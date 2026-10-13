@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI SOC Analyst Live · ASA AI</title>
+<meta name="description" content="Live demo of the ASA AI SOC Analyst every Thursday at 3:00 pm Paris time. 100 seats per session.">
+<meta property="og:title" content="AI SOC Analyst Live · ASA AI">
+<meta property="og:description" content="Watch our AI SOC Analyst work a real alert, live. Every Thursday, 3:00 pm Paris time.">
+<meta property="og:image" content="https://khemegha.github.io/asa-ai-live/assets/asa-ai-soc-analyst-live.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Archivo";font-weight:700;font-display:swap;src:url(assets/fonts/archivo-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Archivo";font-weight:800;font-display:swap;src:url(assets/fonts/archivo-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Plex";font-weight:400;font-display:swap;src:url(assets/fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Plex";font-weight:500;font-display:swap;src:url(assets/fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Plex";font-weight:600;font-display:swap;src:url(assets/fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"PlexMono";font-weight:400;font-display:swap;src:url(assets/fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"PlexMono";font-weight:500;font-display:swap;src:url(assets/fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+/* Layout : en-tete fin ; heros a deux colonnes (argument + formulaire) ; programme ; calendrier des sessions. Charte ASA AI, rendu clair. */
+:root{
+  --paper:#F2F2F2; --card:#FFFFFF; --ink:#1A1A2E; --mut:#5C5C72; --line:#D3D3DE;
+  --mag:#D6247A; --mag-d:#B81C68; --vio:#6B2FA0; --ok:#1F8A5B; --warn:#B4541A;
+  --display:"Archivo","Arial Black",Arial,sans-serif; --body:"Plex","Segoe UI",Arial,sans-serif; --mono:"PlexMono",Consolas,"Courier New",monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:24px}
+a{color:var(--vio)}
+:focus-visible{outline:3px solid var(--vio);outline-offset:2px}
+header.top{border-bottom:1px solid var(--line);background:var(--paper)}
+header.top .wrap{display:flex;align-items:center;gap:14px;padding-block:16px}
+.mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--vio),var(--mag));color:#fff;font:800 13px var(--display);display:flex;align-items:center;justify-content:center;letter-spacing:.04em;flex:none}
+.brand{font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.brand b{color:var(--ink);font-weight:600}
+.langs{margin-left:auto;display:flex;gap:4px}
+.langs button{font:500 12px var(--mono);letter-spacing:.06em;background:none;border:1px solid transparent;color:var(--mut);padding:6px 9px;border-radius:6px;cursor:pointer}
+.langs button[aria-pressed="true"]{border-color:var(--line);background:var(--card);color:var(--ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"intro card" "fig card";grid-template-rows:auto 1fr;column-gap:48px;row-gap:0;padding-block:52px 40px;align-items:start}
+.eyebrow{font:500 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mag);display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--mag);box-shadow:0 0 0 4px #D6247A22;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px #D6247A10}}
+@media (prefers-reduced-motion:reduce){.eyebrow:before{animation:none}}
+h1{font:800 clamp(34px,5vw,56px)/1.04 var(--display);letter-spacing:-.015em;margin:16px 0 0;text-wrap:balance}
+h1 span{display:block;color:var(--mag)}
+.lede{font-size:18px;color:var(--mut);max-width:60ch;margin:20px 0 0}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 0;padding:0;list-style:none}
+.facts li{font:500 13px var(--mono);color:var(--ink)}
+.facts li small{display:block;font:400 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+.intro{grid-area:intro}.card{grid-area:card}figure.shot{grid-area:fig;align-self:start;margin:32px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+figure.shot img{display:block;width:100%;height:auto}
+/* formulaire */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;position:sticky;top:20px;box-shadow:0 18px 40px -28px #1A1A2E55}
+.card h2{font:700 24px var(--display);margin:0}
+.next{margin:14px 0 0;padding:14px 16px;border-radius:10px;background:var(--paper);border:1px solid var(--line)}
+.next small{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.next strong{display:block;font:600 17px var(--body);margin-top:3px}
+.next span{font:400 13px var(--body);color:var(--mut)}
+fieldset{border:0;padding:0;margin:18px 0 0;min-width:0}
+legend{font:600 13px var(--body);margin-bottom:8px;padding:0}
+.slots{display:grid;gap:6px}
+.slot{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;font-size:14px}
+.slot input{accent-color:var(--mag);margin:0}
+.slot .bar{grid-column:2/4;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.slot .bar i{display:block;height:100%;background:var(--vio)}
+.slot .left{font:500 12px var(--mono);color:var(--mut);white-space:nowrap}
+.slot:has(input:checked){border-color:var(--mag);background:#D6247A0A}
+.slot.full{opacity:.55;cursor:not-allowed}
+.slot.full .left{color:var(--warn)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label.f{display:flex;flex-direction:column;gap:5px;font:500 13px var(--body);margin-top:12px;min-width:0}
+label.f input{font:400 15px var(--body);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:11px 12px;width:100%}
+label.f input:focus{border-color:var(--vio);outline:none;box-shadow:0 0 0 3px #6B2FA022}
+.consent{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-top:16px;font-size:12.5px;line-height:1.45;color:var(--mut)}
+.consent input{accent-color:var(--mag);margin-top:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button.go{margin-top:18px;width:100%;font:600 16px var(--body);color:#fff;background:var(--mag);border:0;border-radius:10px;padding:14px 18px;cursor:pointer}
+button.go:hover{background:var(--mag-d)}
+button.go:disabled{opacity:.6;cursor:progress}
+.msg{margin-top:14px;font-size:14px;min-height:1px}
+.msg.err{color:var(--warn)}
+.done{text-align:left}
+.done .tick{width:44px;height:44px;border-radius:50%;background:#1F8A5B18;color:var(--ok);display:flex;align-items:center;justify-content:center;font:700 22px var(--body)}
+.done h2{margin-top:14px}
+.done p{color:var(--mut)}
+/* programme */
+section.block{padding-block:44px;border-top:1px solid var(--line)}
+section.block h2.t{font:700 28px var(--display);margin:0 0 24px}
+.agenda{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:a}
+.agenda li{counter-increment:a;border-top:2px solid var(--ink);padding-top:14px}
+.agenda li:before{content:counter(a,decimal-leading-zero);font:500 12px var(--mono);color:var(--mag)}
+.agenda h3{font:600 17px/1.3 var(--body);margin:6px 0 6px}
+.agenda p{margin:0;color:var(--mut);font-size:14.5px}
+/* calendrier */
+.tablewrap{overflow-x:auto}
+table.cal{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:520px}
+.cal th{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);text-align:left;padding:0 12px 10px 0;border-bottom:1px solid var(--line)}
+.cal td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.cal td.m{font-family:var(--mono);font-size:13px;color:var(--mut)}
+.pill{display:inline-block;font:500 11.5px var(--mono);padding:3px 9px;border-radius:20px;border:1px solid var(--line);white-space:nowrap}
+.pill.open{color:var(--ok);border-color:#1F8A5B55;background:#1F8A5B0F}
+.pill.full{color:var(--warn);border-color:#B4541A55;background:#B4541A0F}
+.note{color:var(--mut);font-size:14px;max-width:70ch;margin-top:16px}
+footer{border-top:1px solid var(--line);padding-block:26px;color:var(--mut);font:400 13px var(--mono)}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"intro" "card" "fig";grid-template-rows:auto;row-gap:28px;padding-block:32px}
+  figure.shot{margin:0}
+  .card{position:static}
+  .agenda{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .wrap{padding-inline:16px}
+  .grid2,.agenda{grid-template-columns:1fr}
+  .brand{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="mark" aria-hidden="true">ASA</div>
+  <div class="brand"><b>ASA AI</b> · AI SOC Analyst</div>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="es">ES</button>
+  </div>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="intro">
+    <div class="eyebrow" data-t="eyebrow"></div>
+    <h1><span data-t="h1a" style="color:inherit"></span><span data-t="h1b"></span></h1>
+    <p class="lede" data-t="lede"></p>
+    <ul class="facts">
+      <li><small data-t="f_when"></small><span data-t="f_when_v"></span></li>
+      <li><small data-t="f_dur"></small><span data-t="f_dur_v"></span></li>
+      <li><small data-t="f_seats"></small><span data-t="f_seats_v"></span></li>
+    </ul>
+  </div>
+    <figure class="shot"><img src="assets/asa-ai-soc-analyst-live.jpg" width="1200" height="630" alt="AI SOC Analyst: from raw alert to an approved response, with every step on record"></figure>
+
+  <aside class="card" id="card" aria-live="polite">
+    <form id="form" novalidate>
+      <h2 data-t="form_title"></h2>
+      <div class="next" id="next"><small data-t="next_open"></small><strong id="nextDate">…</strong><span id="nextSeats"></span></div>
+      <fieldset><legend data-t="choose"></legend><div class="slots" id="slots"></div></fieldset>
+      <div class="grid2">
+        <label class="f"><span data-t="first"></span><input id="first" name="first" autocomplete="given-name" required maxlength="80"></label>
+        <label class="f"><span data-t="last"></span><input id="last" name="last" autocomplete="family-name" required maxlength="80"></label>
+      </div>
+      <label class="f"><span data-t="email"></span><input id="email" name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <div class="grid2">
+        <label class="f"><span data-t="company"></span><input id="company" name="company" autocomplete="organization" required maxlength="100"></label>
+        <label class="f"><span data-t="role"></span><input id="role" name="role" autocomplete="organization-title" required maxlength="100"></label>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Website <input id="website" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent"><input id="consent" type="checkbox" required><span data-t="consent"></span></label>
+      <button class="go" id="go" type="submit" data-t="submit"></button>
+      <div class="msg" id="msg" role="status"></div>
+    </form>
+    <div class="done" id="done" hidden>
+      <div class="tick" aria-hidden="true">✓</div>
+      <h2 data-t="ok_title"></h2>
+      <p id="okText"></p>
+    </div>
+  </aside>
+</div>
+
+<section class="block"><div class="wrap">
+  <h2 class="t" data-t="agenda_title"></h2>
+  <ol class="agenda" id="agenda"></ol>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2 class="t" data-t="upcoming"></h2>
+  <div class="tablewrap"><table class="cal"><thead><tr><th data-t="c_date"></th><th data-t="c_time"></th><th data-t="c_seats"></th><th></th></tr></thead><tbody id="cal"></tbody></table></div>
+  <p class="note" data-t="upcoming_note"></p>
+</div></section>
+</main>
+
+<footer><div class="wrap" data-t="footer"></div></footer>
+
+<script>
+const API = "https://www.asa-ai.fr/live-api";
+const TEXTS = {"en": {"html_lang": "en", "f_when": "When", "f_when_v": "Thursdays · 3:00 pm Paris", "f_dur": "Format", "f_dur_v": "{dur} min · live online + Q&A", "f_seats": "Seats", "f_seats_v": "{cap} per session", "c_date": "Date", "c_time": "Time", "c_seats": "Seats left", "open": "Open", "err_api": "Registration is briefly unavailable. Please write to contact@asa-ai.fr.", "title": "AI SOC Analyst Live", "eyebrow": "Live demo · every Thursday · 3:00 pm Paris time", "h1a": "Watch our AI SOC Analyst", "h1b": "work a real alert, live.", "lede": "In {dur} minutes we take an alert from your SIEM, let the agent investigate it across SIEM, EDR and threat intelligence, and show the response it proposes. Your analyst approves or holds every action. Questions are welcome throughout.", "agenda_title": "What you will see", "agenda": [["Triage with context", "The agent pulls logs, endpoint data and CTI / MISP indicators for one alert and explains what it found."], ["MITRE ATT&CK mapping", "Each finding is tied to real ATT&CK techniques, so the case reads the way your team already works."], ["A proposed response, held for approval", "Containment steps are listed as pending. Nothing runs until an analyst says yes."], ["The audit trail", "Every tool call is logged, ready to support incident reporting under NIS2 and DORA."]], "form_title": "Reserve your seat", "next_open": "Next session with seats available", "choose": "Session", "seats_left": "{n} of {cap} seats left", "full": "Full", "first": "First name", "last": "Last name", "email": "Work email", "company": "Company", "role": "Job title", "consent": "I agree that ASA AI stores these details to send me the session access and follow-up about this demo. You can ask us to delete them at any time at contact@asa-ai.fr.", "submit": "Reserve my seat", "sending": "Reserving…", "ok_title": "Your seat is reserved", "ok_text": "See you on {date} at 3:00 pm (Paris time). A confirmation with the access link is on its way to {email}.", "err_full": "This session just filled up. We moved the form to the next session with seats available; please confirm again.", "err_dup": "This email is already registered for this session.", "err_invalid": "Please fill in every field with a valid work email and accept the storage notice.", "err_rate": "Too many attempts from your connection. Please try again in a few minutes.", "err_generic": "Something went wrong on our side. Please try again, or write to contact@asa-ai.fr.", "upcoming": "Upcoming sessions", "upcoming_note": "100 seats per session. When a session is full, registration opens on the next one. No session on French public holidays or Paris-area school holidays.", "footer": "ASA AI · contact@asa-ai.fr · www.asa-ai.fr", "time_label": "3:00 pm Paris time"}, "fr": {"html_lang": "fr", "f_when": "Quand", "f_when_v": "Le jeudi · 15h00 Paris", "f_dur": "Format", "f_dur_v": "{dur} min · en ligne + questions", "f_seats": "Places", "f_seats_v": "{cap} par session", "c_date": "Date", "c_time": "Heure", "c_seats": "Places restantes", "open": "Ouvert", "err_api": "Inscriptions momentanément indisponibles. Écrivez-nous à contact@asa-ai.fr.", "title": "AI SOC Analyst en direct", "eyebrow": "Démo en direct · chaque jeudi · 15h00 (heure de Paris)", "h1a": "Regardez notre AI SOC Analyst", "h1b": "traiter une vraie alerte, en direct.", "lede": "En {dur} minutes, nous prenons une alerte de votre SIEM, laissons l'agent l'investiguer dans le SIEM, l'EDR et la threat intelligence, et montrons la réponse qu'il propose. Votre analyste approuve ou retient chaque action. Vos questions sont les bienvenues tout au long de la session.", "agenda_title": "Ce que vous verrez", "agenda": [["Un triage avec son contexte", "L'agent rassemble journaux, données endpoint et indicateurs CTI / MISP pour une alerte et explique ce qu'il a trouvé."], ["La correspondance MITRE ATT&CK", "Chaque constat est rattaché à de vraies techniques ATT&CK, comme votre équipe travaille déjà."], ["Une réponse proposée, en attente d'approbation", "Les mesures de confinement restent en attente. Rien ne s'exécute sans le « oui » d'un analyste."], ["La piste d'audit", "Chaque appel d'outil est journalisé, prêt à appuyer vos déclarations d'incident NIS2 et DORA."]], "form_title": "Réservez votre place", "next_open": "Prochaine session avec des places disponibles", "choose": "Session", "seats_left": "{n} places restantes sur {cap}", "full": "Complet", "first": "Prénom", "last": "Nom", "email": "E-mail professionnel", "company": "Entreprise", "role": "Fonction", "consent": "J'accepte qu'ASA AI conserve ces informations pour m'envoyer l'accès à la session et le suivi de cette démo. Je peux en demander la suppression à tout moment à contact@asa-ai.fr.", "submit": "Réserver ma place", "sending": "Réservation…", "ok_title": "Votre place est réservée", "ok_text": "Rendez-vous le {date} à 15h00 (heure de Paris). Une confirmation avec le lien d'accès part vers {email}.", "err_full": "Cette session vient d'être complète. Le formulaire propose maintenant la session suivante avec des places ; merci de confirmer à nouveau.", "err_dup": "Cet e-mail est déjà inscrit à cette session.", "err_invalid": "Merci de remplir tous les champs avec un e-mail professionnel valide et d'accepter la mention de conservation.", "err_rate": "Trop de tentatives depuis votre connexion. Réessayez dans quelques minutes.", "err_generic": "Un problème est survenu de notre côté. Réessayez, ou écrivez-nous à contact@asa-ai.fr.", "upcoming": "Prochaines sessions", "upcoming_note": "100 places par session. Quand une session est complète, les inscriptions s'ouvrent sur la suivante. Pas de session les jours fériés ni pendant les vacances scolaires de la zone C.", "footer": "ASA AI · contact@asa-ai.fr · www.asa-ai.fr", "time_label": "15h00 (heure de Paris)"}, "es": {"html_lang": "es", "f_when": "Cuándo", "f_when_v": "Jueves · 15:00 París", "f_dur": "Formato", "f_dur_v": "{dur} min · en línea + preguntas", "f_seats": "Plazas", "f_seats_v": "{cap} por sesión", "c_date": "Fecha", "c_time": "Hora", "c_seats": "Plazas libres", "open": "Abierta", "err_api": "Inscripción no disponible por un momento. Escriba a contact@asa-ai.fr.", "title": "AI SOC Analyst en directo", "eyebrow": "Demo en directo · cada jueves · 15:00 (hora de París)", "h1a": "Vea a nuestro AI SOC Analyst", "h1b": "trabajar una alerta real, en directo.", "lede": "En {dur} minutos tomamos una alerta de su SIEM, dejamos que el agente la investigue en el SIEM, el EDR y la inteligencia de amenazas, y mostramos la respuesta que propone. Su analista aprueba o retiene cada acción. Puede hacer preguntas durante toda la sesión.", "agenda_title": "Lo que verá", "agenda": [["Triage con contexto", "El agente reúne registros, datos de endpoint e indicadores CTI / MISP de una alerta y explica lo que encontró."], ["Correspondencia con MITRE ATT&CK", "Cada hallazgo se vincula a técnicas ATT&CK reales, tal como ya trabaja su equipo."], ["Una respuesta propuesta, pendiente de aprobación", "Las medidas de contención quedan pendientes. Nada se ejecuta sin el «sí» de un analista."], ["La pista de auditoría", "Cada llamada a herramientas queda registrada, lista para apoyar sus notificaciones NIS2 y DORA."]], "form_title": "Reserve su plaza", "next_open": "Próxima sesión con plazas disponibles", "choose": "Sesión", "seats_left": "Quedan {n} de {cap} plazas", "full": "Completa", "first": "Nombre", "last": "Apellidos", "email": "Correo profesional", "company": "Empresa", "role": "Cargo", "consent": "Acepto que ASA AI conserve estos datos para enviarme el acceso a la sesión y el seguimiento de esta demo. Puedo pedir su eliminación en cualquier momento en contact@asa-ai.fr.", "submit": "Reservar mi plaza", "sending": "Reservando…", "ok_title": "Su plaza está reservada", "ok_text": "Nos vemos el {date} a las 15:00 (hora de París). La confirmación con el enlace de acceso va de camino a {email}.", "err_full": "Esta sesión acaba de completarse. El formulario muestra ahora la siguiente sesión con plazas; confirme de nuevo, por favor.", "err_dup": "Este correo ya está inscrito en esta sesión.", "err_invalid": "Complete todos los campos con un correo profesional válido y acepte el aviso de conservación.", "err_rate": "Demasiados intentos desde su conexión. Inténtelo de nuevo en unos minutos.", "err_generic": "Algo ha fallado por nuestra parte. Inténtelo de nuevo o escriba a contact@asa-ai.fr.", "upcoming": "Próximas sesiones", "upcoming_note": "100 plazas por sesión. Cuando una sesión se completa, la inscripción pasa a la siguiente. No hay sesión en festivos franceses ni en vacaciones escolares de la región de París.", "footer": "ASA AI · contact@asa-ai.fr · www.asa-ai.fr", "time_label": "15:00 (hora de París)"}};
+let lang = "en", state = {sessions: [], capacity: 100, duration: 45}, chosen = null, done = null;
+try { const s = localStorage.getItem("asa-live-lang"); if (TEXTS[s]) lang = s; } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const t = k => (TEXTS[lang][k] ?? TEXTS.en[k] ?? "");
+function fmtDate(iso, lower) {
+  const d = new Date(iso + "T12:00:00");
+  const loc = {en: "en-GB", fr: "fr-FR", es: "es-ES"}[lang];
+  const s = d.toLocaleDateString(loc, {weekday: "long", day: "numeric", month: "long", year: "numeric"});
+  return lower && lang !== "en" ? s : s.charAt(0).toUpperCase() + s.slice(1);
+}
+function seats(s) { return t("seats_left").replace("{n}", s.left).replace("{cap}", state.capacity); }
+
+function render() {
+  document.documentElement.lang = TEXTS[lang].html_lang;
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const k = el.dataset.t; let v = t(k);
+    if (k === "lede") v = v.replace("{dur}", state.duration);
+    if (k === "f_dur_v") v = v.replace("{dur}", state.duration);
+    if (k === "f_seats_v") v = v.replace("{cap}", state.capacity);
+    el.textContent = v;
+  });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  $("agenda").innerHTML = "";
+  TEXTS[lang].agenda.forEach(([h, p]) => {
+    const li = document.createElement("li"), h3 = document.createElement("h3"), pp = document.createElement("p");
+    h3.textContent = h; pp.textContent = p; li.append(h3, pp); $("agenda").append(li);
+  });
+  const open = state.sessions.filter(s => !s.full);
+  if (!chosen || !open.some(s => s.date === chosen)) chosen = open[0]?.date ?? null;
+  const first = open[0];
+  $("nextDate").textContent = first ? fmtDate(first.date) + " · " + t("time_label") : (state.error ? t("err_api") : "…");
+  $("nextSeats").textContent = first ? seats(first) : "";
+  const slots = $("slots"); slots.innerHTML = "";
+  state.sessions.slice(0, 6).forEach(s => {
+    const lab = document.createElement("label"); lab.className = "slot" + (s.full ? " full" : "");
+    const r = document.createElement("input"); r.type = "radio"; r.name = "session"; r.value = s.date; r.disabled = s.full; r.checked = s.date === chosen;
+    r.addEventListener("change", () => { chosen = s.date; });
+    const name = document.createElement("span"); name.textContent = fmtDate(s.date);
+    const left = document.createElement("span"); left.className = "left"; left.textContent = s.full ? t("full") : seats(s);
+    const bar = document.createElement("span"); bar.className = "bar"; const i = document.createElement("i");
+    i.style.width = Math.min(100, Math.round(100 * s.taken / state.capacity)) + "%"; bar.append(i);
+    lab.append(r, name, left, bar); slots.append(lab);
+  });
+  const cal = $("cal"); cal.innerHTML = "";
+  state.sessions.forEach(s => {
+    const tr = document.createElement("tr");
+    const a = document.createElement("td"); a.textContent = fmtDate(s.date);
+    const b = document.createElement("td"); b.className = "m"; b.textContent = t("time_label");
+    const c = document.createElement("td"); c.className = "m"; c.textContent = s.full ? "0 / " + state.capacity : s.left + " / " + state.capacity;
+    const d = document.createElement("td"); const p = document.createElement("span"); p.className = "pill " + (s.full ? "full" : "open"); p.textContent = s.full ? t("full") : t("open"); d.append(p);
+    tr.append(a, b, c, d); cal.append(tr);
+  });
+  $("go").disabled = !chosen;
+  if (done) $("okText").textContent = t("ok_text").replace("{date}", fmtDate(done.date, true)).replace("{email}", done.email);
+}
+
+document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang; try { localStorage.setItem("asa-live-lang", lang); } catch (e) {} render();
+}));
+
+async function load() {
+  try {
+    const r = await fetch(API + "/api/sessions", {cache: "no-store"});
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    state = {sessions: j.sessions, capacity: j.capacity, duration: j.duration ?? state.duration};
+  } catch (e) { state.error = true; }
+  render();
+}
+
+$("form").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const msg = $("msg"); msg.className = "msg"; msg.textContent = "";
+  const body = {
+    first: $("first").value.trim(), last: $("last").value.trim(), email: $("email").value.trim(),
+    company: $("company").value.trim(), role: $("role").value.trim(), session: chosen, lang,
+    consent: $("consent").checked, website: $("website").value
+  };
+  if (!body.first || !body.last || !body.company || !body.role || !/^\S+@\S+\.\S+$/.test(body.email) || !body.consent || !chosen) {
+    msg.className = "msg err"; msg.textContent = t("err_invalid"); return;
+  }
+  const go = $("go"); go.disabled = true; go.textContent = t("sending");
+  try {
+    const r = await fetch(API + "/api/register", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+    const j = await r.json().catch(() => ({}));
+    if (j.sessions) state.sessions = j.sessions;
+    if (r.ok && j.ok) {
+      done = {date: j.session, email: body.email};
+      $("form").hidden = true; $("done").hidden = false; render(); return;
+    }
+    msg.className = "msg err";
+    msg.textContent = t({full: "err_full", dup: "err_dup", invalid: "err_invalid", rate: "err_rate"}[j.error] || "err_generic");
+    if (j.error === "full") chosen = null;
+  } catch (e) {
+    msg.className = "msg err"; msg.textContent = t("err_generic");
+  }
+  go.textContent = t("submit"); render();
+});
+
+render();
+load();
+setInterval(() => { if (!done) load(); }, 60000);
+</script>
+</body>
+</html>
