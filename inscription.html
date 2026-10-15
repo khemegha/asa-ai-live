@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI SOC Analyst — Démo live | ASA AI</title>
+<meta name="description" content="À 15h00 (heure de Paris) : démonstration en direct de l'AI SOC Analyst d'ASA AI et de l'automatisation du SOC.">
+<link rel="canonical" href="https://khemegha.github.io/asa-ai-live/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ASA AI">
+<meta property="og:url" content="https://khemegha.github.io/asa-ai-live/">
+<meta property="og:title" content="AI SOC Analyst — Votre SOC automatisé, démontré en direct">
+<meta property="og:description" content="À 15h00 (Paris), en ligne : triage des alertes SIEM, priorisation des CVE, MISP, détection de la fraude et réponse validée par l'humain. 100 places par session.">
+<meta property="og:image" content="https://khemegha.github.io/asa-ai-live/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="AI SOC Analyst — démo live ASA AI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI SOC Analyst — Votre SOC automatisé, démontré en direct">
+<meta name="twitter:image" content="https://khemegha.github.io/asa-ai-live/assets/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --magenta:#D6247A; --magenta-dark:#B81C68; --violet:#6B2FA0;
+    --ink:#1A1A2E; --page:#F2F2F2; --card:#FAF8F4; --hero:#F3F1EA;
+    --grid-bg:#2E2554; --grid-line:#6F6FC9; --node:#7B8CE6;
+    --muted:#5B5B6E; --line:#E4E0D8; --pink-soft:#FBE9F1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--page);color:var(--ink);font:15px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:620px;margin:40px auto;padding:0 16px}
+  .card{background:var(--card);box-shadow:0 1px 3px rgba(26,26,46,.06)}
+
+  /* ---------- Bandeau ---------- */
+  .hero{display:grid;grid-template-columns:1fr 262px;background:var(--hero);min-height:250px}
+  .hero-left{padding:22px 26px 24px;display:flex;flex-direction:column;justify-content:center}
+  .brand{align-self:flex-start;display:flex;align-items:center;gap:12px;margin-bottom:22px;height:30px}
+  .brand img{height:30px;width:auto;border-radius:4px}
+  .wordmark{display:none;align-items:center;gap:6px;font-weight:700;font-size:19px;letter-spacing:-.2px;color:var(--ink)}
+  .wordmark .mark{width:22px;height:22px}
+  .brand .sep{width:1px;height:20px;background:#CFCAC0}
+  .brand .co{font:500 10px/1.1 "JetBrains Mono",monospace;color:var(--violet);text-transform:uppercase;letter-spacing:.6px}
+  .tag{align-self:flex-start;display:inline-block;background:#fff;border:1px solid var(--line);font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:1.6px;text-transform:uppercase;padding:7px 10px;margin-bottom:16px;color:#3a3a4a}
+  h1{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:28px;line-height:1.15;letter-spacing:-.3px;margin:0;color:#14142a}
+  .hero-right{background:var(--grid-bg);display:flex;align-items:center;justify-content:center;padding:6px}
+  .hero-right svg{width:100%;max-width:250px;height:auto;display:block}
+  .hero-right text{font-family:"Inter",system-ui,sans-serif}
+
+  /* ---------- Corps ---------- */
+  .body{padding:26px 28px 8px}
+  .body p{margin:0 0 14px}
+  .hl{color:var(--magenta);font-style:italic;text-decoration:none}
+  .hl:hover{text-decoration:underline}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;margin:30px 0 26px}
+  .fact svg{width:26px;height:26px;stroke:var(--magenta);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .fact b{display:block;font-size:13.5px;line-height:1.35;margin-top:8px}
+  .fact span{display:block;font-size:13px;font-weight:600}
+  .cta{display:flex;justify-content:center;margin:4px 0 30px}
+  .btn{display:inline-block;background:var(--magenta);color:#fff;font-weight:700;font-size:15px;padding:13px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
+  .btn:hover{background:var(--magenta-dark)}
+  .btn-alt{background:#fff;color:var(--magenta);border:2px solid var(--magenta);padding:11px 24px}
+  .btn-alt:hover{background:var(--pink-soft);color:var(--magenta-dark)}
+  .cta{gap:12px;flex-wrap:wrap}
+  .sign p{margin:0 0 6px}
+
+  /* ---------- Programme ---------- */
+  .agenda{margin:22px 0 0;padding:20px 28px 22px;background:var(--pink-soft);border-top:1px solid #F3D3E2}
+  .agenda h2,.reg h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:19px;margin:0 0 12px}
+  .agenda ul{margin:0;padding:0;list-style:none}
+  .agenda li{position:relative;padding:0 0 9px 22px;font-size:14px}
+  .agenda li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--magenta)}
+
+  /* ---------- Inscription ---------- */
+  .reg{padding:26px 28px 28px;border-top:1px solid var(--line)}
+  .reg .sub{color:var(--muted);font-size:13.5px;margin:-4px 0 18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:block;font-size:12.5px;font-weight:600;margin:0 0 5px}
+  .f{margin-bottom:14px}
+  input,select{width:100%;font:inherit;font-size:14px;padding:10px 12px;border:1px solid #D6D1C7;border-radius:6px;background:#fff;color:var(--ink)}
+  input:focus,select:focus{outline:2px solid rgba(214,36,122,.25);border-color:var(--magenta)}
+  .consent{font-weight:400;display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin:4px 0 18px}
+  .consent input{width:auto;margin-top:3px;accent-color:var(--magenta)}
+  .reg .btn{width:100%}
+  .ok{display:none;background:#EEF8F1;border:1px solid #BFE3CB;color:#1E6B3A;padding:14px 16px;border-radius:6px;font-size:14px;margin-bottom:16px}
+  .ok.show{display:block}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:4px}
+  input:user-invalid{border-color:#C0392B}
+
+  footer{text-align:center;font-size:12px;color:#8A8A98;padding:18px 0 40px}
+  footer a{color:var(--violet);text-decoration:none}
+
+  @media (max-width:480px){
+    .wrap{margin:16px auto}
+    .hero{grid-template-columns:1fr}
+    h1{font-size:24px}
+    .body,.reg,.agenda{padding-left:18px;padding-right:18px}
+    .row{grid-template-columns:1fr;gap:0}
+    .facts{gap:4px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+
+    <!-- Bandeau -->
+    <header class="hero">
+      <div class="hero-left">
+        <div class="brand">
+          <img src="ASA-AI-LOGO.png" alt="ASA AI" onerror="this.style.display='none';document.getElementById('wm').style.display='inline-flex'">
+          <span class="wordmark" id="wm">
+            <svg class="mark" viewBox="0 0 24 24"><path d="M12 3 3 20h4l5-10 5 10h4z" fill="#D6247A"/></svg>ASA AI
+          </span>
+          <span class="sep"></span>
+          <span class="co">SOC<br>Automation</span>
+        </div>
+        <span class="tag">AI SOC Analyst</span>
+        <h1 data-i18n="title"></h1>
+      </div>
+      <div class="hero-right">
+        <svg viewBox="0 0 250 252" role="img" aria-labelledby="sch-t">
+          <title id="sch-t">AI SOC Analyst — architecture</title>
+          <defs>
+            <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8z" fill="#9AA6EE"/></marker>
+            <marker id="arm" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8z" fill="#E88AB6"/></marker>
+          </defs>
+          <g stroke="#6F6FC9" stroke-width=".8" opacity=".28">
+            <path d="M0 30H250M0 75H250M0 120H250M0 165H250M0 210H250M40 0V252M125 0V252M210 0V252"/>
+          </g>
+          <g fill="none" stroke="#9AA6EE" stroke-width="1.3">
+            <path d="M125 38V55" marker-end="url(#ar)"/>
+            <path d="M98 88 70 108" marker-end="url(#ar)"/>
+            <path d="M152 88 180 108" marker-end="url(#ar)"/>
+            <path d="M65 138V155" marker-end="url(#ar)"/>
+            <path d="M185 138V155" marker-end="url(#ar)"/>
+          </g>
+          <path d="M185 184C185 200 170 206 160 210" fill="none" stroke="#E88AB6" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#arm)"/>
+
+          <rect x="70" y="12" width="110" height="26" rx="13" fill="#1A1A2E" stroke="#9AA6EE" stroke-opacity=".6"/>
+          <text x="125" y="29" text-anchor="middle" font-size="10" fill="#fff" data-i18n="schAnalyst"></text>
+
+          <rect x="50" y="57" width="150" height="31" rx="8" fill="#D6247A"/>
+          <text x="125" y="77" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">AI SOC Analyst</text>
+
+          <rect x="10" y="110" width="110" height="28" rx="8" fill="#6B2FA0"/>
+          <text x="65" y="128" text-anchor="middle" font-size="10" fill="#fff">Prompt Guard</text>
+
+          <rect x="130" y="110" width="110" height="28" rx="8" fill="#6B2FA0"/>
+          <text x="185" y="128" text-anchor="middle" font-size="10" fill="#fff" data-i18n="schTools"></text>
+
+          <rect x="10" y="157" width="110" height="27" rx="8" fill="#1A1A2E" stroke="#7B8CE6"/>
+          <text x="65" y="174" text-anchor="middle" font-size="10" fill="#fff" data-i18n="schLlm"></text>
+
+          <rect x="130" y="157" width="35" height="27" rx="5" fill="#EEEAF6"/>
+          <text x="147.5" y="174" text-anchor="middle" font-size="8.5" font-weight="600" fill="#1A1A2E">SIEM</text>
+          <rect x="168" y="157" width="33" height="27" rx="5" fill="#EEEAF6"/>
+          <text x="184.5" y="174" text-anchor="middle" font-size="8.5" font-weight="600" fill="#1A1A2E">MISP</text>
+          <rect x="204" y="157" width="36" height="27" rx="5" fill="#EEEAF6"/>
+          <text x="222" y="174" text-anchor="middle" font-size="8.5" font-weight="600" fill="#1A1A2E">VoIP</text>
+
+          <text x="205" y="203" font-size="8" font-style="italic" fill="#E88AB6">Response</text>
+          <rect x="55" y="212" width="140" height="28" rx="8" fill="#FBE9F1"/>
+          <text x="125" y="230" text-anchor="middle" font-size="10" font-weight="600" fill="#B81C68" data-i18n="schHuman"></text>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Inscription -->
+    <section class="reg" id="inscription">
+      <h2 data-i18n="regTitle"></h2>
+      <p class="sub" data-i18n="regSub"></p>
+
+      <div class="ok" id="ok" data-i18n="thanks"></div>
+
+      <form id="form" action="https://formsubmit.co/contact@asa-ai.fr" method="POST">
+        <input type="hidden" name="_subject" id="f-subject">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="next-url">
+        <input type="hidden" name="Langue" id="f-lang">
+        <input type="hidden" name="Ref" id="f-ref">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="row">
+          <div class="f"><label for="prenom" data-i18n="first"></label><input id="prenom" name="Prénom" required></div>
+          <div class="f"><label for="nom" data-i18n="last"></label><input id="nom" name="Nom" required></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="email" data-i18n="email"></label><input id="email" type="email" name="email" autocomplete="email" required><div class="hint" data-i18n="emailHint"></div></div>
+          <div class="f"><label for="tel" data-i18n="phone"></label><input id="tel" type="tel" name="Téléphone" autocomplete="tel" placeholder="+33 6 12 34 56 78" required><div class="hint" data-i18n="phoneHint"></div></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="ent" data-i18n="company"></label><input id="ent" name="Entreprise" required></div>
+          <div class="f"><label for="fn" data-i18n="role"></label><input id="fn" name="Fonction"></div>
+        </div>
+        <div class="f">
+          <label for="session" data-i18n="session"></label>
+          <select id="session" name="Session" required></select>
+        </div>
+        <label class="consent"><input type="checkbox" required> <span data-i18n="consent"></span></label>
+        <button class="btn" type="submit" data-i18n="submit"></button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a href="./" data-i18n="back"></a><br>
+    ASA AI · <a href="https://www.asa-ai.fr">www.asa-ai.fr</a> · <a href="mailto:contact@asa-ai.fr">contact@asa-ai.fr</a>
+  </footer>
+</div>
+
+<script>
+  /* Sessions : un jeudi sur deux à 15h00 (heure de Paris) à partir du 19/11/2026.
+     Les dates tombant pendant les vacances scolaires (zone C) ou un jour férié sont sautées,
+     sans décaler le rythme. Pour ajouter une période à exclure, compléter EXCLUSIONS. */
+  const PREMIERE_SESSION = "2026-11-19";
+  const INTERVALLE_JOURS = 14;
+  const NB_SESSIONS_AFFICHEES = 8;
+  const EXCLUSIONS = [                       /* [début, fin] inclus — source : service-public.gouv.fr */
+    ["2026-10-17","2026-11-01"],             /* Toussaint 2026 */
+    ["2026-12-19","2027-01-03"],             /* Noël 2026 */
+    ["2027-02-06","2027-02-21"],             /* Hiver 2027 (zone C) */
+    ["2027-04-03","2027-04-18"],             /* Printemps 2027 (zone C) */
+    ["2027-05-06","2027-05-06"],             /* Ascension 2027 */
+    ["2027-07-03","2027-08-31"],             /* Été 2027 */
+    ["2026-11-11","2026-11-11"],["2026-12-25","2026-12-25"],["2027-01-01","2027-01-01"],
+    ["2027-05-01","2027-05-01"],["2027-05-08","2027-05-08"],["2027-07-14","2027-07-14"]  /* fériés */
+  ];
+  const iso = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  const exclu = d => EXCLUSIONS.some(([a,b]) => d >= a && d <= b);
+  const SESSIONS = [];
+  for (let d = new Date(PREMIERE_SESSION+"T12:00:00"), n = 0; n < 60; n++, d.setDate(d.getDate()+INTERVALLE_JOURS)) {
+    const s = iso(d); if (!exclu(s)) SESSIONS.push(s);
+  }
+
+  /* Textes par langue — l'anglais est la langue par défaut */
+  const T = {
+    en: {
+      phone:"Phone number", phoneHint:"International format, e.g. +33 6 12 34 56 78", emailHint:"Company address only (no Gmail, Outlook, Yahoo…)",
+      errEmail:"Please use your business email address (personal addresses such as Gmail, Outlook or Yahoo are not accepted).",
+      errPhone:"Please enter a valid phone number (8 to 15 digits, e.g. +33 6 12 34 56 78).",
+      schAnalyst:"SOC analyst", schTools:"MCP tools", schLlm:"Local LLM · GPU", schHuman:"Human approval",
+      locale:"en-GB", pageTitle:"AI SOC Analyst — Live demo | ASA AI",
+      title:"Your automated SOC, demonstrated live",
+      hello:"Hello,",
+      intro1:"New live session on",
+      introLink:"how an AI agent triages alerts, prioritises vulnerabilities and prepares incident response",
+      intro2:"If you run a SOC, an MSSP or a cyber team in banking, insurance or the public sector, this session shows the AI SOC Analyst at work on a real Wazuh SIEM: triage, MISP enrichment, CVE prioritisation, VoIP/SIP and response proposals subject to human approval.",
+      time:"3:00 PM Paris time", timeUk:"2:00 PM UK",
+      back:"← Back to the programme", virtual:"Virtual", weekly:"Every other Thursday",
+      demoBtn:"Request a demo", cta:"Register now", bye:"Hope to see you there.", team:"The ASA AI team",
+      agendaTitle:"Agenda (45 min)",
+      agenda:["Automated triage and correlation of SIEM alerts","Prioritisation of critical vulnerabilities per host (CVE + CVSS)","Threat Intelligence enrichment with MISP","Fraud detection","Incident response with human approval and audit trail","Live Q&A"],
+      regTitle:"Save your seat", regSub:"100 seats per session. You will receive a confirmation email with the joining link.",
+      thanks:"Thank you, your registration is confirmed. A confirmation email has just been sent to you.",
+      first:"First name", last:"Last name", email:"Business email", company:"Company", role:"Job title", session:"Session",
+      consent:"I agree that ASA AI may use this information to organise the session and contact me about it.",
+      submit:"Register", at:"3:00 PM",
+      subject:"New registration — AI SOC Analyst live demo (EN)",
+      auto:"Thank you for registering for the AI SOC Analyst live demo (3:00 PM Paris time). We will send you the joining link before the session. — The ASA AI team · contact@asa-ai.fr · www.asa-ai.fr"
+    },
+    fr: {
+      phone:"Téléphone", phoneHint:"Format international, ex. +33 6 12 34 56 78", emailHint:"Adresse d'entreprise uniquement (pas de Gmail, Outlook, Yahoo…)",
+      errEmail:"Merci d'utiliser votre adresse e-mail professionnelle (les adresses personnelles Gmail, Outlook, Yahoo… ne sont pas acceptées).",
+      errPhone:"Merci d'indiquer un numéro de téléphone valide (8 à 15 chiffres, ex. +33 6 12 34 56 78).",
+      schAnalyst:"Analyste SOC", schTools:"Outils MCP", schLlm:"LLM local · GPU", schHuman:"Validation humaine",
+      locale:"fr-FR", pageTitle:"AI SOC Analyst — Démo live | ASA AI",
+      title:"Votre SOC automatisé, démontré en direct",
+      hello:"Bonjour,",
+      intro1:"Nouvelle session live sur",
+      introLink:"la manière dont un agent IA trie les alertes, priorise les vulnérabilités et prépare la réponse à incident",
+      intro2:"Si vous pilotez un SOC, un MSSP ou une équipe cyber en banque, assurance ou secteur public, cette session vous montre l'AI SOC Analyst à l'œuvre sur un vrai SIEM Wazuh : triage, enrichissement MISP, priorisation CVE, VoIP/SIP et propositions de réponse soumises à validation humaine.",
+      time:"15h00 heure de Paris", timeUk:"14h00 UK",
+      back:"← Retour au programme", virtual:"Virtuel", weekly:"Un jeudi sur deux",
+      demoBtn:"Demander une démo", cta:"Inscrivez-vous maintenant", bye:"Au plaisir de vous y retrouver.", team:"L'équipe ASA AI",
+      agendaTitle:"Au programme (45 min)",
+      agenda:["Triage automatique des alertes SIEM et corrélation","Priorisation des vulnérabilités critiques par machine (CVE + CVSS)","Enrichissement Threat Intelligence via MISP","Détection de la fraude","Réponse à incident avec approbation humaine et journal d'audit","Questions / réponses en direct"],
+      regTitle:"Réservez votre place", regSub:"100 places par session. Vous recevez une confirmation par e-mail avec le lien de connexion.",
+      thanks:"Merci, votre inscription est enregistrée. Un e-mail de confirmation vient de vous être envoyé.",
+      first:"Prénom", last:"Nom", email:"E-mail professionnel", company:"Entreprise", role:"Fonction", session:"Session",
+      consent:"J'accepte qu'ASA AI utilise ces informations pour organiser la session et me recontacter à son sujet.",
+      submit:"Je m'inscris", at:"15h00",
+      subject:"Nouvelle inscription — Démo live AI SOC Analyst (FR)",
+      auto:"Merci pour votre inscription à la démonstration live de l'AI SOC Analyst (15h00 heure de Paris). Nous vous envoyons le lien de connexion avant la session. — L'équipe ASA AI · contact@asa-ai.fr · www.asa-ai.fr"
+    },
+    es: {
+      phone:"Teléfono", phoneHint:"Formato internacional, p. ej. +34 612 34 56 78", emailHint:"Solo dirección de empresa (no Gmail, Outlook, Yahoo…)",
+      errEmail:"Utilice su correo profesional (no se aceptan direcciones personales como Gmail, Outlook o Yahoo).",
+      errPhone:"Introduzca un número de teléfono válido (de 8 a 15 dígitos, p. ej. +34 612 34 56 78).",
+      schAnalyst:"Analista SOC", schTools:"Herramientas MCP", schLlm:"LLM local · GPU", schHuman:"Aprobación humana",
+      locale:"es-ES", pageTitle:"AI SOC Analyst — Demo en directo | ASA AI",
+      title:"Su SOC automatizado, demostrado en directo",
+      hello:"Hola,",
+      intro1:"Nueva sesión en directo sobre",
+      introLink:"cómo un agente de IA clasifica alertas, prioriza vulnerabilidades y prepara la respuesta a incidentes",
+      intro2:"Si dirige un SOC, un MSSP o un equipo de ciberseguridad en banca, seguros o sector público, esta sesión le muestra el AI SOC Analyst en acción sobre un SIEM Wazuh real: triaje, enriquecimiento MISP, priorización de CVE, VoIP/SIP y propuestas de respuesta sujetas a validación humana.",
+      time:"15:00 hora de París", timeUk:"14:00 UK",
+      back:"← Volver al programa", virtual:"Virtual", weekly:"Un jueves de cada dos",
+      demoBtn:"Solicitar una demo", cta:"Inscríbase ahora", bye:"Esperamos verle allí.", team:"El equipo de ASA AI",
+      agendaTitle:"Programa (45 min)",
+      agenda:["Triaje automático y correlación de alertas SIEM","Priorización de vulnerabilidades críticas por equipo (CVE + CVSS)","Enriquecimiento de Threat Intelligence con MISP","Detección del fraude","Respuesta a incidentes con aprobación humana y registro de auditoría","Preguntas y respuestas en directo"],
+      regTitle:"Reserve su plaza", regSub:"100 plazas por sesión. Recibirá un correo de confirmación con el enlace de conexión.",
+      thanks:"Gracias, su inscripción ha sido registrada. Le acabamos de enviar un correo de confirmación.",
+      first:"Nombre", last:"Apellidos", email:"Correo profesional", company:"Empresa", role:"Cargo", session:"Sesión",
+      consent:"Acepto que ASA AI utilice estos datos para organizar la sesión y contactarme al respecto.",
+      submit:"Inscribirme", at:"15:00",
+      subject:"Nueva inscripción — Demo en directo AI SOC Analyst (ES)",
+      auto:"Gracias por inscribirse en la demostración en directo del AI SOC Analyst (15:00 hora de París). Le enviaremos el enlace de conexión antes de la sesión. — El equipo de ASA AI · contact@asa-ai.fr · www.asa-ai.fr"
+    }
+  };
+
+  /* Détection automatique de la langue du lecteur (anglais par défaut) */
+  const prefs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+  let lang = "en";
+  for (const l of prefs){ const c = (l||"").slice(0,2).toLowerCase(); if (T[c]) { lang = c; break; } }
+  const L = T[lang];
+
+  document.documentElement.lang = lang;
+  document.title = L.pageTitle;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = L[el.dataset.i18n]; });
+  const $ = id => document.getElementById(id);
+  if ($("agenda-list")) $("agenda-list").innerHTML = L.agenda.map(a => "<li>"+a+"</li>").join("");
+  if ($("f-subject")) $("f-subject").value = L.subject;
+  if ($("f-lang")) $("f-lang").value = lang.toUpperCase();
+
+  /* Sessions affichées dans la langue du lecteur ; la valeur envoyée reste en français pour le suivi interne */
+  const today = new Date(); today.setHours(0,0,0,0);
+  const upcoming = SESSIONS.filter(d => new Date(d+"T23:59:59") >= today).slice(0, NB_SESSIONS_AFFICHEES);
+  const long = (d,loc) => new Date(d+"T15:00:00").toLocaleDateString(loc,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  const sel = document.getElementById("session");
+  if (sel) upcoming.forEach(d => {
+    const o = document.createElement("option");
+    o.value = long(d,"fr-FR") + " — 15h00";
+    o.textContent = long(d,L.locale) + " — " + L.at;
+    sel.appendChild(o);
+  });
+  if (upcoming.length && $("next-date")){
+    $("next-date").textContent =
+      new Date(upcoming[0]+"T15:00:00").toLocaleDateString(L.locale,{day:"numeric",month:"long"});
+  }
+
+  if ($("form")) {
+  /* ---------- Contrôles : e-mail professionnel + téléphone ---------- */
+  const FREE_EXACT = new Set(["gmail.com","googlemail.com","ymail.com","rocketmail.com","msn.com","icloud.com","me.com","mac.com",
+    "aol.com","aol.fr","mail.com","email.com","protonmail.com","protonmail.ch","proton.me","pm.me","tutanota.com","tutanota.de","tuta.io",
+    "zoho.com","zohomail.com","fastmail.com","hey.com","mail.ru","bk.ru","inbox.ru","list.ru","qq.com","163.com","126.com","sina.com",
+    "laposte.net","orange.fr","wanadoo.fr","free.fr","sfr.fr","neuf.fr","cegetel.net","bbox.fr","numericable.fr","noos.fr",
+    "aliceadsl.fr","club-internet.fr","voila.fr","web.de","t-online.de","freenet.de","libero.it","virgilio.it","tiscali.it",
+    "terra.es","telefonica.net","seznam.cz","wp.pl","o2.pl","interia.pl","rediffmail.com","mailinator.com","yopmail.com",
+    "yopmail.fr","guerrillamail.com","10minutemail.com","temp-mail.org","trashmail.com"]);
+  const FREE_BASE = ["gmail","yahoo","hotmail","outlook","live","gmx","yandex","msn"];
+  function isProEmail(v){
+    const m = /^[^@\s]+@([^@\s]+\.[a-z]{2,})$/i.exec((v||"").trim());
+    if (!m) return false;
+    const d = m[1].toLowerCase();
+    if (FREE_EXACT.has(d)) return false;
+    if (FREE_BASE.includes(d.split(".")[0])) return false;
+    return true;
+  }
+  function isPhone(v){
+    const t = (v||"").trim();
+    if (!/^\+?[0-9\s().\-\/]+$/.test(t)) return false;
+    const n = t.replace(/\D/g,"").length;
+    return n >= 8 && n <= 15;
+  }
+  const emailEl = document.getElementById("email"), telEl = document.getElementById("tel");
+  const checkEmail = () => emailEl.setCustomValidity(emailEl.value && !isProEmail(emailEl.value) ? L.errEmail : "");
+  const checkTel   = () => telEl.setCustomValidity(telEl.value && !isPhone(telEl.value) ? L.errPhone : "");
+  emailEl.addEventListener("input", checkEmail); telEl.addEventListener("input", checkTel);
+
+  /* Avant envoi : contrôles + ligne technique pour le fichier CSV (lue par le service côté messagerie) */
+  const b64 = str => { const by = new TextEncoder().encode(str); let bin=""; by.forEach(c => bin += String.fromCharCode(c)); return btoa(bin); };
+  document.getElementById("form").addEventListener("submit", e => {
+    checkEmail(); checkTel();
+    const f = e.target;
+    if (!f.checkValidity()){ e.preventDefault(); f.reportValidity(); return; }
+    const rec = {
+      session: sel.value, prenom: f["Prénom"].value.trim(), nom: f["Nom"].value.trim(),
+      email: emailEl.value.trim().toLowerCase(), telephone: telEl.value.trim(),
+      entreprise: f["Entreprise"].value.trim(), fonction: f["Fonction"].value.trim(),
+      langue: lang.toUpperCase(), envoye_le: new Date().toISOString()
+    };
+    document.getElementById("f-ref").value = "ASAAI1:" + b64(JSON.stringify(rec));
+  });
+
+  /* Retour après envoi : même page avec ?merci=1 */
+  document.getElementById("next-url").value = location.origin + location.pathname + "?merci=1";
+  if (new URLSearchParams(location.search).get("merci")) document.getElementById("ok").classList.add("show");
+  }
+</script>
+</body>
+</html>

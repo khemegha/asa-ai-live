@@ -185,7 +185,7 @@
         </div>
       </div>
 
-      <div class="cta"><a class="btn" href="#inscription" data-i18n="cta"></a><a class="btn btn-alt" href="demo.html" data-i18n="demoBtn"></a></div>
+      <div class="cta"><a class="btn" href="inscription.html" data-i18n="cta"></a><a class="btn btn-alt" href="demo.html" data-i18n="demoBtn"></a></div>
     </section>
 
     <!-- Programme -->
@@ -194,41 +194,6 @@
       <ul id="agenda-list"></ul>
     </section>
 
-    <!-- Inscription -->
-    <section class="reg" id="inscription">
-      <h2 data-i18n="regTitle"></h2>
-      <p class="sub" data-i18n="regSub"></p>
-
-      <div class="ok" id="ok" data-i18n="thanks"></div>
-
-      <form id="form" action="https://formsubmit.co/contact@asa-ai.fr" method="POST">
-        <input type="hidden" name="_subject" id="f-subject">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" id="next-url">
-        <input type="hidden" name="Langue" id="f-lang">
-        <input type="hidden" name="Ref" id="f-ref">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="row">
-          <div class="f"><label for="prenom" data-i18n="first"></label><input id="prenom" name="Prénom" required></div>
-          <div class="f"><label for="nom" data-i18n="last"></label><input id="nom" name="Nom" required></div>
-        </div>
-        <div class="row">
-          <div class="f"><label for="email" data-i18n="email"></label><input id="email" type="email" name="email" autocomplete="email" required><div class="hint" data-i18n="emailHint"></div></div>
-          <div class="f"><label for="tel" data-i18n="phone"></label><input id="tel" type="tel" name="Téléphone" autocomplete="tel" placeholder="+33 6 12 34 56 78" required><div class="hint" data-i18n="phoneHint"></div></div>
-        </div>
-        <div class="row">
-          <div class="f"><label for="ent" data-i18n="company"></label><input id="ent" name="Entreprise" required></div>
-          <div class="f"><label for="fn" data-i18n="role"></label><input id="fn" name="Fonction"></div>
-        </div>
-        <div class="f">
-          <label for="session" data-i18n="session"></label>
-          <select id="session" name="Session" required></select>
-        </div>
-        <label class="consent"><input type="checkbox" required> <span data-i18n="consent"></span></label>
-        <button class="btn" type="submit" data-i18n="submit"></button>
-      </form>
-    </section>
   </main>
 
   <footer>
@@ -274,7 +239,7 @@
       introLink:"how an AI agent triages alerts, prioritises vulnerabilities and prepares incident response",
       intro2:"If you run a SOC, an MSSP or a cyber team in banking, insurance or the public sector, this session shows the AI SOC Analyst at work on a real Wazuh SIEM: triage, MISP enrichment, CVE prioritisation, VoIP/SIP and response proposals subject to human approval.",
       time:"3:00 PM Paris time", timeUk:"2:00 PM UK",
-      virtual:"Virtual", weekly:"Every other Thursday",
+      back:"← Back to the programme", virtual:"Virtual", weekly:"Every other Thursday",
       demoBtn:"Request a demo", cta:"Register now", bye:"Hope to see you there.", team:"The ASA AI team",
       agendaTitle:"Agenda (45 min)",
       agenda:["Automated triage and correlation of SIEM alerts","Prioritisation of critical vulnerabilities per host (CVE + CVSS)","Threat Intelligence enrichment with MISP","Fraud detection","Incident response with human approval and audit trail","Live Q&A"],
@@ -298,7 +263,7 @@
       introLink:"la manière dont un agent IA trie les alertes, priorise les vulnérabilités et prépare la réponse à incident",
       intro2:"Si vous pilotez un SOC, un MSSP ou une équipe cyber en banque, assurance ou secteur public, cette session vous montre l'AI SOC Analyst à l'œuvre sur un vrai SIEM Wazuh : triage, enrichissement MISP, priorisation CVE, VoIP/SIP et propositions de réponse soumises à validation humaine.",
       time:"15h00 heure de Paris", timeUk:"14h00 UK",
-      virtual:"Virtuel", weekly:"Un jeudi sur deux",
+      back:"← Retour au programme", virtual:"Virtuel", weekly:"Un jeudi sur deux",
       demoBtn:"Demander une démo", cta:"Inscrivez-vous maintenant", bye:"Au plaisir de vous y retrouver.", team:"L'équipe ASA AI",
       agendaTitle:"Au programme (45 min)",
       agenda:["Triage automatique des alertes SIEM et corrélation","Priorisation des vulnérabilités critiques par machine (CVE + CVSS)","Enrichissement Threat Intelligence via MISP","Détection de la fraude","Réponse à incident avec approbation humaine et journal d'audit","Questions / réponses en direct"],
@@ -322,7 +287,7 @@
       introLink:"cómo un agente de IA clasifica alertas, prioriza vulnerabilidades y prepara la respuesta a incidentes",
       intro2:"Si dirige un SOC, un MSSP o un equipo de ciberseguridad en banca, seguros o sector público, esta sesión le muestra el AI SOC Analyst en acción sobre un SIEM Wazuh real: triaje, enriquecimiento MISP, priorización de CVE, VoIP/SIP y propuestas de respuesta sujetas a validación humana.",
       time:"15:00 hora de París", timeUk:"14:00 UK",
-      virtual:"Virtual", weekly:"Un jueves de cada dos",
+      back:"← Volver al programa", virtual:"Virtual", weekly:"Un jueves de cada dos",
       demoBtn:"Solicitar una demo", cta:"Inscríbase ahora", bye:"Esperamos verle allí.", team:"El equipo de ASA AI",
       agendaTitle:"Programa (45 min)",
       agenda:["Triaje automático y correlación de alertas SIEM","Priorización de vulnerabilidades críticas por equipo (CVE + CVSS)","Enriquecimiento de Threat Intelligence con MISP","Detección del fraude","Respuesta a incidentes con aprobación humana y registro de auditoría","Preguntas y respuestas en directo"],
@@ -345,26 +310,28 @@
   document.documentElement.lang = lang;
   document.title = L.pageTitle;
   document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = L[el.dataset.i18n]; });
-  document.getElementById("agenda-list").innerHTML = L.agenda.map(a => "<li>"+a+"</li>").join("");
-  document.getElementById("f-subject").value = L.subject;
-  document.getElementById("f-lang").value = lang.toUpperCase();
+  const $ = id => document.getElementById(id);
+  if ($("agenda-list")) $("agenda-list").innerHTML = L.agenda.map(a => "<li>"+a+"</li>").join("");
+  if ($("f-subject")) $("f-subject").value = L.subject;
+  if ($("f-lang")) $("f-lang").value = lang.toUpperCase();
 
   /* Sessions affichées dans la langue du lecteur ; la valeur envoyée reste en français pour le suivi interne */
   const today = new Date(); today.setHours(0,0,0,0);
   const upcoming = SESSIONS.filter(d => new Date(d+"T23:59:59") >= today).slice(0, NB_SESSIONS_AFFICHEES);
   const long = (d,loc) => new Date(d+"T15:00:00").toLocaleDateString(loc,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   const sel = document.getElementById("session");
-  upcoming.forEach(d => {
+  if (sel) upcoming.forEach(d => {
     const o = document.createElement("option");
     o.value = long(d,"fr-FR") + " — 15h00";
     o.textContent = long(d,L.locale) + " — " + L.at;
     sel.appendChild(o);
   });
-  if (upcoming.length){
-    document.getElementById("next-date").textContent =
+  if (upcoming.length && $("next-date")){
+    $("next-date").textContent =
       new Date(upcoming[0]+"T15:00:00").toLocaleDateString(L.locale,{day:"numeric",month:"long"});
   }
 
+  if ($("form")) {
   /* ---------- Contrôles : e-mail professionnel + téléphone ---------- */
   const FREE_EXACT = new Set(["gmail.com","googlemail.com","ymail.com","rocketmail.com","msn.com","icloud.com","me.com","mac.com",
     "aol.com","aol.fr","mail.com","email.com","protonmail.com","protonmail.ch","proton.me","pm.me","tutanota.com","tutanota.de","tuta.io",
@@ -409,8 +376,9 @@
   });
 
   /* Retour après envoi : même page avec ?merci=1 */
-  document.getElementById("next-url").value = location.origin + location.pathname + "?merci=1#inscription";
+  document.getElementById("next-url").value = location.origin + location.pathname + "?merci=1";
   if (new URLSearchParams(location.search).get("merci")) document.getElementById("ok").classList.add("show");
+  }
 </script>
 </body>
 </html>
