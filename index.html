@@ -204,9 +204,7 @@
       <form id="form" action="https://formsubmit.co/contact@asa-ai.fr" method="POST">
         <input type="hidden" name="_subject" id="f-subject">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" id="next-url">
-        <input type="hidden" name="_autoresponse" id="f-auto">
         <input type="hidden" name="Langue" id="f-lang">
         <input type="hidden" name="Ref" id="f-ref">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -350,7 +348,6 @@
   document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = L[el.dataset.i18n]; });
   document.getElementById("agenda-list").innerHTML = L.agenda.map(a => "<li>"+a+"</li>").join("");
   document.getElementById("f-subject").value = L.subject;
-  document.getElementById("f-auto").value = L.auto;
   document.getElementById("f-lang").value = lang.toUpperCase();
 
   /* Sessions affichées dans la langue du lecteur ; la valeur envoyée reste en français pour le suivi interne */
