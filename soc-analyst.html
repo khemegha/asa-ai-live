@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI SOC Analyst — Watch It Crush Alert Fatigue | ASA AI</title>
+<meta name="description" content="Watch AI SOC Analyst triage alerts, prioritize CVEs and propose containment in seconds, while your analysts stay in command. On-prem, human-in-the-loop SOC automation built for CISOs.">
+<meta name="keywords" content="AI SOC Analyst, SOC automation, alert fatigue, AI-powered alert triage, vulnerability prioritization, threat intelligence, MISP, SIEM integration, human-in-the-loop, on-prem LLM, incident response, MTTR, CISO, MCP">
+<link rel="canonical" href="https://demo.asa-ai.fr/soc-analyst.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="AI SOC Analyst — AI does the grind. Your analysts make the call.">
+<meta property="og:description" content="See AI-powered triage, CVE prioritization and human-approved response in action. On-prem. Fully auditable.">
+<meta property="og:url" content="https://demo.asa-ai.fr/soc-analyst.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/soc-analyst/cover.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:video" content="https://demo.asa-ai.fr/videos/ai-soc-analyst-walkthrough.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/soc-analyst/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.2px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:48px 0 28px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:760px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .video{margin:44px auto 0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#000;
+         box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .video video{display:block;width:100%;height:auto}
+  .caption{text-align:center;color:var(--mut);font-size:14px;margin-top:12px}
+  section{padding:72px 0 0}
+  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center}
+  .sub{text-align:center;color:var(--mut);max-width:700px;margin:12px auto 0}
+  .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:36px}
+  .grid .card{flex:1 1 300px;max-width:360px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+  .card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--mag),var(--vio))}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:15px}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+  .pillar{border-left:4px solid var(--mag);padding:6px 0 6px 20px}
+  .pillar h3{font-size:22px}
+  .pillar p{color:var(--mut)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:36px}
+  .gallery figure{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .gallery img{display:block;width:100%;height:auto}
+  .gallery figcaption{padding:12px 16px;font-size:14px;color:var(--mut)}
+  .final{text-align:center;margin:80px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
+         background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .final p{color:var(--mut);margin-top:12px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:48px 0 40px}
+  @media (max-width:600px){header .btn{display:none}.btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow">AI-powered SOC automation</span>
+      <h1>Your analysts are drowning in alerts.<br><span class="grad">Watch them take control back.</span></h1>
+      <p class="lead">AI SOC Analyst triages every alert, prioritizes thousands of CVEs into one actionable patch plan, and drafts containment in seconds. <strong>Your analysts make every call.</strong> Nothing executes without human approval.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="register.html">Join the live demo →</a>
+        <a class="btn btn-sec" href="demo.html">Get a private walkthrough</a>
+      </div>
+
+      <div class="video">
+        <video controls playsinline preload="metadata" poster="assets/soc-analyst/cover.jpg">
+          <source src="videos/ai-soc-analyst-walkthrough.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="caption">Full walkthrough of AI SOC Analyst in action. Turn the sound on 🎧</p>
+    </div>
+
+    <section>
+      <h2>AI does the grind. <span class="grad">Your analysts make the call.</span></h2>
+      <p class="sub">Specialized AI agents behind one conversational analyst, wired into your SIEM, threat intel and fleet through MCP.</p>
+      <div class="grid">
+        <div class="card"><h3>Alert triage at machine speed</h3><p>Every alert scored, enriched and ranked, so your team starts the shift with what actually matters.</p></div>
+        <div class="card"><h3>Risk-based vulnerability prioritization</h3><p>Thousands of CVEs turned into one ranked patch plan, internet-facing assets first.</p></div>
+        <div class="card"><h3>Threat intelligence on autopilot</h3><p>IOCs matched against MISP automatically. Context arrives before you ask for it.</p></div>
+        <div class="card"><h3>VoIP / SIP threat analysis</h3><p>Toll fraud and SIP attacks, a blind spot for most SOCs, covered out of the box.</p></div>
+        <div class="card"><h3>Guarded, human-approved response</h3><p>Containment is proposed, never forced. One click to approve or reject, and every action is logged.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Built for the people who sign off on risk</h2>
+      <div class="pillars">
+        <div class="pillar"><h3>Human in the loop</h3><p>Your SOC analysts stay in the decision seat. The AI recommends; people decide.</p></div>
+        <div class="pillar"><h3>Runs on-prem</h3><p>Private LLM inference on your infrastructure. Your logs never leave your walls.</p></div>
+        <div class="pillar"><h3>Audit-ready by design</h3><p>Every tool call, recommendation and approval is traceable, ready for your compliance team.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>See it in action</h2>
+      <p class="sub">Plain-English questions. Ranked, sourced answers. Human-approved actions.</p>
+      <div class="gallery">
+        <figure><img src="assets/soc-analyst/01-cve-prioritization.jpg" alt="AI SOC Analyst ranking critical CVEs across 48 servers" loading="lazy"><figcaption>Critical CVEs ranked across the whole fleet</figcaption></figure>
+        <figure><img src="assets/soc-analyst/02-awaiting-approval.jpg" alt="Containment proposal awaiting analyst approval" loading="lazy"><figcaption>Containment proposed, waiting for the analyst</figcaption></figure>
+        <figure><img src="assets/soc-analyst/03-human-approved.jpg" alt="Action approved by the analyst and logged to the audit trail" loading="lazy"><figcaption>Approved by a human, logged to the audit trail</figcaption></figure>
+        <figure><img src="assets/soc-analyst/04-capabilities.jpg" alt="AI SOC Analyst capabilities overview" loading="lazy"><figcaption>Five specialized agents, one analyst experience</figcaption></figure>
+        <figure><img src="assets/soc-analyst/05-human-in-the-loop.jpg" alt="Human in the loop, on-prem and fully auditable" loading="lazy"><figcaption>Human in the loop. On-prem. Fully auditable.</figcaption></figure>
+        <figure><img src="assets/soc-analyst/06-see-it-live.jpg" alt="See AI SOC Analyst live at demo.asa-ai.fr" loading="lazy"><figcaption>Stop drowning in alerts. Start closing them.</figcaption></figure>
+      </div>
+    </section>
+
+    <div class="final">
+      <h2>Stop drowning in alerts. <span class="grad">Start closing them.</span></h2>
+      <p>Join a live session and watch AI SOC Analyst work a real environment, with your analysts in command.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="register.html">Save my seat →</a>
+        <a class="btn btn-sec" href="demo.html">Book a private demo</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+</div>
+</body>
+</html>
