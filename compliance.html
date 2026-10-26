@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI SOC Analyst Compliance: Every AI Decision on the Record | ASA AI</title>
-<meta name="description" content="AI SOC Analyst keeps a tamper-evident, SHA-256 hash-chained audit trail of every AI decision: tool calls, evidence, analyst approvals. Built for banks, insurers and the public sector under DORA, NIS2 and GDPR. Book a demo.">
-<meta name="keywords" content="AI compliance, AI audit trail, explainable AI, DORA, NIS2, GDPR, EU AI Act, SOC compliance, tamper-evident log, hash chain, human-in-the-loop, AI SOC Analyst, banking cybersecurity, public sector">
+<title>SENTINEL AI Compliance: EU AI Act, OWASP LLM Top 10, MITRE ATLAS | ASA AI</title>
+<meta name="description" content="SENTINEL AI Compliance inventories every AI system you run, red-teams each agent against the OWASP LLM Top 10 and MITRE ATLAS, and tracks your EU AI Act obligations article by article. On-prem. Book a demo.">
+<meta name="keywords" content="EU AI Act compliance, AI Act high-risk, OWASP LLM Top 10, MITRE ATLAS, AI red teaming, Garak, PyRIT, AI governance, AI inventory, FRIA, AI audit trail, LLM security, SENTINEL AI, ASA AI">
 <link rel="canonical" href="https://demo.asa-ai.fr/compliance.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Every AI decision, on the record. Ready for your auditor.">
-<meta property="og:description" content="Tamper-evident audit trail, explainable decisions, human approval. AI SOC automation your regulator can follow. Book a demo.">
+<meta property="og:title" content="The EU AI Act is coming for your AI agents. Can you prove they comply?">
+<meta property="og:description" content="SENTINEL AI Compliance: AI inventory, OWASP LLM Top 10 and MITRE ATLAS red teaming, EU AI Act obligations tracked live. Book a demo.">
 <meta property="og:url" content="https://demo.asa-ai.fr/compliance.html">
 <meta property="og:image" content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png">
 <meta property="og:image:width" content="1200">
@@ -21,13 +21,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E}
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E;--blue:#3B6FD8}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
        background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
-                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+                        radial-gradient(800px 600px at 110% 20%,rgba(59,111,216,.22),transparent 60%)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
   header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--txt);text-decoration:none}
   .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
@@ -35,34 +35,40 @@
   .btn:hover{transform:translateY(-2px)}
   .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
   .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
-  .alert{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:rgba(255,90,110,.1);border:1px solid rgba(255,90,110,.4);
-         color:#FFC2CA;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;margin-top:6px;text-align:center}
-  .alert b{color:var(--red)}
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:44px 0 10px}
+  .hero{text-align:center;padding:44px 0 0}
   .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);
            border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:20px}
-  h1{font-size:clamp(34px,5.2vw,56px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  h1{font-size:clamp(34px,5.6vw,62px);line-height:1.07;font-weight:800;letter-spacing:-1px;max-width:980px;margin:0 auto}
   .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lead{margin-top:20px;font-size:clamp(17px,2vw,19px);color:var(--mut)}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .lead{max-width:780px;margin:22px auto 0;font-size:clamp(17px,2.1vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
   .trust{margin-top:16px;font-size:14px;color:var(--mut)}
-  .shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#14131f}
   .shot img{display:block;width:100%;height:auto}
-  .shot-cap{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
-  section{padding:72px 0 0}
-  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center}
+  .hero .shot{margin:44px auto 0}
+  .cap{text-align:center;color:var(--mut);font-size:13.5px;margin-top:10px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
   .sub{text-align:center;color:var(--mut);max-width:720px;margin:12px auto 0}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
-  .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
-  .stat strong{display:block;font-size:34px;font-weight:800;line-height:1.1;color:var(--txt)}
-  .stat strong.r{color:var(--red)}
-  .stat span{color:var(--mut);font-size:14.5px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:36px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
-  .card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--mag),var(--vio))}
-  .card .n{font-size:13px;font-weight:700;color:var(--mag);letter-spacing:1px}
-  .card h3{font-size:19px;margin:6px 0 8px}
-  .card p{color:var(--mut);font-size:15px}
+  .qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+  .q{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-weight:600;font-size:16.5px}
+  .q span{display:block;color:var(--mut);font-weight:400;font-size:14.5px;margin-top:6px}
+  .feat{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;margin-top:56px}
+  .feat.rev{grid-template-columns:1.15fr .85fr}
+  .feat.rev .txt{order:2}
+  .feat .n{font-size:13px;font-weight:700;color:var(--mag);letter-spacing:1.2px;text-transform:uppercase}
+  .feat h3{font-size:clamp(22px,2.6vw,28px);line-height:1.2;margin:8px 0 12px;letter-spacing:-.3px}
+  .feat p{color:var(--mut);font-size:16px}
+  .feat ul{margin-top:12px}
+  .feat li{list-style:none;padding:5px 0 5px 26px;position:relative;color:var(--txt);font-size:15px}
+  .feat li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+  .stat strong{display:block;font-size:36px;font-weight:800;line-height:1.1}
+  .stat strong.g{color:var(--ok)}
+  .stat span{color:var(--mut);font-size:14px}
+  .note{text-align:center;color:var(--mut);font-size:13px;margin-top:12px}
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
   .col{border-radius:18px;padding:26px;border:1px solid var(--line)}
   .col h3{font-size:18px;margin-bottom:14px}
@@ -73,24 +79,19 @@
   .new{background:linear-gradient(135deg,rgba(214,36,122,.14),rgba(107,47,160,.18))}
   .new li{color:var(--txt)}
   .new li:before{content:"✓";color:var(--ok)}
-  .final{text-align:center;margin:80px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
+  .final{text-align:center;margin:84px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
          background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
   .final p{color:var(--mut);margin:12px auto 0;max-width:640px}
-  .final .cta-row{justify-content:center}
   .fine{font-size:13px;color:var(--mut);margin-top:14px}
   footer{text-align:center;color:var(--mut);font-size:14px;padding:48px 0 40px}
   .sticky{display:none}
-  @media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}.compare{grid-template-columns:1fr}}
+  @media (max-width:860px){.feat,.feat.rev{grid-template-columns:1fr;gap:20px}.feat.rev .txt{order:0}.compare{grid-template-columns:1fr}}
   @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%;justify-content:center}
-    .sticky{display:block;position:fixed;left:16px;right:16px;bottom:14px;z-index:9;text-align:center}
+    .sticky{display:block;position:fixed;left:16px;right:16px;bottom:14px;z-index:9}
     .sticky .btn{width:100%;justify-content:center}
     footer{padding-bottom:96px}}
-  .clocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
-  .clock{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
-  .clock h3{font-size:18px;margin-bottom:10px}
-  .clock li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
-  .clock li b{color:var(--txt);white-space:nowrap}
-  .ea{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FFC861;border:1px solid rgba(255,200,97,.5);border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+  .pill{display:inline-block;font-size:12px;font-weight:700;color:var(--txt);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:4px}
+  .chat{width:100%;max-width:440px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -101,89 +102,124 @@
   </header>
 
   <div class="hero">
-    <div>
-      <span class="eyebrow">AI SOC Analyst · Compliance &amp; Auditability</span>
-      <h1>Every AI decision, on the record. <span class="grad">Ready for your auditor.</span></h1>
-      <p class="lead">Regulators don't ask whether your SOC uses AI. They ask <strong style="color:var(--txt)">who decided what, based on which evidence, and whether you can prove it.</strong> AI SOC Analyst answers all three, in seconds.</p>
-      <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">See it with your auditors' questions →</a>
-        <a class="btn btn-sec" href="#how">How it works</a>
-      </div>
-      <p class="trust">On-prem · Human-approved actions · Tamper-evident audit trail</p>
+    <span class="eyebrow">SENTINEL AI · Compliance</span>
+    <h1>The EU AI Act is coming for your AI agents. <span class="grad">Can you prove they comply?</span></h1>
+    <p class="lead">Inventory every AI system. Red-team every agent. Track every obligation. <strong>SENTINEL AI Compliance</strong> turns the EU AI Act, the OWASP LLM Top 10 and MITRE ATLAS into one live posture your board, your DPO and your regulator can read.</p>
+    <div class="cta-row">
+      <a class="btn btn-pri" href="demo.html">See your AI posture in a demo →</a>
+      <a class="btn btn-sec" href="#tour">Take the tour</a>
     </div>
-    <div>
-      <div class="shot"><img src="assets/compliance/ai-soc-analyst-compliance.png" width="1080" height="1360" alt="AI SOC Analyst chat: explains why it proposed isolating a server, shows analyst approval, and proves the audit chain is intact"></div>
-      <p class="shot-cap">Illustrative scenario: the auditor's two questions, answered with evidence.</p>
-    </div>
+    <p class="trust">On-prem · Live data · Regulator pack export · No prompts leave your network</p>
+    <div class="shot"><img src="assets/compliance/ai-act-posture.jpg" width="1670" height="857" alt="EU AI Act posture: overall score, next deadline, AI systems, high-risk systems, robustness gaps, application timeline, risk distribution, control coverage, attention points"></div>
+    <p class="cap">The posture view: score, next deadline, risk distribution, control coverage and what to fix first.</p>
+    <div style="margin-top:22px"><span class="pill">EU AI Act</span><span class="pill">OWASP LLM Top 10 · 2025</span><span class="pill">MITRE ATLAS</span><span class="pill">Garak</span><span class="pill">PyRIT</span><span class="pill">FRIA</span></div>
   </div>
 
   <section>
-    <h2>AI in the SOC is now a compliance question</h2>
-    <p class="sub">DORA, NIS2, GDPR and the EU AI Act all point the same way: if a machine helps make a security decision, you must be able to show your work.</p>
-    <div class="stats">
-      <div class="stat"><strong>Who?</strong><span>Which analyst approved the action, and when</span></div>
-      <div class="stat"><strong>Why?</strong><span>Which alerts, tools and threat intel led to the proposal</span></div>
-      <div class="stat"><strong>What?</strong><span>The exact action proposed, approved or rejected</span></div>
-      <div class="stat"><strong class="r">Proof?</strong><span>Evidence that nobody rewrote the history afterwards</span></div>
+    <h2>Four questions your regulator will ask.<br><span class="grad">Answered before they do.</span></h2>
+    <div class="qs">
+      <div class="q">"Which AI systems do you run?"<span>A live inventory of agents, models and platforms, each with its risk class.</span></div>
+      <div class="q">"Are your high-risk systems robust?"<span>OWASP LLM Top 10 and MITRE ATLAS results, per agent, re-run on demand.</span></div>
+      <div class="q">"Who owns each obligation?"<span>An article-by-article register with owners, status and deadlines.</span></div>
+      <div class="q">"Can you prove it?"<span>A tamper-evident audit log and a regulator pack you can export today.</span></div>
     </div>
   </section>
 
-  <section id="how">
-    <h2>What AI SOC Analyst gives your auditors</h2>
-    <p class="sub">Not a dashboard to interpret. A record you can hand over.</p>
-    <div class="grid">
-      <div class="card"><div class="n">01 · RECORD</div><h3>Every tool call, logged</h3><p>Each step the agent takes is written to an audit log: user, tool, parameters, sources, result. Secrets are masked automatically.</p></div>
-      <div class="card"><div class="n">02 · CHAIN</div><h3>Tamper-evident by design</h3><p>Entries are linked in a SHA-256 hash chain and anchored daily. Change one line and the chain breaks, visibly.</p></div>
-      <div class="card"><div class="n">03 · EXPLAIN</div><h3>Decisions in plain English</h3><p>Ask "why did you propose this?" and get the evidence trail behind it: alerts, threat intel, tool results.</p></div>
-      <div class="card"><div class="n">04 · APPROVE</div><h3>Humans stay accountable</h3><p>Containment is proposed, never executed alone. Every approval or rejection is recorded with the analyst's name.</p></div>
+  <section id="tour">
+    <h2>A tour of SENTINEL AI Compliance</h2>
+    <p class="sub">Real screens from our console. Third-party names and internal addresses are masked.</p>
+    
+    <div class="feat">
+      <div class="txt">
+        <div class="n">01 · EU AI Act</div>
+        <h3>Every obligation, article by article. With an owner and a deadline.</h3>
+        <p>The obligations register maps your AI estate to the regulation: risk management, data governance, documentation, record-keeping, human oversight, robustness. Each line has a status, an owner and a date, and many are computed live from the console.</p>
+        <ul><li>Art. 4 to Art. 50, from AI literacy to transparency</li><li>Status computed from live data where it can be</li><li>Export a regulator pack in one click</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/ai-act-obligations.jpg" width="1658" height="857" loading="lazy" alt="EU AI Act obligations register: article, requirement, implementation, status, owner, progress, applicable date"></div>
+    </div>
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">02 · Inventory</div>
+        <h3>You can't comply with what you haven't listed.</h3>
+        <p>Every agent, model and platform is discovered, classified by risk level and scored. Third-party AI services you rely on are tested too, and clearly marked out of your deployment perimeter.</p>
+        <ul><li>Risk classes: prohibited, high, limited, GPAI, minimal</li><li>Provider vs deployer role per system</li><li>Compliance score per system, critical gaps first</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/ai-act-inventory.jpg" width="1683" height="854" loading="lazy" alt="AI system inventory: average score, compliant systems, systems to monitor, critical gaps, list of systems with risk class"></div>
+    </div>
+    <div class="feat">
+      <div class="txt">
+        <div class="n">03 · OWASP LLM Top 10</div>
+        <h3>Every agent red-teamed against the OWASP LLM Top 10 (2025).</h3>
+        <p>Prompt injection, sensitive data disclosure, system prompt leakage, improper output handling, misinformation: each agent is attacked with real prompts, and the result lands in a scorecard your security team can act on.</p>
+        <ul><li>Per-agent coverage and pass rate</li><li>Findings in plain language, category by category</li><li>Re-run on demand after every model or prompt change</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/per-agent.jpg" width="1678" height="893" loading="lazy" alt="OWASP LLM Top 10 compliance per agent: coverage gauge and per-category results"></div>
+    </div>
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">04 · MITRE ATLAS</div>
+        <h3>Mapped to the techniques real attackers use.</h3>
+        <p>Test results are translated into MITRE ATLAS techniques, so your threat model speaks the same language as your SOC: exploited, partial or thwarted.</p>
+        <ul><li>AML.T0051 prompt injection, AML.T0057 data leakage, AML.T0056 system prompt extraction</li><li>Attack success rate per technique</li><li>Garak and PyRIT red-team engines</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/mitre-atlas.jpg" width="1664" height="672" loading="lazy" alt="MITRE ATLAS coverage: techniques tested, exploited, partial, thwarted"></div>
+    </div>
+    <div class="feat">
+      <div class="txt">
+        <div class="n">05 · Roadmap</div>
+        <h3>From "where do we start?" to a 12-step plan.</h3>
+        <p>Inventory, classification, prohibited-practice review, risk management, documentation, logging, human oversight, robustness, FRIA, EU registration, post-market monitoring: the path is laid out, and progress updates itself.</p>
+        <ul><li>12 steps aligned with the regulation</li><li>Progress tracked live</li><li>Fundamental Rights Impact Assessment wizard built in</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/ai-act-roadmap.jpg" width="1663" height="817" loading="lazy" alt="EU AI Act compliance roadmap: 12 steps with status"></div>
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <div class="n">06 · Record-keeping (Art. 12)</div>
+        <h3>Every AI decision, on the record. Ready for your auditor.</h3>
+        <p>Every action of the AI SOC Analyst agent is written to a SHA-256 hash-chained log, anchored daily. Ask why it proposed an action and get the evidence. Ask if the log was altered and get proof.</p>
+        <ul><li>Tool calls, sources and results logged, secrets masked</li><li>Integrity verified on demand</li><li>Every approval recorded with the analyst's name</li></ul>
+      </div>
+      <div class="chat"><div class="shot"><img src="assets/compliance/ai-soc-analyst-compliance.png" width="1080" height="1360" loading="lazy" alt="AI SOC Analyst explains a decision and proves the audit chain is intact"></div><p class="cap">Illustrative scenario.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Regulatory clocks, tracked for you <span class="ea">Early access</span></h2>
-    <p class="sub">When an incident turns serious, the agent qualifies it against your regulatory profile and reminds your team what is due, and when.</p>
-    <div class="clocks">
-      <div class="clock"><h3>NIS2</h3><ul><li>Early warning <b>24 h</b></li><li>Incident notification <b>72 h</b></li><li>Final report <b>1 month</b></li></ul></div>
-      <div class="clock"><h3>DORA</h3><ul><li>Initial notification <b>4 h after classification</b></li><li>Intermediate report <b>72 h</b></li><li>Final report <b>1 month</b></li></ul></div>
-      <div class="clock"><h3>GDPR</h3><ul><li>Notify the supervisory authority <b>72 h</b></li><li>Inform data subjects <b>without undue delay</b></li></ul></div>
-    </div>
-    <p class="note" style="text-align:center;color:var(--mut);font-size:13px;margin-top:12px">Deadlines shown for illustration. Your legal and DPO teams remain the reference.</p>
-  </section>
-
-  <section>
-    <h2>The next audit, two ways</h2>
+    <h2>AI governance, two ways</h2>
     <div class="compare">
       <div class="col old">
-        <h3>Typical AI in the SOC</h3>
+        <h3>Spreadsheets and good intentions</h3>
         <ul>
-          <li>Black-box answers nobody can reconstruct</li>
-          <li>Logs that can be edited after the fact</li>
-          <li>Automated actions with no named approver</li>
-          <li>Weeks of screenshots before every audit</li>
+          <li>Nobody knows how many AI systems are in use</li>
+          <li>Robustness is "tested" once, before launch</li>
+          <li>Obligations live in a slide deck, without owners</li>
+          <li>Audit evidence is rebuilt by hand every time</li>
         </ul>
       </div>
       <div class="col new">
-        <h3>With AI SOC Analyst</h3>
+        <h3>With SENTINEL AI Compliance</h3>
         <ul>
-          <li>Every decision explained with its evidence</li>
-          <li>Hash-chained log, integrity verified on demand</li>
-          <li>Every action approved by a named analyst</li>
-          <li>Audit evidence available in one question</li>
+          <li>Live inventory, classified by risk</li>
+          <li>Continuous red teaming on OWASP and MITRE ATLAS</li>
+          <li>Article-by-article register with owners and dates</li>
+          <li>Regulator pack and audit trail, ready to export</li>
         </ul>
       </div>
     </div>
   </section>
 
   <div class="final">
-    <h2>AI does the grind. Your analysts make the call.<br><span class="grad">Your auditor sees all of it.</span></h2>
-    <p>Bring your toughest audit questions. In 30 minutes, we'll show you how AI SOC Analyst answers them, live, on-prem.</p>
+    <h2>Compliance you can show, not just claim.</h2>
+    <p>In 30 minutes, we'll walk you through your AI posture: inventory, red-team results, EU AI Act obligations and the gaps to fix first.</p>
     <div class="cta-row" style="margin-top:28px">
       <a class="btn btn-pri" href="demo.html">Request my demo →</a>
     </div>
-    <p class="fine">Built for banks, insurers and the public sector · On-prem · Nothing leaves your network</p>
+    <p class="fine">Built for banks, insurers and the public sector · On-prem · EU AI Act · DORA · NIS2 · GDPR</p>
   </div>
 
-  <footer>© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+  <footer>© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr</footer>
 </div>
 <div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
 </body>

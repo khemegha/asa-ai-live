@@ -1,26 +1,38 @@
 # ASA AI · SENTINEL AI & AI SOC Analyst
 
-## 📜 Every AI decision, on the record. Ready for your auditor.
+## 📜 The EU AI Act is coming for your AI agents. Can you prove they comply?
 
-[![AI SOC Analyst explains why it proposed isolating a server, shows the analyst approval and proves the audit chain is intact](assets/compliance/ai-soc-analyst-compliance.png)](https://demo.asa-ai.fr/demo.html)
+[![SENTINEL AI Compliance: EU AI Act posture, next deadline, AI systems, high-risk systems, robustness gaps and control coverage](assets/compliance/ai-act-posture.jpg)](https://demo.asa-ai.fr/demo.html)
 
-Regulators don't ask whether your SOC uses AI. They ask **who decided what, based on which evidence, and whether you can prove it.** AI SOC Analyst answers all three, in seconds.
+Inventory every AI system. Red-team every agent. Track every obligation. **SENTINEL AI Compliance** turns the **EU AI Act**, the **OWASP LLM Top 10 (2025)** and **MITRE ATLAS** into one live posture your board, your DPO and your regulator can read.
 
-- 📝 **Record**: every tool call the agent makes is logged (user, tool, parameters, sources, result), with secrets masked
-- 🔗 **Chain**: entries are linked in a SHA-256 hash chain and anchored daily. Change one line and the chain breaks, visibly
-- 💬 **Explain**: ask "why did you propose this?" and get the evidence trail behind the decision
-- ✅ **Approve**: containment is proposed, never executed alone. Every approval is recorded with the analyst's name
-- ⏱️ **Regulatory clocks** *(early access)*: NIS2, DORA and GDPR notification deadlines tracked when an incident turns serious
+| | |
+|---|---|
+| ⚖️ **EU AI Act** | Article-by-article obligations register with owners, status and deadlines. Regulator pack export and FRIA wizard built in. |
+| 📋 **Inventory** | Every agent, model and platform, classified by risk (prohibited, high, limited, GPAI, minimal) and scored. |
+| 🛡️ **OWASP LLM Top 10** | Every agent attacked with real prompts: injection, data disclosure, system prompt leakage, output handling, misinformation. |
+| 🎯 **MITRE ATLAS** | Results mapped to adversarial AI techniques: exploited, partial or thwarted. Garak and PyRIT engines. |
+| 🗺️ **Roadmap** | A 12-step compliance plan whose progress updates itself. |
+| 🔗 **Record-keeping** | SHA-256 hash-chained audit log of every AI SOC Analyst action, integrity verified on demand. |
 
-Built for banks, insurers and the public sector · On-prem · Nothing leaves your network
+<p>
+<img src="assets/compliance/per-agent.jpg" width="49%" alt="OWASP LLM Top 10 results per agent">
+<img src="assets/compliance/ai-act-obligations.jpg" width="49%" alt="EU AI Act obligations register">
+</p>
+<p>
+<img src="assets/compliance/mitre-atlas.jpg" width="49%" alt="MITRE ATLAS techniques evaluated">
+<img src="assets/compliance/ai-act-roadmap.jpg" width="49%" alt="EU AI Act 12-step compliance roadmap">
+</p>
 
-**AI does the grind. Your analysts make the call. Your auditor sees all of it.**
+<sub>Real screens from our console. Third-party names and internal addresses are masked.</sub>
 
-### 👉 [Request a demo with your toughest audit questions](https://demo.asa-ai.fr/demo.html)
+Built for banks, insurers and the public sector · On-prem · No prompts leave your network
 
-Full page: [demo.asa-ai.fr/compliance.html](https://demo.asa-ai.fr/compliance.html)
+**Compliance you can show, not just claim.**
 
-<sub>Illustrative scenario.</sub>
+### 👉 [Request a demo of your AI posture](https://demo.asa-ai.fr/demo.html)
+
+Full tour: [demo.asa-ai.fr/compliance.html](https://demo.asa-ai.fr/compliance.html)
 
 ---
 
