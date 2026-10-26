@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SENTINEL AI Observability: See Every AI Agent Call | ASA AI</title>
+<meta name="description" content="SENTINEL AI Observability tracks every call your AI agents make: requests, latency, tokens, cache, errors, user feedback and security Guard decisions. On-prem, per agent, per model. Book a demo.">
+<meta name="keywords" content="AI observability, LLM observability, AI agent monitoring, LLM gateway, prompt injection, AI guardrails, token usage, LLM latency, LLM cost, semantic cache, on-prem AI, SENTINEL AI, ASA AI">
+<link rel="canonical" href="https://demo.asa-ai.fr/sentinel-observability.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your AI agents are in production. Can you see what they're doing?">
+<meta property="og:description" content="SENTINEL AI Observability: every call, every token, every blocked prompt. On-prem. Book a demo.">
+<meta property="og:url" content="https://demo.asa-ai.fr/sentinel-observability.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/observability/og-observability.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/observability/og-observability.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E;--blue:#3B6FD8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(59,111,216,.22),transparent 60%)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--txt);text-decoration:none}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 0}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(34px,5.6vw,62px);line-height:1.07;font-weight:800;letter-spacing:-1px;max-width:980px;margin:0 auto}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:780px;margin:22px auto 0;font-size:clamp(17px,2.1vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .trust{margin-top:16px;font-size:14px;color:var(--mut)}
+  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#14131f}
+  .shot img{display:block;width:100%;height:auto}
+  .hero .shot{margin:44px auto 0}
+  .cap{text-align:center;color:var(--mut);font-size:13.5px;margin-top:10px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:720px;margin:12px auto 0}
+  .qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+  .q{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-weight:600;font-size:16.5px}
+  .q span{display:block;color:var(--mut);font-weight:400;font-size:14.5px;margin-top:6px}
+  .feat{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center;margin-top:56px}
+  .feat.rev{grid-template-columns:1.15fr .85fr}
+  .feat.rev .txt{order:2}
+  .feat .n{font-size:13px;font-weight:700;color:var(--mag);letter-spacing:1.2px;text-transform:uppercase}
+  .feat h3{font-size:clamp(22px,2.6vw,28px);line-height:1.2;margin:8px 0 12px;letter-spacing:-.3px}
+  .feat p{color:var(--mut);font-size:16px}
+  .feat ul{margin-top:12px}
+  .feat li{list-style:none;padding:5px 0 5px 26px;position:relative;color:var(--txt);font-size:15px}
+  .feat li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+  .stat strong{display:block;font-size:36px;font-weight:800;line-height:1.1}
+  .stat strong.g{color:var(--ok)}
+  .stat span{color:var(--mut);font-size:14px}
+  .note{text-align:center;color:var(--mut);font-size:13px;margin-top:12px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  .col{border-radius:18px;padding:26px;border:1px solid var(--line)}
+  .col h3{font-size:18px;margin-bottom:14px}
+  .col li{list-style:none;padding:7px 0 7px 28px;position:relative;color:var(--mut);font-size:15px}
+  .col li:before{position:absolute;left:0;top:6px;font-weight:800}
+  .old{background:rgba(255,255,255,.02)}
+  .old li:before{content:"✕";color:var(--red)}
+  .new{background:linear-gradient(135deg,rgba(214,36,122,.14),rgba(107,47,160,.18))}
+  .new li{color:var(--txt)}
+  .new li:before{content:"✓";color:var(--ok)}
+  .final{text-align:center;margin:84px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
+         background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .final p{color:var(--mut);margin:12px auto 0;max-width:640px}
+  .fine{font-size:13px;color:var(--mut);margin-top:14px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:48px 0 40px}
+  .sticky{display:none}
+  @media (max-width:860px){.feat,.feat.rev{grid-template-columns:1fr;gap:20px}.feat.rev .txt{order:0}.compare{grid-template-columns:1fr}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%;justify-content:center}
+    .sticky{display:block;position:fixed;left:16px;right:16px;bottom:14px;z-index:9}
+    .sticky .btn{width:100%;justify-content:center}
+    footer{padding-bottom:96px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><i></i>ASA AI</a>
+    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+  </header>
+
+  <div class="hero">
+    <span class="eyebrow">SENTINEL AI · AI Observability</span>
+    <h1>Your AI agents are in production. <span class="grad">Can you see what they're doing?</span></h1>
+    <p class="lead">Every prompt, every token, every slow answer, every blocked attack. <strong>SENTINEL AI Observability</strong> gives your security and platform teams one live view of all your AI agents, on your own infrastructure.</p>
+    <div class="cta-row">
+      <a class="btn btn-pri" href="demo.html">See it live on your agents →</a>
+      <a class="btn btn-sec" href="#tour">Take the tour</a>
+    </div>
+    <p class="trust">On-prem · Per agent and per model · Live data · No prompts leave your network</p>
+    <div class="shot"><img src="assets/observability/overview.jpg" width="1576" height="736" alt="SENTINEL AI Observability overview: total requests, average latency, satisfaction, unique users, with request, latency, token and active-user charts"></div>
+    <p class="cap">The overview: requests, latency, tokens and active users across every agent, at a glance.</p>
+  </div>
+
+  <section>
+    <h2>Questions your board will ask.<br><span class="grad">Answers you'll have in seconds.</span></h2>
+    <div class="qs">
+      <div class="q">"How much is our AI actually used?"<span>Requests, users and requests per user, over 1 h to 30 days.</span></div>
+      <div class="q">"Which agent is failing, and since when?"<span>Errors over time and per agent, the moment a spike starts.</span></div>
+      <div class="q">"What is it costing us?"<span>Input and output tokens per model, and what the cache saved.</span></div>
+      <div class="q">"Did anyone try to attack it?"<span>Every Guard decision: prompts blocked or flagged, with the timeline.</span></div>
+    </div>
+  </section>
+
+  <section id="tour">
+    <h2>A tour of SENTINEL AI Observability</h2>
+    <p class="sub">Real screens. Filter globally or per agent, from the last hour to the last 30 days.</p>
+
+    <div class="feat">
+      <div class="txt">
+        <div class="n">01 · Security</div>
+        <h3>Every call goes through the Guard. Every decision is on the record.</h3>
+        <p>ASA-AI-Guard sits between your users and your models. It inspects each prompt in milliseconds, blocks or flags what looks like injection or abuse, and measures everything it lets through.</p>
+        <ul><li>Calls forwarded, errored and blocked, hour by hour</li><li>Median and 95th-percentile latency, time to first token</li><li>Guard decisions counted and timestamped for your audit trail</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/guard.jpg" width="1667" height="887" loading="lazy" alt="Guard view: model calls, median latency, time to first token, tokens, error rate and blocked or flagged prompts"></div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">02 · Models</div>
+        <h3>Know which model does the work, and what it costs.</h3>
+        <p>Invocations, latency, token consumption and errors, broken down per model across the whole agent gateway. Spot the model that slows down or starts failing before your users do.</p>
+        <ul><li>Series per model, side by side</li><li>Input and output tokens per period</li><li>Errors per model, spikes visible immediately</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/models.jpg" width="1578" height="751" loading="lazy" alt="AI agents dashboard: invocations, latency, token consumption and errors per model"></div>
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <div class="n">03 · Reliability</div>
+        <h3>When an agent breaks, you see which one, and when.</h3>
+        <p>Errors over time and per agent. A spike at 23:00 on one agent stops being a mystery and becomes a ticket with a name, a time and a scope.</p>
+        <ul><li>Error rate and error count per period</li><li>Ranking of agents by errors</li><li>Correlate with latency and Guard activity</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/errors.jpg" width="1596" height="712" loading="lazy" alt="Errors view: error rate, number of errors, errors over time and errors per agent"></div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">04 · Cost &amp; speed</div>
+        <h3>Stop paying twice for the same answer.</h3>
+        <p>The semantic cache answers repeated questions instantly. The dashboard shows exactly what it saves: hits, hit rate, time saved and tokens saved.</p>
+        <ul><li>Cache hits vs misses over time</li><li>Hit rate gauge, per agent or global</li><li>Time and tokens saved, in plain numbers</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/cache.jpg" width="1583" height="716" loading="lazy" alt="Cache view: cache hits, cache rate, time saved and tokens saved"></div>
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <div class="n">05 · Adoption</div>
+        <h3>Measure adoption, not just uptime.</h3>
+        <p>Unique users, active users and requests per user show whether your agents are becoming part of how people work, or quietly ignored.</p>
+        <ul><li>Active users over time</li><li>Requests per user</li><li>Per-agent drill-down</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/users.jpg" width="1587" height="631" loading="lazy" alt="Users view: unique users, requests per user, total requests and active users"></div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">06 · Quality</div>
+        <h3>Your users tell you if the answers are good. Now you can listen.</h3>
+        <p>Thumbs up, thumbs down, satisfaction rate over time. Quality becomes a number you can track, compare between agents and improve.</p>
+        <ul><li>Satisfaction rate gauge</li><li>Positive and negative feedback over time</li><li>Compare agents and models on quality</li></ul>
+      </div>
+      <div class="shot"><img src="assets/observability/feedback.jpg" width="1582" height="630" loading="lazy" alt="Feedback view: satisfaction, positive and negative feedback, feedback over time"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Measured in our lab, last 24 hours</h2>
+    <div class="stats">
+      <div class="stat"><strong>9.3M</strong><span>agent requests tracked</span></div>
+      <div class="stat"><strong class="g">86%</strong><span>cache hit rate</span></div>
+      <div class="stat"><strong class="g">80%</strong><span>user satisfaction</span></div>
+      <div class="stat"><strong>20</strong><span>agents behind one gateway</span></div>
+    </div>
+    <p class="note">Figures from the ASA AI lab, including load testing. Your numbers will differ: that's what the demo is for.</p>
+  </section>
+
+  <section>
+    <h2>AI in production, two ways</h2>
+    <div class="compare">
+      <div class="col old">
+        <h3>Without observability</h3>
+        <ul>
+          <li>You find out an agent is down when users complain</li>
+          <li>The token bill arrives, nobody can explain it</li>
+          <li>Prompt injection attempts go unnoticed</li>
+          <li>"Is it any good?" has no answer</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>With SENTINEL AI Observability</h3>
+        <ul>
+          <li>Errors and slowdowns flagged per agent, per model</li>
+          <li>Token spend and cache savings in one view</li>
+          <li>Every blocked or flagged prompt on the record</li>
+          <li>Satisfaction tracked like any other KPI</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>You can't secure what you can't see.</h2>
+    <p>In 30 minutes, we'll show you SENTINEL AI Observability on your own AI agents and models: usage, cost, reliability, quality and security, in one live view.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-pri" href="demo.html">Request my demo →</a>
+    </div>
+    <p class="fine">On-prem · Works with your existing LLMs and agents · Built for regulated environments (DORA, NIS2, GDPR, EU AI Act)</p>
+  </div>
+
+  <footer>© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr</footer>
+</div>
+<div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
+</body>
+</html>
