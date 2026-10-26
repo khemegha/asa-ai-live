@@ -2,7 +2,7 @@
 
 ## 📜 The EU AI Act is coming for your AI agents. Can you prove they comply?
 
-[![SENTINEL AI Compliance: EU AI Act posture, next deadline, AI systems, high-risk systems, robustness gaps and control coverage](assets/compliance/ai-act-posture.jpg)](https://demo.asa-ai.fr/demo.html)
+[![SENTINEL AI Compliance: every agent red-teamed against the OWASP LLM Top 10 and scored](assets/compliance/per-agent.jpg)](https://demo.asa-ai.fr/demo.html)
 
 Inventory every AI system. Red-team every agent. Track every obligation. **SENTINEL AI Compliance** turns the **EU AI Act**, the **OWASP LLM Top 10 (2025)** and **MITRE ATLAS** into one live posture your board, your DPO and your regulator can read.
 
@@ -16,7 +16,7 @@ Inventory every AI system. Red-team every agent. Track every obligation. **SENTI
 | 🔗 **Record-keeping** | SHA-256 hash-chained audit log of every AI SOC Analyst action, integrity verified on demand. |
 
 <p>
-<img src="assets/compliance/per-agent.jpg" width="49%" alt="OWASP LLM Top 10 results per agent">
+<img src="assets/compliance/owasp.jpg" width="49%" alt="OWASP LLM Top 10 evaluation of one target, category by category">
 <img src="assets/compliance/ai-act-obligations.jpg" width="49%" alt="EU AI Act obligations register">
 </p>
 <p>
