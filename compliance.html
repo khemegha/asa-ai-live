@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI SOC Analyst Compliance: Every AI Decision on the Record | ASA AI</title>
+<meta name="description" content="AI SOC Analyst keeps a tamper-evident, SHA-256 hash-chained audit trail of every AI decision: tool calls, evidence, analyst approvals. Built for banks, insurers and the public sector under DORA, NIS2 and GDPR. Book a demo.">
+<meta name="keywords" content="AI compliance, AI audit trail, explainable AI, DORA, NIS2, GDPR, EU AI Act, SOC compliance, tamper-evident log, hash chain, human-in-the-loop, AI SOC Analyst, banking cybersecurity, public sector">
+<link rel="canonical" href="https://demo.asa-ai.fr/compliance.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Every AI decision, on the record. Ready for your auditor.">
+<meta property="og:description" content="Tamper-evident audit trail, explainable decisions, human approval. AI SOC automation your regulator can follow. Book a demo.">
+<meta property="og:url" content="https://demo.asa-ai.fr/compliance.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--txt);text-decoration:none}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .alert{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:rgba(255,90,110,.1);border:1px solid rgba(255,90,110,.4);
+         color:#FFC2CA;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;margin-top:6px;text-align:center}
+  .alert b{color:var(--red)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(34px,5.2vw,56px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{margin-top:20px;font-size:clamp(17px,2vw,19px);color:var(--mut)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .trust{margin-top:16px;font-size:14px;color:var(--mut)}
+  .shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot-cap{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
+  section{padding:72px 0 0}
+  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center}
+  .sub{text-align:center;color:var(--mut);max-width:720px;margin:12px auto 0}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .stat strong{display:block;font-size:34px;font-weight:800;line-height:1.1;color:var(--txt)}
+  .stat strong.r{color:var(--red)}
+  .stat span{color:var(--mut);font-size:14.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:36px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+  .card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--mag),var(--vio))}
+  .card .n{font-size:13px;font-weight:700;color:var(--mag);letter-spacing:1px}
+  .card h3{font-size:19px;margin:6px 0 8px}
+  .card p{color:var(--mut);font-size:15px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  .col{border-radius:18px;padding:26px;border:1px solid var(--line)}
+  .col h3{font-size:18px;margin-bottom:14px}
+  .col li{list-style:none;padding:7px 0 7px 28px;position:relative;color:var(--mut);font-size:15px}
+  .col li:before{position:absolute;left:0;top:6px;font-weight:800}
+  .old{background:rgba(255,255,255,.02)}
+  .old li:before{content:"✕";color:var(--red)}
+  .new{background:linear-gradient(135deg,rgba(214,36,122,.14),rgba(107,47,160,.18))}
+  .new li{color:var(--txt)}
+  .new li:before{content:"✓";color:var(--ok)}
+  .final{text-align:center;margin:80px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
+         background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .final p{color:var(--mut);margin:12px auto 0;max-width:640px}
+  .final .cta-row{justify-content:center}
+  .fine{font-size:13px;color:var(--mut);margin-top:14px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:48px 0 40px}
+  .sticky{display:none}
+  @media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}.compare{grid-template-columns:1fr}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%;justify-content:center}
+    .sticky{display:block;position:fixed;left:16px;right:16px;bottom:14px;z-index:9;text-align:center}
+    .sticky .btn{width:100%;justify-content:center}
+    footer{padding-bottom:96px}}
+  .clocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+  .clock{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .clock h3{font-size:18px;margin-bottom:10px}
+  .clock li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+  .clock li b{color:var(--txt);white-space:nowrap}
+  .ea{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FFC861;border:1px solid rgba(255,200,97,.5);border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><i></i>ASA AI</a>
+    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">AI SOC Analyst · Compliance &amp; Auditability</span>
+      <h1>Every AI decision, on the record. <span class="grad">Ready for your auditor.</span></h1>
+      <p class="lead">Regulators don't ask whether your SOC uses AI. They ask <strong style="color:var(--txt)">who decided what, based on which evidence, and whether you can prove it.</strong> AI SOC Analyst answers all three, in seconds.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html">See it with your auditors' questions →</a>
+        <a class="btn btn-sec" href="#how">How it works</a>
+      </div>
+      <p class="trust">On-prem · Human-approved actions · Tamper-evident audit trail</p>
+    </div>
+    <div>
+      <div class="shot"><img src="assets/compliance/ai-soc-analyst-compliance.png" width="1080" height="1360" alt="AI SOC Analyst chat: explains why it proposed isolating a server, shows analyst approval, and proves the audit chain is intact"></div>
+      <p class="shot-cap">Illustrative scenario: the auditor's two questions, answered with evidence.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>AI in the SOC is now a compliance question</h2>
+    <p class="sub">DORA, NIS2, GDPR and the EU AI Act all point the same way: if a machine helps make a security decision, you must be able to show your work.</p>
+    <div class="stats">
+      <div class="stat"><strong>Who?</strong><span>Which analyst approved the action, and when</span></div>
+      <div class="stat"><strong>Why?</strong><span>Which alerts, tools and threat intel led to the proposal</span></div>
+      <div class="stat"><strong>What?</strong><span>The exact action proposed, approved or rejected</span></div>
+      <div class="stat"><strong class="r">Proof?</strong><span>Evidence that nobody rewrote the history afterwards</span></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>What AI SOC Analyst gives your auditors</h2>
+    <p class="sub">Not a dashboard to interpret. A record you can hand over.</p>
+    <div class="grid">
+      <div class="card"><div class="n">01 · RECORD</div><h3>Every tool call, logged</h3><p>Each step the agent takes is written to an audit log: user, tool, parameters, sources, result. Secrets are masked automatically.</p></div>
+      <div class="card"><div class="n">02 · CHAIN</div><h3>Tamper-evident by design</h3><p>Entries are linked in a SHA-256 hash chain and anchored daily. Change one line and the chain breaks, visibly.</p></div>
+      <div class="card"><div class="n">03 · EXPLAIN</div><h3>Decisions in plain English</h3><p>Ask "why did you propose this?" and get the evidence trail behind it: alerts, threat intel, tool results.</p></div>
+      <div class="card"><div class="n">04 · APPROVE</div><h3>Humans stay accountable</h3><p>Containment is proposed, never executed alone. Every approval or rejection is recorded with the analyst's name.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Regulatory clocks, tracked for you <span class="ea">Early access</span></h2>
+    <p class="sub">When an incident turns serious, the agent qualifies it against your regulatory profile and reminds your team what is due, and when.</p>
+    <div class="clocks">
+      <div class="clock"><h3>NIS2</h3><ul><li>Early warning <b>24 h</b></li><li>Incident notification <b>72 h</b></li><li>Final report <b>1 month</b></li></ul></div>
+      <div class="clock"><h3>DORA</h3><ul><li>Initial notification <b>4 h after classification</b></li><li>Intermediate report <b>72 h</b></li><li>Final report <b>1 month</b></li></ul></div>
+      <div class="clock"><h3>GDPR</h3><ul><li>Notify the supervisory authority <b>72 h</b></li><li>Inform data subjects <b>without undue delay</b></li></ul></div>
+    </div>
+    <p class="note" style="text-align:center;color:var(--mut);font-size:13px;margin-top:12px">Deadlines shown for illustration. Your legal and DPO teams remain the reference.</p>
+  </section>
+
+  <section>
+    <h2>The next audit, two ways</h2>
+    <div class="compare">
+      <div class="col old">
+        <h3>Typical AI in the SOC</h3>
+        <ul>
+          <li>Black-box answers nobody can reconstruct</li>
+          <li>Logs that can be edited after the fact</li>
+          <li>Automated actions with no named approver</li>
+          <li>Weeks of screenshots before every audit</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>With AI SOC Analyst</h3>
+        <ul>
+          <li>Every decision explained with its evidence</li>
+          <li>Hash-chained log, integrity verified on demand</li>
+          <li>Every action approved by a named analyst</li>
+          <li>Audit evidence available in one question</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>AI does the grind. Your analysts make the call.<br><span class="grad">Your auditor sees all of it.</span></h2>
+    <p>Bring your toughest audit questions. In 30 minutes, we'll show you how AI SOC Analyst answers them, live, on-prem.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-pri" href="demo.html">Request my demo →</a>
+    </div>
+    <p class="fine">Built for banks, insurers and the public sector · On-prem · Nothing leaves your network</p>
+  </div>
+
+  <footer>© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+</div>
+<div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
+</body>
+</html>

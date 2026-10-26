@@ -1,5 +1,29 @@
 # ASA AI · SENTINEL AI & AI SOC Analyst
 
+## 📜 Every AI decision, on the record. Ready for your auditor.
+
+[![AI SOC Analyst explains why it proposed isolating a server, shows the analyst approval and proves the audit chain is intact](assets/compliance/ai-soc-analyst-compliance.png)](https://demo.asa-ai.fr/demo.html)
+
+Regulators don't ask whether your SOC uses AI. They ask **who decided what, based on which evidence, and whether you can prove it.** AI SOC Analyst answers all three, in seconds.
+
+- 📝 **Record**: every tool call the agent makes is logged (user, tool, parameters, sources, result), with secrets masked
+- 🔗 **Chain**: entries are linked in a SHA-256 hash chain and anchored daily. Change one line and the chain breaks, visibly
+- 💬 **Explain**: ask "why did you propose this?" and get the evidence trail behind the decision
+- ✅ **Approve**: containment is proposed, never executed alone. Every approval is recorded with the analyst's name
+- ⏱️ **Regulatory clocks** *(early access)*: NIS2, DORA and GDPR notification deadlines tracked when an incident turns serious
+
+Built for banks, insurers and the public sector · On-prem · Nothing leaves your network
+
+**AI does the grind. Your analysts make the call. Your auditor sees all of it.**
+
+### 👉 [Request a demo with your toughest audit questions](https://demo.asa-ai.fr/demo.html)
+
+Full page: [demo.asa-ai.fr/compliance.html](https://demo.asa-ai.fr/compliance.html)
+
+<sub>Illustrative scenario.</sub>
+
+---
+
 ## 👁️ Your AI agents are in production. Can you see what they're doing?
 
 [![SENTINEL AI Observability: requests, latency, tokens and active users across every AI agent](assets/observability/overview.jpg)](https://demo.asa-ai.fr/demo.html)
