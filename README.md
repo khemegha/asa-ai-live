@@ -11,6 +11,7 @@ Inventory every AI system. Red-team every agent. Track every obligation. **SENTI
 | ⚖️ **EU AI Act** | Article-by-article obligations register with owners, status and deadlines. Regulator pack export and FRIA wizard built in. |
 | 📋 **Inventory** | Every agent, model and platform, classified by risk (prohibited, high, limited, GPAI, minimal) and scored. |
 | 🛡️ **OWASP LLM Top 10** | Every agent attacked with real prompts: injection, data disclosure, system prompt leakage, output handling, misinformation. |
+| 🧬 **AI supply chain** | Every model, agent and MCP server your workflows use is audited before admission: fingerprint, license, chat template drift. Unsafe models blocked in one click (OWASP LLM03). |
 | 🎯 **MITRE ATLAS** | Results mapped to adversarial AI techniques: exploited, partial or thwarted. Garak and PyRIT engines. |
 | 🗺️ **Roadmap** | A 12-step compliance plan whose progress updates itself. |
 | 🔗 **Record-keeping** | SHA-256 hash-chained audit log of every AI SOC Analyst action, integrity verified on demand. |
@@ -22,6 +23,9 @@ Inventory every AI system. Red-team every agent. Track every obligation. **SENTI
 <p>
 <img src="assets/compliance/mitre-atlas.jpg" width="49%" alt="MITRE ATLAS techniques evaluated">
 <img src="assets/compliance/ai-act-roadmap.jpg" width="49%" alt="EU AI Act 12-step compliance roadmap">
+</p>
+<p>
+<img src="assets/compliance/ai-supply-chain.jpg" width="98%" alt="AI model admission gateway: fingerprint, license verdict, template drift and block action per model">
 </p>
 
 <sub>Real screens from our console. Third-party names and internal addresses are masked.</sub>

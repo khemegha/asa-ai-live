@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SENTINEL AI Compliance: EU AI Act, OWASP LLM Top 10, MITRE ATLAS | ASA AI</title>
 <meta name="description" content="SENTINEL AI Compliance inventories every AI system you run, red-teams each agent against the OWASP LLM Top 10 and MITRE ATLAS, and tracks your EU AI Act obligations article by article. On-prem. Book a demo.">
-<meta name="keywords" content="EU AI Act compliance, AI Act high-risk, OWASP LLM Top 10, MITRE ATLAS, AI red teaming, Garak, PyRIT, AI governance, AI inventory, FRIA, AI audit trail, LLM security, SENTINEL AI, ASA AI">
+<meta name="keywords" content="EU AI Act compliance, AI supply chain security, LLM supply chain, model admission, AI-BOM, model fingerprinting, AI Act high-risk, OWASP LLM Top 10, MITRE ATLAS, AI red teaming, Garak, PyRIT, AI governance, AI inventory, FRIA, AI audit trail, LLM security, SENTINEL AI, ASA AI">
 <link rel="canonical" href="https://demo.asa-ai.fr/compliance.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The EU AI Act is coming for your AI agents. Can you prove they comply?">
@@ -116,9 +116,10 @@
   </div>
 
   <section>
-    <h2>Four questions your regulator will ask.<br><span class="grad">Answered before they do.</span></h2>
+    <h2>Five questions your regulator will ask.<br><span class="grad">Answered before they do.</span></h2>
     <div class="qs">
       <div class="q">"Which AI systems do you run?"<span>A live inventory of agents, models and platforms, each with its risk class.</span></div>
+      <div class="q">"Which models are your workflows running?"<span>Every model audited at admission: fingerprint, license and template, unsafe ones blocked.</span></div>
       <div class="q">"Are your high-risk systems robust?"<span>OWASP LLM Top 10 and MITRE ATLAS results, per agent, re-run on demand.</span></div>
       <div class="q">"Who owns each obligation?"<span>An article-by-article register with owners, status and deadlines.</span></div>
       <div class="q">"Can you prove it?"<span>A tamper-evident audit log and a regulator pack you can export today.</span></div>
@@ -175,9 +176,19 @@
       <div class="shot"><img src="assets/compliance/ai-act-roadmap.jpg" width="1663" height="817" loading="lazy" alt="EU AI Act compliance roadmap: 12 steps with status"></div>
     </div>
 
+    <div class="feat rev">
+      <div class="txt">
+        <div class="n">06 · AI supply chain (OWASP LLM03)</div>
+        <h3>A vulnerable model inside a workflow is a backdoor. Catch it before it ships.</h3>
+        <p>Every model, agent and MCP server your workflows rely on goes through an admission gateway before it is used. Each model is fingerprinted, its license checked and its chat template compared with a known-good reference. Anything that fails is flagged, and blocked in one click.</p>
+        <ul><li>Unique fingerprint per model: a swapped or modified file stands out</li><li>License verdict before use: Apache-2.0, MIT, restricted or non-compliant</li><li>Chat template drift detection, a known place to hide malicious instructions</li><li>One-click block, re-audited automatically</li></ul>
+      </div>
+      <div class="shot"><img src="assets/compliance/ai-supply-chain.jpg" width="1660" height="821" loading="lazy" alt="AI inventory admission gateway: audited models, admitted, non-compliant license, to review, refused, template drift, with fingerprint and block action per model"></div>
+    </div>
+
     <div class="feat">
       <div class="txt">
-        <div class="n">06 · Record-keeping (Art. 12)</div>
+        <div class="n">07 · Record-keeping (Art. 12)</div>
         <h3>Every AI decision, on the record. Ready for your auditor.</h3>
         <p>Every action of the AI SOC Analyst agent is written to a SHA-256 hash-chained log, anchored daily. Ask why it proposed an action and get the evidence. Ask if the log was altered and get proof.</p>
         <ul><li>Tool calls, sources and results logged, secrets masked</li><li>Integrity verified on demand</li><li>Every approval recorded with the analyst's name</li></ul>
@@ -193,6 +204,7 @@
         <h3>Spreadsheets and good intentions</h3>
         <ul>
           <li>Nobody knows how many AI systems are in use</li>
+          <li>Models downloaded and plugged into workflows unchecked</li>
           <li>Robustness is "tested" once, before launch</li>
           <li>Obligations live in a slide deck, without owners</li>
           <li>Audit evidence is rebuilt by hand every time</li>
@@ -202,6 +214,7 @@
         <h3>With SENTINEL AI Compliance</h3>
         <ul>
           <li>Live inventory, classified by risk</li>
+          <li>Every model audited and fingerprinted before use</li>
           <li>Continuous red teaming on OWASP and MITRE ATLAS</li>
           <li>Article-by-article register with owners and dates</li>
           <li>Regulator pack and audit trail, ready to export</li>
