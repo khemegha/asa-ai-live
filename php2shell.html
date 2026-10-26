@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHP2Shell: Find Your Exposure in Seconds | ASA AI</title>
+<meta name="description" content="PHP2Shell (CVE-2026-109618 / CVE-2026-109619) is being exploited in hours. See how AI SOC Analyst finds every exposed PHP server in seconds and proposes containment, with your analysts approving every action.">
+<meta name="keywords" content="PHP2Shell, CVE-2026-109618, CVE-2026-109619, PHP vulnerability, PHP RCE, AI SOC Analyst, SOC automation, vulnerability management, exposure management, incident response, human-in-the-loop, CISO">
+<link rel="canonical" href="https://demo.asa-ai.fr/php2shell.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PHP2Shell gets exploited in hours. Find your exposure in seconds.">
+<meta property="og:description" content="AI SOC Analyst maps every vulnerable PHP host, flags exploit attempts and proposes containment. Your analysts approve. Book a demo.">
+<meta property="og:url" content="https://demo.asa-ai.fr/php2shell.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--txt);text-decoration:none}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .alert{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:rgba(255,90,110,.1);border:1px solid rgba(255,90,110,.4);
+         color:#FFC2CA;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;margin-top:6px;text-align:center}
+  .alert b{color:var(--red)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(34px,5.2vw,56px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{margin-top:20px;font-size:clamp(17px,2vw,19px);color:var(--mut)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .trust{margin-top:16px;font-size:14px;color:var(--mut)}
+  .shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot-cap{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
+  section{padding:72px 0 0}
+  h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center}
+  .sub{text-align:center;color:var(--mut);max-width:720px;margin:12px auto 0}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .stat strong{display:block;font-size:34px;font-weight:800;line-height:1.1;color:var(--txt)}
+  .stat strong.r{color:var(--red)}
+  .stat span{color:var(--mut);font-size:14.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:36px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}
+  .card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--mag),var(--vio))}
+  .card .n{font-size:13px;font-weight:700;color:var(--mag);letter-spacing:1px}
+  .card h3{font-size:19px;margin:6px 0 8px}
+  .card p{color:var(--mut);font-size:15px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  .col{border-radius:18px;padding:26px;border:1px solid var(--line)}
+  .col h3{font-size:18px;margin-bottom:14px}
+  .col li{list-style:none;padding:7px 0 7px 28px;position:relative;color:var(--mut);font-size:15px}
+  .col li:before{position:absolute;left:0;top:6px;font-weight:800}
+  .old{background:rgba(255,255,255,.02)}
+  .old li:before{content:"✕";color:var(--red)}
+  .new{background:linear-gradient(135deg,rgba(214,36,122,.14),rgba(107,47,160,.18))}
+  .new li{color:var(--txt)}
+  .new li:before{content:"✓";color:var(--ok)}
+  .final{text-align:center;margin:80px 0 0;padding:56px 24px;border-radius:24px;border:1px solid var(--line);
+         background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .final p{color:var(--mut);margin:12px auto 0;max-width:640px}
+  .final .cta-row{justify-content:center}
+  .fine{font-size:13px;color:var(--mut);margin-top:14px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:48px 0 40px}
+  .sticky{display:none}
+  @media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}.compare{grid-template-columns:1fr}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%;justify-content:center}
+    .sticky{display:block;position:fixed;left:16px;right:16px;bottom:14px;z-index:9;text-align:center}
+    .sticky .btn{width:100%;justify-content:center}
+    footer{padding-bottom:96px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><i></i>ASA AI</a>
+    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+  </header>
+
+  <div class="alert">⚠ <span><b>PHP2Shell</b> · CVE-2026-109618 &amp; CVE-2026-109619 · CVSS 9.2 · pre-auth RCE · patch to 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span></div>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Critical PHP vulnerability · October 2026</span>
+      <h1>PHP2Shell gets exploited in hours. <span class="grad">Find your exposure in seconds.</span></h1>
+      <p class="lead">Leaked before the patch. Exploited before the disclosure. Millions of attempts within a day. The only question that matters now: <strong style="color:var(--txt)">which of your servers are exposed, and is anyone already inside?</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html">See it on your environment →</a>
+        <a class="btn btn-sec" href="#how">How it works</a>
+      </div>
+      <p class="trust">30-minute live demo · On-prem · Your analysts approve every action</p>
+    </div>
+    <div>
+      <div class="shot"><img src="assets/php2shell/ai-soc-analyst-php2shell.png" width="1080" height="1360" alt="AI SOC Analyst chat: 7 hosts exposed to PHP2Shell, exploit attempt on web-prod-02 contained in 41 seconds after analyst approval"></div>
+      <p class="shot-cap">Illustrative scenario: one question, one answer, one click.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>Why this one can't wait</h2>
+    <p class="sub">PHP powers a huge share of the web: CMSs, customer portals, hosting panels, internal tools you forgot you had.</p>
+    <div class="stats">
+      <div class="stat"><strong class="r">9.2</strong><span>CVSS v4.0, unauthenticated remote code execution on default configurations</span></div>
+      <div class="stat"><strong>5.4 → 8.5.11</strong><span>Every PHP version in that range is affected</span></div>
+      <div class="stat"><strong class="r">22.6M</strong><span>Internet-exposed instances potentially vulnerable (Palo Alto Cortex Xpanse)</span></div>
+      <div class="stat"><strong>Day 0</strong><span>Exploit attempts were seen days before disclosure, then surged to millions within 24 hours</span></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>What AI SOC Analyst does with PHP2Shell</h2>
+    <p class="sub">Ask in plain English. Get an answer grounded in your SIEM and vulnerability data, not a dashboard to dig through.</p>
+    <div class="grid">
+      <div class="card"><div class="n">01 · FIND</div><h3>Every vulnerable PHP host</h3><p>Inventory across your fleet in seconds, with the exact PHP version on each server.</p></div>
+      <div class="card"><div class="n">02 · RANK</div><h3>Exposure first</h3><p>Internet-facing and business-critical hosts at the top. One clear patch plan to 8.5.12, 8.4.27, 8.3.36 or 8.2.35.</p></div>
+      <div class="card"><div class="n">03 · DETECT</div><h3>Exploit attempts</h3><p>Watches for php-fpm and php-cgi spawning shells or unexpected child processes, the telltale sign of PHP2Shell.</p></div>
+      <div class="card"><div class="n">04 · CONTAIN</div><h3>Human-approved response</h3><p>Proposes isolation, IP blocking and patching. Nothing runs until your analyst clicks Approve. Every step is logged.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The next critical CVE, two ways</h2>
+    <div class="compare">
+      <div class="col old">
+        <h3>Without AI SOC Analyst</h3>
+        <ul>
+          <li>Export asset lists, cross-check versions in a spreadsheet</li>
+          <li>Hours before you know who is exposed</li>
+          <li>Exploit attempts buried in thousands of alerts</li>
+          <li>Containment waits for the morning stand-up</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>With AI SOC Analyst</h3>
+        <ul>
+          <li>One question: "Are we exposed to PHP2Shell?"</li>
+          <li>Exposed hosts ranked by risk in seconds</li>
+          <li>Active exploitation flagged with the evidence</li>
+          <li>Containment ready, approved by your analyst in one click</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>AI does the grind. Your analysts make the call.</h2>
+    <p>See how AI SOC Analyst answers "are we exposed?" on your own use cases. We'll walk you through triage, CVE prioritization and human-approved response, live.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-pri" href="demo.html">Request my demo →</a>
+    </div>
+    <p class="fine">On-prem · Fully auditable · Built for regulated environments (DORA, NIS2, GDPR)</p>
+  </div>
+
+  <footer>© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+</div>
+<div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
+</body>
+</html>
