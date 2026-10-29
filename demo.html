@@ -125,13 +125,55 @@
         ok:"Gracias, su solicitud se ha enviado. Le contactaremos en breve para programar su demo.",
         ko:"El envío ha fallado. Inténtelo de nuevo o escriba a contact@asa-ai.fr.",sending:"Enviando…"}
   };
+  /* Produit d'origine (?p=...) : adapte l'en-tête, le lien retour et l'objet de l'e-mail */
+  var P = {
+    "voip-audit": {name:"VoIP Security Audit", url:"voip-audit.html",
+      en:{back:"← Back to the VoIP Security Audit page",kicker:"VoIP Security Audit",
+          lead:"See our VoIP / SIP audit tool run its 24 tests and deliver a branded report with prioritized remediation.",
+          p1:"A 30-minute session tailored to your voice network",p2:"Live on our lab: Asterisk IPBX, SBC and IP phones",p3:"Then receive your trial access: 5 free scans"},
+      fr:{back:"← Retour à la page Audit de sécurité VoIP",kicker:"Audit de sécurité VoIP",
+          lead:"Voyez notre outil d'audit VoIP / SIP dérouler ses 24 tests et produire un rapport à vos couleurs avec une remédiation priorisée.",
+          p1:"Une séance de 30 minutes adaptée à votre réseau voix",p2:"En direct sur notre lab : IPBX Asterisk, SBC et téléphones IP",p3:"Puis recevez votre accès d'essai : 5 scans offerts"},
+      es:{back:"← Volver a la página Auditoría de seguridad VoIP",kicker:"Auditoría de seguridad VoIP",
+          lead:"Vea cómo nuestra herramienta de auditoría VoIP / SIP ejecuta sus 24 pruebas y entrega un informe con remediación priorizada.",
+          p1:"Una sesión de 30 minutos adaptada a su red de voz",p2:"En directo en nuestro laboratorio: centralita Asterisk, SBC y teléfonos IP",p3:"Después reciba su acceso de prueba: 5 escaneos gratis"}},
+    "voip-antifraud": {name:"VoIP Anti-Fraud", url:"voip-anti-fraud.html",
+      en:{back:"← Back to the VoIP Anti-Fraud page",kicker:"VoIP Anti-Fraud",
+          lead:"See GuardVoIP and VoIP Threat Sentinel catch a live SIP attack and score the risk in real time.",
+          p1:"A 30-minute session tailored to your voice network",p2:"Live on our lab PBX under simulated attack",p3:"100% on-prem: your call data never leaves your walls"},
+      fr:{back:"← Retour à la page Anti-fraude VoIP",kicker:"Anti-fraude VoIP",
+          lead:"Voyez GuardVoIP et VoIP Threat Sentinel détecter une attaque SIP en direct et évaluer le risque en temps réel.",
+          p1:"Une séance de 30 minutes adaptée à votre réseau voix",p2:"En direct sur l'IPBX de notre lab, sous attaque simulée",p3:"100 % on-prem : vos données d'appels restent chez vous"},
+      es:{back:"← Volver a la página Antifraude VoIP",kicker:"Antifraude VoIP",
+          lead:"Vea cómo GuardVoIP y VoIP Threat Sentinel detectan un ataque SIP en directo y evalúan el riesgo en tiempo real.",
+          p1:"Una sesión de 30 minutos adaptada a su red de voz",p2:"En directo en la centralita de nuestro laboratorio, bajo ataque simulado",p3:"100 % on-prem: sus datos de llamadas no salen de sus instalaciones"}},
+    "webappsec": {name:"WebAppSec", url:"https://www.asa-ai.fr", mode:"key",
+      en:{back:"← Back to www.asa-ai.fr",kicker:"WebAppSec",title:"Request your license key",
+          lead:"Activate ASA AI WebAppSec: passive recon, DAST, SAST and CVE correlation, one board-ready report per application.",
+          p1:"5 scans per key, bound to one workstation",p2:"Request validated by our team, key sent by e-mail",p3:"Need more, or an assisted audit? Tell us in the comment",
+          btn:"Request my key",ok:"Thank you, your request has been sent. We will send you your license key shortly."},
+      fr:{back:"← Retour à www.asa-ai.fr",kicker:"WebAppSec",title:"Demander votre clé de licence",
+          lead:"Activez ASA AI WebAppSec : reconnaissance passive, DAST, SAST et corrélation CVE, un rapport prêt pour la direction par application.",
+          p1:"5 scans par clé, liée à un seul poste",p2:"Demande validée par notre équipe, clé envoyée par e-mail",p3:"Besoin de plus, ou d'un audit accompagné ? Dites-le en commentaire",
+          btn:"Demander ma clé",ok:"Merci, votre demande a bien été envoyée. Nous vous envoyons votre clé de licence rapidement."},
+      es:{back:"← Volver a www.asa-ai.fr",kicker:"WebAppSec",title:"Solicite su clave de licencia",
+          lead:"Active ASA AI WebAppSec: reconocimiento pasivo, DAST, SAST y correlación CVE, un informe listo para la dirección por aplicación.",
+          p1:"5 escaneos por clave, vinculada a un equipo",p2:"Solicitud validada por nuestro equipo, clave enviada por e-mail",p3:"¿Necesita más o una auditoría acompañada? Indíquelo en el comentario",
+          btn:"Solicitar mi clave",ok:"Gracias, su solicitud se ha enviado. Le enviaremos su clave de licencia en breve."}}
+  };
+  var qs = new URLSearchParams(location.search);
+  var prod = P[qs.get("p")] || null;
   var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
   var lang = nav.slice(0,2).toLowerCase();
+  if (T[qs.get("lang")]) lang = qs.get("lang");
   if (!T[lang]) lang = "en";
   var t = T[lang];
+  if (prod) { var o = prod[lang]; for (var k in o) t[k] = o[k]; }
+  var pname = prod ? prod.name : "AI SOC Analyst";
   document.documentElement.lang = lang;
-  document.title = "AI SOC Analyst — " + t.title + " | ASA AI";
+  document.title = pname + " — " + t.title + " | ASA AI";
   document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = t[el.getAttribute("data-i18n")]; });
+  if (prod) { var bk = document.querySelector('footer a[data-i18n="back"]'); if (bk) bk.setAttribute("href", prod.url); }
 
   var FREE = ["gmail.com","googlemail.com","outlook.com","outlook.fr","hotmail.com","hotmail.fr","live.com","live.fr","msn.com",
     "yahoo.com","yahoo.fr","ymail.com","icloud.com","me.com","mac.com","aol.com","proton.me","protonmail.com","pm.me",
@@ -159,7 +201,7 @@
   tel.addEventListener("blur", checkTel);
 
   /* Envoi classique vers FormSubmit : la verification anti-robot (captcha) s'affiche, puis retour ici avec ?merci=1 */
-  document.getElementById("next-url").value = location.origin + location.pathname + "?merci=1";
+  document.getElementById("next-url").value = location.origin + location.pathname + "?merci=1" + (prod ? "&p=" + qs.get("p") : "");
   document.getElementById("f-lang").value = lang.toUpperCase();
   if (new URLSearchParams(location.search).get("merci")) { msg.className = "msg ok"; msg.textContent = t.ok; }
 
@@ -168,7 +210,7 @@
     var a = checkEmail(), b = checkTel();
     if (!a || !b) { e.preventDefault(); (a ? tel : em).focus(); return; }
     var email = em.value.trim();
-    document.getElementById("f-subject").value = "Demande de démo AI SOC Analyst — " + email + " (" + lang.toUpperCase() + ")";
+    document.getElementById("f-subject").value = (prod && prod.mode === "key" ? "Demande de clé de licence " : "Demande de démo ") + pname + " — " + email + " (" + lang.toUpperCase() + ")";
     if (!com.value.trim()) com.value = "—";
     btn.disabled = true; btn.textContent = t.sending;
   });
