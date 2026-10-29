@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SENTINEL Platform — End-to-end AI Agent Security | ASA AI</title>
+<meta name="description" content="Discover, test, protect, observe, detect and govern every AI agent, on your own infrastructure, with people in the loop. OWASP LLM Top 10, MITRE ATLAS, EU AI Act.">
+<meta name="keywords" content="AI agent security platform, AI security posture management, AI red teaming, AI guardrails, LLM observability, MCP security, AI inventory, OWASP LLM Top 10, MITRE ATLAS, EU AI Act compliance, sovereign AI, on-prem">
+<link rel="canonical" href="https://demo.asa-ai.fr/platform.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One platform for every AI agent you put to work.">
+<meta property="og:description" content="Discover, test, protect, observe, detect and govern your AI agents. On-prem, human in the loop, OWASP · MITRE ATLAS · EU AI Act.">
+<meta property="og:url" content="https://demo.asa-ai.fr/platform.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/platform/og-platform.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/platform/og-platform.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FBF8F6;--paper:#FFFFFF;--ink:#1A1A2E;--mut:#5B5870;--line:#ECE4E8;--mag:#D6247A;--vio:#6B2FA0;--soft:#F5EEF3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.01em}
+  a{color:inherit}
+  /* barre */
+  .top{position:sticky;top:0;z-index:10;background:rgba(251,248,246,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+  .brand i{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--mag),var(--vio));display:inline-block}
+  .pills{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+  .pills a{font-size:14px;color:var(--mut);text-decoration:none;padding:7px 12px;border-radius:999px;transition:background .2s,color .2s}
+  .pills a:hover{background:var(--soft);color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15.5px;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-pri{background:var(--ink);color:#fff}
+  .btn-pri:hover{box-shadow:0 10px 24px rgba(26,26,46,.22)}
+  .btn-ghost{border:1px solid #D9CFD5;color:var(--ink)}
+  .btn-ghost:hover{background:var(--paper)}
+  .btn.sm{padding:9px 16px;font-size:14px}
+  /* hero */
+  .hero{padding:84px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+  .eyebrow,.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag)}
+  h1{font-size:clamp(40px,5.4vw,66px);line-height:1.04;margin:16px 0 22px}
+  .lead{font-size:clamp(17px,1.6vw,19.5px);color:var(--mut);max-width:560px}
+  .lead strong{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .cta-row.center{justify-content:center}
+  .trust{list-style:none;display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--mut);font-size:13.5px}
+  .trust li:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mag);margin-right:8px;vertical-align:middle}
+  .hero-art{border-radius:28px;padding:22px;background:linear-gradient(135deg,#D6247A 0%,#A42A8E 50%,#6B2FA0 100%);box-shadow:0 40px 80px -30px rgba(107,47,160,.55)}
+  .hero-art img{display:block;width:100%;height:auto}
+  /* boucle */
+  .band{padding:72px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .band h2{font-size:clamp(30px,3.4vw,44px);line-height:1.12;margin-top:10px}
+  .loop{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:36px;counter-reset:s}
+  .step{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .step:hover{border-color:#E3C3D6;transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(214,36,122,.45)}
+  .step span{font-size:12px;font-weight:700;color:var(--mag);letter-spacing:1px}
+  .step b{font-size:17px}
+  .step small{font-size:13px;color:var(--mut);line-height:1.45}
+  .step:not(:last-child):after{content:"";position:absolute;right:-9px;top:50%;width:6px;height:6px;border-top:1.5px solid #CDB9C5;border-right:1.5px solid #CDB9C5;transform:translateY(-50%) rotate(45deg)}
+  /* fonctionnalités */
+  .feat{padding:96px 0}
+  .feat.alt{background:linear-gradient(180deg,var(--soft),var(--bg))}
+  .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+  .grid.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .grid.rev .txt{order:2}
+  .feat h2{font-size:clamp(28px,3.1vw,40px);line-height:1.14;margin:12px 0 16px}
+  .feat .txt>p{color:var(--mut);font-size:16.5px}
+  .feat .txt>p.kicker{color:var(--mag);font-size:12.5px}
+  .ticks{list-style:none;display:grid;gap:12px;margin-top:22px}
+  .ticks li{position:relative;padding-left:28px;color:var(--mut)}
+  .ticks li strong{color:var(--ink);font-weight:600}
+  .ticks li:before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,var(--mag) 0 3px,rgba(214,36,122,.16) 4px)}
+  .shots{position:relative}
+  .shots figure{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -28px rgba(26,26,46,.35)}
+  .shots img{display:block;width:100%;height:auto}
+  .shots figure.back{width:62%;margin:-18% 0 0 auto;position:relative;box-shadow:0 30px 60px -20px rgba(26,26,46,.45);border:4px solid #fff}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
+  .stats div{padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}
+  .stats b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:30px;font-weight:600;line-height:1.1}
+  .stats span{font-size:12.5px;color:var(--mut)}
+  .kpi-card{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(26,26,46,.3)}
+  .kpi-card div{background:var(--paper);padding:30px 28px}
+  .kpi-card b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(34px,3.6vw,48px);font-weight:600;line-height:1;background:linear-gradient(90deg,var(--mag),var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kpi-card span{display:block;margin-top:8px;color:var(--mut);font-size:14px}
+  .kpi-card .kpi-note{grid-column:1/-1;background:var(--paper);padding:0 28px 22px;font-size:12px;color:var(--mut)}
+  /* principes */
+  .principles .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:26px}
+  .principles h3{font-size:26px;margin-bottom:10px}
+  .principles p{color:var(--mut)}
+  /* final */
+  .final{padding:110px 0;text-align:center;background:radial-gradient(900px 400px at 50% 0%,rgba(214,36,122,.18),transparent 70%),var(--ink);color:#fff}
+  .final h2{font-size:clamp(30px,3.8vw,50px);line-height:1.1;max-width:880px;margin:0 auto}
+  .final p{color:#C9C5DA;max-width:620px;margin:18px auto 0;font-size:17px}
+  .final .btn-pri{background:#fff;color:var(--ink)}
+  .btn-ghost.light{border-color:rgba(255,255,255,.35);color:#fff}
+  .btn-ghost.light:hover{background:rgba(255,255,255,.08)}
+  .foot{padding:28px 0 40px;color:var(--mut);font-size:13px}
+  .foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* apparition au défilement */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (max-width:1100px){.loop{grid-template-columns:repeat(3,minmax(0,1fr))}.step:nth-child(3):after{display:none}}
+  @media (max-width:960px){.pills{display:none}.hero-grid,.grid,.grid.rev{grid-template-columns:1fr;gap:36px}.grid.rev .txt{order:0}.principles .three{grid-template-columns:1fr;gap:26px}.feat{padding:72px 0}}
+  @media (max-width:600px){.wrap{padding:0 16px}.loop{grid-template-columns:1fr 1fr}.step:after{display:none}.stats{grid-template-columns:1fr 1fr 1fr}.stats b{font-size:24px}.kpi-card div{padding:22px 18px}.cta-row .btn{width:100%}.hero{padding:56px 0 40px}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="https://www.asa-ai.fr"><i></i>ASA AI</a>
+    <nav class="pills" aria-label="Platform sections">
+      <a href="#discovery" data-i18n="n1">Discover</a><a href="#redteam" data-i18n="n2">Test</a><a href="#guardrails" data-i18n="n3">Protect</a><a href="#observability" data-i18n="n4">Observe</a><a href="#intelligence" data-i18n="n5">Detect</a><a href="#compliance" data-i18n="n6">Govern</a>
+    </nav>
+    <a class="btn btn-pri sm" href="demo.html?p=sentinel" data-i18n="hdr">Book a demo</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="overview">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="eyebrow">The SENTINEL platform</span>
+        <h1 class="serif" data-i18n="h1">One platform for every AI agent you put to work.</h1>
+        <p class="lead" data-i18n="lead">Discover them. Attack them before anyone else does. Guard every prompt and every tool call. Measure what they cost and how they behave. Prove they comply. <strong>All of it on your own infrastructure, with your people making the final call.</strong></p>
+        <div class="cta-row">
+          <a class="btn btn-pri" href="demo.html?p=sentinel" data-i18n="cta1">Book a demo →</a>
+          <a class="btn btn-ghost" href="#discovery" data-i18n="cta2">Explore the platform</a>
+        </div>
+        <ul class="trust">
+          <li data-i18n="tr1">On-prem &amp; sovereign</li><li data-i18n="tr2">Human in the loop</li><li data-i18n="tr3">OWASP · MITRE ATLAS · EU AI Act</li>
+        </ul>
+      </div>
+      <div class="hero-art"><img data-svg src="assets/platform/hero-arch-en.svg" alt="SENTINEL: offensive, defensive and AI security, orchestrated with guardrails and human approval, on your infrastructure"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="kicker" data-i18n="lc_k">How it fits together</p>
+      <h2 class="serif" data-i18n="lc_h">Six capabilities. One continuous loop.</h2>
+      <div class="loop">
+        <a class="step" href="#discovery"><span>01</span><b data-i18n="n1">Discover</b><small data-i18n="l1">Inventory every agent, model and MCP server</small></a>
+        <a class="step" href="#redteam"><span>02</span><b data-i18n="n2">Test</b><small data-i18n="l2">Red-team them before production</small></a>
+        <a class="step" href="#guardrails"><span>03</span><b data-i18n="n3">Protect</b><small data-i18n="l3">Guard prompts, responses and tools at runtime</small></a>
+        <a class="step" href="#observability"><span>04</span><b data-i18n="n4">Observe</b><small data-i18n="l4">See every call, token and error</small></a>
+        <a class="step" href="#intelligence"><span>05</span><b data-i18n="n5">Detect</b><small data-i18n="l5">Enrich with threat intelligence</small></a>
+        <a class="step" href="#compliance"><span>06</span><b data-i18n="n6">Govern</b><small data-i18n="l6">Prove compliance, keep the evidence</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat" id="discovery">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="kicker">01 · <span data-i18n="n1">Discover</span></p>
+        <h2 class="serif" data-i18n="d_h">You can't secure the agents you don't know you have.</h2>
+        <p data-i18n="d_p">SENTINEL builds a live inventory of every AI agent, model and MCP server in your estate, then keeps watching them: availability every 15 minutes, quality every night, security every week, for in-house agents and external AI services alike.</p>
+        <ul class="ticks">
+          <li data-i18n="d1"><strong>Continuous evaluation</strong> of every tracked agent, internal or external.</li>
+          <li data-i18n="d2"><strong>Model admission gate:</strong> fingerprint, license and chat-template drift checked before any model is used.</li>
+          <li data-i18n="d3"><strong>Risk score per asset</strong>, so you know where to look first.</li>
+        </ul>
+      </div>
+      <div class="shots">
+        <figure><img src="assets/platform/agents-eval.png" alt="AI agents under continuous evaluation" loading="lazy"></figure>
+        <figure class="back"><img src="assets/compliance/ai-supply-chain.jpg" alt="Model admission gateway" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat alt" id="redteam">
+    <div class="wrap grid rev">
+      <div class="txt">
+        <p class="kicker">02 · <span data-i18n="n2">Test</span></p>
+        <h2 class="serif" data-i18n="r_h">Attack your agents before someone else does.</h2>
+        <p data-i18n="r_p">Real attack prompts are played against each agent: prompt injection, system-prompt leakage, secret disclosure, jailbreaks. Every agent gets its own OWASP LLM Top 10 scorecard, and results map to the MITRE ATLAS techniques attackers actually use.</p>
+        <ul class="ticks">
+          <li data-i18n="r1"><strong>Per-agent scorecards</strong>, category by category.</li>
+          <li data-i18n="r2"><strong>Vulnerability assessment</strong> of the infrastructure your agents run on.</li>
+          <li data-i18n="r3"><strong>Re-run on demand</strong> after every model or prompt change.</li>
+        </ul>
+      </div>
+      <div class="shots"><figure><img src="assets/compliance/per-agent.jpg" alt="OWASP LLM Top 10 scorecards per agent" loading="lazy"></figure></div>
+    </div>
+  </section>
+
+  <section class="feat" id="guardrails">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="kicker">03 · <span data-i18n="n3">Protect</span></p>
+        <h2 class="serif" data-i18n="g_h">A guardrail between your agents and your models.</h2>
+        <p data-i18n="g_p">Every prompt, every response and every tool result is checked inline before it lands. Injection attempts are blocked, risky calls are flagged, and your analysts qualify each decision as a true or false positive, so the guardrail gets sharper over time.</p>
+        <div class="stats">
+          <div><b>1,078</b><span data-i18n="gs1">checks in 30 days</span></div>
+          <div><b>23</b><span data-i18n="gs2">prompts blocked</span></div>
+          <div><b>2.1%</b><span data-i18n="gs3">block rate</span></div>
+        </div>
+      </div>
+      <div class="shots"><figure><img src="assets/platform/guardrail.png" alt="Guardrail: blocked prompts and analyst feedback" loading="lazy"></figure></div>
+    </div>
+  </section>
+
+  <section class="feat alt" id="observability">
+    <div class="wrap grid rev">
+      <div class="txt">
+        <p class="kicker">04 · <span data-i18n="n4">Observe</span></p>
+        <h2 class="serif" data-i18n="o_h">Every call, every token, every error. On the record.</h2>
+        <p data-i18n="o_p">Requests, latency, token spend, errors and cache savings, globally or agent by agent. Spot the failing bot before your users do, and stop paying twice for the same answer.</p>
+        <div class="stats">
+          <div><b>0.6%</b><span data-i18n="os1">error rate over 24 h</span></div>
+          <div><b>55%</b><span data-i18n="os2">cache hit rate</span></div>
+          <div><b>5,772</b><span data-i18n="os3">minutes of compute saved in a day</span></div>
+        </div>
+      </div>
+      <div class="shots">
+        <figure><img src="assets/platform/cache.png" alt="AI observability: cache hits, rate and time saved" loading="lazy"></figure>
+        <figure class="back"><img src="assets/observability/models.jpg" alt="Invocations, latency and tokens per model" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat" id="intelligence">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="kicker">05 · <span data-i18n="n5">Detect</span></p>
+        <h2 class="serif" data-i18n="i_h">Threat intelligence that reaches your detections.</h2>
+        <p data-i18n="i_p">Indicators of compromise are collected every hour, enriched with reputation services and pushed into your detection lists. When one of them shows up on a machine, you know where, when and how often, and the AI SOC Analyst can take it from there.</p>
+        <ul class="ticks">
+          <li data-i18n="i1"><strong>Hourly collection</strong> with feed health monitoring.</li>
+          <li data-i18n="i2"><strong>Confirmed malicious indicators</strong> separated from the noise.</li>
+          <li data-i18n="i3"><strong>Sightings in your environment</strong>, machine by machine.</li>
+        </ul>
+      </div>
+      <div class="kpi-card">
+        <div><b>53,855</b><span data-i18n="is1">indicators in store</span></div>
+        <div><b>941</b><span data-i18n="is2">entries in active detection lists</span></div>
+        <div><b>473</b><span data-i18n="is3">confirmed malicious</span></div>
+        <div><b>1 h</b><span data-i18n="is4">collection cycle</span></div>
+        <p class="kpi-note" data-i18n="is_n">Figures from our lab deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat alt" id="compliance">
+    <div class="wrap grid rev">
+      <div class="txt">
+        <p class="kicker">06 · <span data-i18n="n6">Govern</span></p>
+        <h2 class="serif" data-i18n="c_h">Compliance you can show, not just claim.</h2>
+        <p data-i18n="c_p">The EU AI Act, the OWASP LLM Top 10 and MITRE ATLAS become one live posture. Obligations are tracked article by article with owners and deadlines, and every agent decision lands in a hash-chained audit log your auditor can verify.</p>
+        <ul class="ticks">
+          <li data-i18n="c1"><strong>EU AI Act register</strong>, classification, roadmap and FRIA wizard.</li>
+          <li data-i18n="c2"><strong>MITRE ATLAS mapping</strong> of every test and detection.</li>
+          <li data-i18n="c3"><strong>Regulator pack</strong> exportable in one click.</li>
+        </ul>
+      </div>
+      <div class="shots">
+        <figure><img src="assets/compliance/ai-act-obligations.jpg" alt="EU AI Act obligations register" loading="lazy"></figure>
+        <figure class="back"><img src="assets/compliance/mitre-atlas.jpg" alt="MITRE ATLAS techniques evaluated" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band principles">
+    <div class="wrap">
+      <p class="kicker" data-i18n="p_k">Built on three commitments</p>
+      <div class="three">
+        <div><h3 class="serif" data-i18n="p1h">Your data stays yours.</h3><p data-i18n="p1p">SENTINEL runs on your infrastructure with local models. Prompts, logs and incidents never leave your walls.</p></div>
+        <div><h3 class="serif" data-i18n="p2h">People decide.</h3><p data-i18n="p2p">The platform recommends and prepares. Every action with consequences waits for a human approval, and is logged.</p></div>
+        <div><h3 class="serif" data-i18n="p3h">Open standards.</h3><p data-i18n="p3p">OWASP, MITRE ATLAS, NIST AI RMF and the EU AI Act, so your results speak the language of your auditors and your SOC.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2 class="serif" data-i18n="f_h">See your AI estate the way an attacker would. Then lock it down.</h2>
+      <p data-i18n="f_p">A 30-minute walkthrough of SENTINEL on a live environment, tailored to your agents and your regulatory constraints.</p>
+      <div class="cta-row center">
+        <a class="btn btn-pri" href="demo.html?p=sentinel" data-i18n="cta1">Book a demo →</a>
+        <a class="btn btn-ghost light" href="mailto:contact@asa-ai.fr?subject=SENTINEL%20platform" data-i18n="cta3">contact@asa-ai.fr</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France</span>
+  <span class="note" data-i18n="note">Screens and figures from the ASA AI lab console. Sensitive identifiers redacted.</span>
+</div></footer>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "title": "Plateforme SENTINEL — Sécurité des agents IA de bout en bout | ASA AI",
+  "desc": "Découvrir, tester, protéger, observer, détecter et gouverner chaque agent IA, sur votre propre infrastructure, avec l'humain dans la boucle. OWASP LLM Top 10, MITRE ATLAS, AI Act.",
+  "n1": "Découvrir",
+  "n2": "Tester",
+  "n3": "Protéger",
+  "n4": "Observer",
+  "n5": "Détecter",
+  "n6": "Gouverner",
+  "hdr": "Réserver une démo",
+  "eyebrow": "La plateforme SENTINEL",
+  "h1": "Une seule plateforme pour chaque agent IA que vous mettez au travail.",
+  "lead": "Découvrez-les. Attaquez-les avant que d'autres ne le fassent. Contrôlez chaque prompt et chaque appel d'outil. Mesurez ce qu'ils coûtent et comment ils se comportent. Prouvez qu'ils sont conformes. <strong>Le tout sur votre propre infrastructure, vos équipes gardant la décision finale.</strong>",
+  "cta1": "Réserver une démo →",
+  "cta2": "Explorer la plateforme",
+  "tr1": "On-prem &amp; souverain",
+  "tr2": "L'humain dans la boucle",
+  "tr3": "OWASP · MITRE ATLAS · AI Act",
+  "lc_k": "Comment tout s'articule",
+  "lc_h": "Six capacités. Une boucle continue.",
+  "l1": "Inventorier chaque agent, modèle et serveur MCP",
+  "l2": "Les tester en red team avant la production",
+  "l3": "Contrôler prompts, réponses et outils à l'exécution",
+  "l4": "Voir chaque appel, jeton et erreur",
+  "l5": "Enrichir avec le renseignement sur la menace",
+  "l6": "Prouver la conformité, garder les preuves",
+  "d_h": "On ne sécurise pas des agents dont on ignore l'existence.",
+  "d_p": "SENTINEL dresse l'inventaire vivant de chaque agent IA, modèle et serveur MCP de votre parc, puis les surveille en continu : disponibilité toutes les 15 minutes, qualité chaque nuit, sécurité chaque semaine, pour vos agents internes comme pour les services IA externes.",
+  "d1": "<strong>Évaluation continue</strong> de chaque agent suivi, interne ou externe.",
+  "d2": "<strong>Portail d'admission des modèles :</strong> empreinte, licence et dérive du template vérifiées avant tout usage.",
+  "d3": "<strong>Score de risque par actif</strong>, pour savoir où regarder en premier.",
+  "r_h": "Attaquez vos agents avant que d'autres ne le fassent.",
+  "r_p": "De vrais prompts d'attaque sont joués contre chaque agent : injection de prompt, fuite du prompt système, divulgation de secrets, jailbreaks. Chaque agent obtient sa fiche OWASP LLM Top 10, et les résultats sont reliés aux techniques MITRE ATLAS réellement utilisées par les attaquants.",
+  "r1": "<strong>Une fiche par agent</strong>, catégorie par catégorie.",
+  "r2": "<strong>Évaluation des vulnérabilités</strong> de l'infrastructure qui fait tourner vos agents.",
+  "r3": "<strong>Relancé à la demande</strong> après chaque changement de modèle ou de prompt.",
+  "g_h": "Un garde-fou entre vos agents et vos modèles.",
+  "g_p": "Chaque prompt, chaque réponse et chaque résultat d'outil est contrôlé en ligne avant d'arriver. Les injections sont bloquées, les appels risqués signalés, et vos analystes qualifient chaque décision en vrai ou faux positif : le garde-fou s'affine avec le temps.",
+  "gs1": "contrôles en 30 jours",
+  "gs2": "prompts bloqués",
+  "gs3": "taux de blocage",
+  "o_h": "Chaque appel, chaque jeton, chaque erreur. Consignés.",
+  "o_p": "Requêtes, latence, consommation de jetons, erreurs et économies de cache, au global ou agent par agent. Repérez le bot défaillant avant vos utilisateurs, et arrêtez de payer deux fois la même réponse.",
+  "os1": "de taux d'erreur sur 24 h",
+  "os2": "de taux de succès du cache",
+  "os3": "minutes de calcul économisées en une journée",
+  "i_h": "Un renseignement sur la menace qui arrive jusqu'à vos détections.",
+  "i_p": "Les indicateurs de compromission sont collectés chaque heure, enrichis par des services de réputation et poussés dans vos listes de détection. Quand l'un d'eux apparaît sur une machine, vous savez où, quand et combien de fois, et l'AI SOC Analyst prend le relais.",
+  "i1": "<strong>Collecte horaire</strong> avec surveillance de la santé des flux.",
+  "i2": "<strong>Indicateurs malveillants confirmés</strong>, séparés du bruit.",
+  "i3": "<strong>Apparitions dans votre environnement</strong>, machine par machine.",
+  "is1": "indicateurs en base",
+  "is2": "entrées dans les listes de détection actives",
+  "is3": "confirmés malveillants",
+  "is4": "cycle de collecte",
+  "is_n": "Chiffres de notre déploiement de lab.",
+  "c_h": "Une conformité que vous pouvez montrer, pas seulement affirmer.",
+  "c_p": "L'AI Act, l'OWASP LLM Top 10 et MITRE ATLAS deviennent une seule posture vivante. Les obligations sont suivies article par article avec responsables et échéances, et chaque décision d'agent est inscrite dans un journal d'audit chaîné que votre auditeur peut vérifier.",
+  "c1": "<strong>Registre AI Act</strong>, classification, feuille de route et assistant FRIA.",
+  "c2": "<strong>Cartographie MITRE ATLAS</strong> de chaque test et détection.",
+  "c3": "<strong>Dossier régulateur</strong> exportable en un clic.",
+  "p_k": "Bâti sur trois engagements",
+  "p1h": "Vos données restent les vôtres.",
+  "p1p": "SENTINEL tourne sur votre infrastructure avec des modèles locaux. Prompts, journaux et incidents ne quittent jamais vos murs.",
+  "p2h": "Les humains décident.",
+  "p2p": "La plateforme recommande et prépare. Toute action lourde de conséquences attend une validation humaine, et elle est journalisée.",
+  "p3h": "Des standards ouverts.",
+  "p3p": "OWASP, MITRE ATLAS, NIST AI RMF et AI Act : vos résultats parlent la langue de vos auditeurs et de votre SOC.",
+  "f_h": "Voyez votre parc IA comme un attaquant le verrait. Puis verrouillez-le.",
+  "f_p": "Une démonstration de 30 minutes de SENTINEL sur un environnement réel, adaptée à vos agents et à vos contraintes réglementaires.",
+  "cta3": "contact@asa-ai.fr",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France",
+  "note": "Écrans et chiffres de la console du lab ASA AI. Identifiants sensibles masqués."
+ },
+ "es": {
+  "title": "Plataforma SENTINEL — Seguridad de agentes de IA de extremo a extremo | ASA AI",
+  "desc": "Descubrir, probar, proteger, observar, detectar y gobernar cada agente de IA, en su propia infraestructura, con un humano en el circuito. OWASP LLM Top 10, MITRE ATLAS, Ley de IA de la UE.",
+  "n1": "Descubrir",
+  "n2": "Probar",
+  "n3": "Proteger",
+  "n4": "Observar",
+  "n5": "Detectar",
+  "n6": "Gobernar",
+  "hdr": "Reservar una demo",
+  "eyebrow": "La plataforma SENTINEL",
+  "h1": "Una sola plataforma para cada agente de IA que pone a trabajar.",
+  "lead": "Descúbralos. Atáquelos antes que nadie. Controle cada prompt y cada llamada a herramienta. Mida lo que cuestan y cómo se comportan. Demuestre que cumplen. <strong>Todo en su propia infraestructura, con sus equipos tomando la decisión final.</strong>",
+  "cta1": "Reservar una demo →",
+  "cta2": "Explorar la plataforma",
+  "tr1": "On-prem y soberano",
+  "tr2": "Humano en el circuito",
+  "tr3": "OWASP · MITRE ATLAS · Ley de IA",
+  "lc_k": "Cómo encaja todo",
+  "lc_h": "Seis capacidades. Un ciclo continuo.",
+  "l1": "Inventariar cada agente, modelo y servidor MCP",
+  "l2": "Someterlos a red team antes de producción",
+  "l3": "Controlar prompts, respuestas y herramientas en ejecución",
+  "l4": "Ver cada llamada, token y error",
+  "l5": "Enriquecer con inteligencia de amenazas",
+  "l6": "Demostrar el cumplimiento y conservar las pruebas",
+  "d_h": "No se pueden proteger agentes cuya existencia se desconoce.",
+  "d_p": "SENTINEL construye un inventario vivo de cada agente de IA, modelo y servidor MCP de su parque, y los vigila de forma continua: disponibilidad cada 15 minutos, calidad cada noche, seguridad cada semana, tanto para agentes internos como para servicios de IA externos.",
+  "d1": "<strong>Evaluación continua</strong> de cada agente seguido, interno o externo.",
+  "d2": "<strong>Portal de admisión de modelos:</strong> huella, licencia y deriva de plantilla verificadas antes de cualquier uso.",
+  "d3": "<strong>Puntuación de riesgo por activo</strong>, para saber dónde mirar primero.",
+  "r_h": "Ataque a sus agentes antes de que lo haga otro.",
+  "r_p": "Se lanzan prompts de ataque reales contra cada agente: inyección de prompt, fuga del prompt de sistema, divulgación de secretos, jailbreaks. Cada agente obtiene su ficha OWASP LLM Top 10, y los resultados se relacionan con las técnicas MITRE ATLAS que usan los atacantes reales.",
+  "r1": "<strong>Una ficha por agente</strong>, categoría por categoría.",
+  "r2": "<strong>Evaluación de vulnerabilidades</strong> de la infraestructura en la que funcionan sus agentes.",
+  "r3": "<strong>Relanzado a demanda</strong> tras cada cambio de modelo o de prompt.",
+  "g_h": "Un guardarraíl entre sus agentes y sus modelos.",
+  "g_p": "Cada prompt, cada respuesta y cada resultado de herramienta se controla en línea antes de llegar. Las inyecciones se bloquean, las llamadas de riesgo se señalan y sus analistas califican cada decisión como verdadero o falso positivo: el guardarraíl se afina con el tiempo.",
+  "gs1": "controles en 30 días",
+  "gs2": "prompts bloqueados",
+  "gs3": "tasa de bloqueo",
+  "o_h": "Cada llamada, cada token, cada error. Registrados.",
+  "o_p": "Peticiones, latencia, consumo de tokens, errores y ahorro de caché, en global o agente por agente. Detecte el bot que falla antes que sus usuarios y deje de pagar dos veces la misma respuesta.",
+  "os1": "de tasa de error en 24 h",
+  "os2": "de aciertos de caché",
+  "os3": "minutos de cómputo ahorrados en un día",
+  "i_h": "Inteligencia de amenazas que llega hasta sus detecciones.",
+  "i_p": "Los indicadores de compromiso se recogen cada hora, se enriquecen con servicios de reputación y se envían a sus listas de detección. Cuando uno aparece en un equipo, sabe dónde, cuándo y cuántas veces, y el AI SOC Analyst toma el relevo.",
+  "i1": "<strong>Recogida horaria</strong> con supervisión del estado de las fuentes.",
+  "i2": "<strong>Indicadores maliciosos confirmados</strong>, separados del ruido.",
+  "i3": "<strong>Apariciones en su entorno</strong>, equipo por equipo.",
+  "is1": "indicadores almacenados",
+  "is2": "entradas en listas de detección activas",
+  "is3": "confirmados maliciosos",
+  "is4": "ciclo de recogida",
+  "is_n": "Cifras de nuestro despliegue de laboratorio.",
+  "c_h": "Un cumplimiento que puede mostrar, no solo afirmar.",
+  "c_p": "La Ley de IA de la UE, el OWASP LLM Top 10 y MITRE ATLAS se convierten en una única postura viva. Las obligaciones se siguen artículo por artículo con responsables y plazos, y cada decisión de agente queda en un registro de auditoría encadenado que su auditor puede verificar.",
+  "c1": "<strong>Registro de la Ley de IA</strong>, clasificación, hoja de ruta y asistente FRIA.",
+  "c2": "<strong>Mapeo MITRE ATLAS</strong> de cada prueba y detección.",
+  "c3": "<strong>Expediente para el regulador</strong> exportable en un clic.",
+  "p_k": "Construido sobre tres compromisos",
+  "p1h": "Sus datos siguen siendo suyos.",
+  "p1p": "SENTINEL funciona en su infraestructura con modelos locales. Prompts, registros e incidentes nunca salen de sus instalaciones.",
+  "p2h": "Las personas deciden.",
+  "p2p": "La plataforma recomienda y prepara. Toda acción con consecuencias espera la aprobación de una persona, y queda registrada.",
+  "p3h": "Estándares abiertos.",
+  "p3p": "OWASP, MITRE ATLAS, NIST AI RMF y la Ley de IA de la UE: sus resultados hablan el idioma de sus auditores y de su SOC.",
+  "f_h": "Vea su parque de IA como lo vería un atacante. Y después ciérrelo.",
+  "f_p": "Una demostración de 30 minutos de SENTINEL en un entorno real, adaptada a sus agentes y a sus requisitos regulatorios.",
+  "cta3": "contact@asa-ai.fr",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia",
+  "note": "Pantallas y cifras de la consola del laboratorio de ASA AI. Identificadores sensibles ocultos."
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang !== "en") {
+    var L = T[lang];
+    document.documentElement.lang = lang;
+    document.title = L.title;
+    var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+    document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+    document.querySelectorAll("img[data-svg]").forEach(function(im){ im.src = "assets/platform/hero-arch-" + lang + ".svg"; });
+    document.querySelectorAll('a[href^="demo.html"]').forEach(function(a){ a.setAttribute("href", a.getAttribute("href") + "&lang=" + lang); });
+  }
+  /* apparition douce des blocs au défilement */
+  var els = document.querySelectorAll(".feat .txt, .feat .shots, .feat .kpi-card, .step, .principles .three > div");
+  if ("IntersectionObserver" in window && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    els.forEach(function(e){ e.classList.add("reveal"); });
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); } }); }, {threshold:.15});
+    els.forEach(function(e){ io.observe(e); });
+  }
+})();
+</script>
+</body>
+</html>
