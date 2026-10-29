@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expert analysis — AI & cybersecurity reading list | ASA AI</title>
+<meta name="description" content="A curated selection of independent expert analysis on AI security, AI-enabled attacks, evaluations and disinformation, from recognised research institutions.">
+<link rel="canonical" href="https://demo.asa-ai.fr/insights.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The research we read before we build.">
+<meta property="og:description" content="Independent expert analysis on AI security, AI-enabled attacks, evaluations and synthetic media.">
+<meta property="og:url" content="https://demo.asa-ai.fr/insights.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/platform/og-platform.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FBF8F6;--paper:#FFFFFF;--ink:#1A1A2E;--mut:#5B5870;--line:#ECE4E8;--mag:#D6247A;--vio:#6B2FA0;--soft:#F5EEF3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.01em}
+  a{color:inherit}
+  /* barre */
+  .top{position:sticky;top:0;z-index:10;background:rgba(251,248,246,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+  .brand i{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--mag),var(--vio));display:inline-block}
+  .pills{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+  .pills a{font-size:14px;color:var(--mut);text-decoration:none;padding:7px 12px;border-radius:999px;transition:background .2s,color .2s}
+  .pills a:hover{background:var(--soft);color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15.5px;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-pri{background:var(--ink);color:#fff}
+  .btn-pri:hover{box-shadow:0 10px 24px rgba(26,26,46,.22)}
+  .btn-ghost{border:1px solid #D9CFD5;color:var(--ink)}
+  .btn-ghost:hover{background:var(--paper)}
+  .btn.sm{padding:9px 16px;font-size:14px}
+  /* hero */
+  .hero{padding:84px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+  .eyebrow,.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag)}
+  h1{font-size:clamp(40px,5.4vw,66px);line-height:1.04;margin:16px 0 22px}
+  .lead{font-size:clamp(17px,1.6vw,19.5px);color:var(--mut);max-width:560px}
+  .lead strong{color:var(--ink);font-weight:600}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .cta-row.center{justify-content:center}
+  .trust{list-style:none;display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--mut);font-size:13.5px}
+  .trust li:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mag);margin-right:8px;vertical-align:middle}
+  .hero-art{border-radius:28px;padding:22px;background:linear-gradient(135deg,#D6247A 0%,#A42A8E 50%,#6B2FA0 100%);box-shadow:0 40px 80px -30px rgba(107,47,160,.55)}
+  .hero-art img{display:block;width:100%;height:auto}
+  /* boucle */
+  .band{padding:72px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .band h2{font-size:clamp(30px,3.4vw,44px);line-height:1.12;margin-top:10px}
+  .loop{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:36px;counter-reset:s}
+  .step{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .step:hover{border-color:#E3C3D6;transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(214,36,122,.45)}
+  .step span{font-size:12px;font-weight:700;color:var(--mag);letter-spacing:1px}
+  .step b{font-size:17px}
+  .step small{font-size:13px;color:var(--mut);line-height:1.45}
+  .step:not(:last-child):after{content:"";position:absolute;right:-9px;top:50%;width:6px;height:6px;border-top:1.5px solid #CDB9C5;border-right:1.5px solid #CDB9C5;transform:translateY(-50%) rotate(45deg)}
+  /* fonctionnalités */
+  .feat{padding:96px 0}
+  .feat.alt{background:linear-gradient(180deg,var(--soft),var(--bg))}
+  .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+  .grid.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .grid.rev .txt{order:2}
+  .feat h2{font-size:clamp(28px,3.1vw,40px);line-height:1.14;margin:12px 0 16px}
+  .feat .txt>p{color:var(--mut);font-size:16.5px}
+  .feat .txt>p.kicker{color:var(--mag);font-size:12.5px}
+  .ticks{list-style:none;display:grid;gap:12px;margin-top:22px}
+  .ticks li{position:relative;padding-left:28px;color:var(--mut)}
+  .ticks li strong{color:var(--ink);font-weight:600}
+  .ticks li:before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,var(--mag) 0 3px,rgba(214,36,122,.16) 4px)}
+  .shots{position:relative}
+  .shots figure{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -28px rgba(26,26,46,.35)}
+  .shots img{display:block;width:100%;height:auto}
+  .shots figure.back{width:62%;margin:-18% 0 0 auto;position:relative;box-shadow:0 30px 60px -20px rgba(26,26,46,.45);border:4px solid #fff}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
+  .stats div{padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}
+  .stats b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:30px;font-weight:600;line-height:1.1}
+  .stats span{font-size:12.5px;color:var(--mut)}
+  .kpi-card{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(26,26,46,.3)}
+  .kpi-card div{background:var(--paper);padding:30px 28px}
+  .kpi-card b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(34px,3.6vw,48px);font-weight:600;line-height:1;background:linear-gradient(90deg,var(--mag),var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kpi-card span{display:block;margin-top:8px;color:var(--mut);font-size:14px}
+  .kpi-card .kpi-note{grid-column:1/-1;background:var(--paper);padding:0 28px 22px;font-size:12px;color:var(--mut)}
+  /* principes */
+  .principles .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:26px}
+  .principles h3{font-size:26px;margin-bottom:10px}
+  .principles p{color:var(--mut)}
+  /* final */
+  .final{padding:110px 0;text-align:center;background:radial-gradient(900px 400px at 50% 0%,rgba(214,36,122,.18),transparent 70%),var(--ink);color:#fff}
+  .final h2{font-size:clamp(30px,3.8vw,50px);line-height:1.1;max-width:880px;margin:0 auto}
+  .final p{color:#C9C5DA;max-width:620px;margin:18px auto 0;font-size:17px}
+  .final .btn-pri{background:#fff;color:var(--ink)}
+  .btn-ghost.light{border-color:rgba(255,255,255,.35);color:#fff}
+  .btn-ghost.light:hover{background:rgba(255,255,255,.08)}
+  .foot{padding:28px 0 40px;color:var(--mut);font-size:13px}
+  .foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* apparition au défilement */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (max-width:1100px){.loop{grid-template-columns:repeat(3,minmax(0,1fr))}.step:nth-child(3):after{display:none}}
+  @media (max-width:960px){.pills{display:none}.hero-grid,.grid,.grid.rev{grid-template-columns:1fr;gap:36px}.grid.rev .txt{order:0}.principles .three{grid-template-columns:1fr;gap:26px}.feat{padding:72px 0}}
+  @media (max-width:600px){.wrap{padding:0 16px}.loop{grid-template-columns:1fr 1fr}.step:after{display:none}.stats{grid-template-columns:1fr 1fr 1fr}.stats b{font-size:24px}.kpi-card div{padding:22px 18px}.cta-row .btn{width:100%}.hero{padding:56px 0 40px}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  .ins-hero{padding:80px 0 30px}
+  .ins-hero h1{font-size:clamp(38px,5vw,60px);line-height:1.06;margin:14px 0 18px;max-width:860px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+  .filters span{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--mut)}
+  .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:30px 0 90px}
+  .card{display:flex;flex-direction:column;gap:12px;padding:26px 24px;border-radius:22px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(26,26,46,.45);border-color:#E3C3D6}
+  .card .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--mut)}
+  .card .org{font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--vio)}
+  .card .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--mag)}
+  .card h3{font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:22px;line-height:1.22}
+  .card p{color:var(--mut);font-size:14.5px;flex:1}
+  .card .more{font-size:14px;font-weight:600}
+  .card.feature{grid-column:span 2;background:linear-gradient(135deg,#fff 0%,#FBEFF5 100%)}
+  .card.feature h3{font-size:30px}
+  .card.hub{grid-column:span 2;background:var(--ink);color:#fff;border-color:var(--ink);justify-content:center}
+  .card.hub .org{color:#F3A6CB}.card.hub h3{font-size:28px}.card.hub p{color:#C9C5DA;flex:0}.card.hub:hover{border-color:var(--mag)}
+  @media (max-width:960px){.cards{grid-template-columns:1fr 1fr}.card.feature{grid-column:span 2}}
+  @media (max-width:600px){.cards{grid-template-columns:1fr}.card.feature,.card.hub{grid-column:auto}.card.feature h3{font-size:24px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="https://www.asa-ai.fr"><i></i>ASA AI</a>
+  <a class="btn btn-pri sm" href="demo.html?p=sentinel" data-i18n="hdr">Book a demo</a>
+</div></header>
+<main>
+  <section class="ins-hero"><div class="wrap">
+    <span class="eyebrow" data-i18n="eyebrow">Expert analysis</span>
+    <h1 class="serif" data-i18n="h1">The research we read before we build.</h1>
+    <p class="lead" data-i18n="lead">A hand-picked selection of independent analysis on AI security, AI-enabled attacks, model evaluations and synthetic media, from recognised research institutions. Each piece is linked to its original source.</p>
+    <div class="filters"><span data-i18n="f1">AI-enabled attacks</span><span data-i18n="f2">Evaluations</span><span data-i18n="f3">Open-weight models</span><span data-i18n="f4">Synthetic media &amp; fraud</span></div>
+  </div></section>
+  <section><div class="wrap cards"><a class="card feature" href="https://cset.georgetown.edu/article/anthropics-ai-attack-threatens-the-strategy-at-the-foundation-of-cybersecurity/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2025-12-22">2025-12-22</time></div><span class="tag" data-i18n="tg_cyber">AI-enabled attacks</span><h3>Anthropic's AI Attack Threatens the Strategy at the Foundation of Cybersecurity</h3><p data-i18n="a1">AI-assisted hacking is not just a new tool for attackers: it erodes defense in depth itself, the strategy most organisations rely on against adaptive, large-scale adversaries.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card" href="https://cset.georgetown.edu/article/ai-safety-evaluations-an-explainer/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2025-05-28">2025-05-28</time></div><span class="tag" data-i18n="tg_eval">Evaluations</span><h3>AI Safety Evaluations: An Explainer</h3><p data-i18n="a2">What the different families of AI safety evaluations actually measure, and where each one falls short. A clear primer before trusting any benchmark.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card" href="https://cset.georgetown.edu/article/openais-open-weight-models-are-coming-to-the-us-military/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2025-11-13">2025-11-13</time></div><span class="tag" data-i18n="tg_def">Open-weight models</span><h3>OpenAI's Open-Weight Models Are Coming to the US Military</h3><p data-i18n="a3">Why defense organisations are drawn to open-weight models they can run offline, secure and customise, and what that shift means for AI security.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card" href="https://cset.georgetown.edu/article/ai-generated-spam-is-starting-to-fill-social-media-heres-why/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2024-05-14">2024-05-14</time></div><span class="tag" data-i18n="tg_mis">Synthetic media &amp; fraud</span><h3>AI-generated spam is starting to fill social media. Here's why</h3><p data-i18n="a4">Why AI-generated spam is spreading across social platforms, and what drives the economics behind it.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card" href="https://cset.georgetown.edu/article/how-spammers-scammers-and-creators-leverage-ai-generated-images-on-facebook-for-audience-growth/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2024-03-19">2024-03-19</time></div><span class="tag" data-i18n="tg_mis">Synthetic media &amp; fraud</span><h3>How Spammers, Scammers and Creators Leverage AI-Generated Images on Facebook for Audience Growth</h3><p data-i18n="a5">How spammers, scammers and creators use AI-generated images to grow audiences on Facebook, documented from real pages and engagement data.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card" href="https://cset.georgetown.edu/article/deepfakes-elections-and-shrinking-the-liars-dividend/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · Georgetown</span><time data-d="2024-01-23">2024-01-23</time></div><span class="tag" data-i18n="tg_mis">Synthetic media &amp; fraud</span><h3>Deepfakes, Elections, and Shrinking the Liar's Dividend</h3><p data-i18n="a6">How the mere possibility of deepfakes lets bad actors dismiss authentic evidence, and how to limit that liar's dividend during elections.</p><span class="more" data-i18n="more">Read the analysis ↗</span></a><a class="card hub" href="https://cset.georgetown.edu/research-area/cyberai/" target="_blank" rel="noopener noreferrer"><div class="meta"><span class="org">CSET · CyberAI</span></div><h3 data-i18n="hub_h">More independent research on AI and cybersecurity.</h3><p data-i18n="hub_p">Reports, data briefs and commentary from the CyberAI research line at Georgetown University.</p><span class="more" data-i18n="all">All CSET CyberAI research ↗</span></a></div></section>
+</main>
+<footer class="foot"><div class="wrap"><span data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France</span><span class="note" data-i18n="src">Source: Center for Security and Emerging Technology (CSET), Georgetown University. Titles are shown in their original language.</span></div></footer>
+<script>
+(function(){
+  var T = {
+ "fr": {
+  "title": "Analyses d'experts — IA & cybersécurité | ASA AI",
+  "desc": "Une sélection d'analyses d'experts indépendants sur la sécurité de l'IA, les attaques assistées par l'IA, les évaluations et la désinformation, issues d'instituts de recherche reconnus.",
+  "hdr": "Réserver une démo",
+  "eyebrow": "Analyses d'experts",
+  "h1": "Les travaux que nous lisons avant de construire.",
+  "lead": "Une sélection faite à la main d'analyses indépendantes sur la sécurité de l'IA, les attaques assistées par l'IA, l'évaluation des modèles et les contenus synthétiques, issues d'instituts de recherche reconnus. Chaque article renvoie à sa source d'origine.",
+  "f1": "Attaques assistées par l'IA",
+  "f2": "Évaluations",
+  "f3": "Modèles open-weight",
+  "f4": "Contenus synthétiques &amp; fraude",
+  "tg_cyber": "Attaques assistées par l'IA",
+  "tg_eval": "Évaluations",
+  "tg_def": "Modèles open-weight",
+  "tg_mis": "Contenus synthétiques &amp; fraude",
+  "a1": "Le piratage assisté par l'IA n'est pas qu'un nouvel outil pour les attaquants : il fragilise la défense en profondeur elle-même, la stratégie sur laquelle s'appuient la plupart des organisations face à des adversaires adaptatifs et à grande échelle.",
+  "a2": "Ce que mesurent réellement les différentes familles d'évaluations de sécurité de l'IA, et leurs limites respectives. Une mise au point claire avant de se fier à un benchmark.",
+  "a3": "Pourquoi les acteurs de la défense s'intéressent aux modèles open-weight qu'ils peuvent faire tourner hors ligne, sécuriser et adapter, et ce que ce virage change pour la sécurité de l'IA.",
+  "a4": "Pourquoi le spam généré par IA envahit les réseaux sociaux, et quelle économie le nourrit.",
+  "a5": "Comment spammeurs, escrocs et créateurs utilisent des images générées par IA pour gagner de l'audience sur Facebook, à partir de pages et de données d'engagement réelles.",
+  "a6": "Comment la simple existence des deepfakes permet de discréditer des preuves authentiques, et comment limiter ce « dividende du menteur » en période électorale.",
+  "more": "Lire l'analyse ↗",
+  "hub_h": "D'autres recherches indépendantes sur l'IA et la cybersécurité.",
+  "hub_p": "Rapports, notes de synthèse et analyses du programme CyberAI de l'Université de Georgetown.",
+  "all": "Toutes les recherches CyberAI du CSET ↗",
+  "src": "Source : Center for Security and Emerging Technology (CSET), Université de Georgetown. Les titres sont affichés dans leur langue d'origine.",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France",
+  "cta": "Réserver une démo →"
+ },
+ "es": {
+  "title": "Análisis de expertos — IA y ciberseguridad | ASA AI",
+  "desc": "Una selección de análisis de expertos independientes sobre seguridad de la IA, ataques asistidos por IA, evaluaciones y desinformación, de institutos de investigación reconocidos.",
+  "hdr": "Reservar una demo",
+  "eyebrow": "Análisis de expertos",
+  "h1": "La investigación que leemos antes de construir.",
+  "lead": "Una selección hecha a mano de análisis independientes sobre seguridad de la IA, ataques asistidos por IA, evaluación de modelos y contenidos sintéticos, de institutos de investigación reconocidos. Cada artículo enlaza con su fuente original.",
+  "f1": "Ataques asistidos por IA",
+  "f2": "Evaluaciones",
+  "f3": "Modelos open-weight",
+  "f4": "Contenidos sintéticos y fraude",
+  "tg_cyber": "Ataques asistidos por IA",
+  "tg_eval": "Evaluaciones",
+  "tg_def": "Modelos open-weight",
+  "tg_mis": "Contenidos sintéticos y fraude",
+  "a1": "El hacking asistido por IA no es solo una herramienta nueva para los atacantes: debilita la propia defensa en profundidad, la estrategia en la que se apoya la mayoría de las organizaciones frente a adversarios adaptativos y a gran escala.",
+  "a2": "Qué miden realmente las distintas familias de evaluaciones de seguridad de la IA y cuáles son sus límites. Una guía clara antes de confiar en cualquier benchmark.",
+  "a3": "Por qué el sector de defensa se interesa por modelos open-weight que puede ejecutar sin conexión, proteger y adaptar, y qué supone este cambio para la seguridad de la IA.",
+  "a4": "Por qué el spam generado por IA se extiende por las redes sociales y qué economía lo alimenta.",
+  "a5": "Cómo spammers, estafadores y creadores usan imágenes generadas por IA para ganar audiencia en Facebook, a partir de páginas y datos de interacción reales.",
+  "a6": "Cómo la mera posibilidad de los deepfakes permite desacreditar pruebas auténticas, y cómo limitar ese «dividendo del mentiroso» en periodo electoral.",
+  "more": "Leer el análisis ↗",
+  "hub_h": "Más investigación independiente sobre IA y ciberseguridad.",
+  "hub_p": "Informes, notas de datos y análisis del programa CyberAI de la Universidad de Georgetown.",
+  "all": "Toda la investigación CyberAI del CSET ↗",
+  "src": "Fuente: Center for Security and Emerging Technology (CSET), Universidad de Georgetown. Los títulos se muestran en su idioma original.",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia",
+  "cta": "Reservar una demo →"
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang !== "en") {
+    var L = T[lang]; document.documentElement.lang = lang; document.title = L.title;
+    var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+    document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+    document.querySelectorAll('a[href^="demo.html"]').forEach(function(a){ a.setAttribute("href", a.getAttribute("href") + "&lang=" + lang); });
+  }
+  document.querySelectorAll("time[data-d]").forEach(function(t){ try { t.textContent = new Date(t.getAttribute("data-d") + "T12:00:00Z").toLocaleDateString(lang, {day:"numeric", month:"long", year:"numeric"}); } catch(e){} });
+})();
+</script>
+</body>
+</html>
