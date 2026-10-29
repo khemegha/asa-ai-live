@@ -1,25 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>SENTINEL AI Compliance: EU AI Act, OWASP LLM Top 10, MITRE ATLAS | ASA AI</title>
-<meta name="description" content="SENTINEL AI Compliance inventories every AI system you run, red-teams each agent against the OWASP LLM Top 10 and MITRE ATLAS, and tracks your EU AI Act obligations article by article. On-prem. Book a demo.">
-<meta name="keywords" content="EU AI Act compliance, AI supply chain security, LLM supply chain, model admission, AI-BOM, model fingerprinting, AI Act high-risk, OWASP LLM Top 10, MITRE ATLAS, AI red teaming, Garak, PyRIT, AI governance, AI inventory, FRIA, AI audit trail, LLM security, SENTINEL AI, ASA AI">
-<link rel="canonical" href="https://demo.asa-ai.fr/compliance.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The EU AI Act is coming for your AI agents. Can you prove they comply?">
-<meta property="og:description" content="SENTINEL AI Compliance: AI inventory, OWASP LLM Top 10 and MITRE ATLAS red teaming, EU AI Act obligations tracked live. Book a demo.">
-<meta property="og:url" content="https://demo.asa-ai.fr/compliance.html">
-<meta property="og:image" content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="SENTINEL AI Compliance inventories every AI system you run, red-teams each agent against the OWASP LLM Top 10 and MITRE ATLAS, and tracks your EU AI Act obligations article by article. On-prem. Book a demo." name="description"/>
+<meta content="EU AI Act compliance, AI supply chain security, LLM supply chain, model admission, AI-BOM, model fingerprinting, AI Act high-risk, OWASP LLM Top 10, MITRE ATLAS, AI red teaming, Garak, PyRIT, AI governance, AI inventory, FRIA, AI audit trail, LLM security, SENTINEL AI, ASA AI" name="keywords"/>
+<link href="https://demo.asa-ai.fr/compliance.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="The EU AI Act is coming for your AI agents. Can you prove they comply?" property="og:title"/>
+<meta content="SENTINEL AI Compliance: AI inventory, OWASP LLM Top 10 and MITRE ATLAS red teaming, EU AI Act obligations tracked live. Book a demo." property="og:description"/>
+<meta content="https://demo.asa-ai.fr/compliance.html" property="og:url"/>
+<meta content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="627" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://demo.asa-ai.fr/assets/compliance/og-compliance.png" name="twitter:image"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E;--blue:#3B6FD8}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -96,144 +97,323 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <a class="brand" href="index.html"><i></i>ASA AI</a>
-    <a class="btn btn-pri" href="demo.html">Book a demo</a>
-  </header>
-
-  <div class="hero">
-    <span class="eyebrow">SENTINEL AI · Compliance</span>
-    <h1>The EU AI Act is coming for your AI agents. <span class="grad">Can you prove they comply?</span></h1>
-    <p class="lead">Inventory every AI system. Red-team every agent. Track every obligation. <strong>SENTINEL AI Compliance</strong> turns the EU AI Act, the OWASP LLM Top 10 and MITRE ATLAS into one live posture your board, your DPO and your regulator can read.</p>
-    <div class="cta-row">
-      <a class="btn btn-pri" href="demo.html">See your AI posture in a demo →</a>
-      <a class="btn btn-sec" href="#tour">Take the tour</a>
-    </div>
-    <p class="trust">On-prem · Live data · Regulator pack export · No prompts leave your network</p>
-    <div class="shot"><img src="assets/compliance/per-agent.jpg" width="1678" height="893" alt="OWASP LLM Top 10 compliance per agent: coverage gauge and per-category results for every agent"></div>
-    <p class="cap">Every agent, red-teamed against the OWASP LLM Top 10 and scored, category by category.</p>
-    <div style="margin-top:22px"><span class="pill">EU AI Act</span><span class="pill">OWASP LLM Top 10 · 2025</span><span class="pill">MITRE ATLAS</span><span class="pill">Garak</span><span class="pill">PyRIT</span><span class="pill">FRIA</span></div>
-  </div>
-
-  <section>
-    <h2>Five questions your regulator will ask.<br><span class="grad">Answered before they do.</span></h2>
-    <div class="qs">
-      <div class="q">"Which AI systems do you run?"<span>A live inventory of agents, models and platforms, each with its risk class.</span></div>
-      <div class="q">"Which models are your workflows running?"<span>Every model audited at admission: fingerprint, license and template, unsafe ones blocked.</span></div>
-      <div class="q">"Are your high-risk systems robust?"<span>OWASP LLM Top 10 and MITRE ATLAS results, per agent, re-run on demand.</span></div>
-      <div class="q">"Who owns each obligation?"<span>An article-by-article register with owners, status and deadlines.</span></div>
-      <div class="q">"Can you prove it?"<span>A tamper-evident audit log and a regulator pack you can export today.</span></div>
-    </div>
-  </section>
-
-  <section id="tour">
-    <h2>A tour of SENTINEL AI Compliance</h2>
-    <p class="sub">Real screens from our console. Third-party names and internal addresses are masked.</p>
-    
-    <div class="feat">
-      <div class="txt">
-        <div class="n">01 · EU AI Act</div>
-        <h3>Every obligation, article by article. With an owner and a deadline.</h3>
-        <p>The obligations register maps your AI estate to the regulation: risk management, data governance, documentation, record-keeping, human oversight, robustness. Each line has a status, an owner and a date, and many are computed live from the console.</p>
-        <ul><li>Art. 4 to Art. 50, from AI literacy to transparency</li><li>Status computed from live data where it can be</li><li>Export a regulator pack in one click</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/ai-act-obligations.jpg" width="1658" height="857" loading="lazy" alt="EU AI Act obligations register: article, requirement, implementation, status, owner, progress, applicable date"></div>
-    </div>
-    <div class="feat rev">
-      <div class="txt">
-        <div class="n">02 · Inventory</div>
-        <h3>You can't comply with what you haven't listed.</h3>
-        <p>Every agent, model and platform is discovered, classified by risk level and scored. Third-party AI services you rely on are tested too, and clearly marked out of your deployment perimeter.</p>
-        <ul><li>Risk classes: prohibited, high, limited, GPAI, minimal</li><li>Provider vs deployer role per system</li><li>Compliance score per system, critical gaps first</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/ai-act-inventory.jpg" width="1683" height="854" loading="lazy" alt="AI system inventory: average score, compliant systems, systems to monitor, critical gaps, list of systems with risk class"></div>
-    </div>
-    <div class="feat">
-      <div class="txt">
-        <div class="n">03 · OWASP LLM Top 10</div>
-        <h3>Every agent red-teamed against the OWASP LLM Top 10 (2025).</h3>
-        <p>Prompt injection, sensitive data disclosure, system prompt leakage, improper output handling, misinformation: each agent is attacked with real prompts, and the result lands in a scorecard your security team can act on.</p>
-        <ul><li>Coverage and pass rate per agent and per category</li><li>Findings in plain language, category by category</li><li>Re-run on demand after every model or prompt change</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/owasp.jpg" width="1675" height="718" loading="lazy" alt="OWASP LLM Top 10 2025 evaluation of one target: coverage, non-compliant, compliant, not tested, with findings per category"></div>
-    </div>
-    <div class="feat rev">
-      <div class="txt">
-        <div class="n">04 · MITRE ATLAS</div>
-        <h3>Mapped to the techniques real attackers use.</h3>
-        <p>Test results are translated into MITRE ATLAS techniques, so your threat model speaks the same language as your SOC: exploited, partial or thwarted.</p>
-        <ul><li>AML.T0051 prompt injection, AML.T0057 data leakage, AML.T0056 system prompt extraction</li><li>Attack success rate per technique</li><li>Garak and PyRIT red-team engines</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/mitre-atlas.jpg" width="1664" height="672" loading="lazy" alt="MITRE ATLAS coverage: techniques tested, exploited, partial, thwarted"></div>
-    </div>
-    <div class="feat">
-      <div class="txt">
-        <div class="n">05 · Roadmap</div>
-        <h3>From "where do we start?" to a 12-step plan.</h3>
-        <p>Inventory, classification, prohibited-practice review, risk management, documentation, logging, human oversight, robustness, FRIA, EU registration, post-market monitoring: the path is laid out, and progress updates itself.</p>
-        <ul><li>12 steps aligned with the regulation</li><li>Progress tracked live</li><li>Fundamental Rights Impact Assessment wizard built in</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/ai-act-roadmap.jpg" width="1663" height="817" loading="lazy" alt="EU AI Act compliance roadmap: 12 steps with status"></div>
-    </div>
-
-    <div class="feat rev">
-      <div class="txt">
-        <div class="n">06 · AI supply chain (OWASP LLM03)</div>
-        <h3>A vulnerable model inside a workflow is a backdoor. Catch it before it ships.</h3>
-        <p>Every model, agent and MCP server your workflows rely on goes through an admission gateway before it is used. Each model is fingerprinted, its license checked and its chat template compared with a known-good reference. Anything that fails is flagged, and blocked in one click.</p>
-        <ul><li>Unique fingerprint per model: a swapped or modified file stands out</li><li>License verdict before use: Apache-2.0, MIT, restricted or non-compliant</li><li>Chat template drift detection, a known place to hide malicious instructions</li><li>One-click block, re-audited automatically</li></ul>
-      </div>
-      <div class="shot"><img src="assets/compliance/ai-supply-chain.jpg" width="1660" height="821" loading="lazy" alt="AI inventory admission gateway: audited models, admitted, non-compliant license, to review, refused, template drift, with fingerprint and block action per model"></div>
-    </div>
-
-    <div class="feat">
-      <div class="txt">
-        <div class="n">07 · Record-keeping (Art. 12)</div>
-        <h3>Every AI decision, on the record. Ready for your auditor.</h3>
-        <p>Every action of the AI SOC Analyst agent is written to a SHA-256 hash-chained log, anchored daily. Ask why it proposed an action and get the evidence. Ask if the log was altered and get proof.</p>
-        <ul><li>Tool calls, sources and results logged, secrets masked</li><li>Integrity verified on demand</li><li>Every approval recorded with the analyst's name</li></ul>
-      </div>
-      <div class="chat"><div class="shot"><img src="assets/compliance/ai-soc-analyst-compliance.png" width="1080" height="1360" loading="lazy" alt="AI SOC Analyst explains a decision and proves the audit chain is intact"></div><p class="cap">Illustrative scenario.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>AI governance, two ways</h2>
-    <div class="compare">
-      <div class="col old">
-        <h3>Spreadsheets and good intentions</h3>
-        <ul>
-          <li>Nobody knows how many AI systems are in use</li>
-          <li>Models downloaded and plugged into workflows unchecked</li>
-          <li>Robustness is "tested" once, before launch</li>
-          <li>Obligations live in a slide deck, without owners</li>
-          <li>Audit evidence is rebuilt by hand every time</li>
-        </ul>
-      </div>
-      <div class="col new">
-        <h3>With SENTINEL AI Compliance</h3>
-        <ul>
-          <li>Live inventory, classified by risk</li>
-          <li>Every model audited and fingerprinted before use</li>
-          <li>Continuous red teaming on OWASP and MITRE ATLAS</li>
-          <li>Article-by-article register with owners and dates</li>
-          <li>Regulator pack and audit trail, ready to export</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="final">
-    <h2>Compliance you can show, not just claim.</h2>
-    <p>In 30 minutes, we'll walk you through your AI posture: inventory, red-team results, EU AI Act obligations and the gaps to fix first.</p>
-    <div class="cta-row" style="margin-top:28px">
-      <a class="btn btn-pri" href="demo.html">Request my demo →</a>
-    </div>
-    <p class="fine">Built for banks, insurers and the public sector · On-prem · EU AI Act · DORA · NIS2 · GDPR</p>
-  </div>
-
-  <footer>© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr</footer>
+<header>
+<a class="brand" data-i18n="t1" href="index.html"><i></i>ASA AI</a>
+<a class="btn btn-pri" data-i18n="t2" href="demo.html">Book a demo</a>
+</header>
+<div class="hero">
+<span class="eyebrow" data-i18n="t3">SENTINEL AI · Compliance</span>
+<h1 data-i18n="t4">The EU AI Act is coming for your AI agents. <span class="grad">Can you prove they comply?</span></h1>
+<p class="lead" data-i18n="t5">Inventory every AI system. Red-team every agent. Track every obligation. <strong>SENTINEL AI Compliance</strong> turns the EU AI Act, the OWASP LLM Top 10 and MITRE ATLAS into one live posture your board, your DPO and your regulator can read.</p>
+<div class="cta-row">
+<a class="btn btn-pri" data-i18n="t6" href="demo.html">See your AI posture in a demo →</a>
+<a class="btn btn-sec" data-i18n="t7" href="#tour">Take the tour</a>
 </div>
-<div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
+<p class="trust" data-i18n="t8">On-prem · Live data · Regulator pack export · No prompts leave your network</p>
+<div class="shot"><img alt="OWASP LLM Top 10 compliance per agent: coverage gauge and per-category results for every agent" height="893" src="assets/compliance/per-agent.jpg" width="1678"/></div>
+<p class="cap" data-i18n="t9">Every agent, red-teamed against the OWASP LLM Top 10 and scored, category by category.</p>
+<div data-i18n="t10" style="margin-top:22px"><span class="pill">EU AI Act</span><span class="pill">OWASP LLM Top 10 · 2025</span><span class="pill">MITRE ATLAS</span><span class="pill">Garak</span><span class="pill">PyRIT</span><span class="pill">FRIA</span></div>
+</div>
+<section>
+<h2 data-i18n="t11">Five questions your regulator will ask.<br/><span class="grad">Answered before they do.</span></h2>
+<div class="qs">
+<div class="q" data-i18n="t12">"Which AI systems do you run?"<span>A live inventory of agents, models and platforms, each with its risk class.</span></div>
+<div class="q" data-i18n="t13">"Which models are your workflows running?"<span>Every model audited at admission: fingerprint, license and template, unsafe ones blocked.</span></div>
+<div class="q" data-i18n="t14">"Are your high-risk systems robust?"<span>OWASP LLM Top 10 and MITRE ATLAS results, per agent, re-run on demand.</span></div>
+<div class="q" data-i18n="t15">"Who owns each obligation?"<span>An article-by-article register with owners, status and deadlines.</span></div>
+<div class="q" data-i18n="t16">"Can you prove it?"<span>A tamper-evident audit log and a regulator pack you can export today.</span></div>
+</div>
+</section>
+<section id="tour">
+<h2 data-i18n="t17">A tour of SENTINEL AI Compliance</h2>
+<p class="sub" data-i18n="t18">Real screens from our console. Third-party names and internal addresses are masked.</p>
+<div class="feat">
+<div class="txt">
+<div class="n" data-i18n="t19">01 · EU AI Act</div>
+<h3 data-i18n="t20">Every obligation, article by article. With an owner and a deadline.</h3>
+<p data-i18n="t21">The obligations register maps your AI estate to the regulation: risk management, data governance, documentation, record-keeping, human oversight, robustness. Each line has a status, an owner and a date, and many are computed live from the console.</p>
+<ul><li data-i18n="t22">Art. 4 to Art. 50, from AI literacy to transparency</li><li data-i18n="t23">Status computed from live data where it can be</li><li data-i18n="t24">Export a regulator pack in one click</li></ul>
+</div>
+<div class="shot"><img alt="EU AI Act obligations register: article, requirement, implementation, status, owner, progress, applicable date" height="857" loading="lazy" src="assets/compliance/ai-act-obligations.jpg" width="1658"/></div>
+</div>
+<div class="feat rev">
+<div class="txt">
+<div class="n" data-i18n="t25">02 · Inventory</div>
+<h3 data-i18n="t26">You can't comply with what you haven't listed.</h3>
+<p data-i18n="t27">Every agent, model and platform is discovered, classified by risk level and scored. Third-party AI services you rely on are tested too, and clearly marked out of your deployment perimeter.</p>
+<ul><li data-i18n="t28">Risk classes: prohibited, high, limited, GPAI, minimal</li><li data-i18n="t29">Provider vs deployer role per system</li><li data-i18n="t30">Compliance score per system, critical gaps first</li></ul>
+</div>
+<div class="shot"><img alt="AI system inventory: average score, compliant systems, systems to monitor, critical gaps, list of systems with risk class" height="854" loading="lazy" src="assets/compliance/ai-act-inventory.jpg" width="1683"/></div>
+</div>
+<div class="feat">
+<div class="txt">
+<div class="n" data-i18n="t31">03 · OWASP LLM Top 10</div>
+<h3 data-i18n="t32">Every agent red-teamed against the OWASP LLM Top 10 (2025).</h3>
+<p data-i18n="t33">Prompt injection, sensitive data disclosure, system prompt leakage, improper output handling, misinformation: each agent is attacked with real prompts, and the result lands in a scorecard your security team can act on.</p>
+<ul><li data-i18n="t34">Coverage and pass rate per agent and per category</li><li data-i18n="t35">Findings in plain language, category by category</li><li data-i18n="t36">Re-run on demand after every model or prompt change</li></ul>
+</div>
+<div class="shot"><img alt="OWASP LLM Top 10 2025 evaluation of one target: coverage, non-compliant, compliant, not tested, with findings per category" height="718" loading="lazy" src="assets/compliance/owasp.jpg" width="1675"/></div>
+</div>
+<div class="feat rev">
+<div class="txt">
+<div class="n" data-i18n="t37">04 · MITRE ATLAS</div>
+<h3 data-i18n="t38">Mapped to the techniques real attackers use.</h3>
+<p data-i18n="t39">Test results are translated into MITRE ATLAS techniques, so your threat model speaks the same language as your SOC: exploited, partial or thwarted.</p>
+<ul><li data-i18n="t40">AML.T0051 prompt injection, AML.T0057 data leakage, AML.T0056 system prompt extraction</li><li data-i18n="t41">Attack success rate per technique</li><li data-i18n="t42">Garak and PyRIT red-team engines</li></ul>
+</div>
+<div class="shot"><img alt="MITRE ATLAS coverage: techniques tested, exploited, partial, thwarted" height="672" loading="lazy" src="assets/compliance/mitre-atlas.jpg" width="1664"/></div>
+</div>
+<div class="feat">
+<div class="txt">
+<div class="n" data-i18n="t43">05 · Roadmap</div>
+<h3 data-i18n="t44">From "where do we start?" to a 12-step plan.</h3>
+<p data-i18n="t45">Inventory, classification, prohibited-practice review, risk management, documentation, logging, human oversight, robustness, FRIA, EU registration, post-market monitoring: the path is laid out, and progress updates itself.</p>
+<ul><li data-i18n="t46">12 steps aligned with the regulation</li><li data-i18n="t47">Progress tracked live</li><li data-i18n="t48">Fundamental Rights Impact Assessment wizard built in</li></ul>
+</div>
+<div class="shot"><img alt="EU AI Act compliance roadmap: 12 steps with status" height="817" loading="lazy" src="assets/compliance/ai-act-roadmap.jpg" width="1663"/></div>
+</div>
+<div class="feat rev">
+<div class="txt">
+<div class="n" data-i18n="t49">06 · AI supply chain (OWASP LLM03)</div>
+<h3 data-i18n="t50">A vulnerable model inside a workflow is a backdoor. Catch it before it ships.</h3>
+<p data-i18n="t51">Every model, agent and MCP server your workflows rely on goes through an admission gateway before it is used. Each model is fingerprinted, its license checked and its chat template compared with a known-good reference. Anything that fails is flagged, and blocked in one click.</p>
+<ul><li data-i18n="t52">Unique fingerprint per model: a swapped or modified file stands out</li><li data-i18n="t53">License verdict before use: Apache-2.0, MIT, restricted or non-compliant</li><li data-i18n="t54">Chat template drift detection, a known place to hide malicious instructions</li><li data-i18n="t55">One-click block, re-audited automatically</li></ul>
+</div>
+<div class="shot"><img alt="AI inventory admission gateway: audited models, admitted, non-compliant license, to review, refused, template drift, with fingerprint and block action per model" height="821" loading="lazy" src="assets/compliance/ai-supply-chain.jpg" width="1660"/></div>
+</div>
+<div class="feat">
+<div class="txt">
+<div class="n" data-i18n="t56">07 · Record-keeping (Art. 12)</div>
+<h3 data-i18n="t57">Every AI decision, on the record. Ready for your auditor.</h3>
+<p data-i18n="t58">Every action of the AI SOC Analyst agent is written to a SHA-256 hash-chained log, anchored daily. Ask why it proposed an action and get the evidence. Ask if the log was altered and get proof.</p>
+<ul><li data-i18n="t59">Tool calls, sources and results logged, secrets masked</li><li data-i18n="t60">Integrity verified on demand</li><li data-i18n="t61">Every approval recorded with the analyst's name</li></ul>
+</div>
+<div class="chat"><div class="shot"><img alt="AI SOC Analyst explains a decision and proves the audit chain is intact" height="1360" loading="lazy" src="assets/compliance/ai-soc-analyst-compliance.png" width="1080"/></div><p class="cap" data-i18n="t62">Illustrative scenario.</p></div>
+</div>
+</section>
+<section>
+<h2 data-i18n="t63">AI governance, two ways</h2>
+<div class="compare">
+<div class="col old">
+<h3 data-i18n="t64">Spreadsheets and good intentions</h3>
+<ul>
+<li data-i18n="t65">Nobody knows how many AI systems are in use</li>
+<li data-i18n="t66">Models downloaded and plugged into workflows unchecked</li>
+<li data-i18n="t67">Robustness is "tested" once, before launch</li>
+<li data-i18n="t68">Obligations live in a slide deck, without owners</li>
+<li data-i18n="t69">Audit evidence is rebuilt by hand every time</li>
+</ul>
+</div>
+<div class="col new">
+<h3 data-i18n="t70">With SENTINEL AI Compliance</h3>
+<ul>
+<li data-i18n="t71">Live inventory, classified by risk</li>
+<li data-i18n="t72">Every model audited and fingerprinted before use</li>
+<li data-i18n="t73">Continuous red teaming on OWASP and MITRE ATLAS</li>
+<li data-i18n="t74">Article-by-article register with owners and dates</li>
+<li data-i18n="t75">Regulator pack and audit trail, ready to export</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="final">
+<h2 data-i18n="t76">Compliance you can show, not just claim.</h2>
+<p data-i18n="t77">In 30 minutes, we'll walk you through your AI posture: inventory, red-team results, EU AI Act obligations and the gaps to fix first.</p>
+<div class="cta-row" style="margin-top:28px">
+<a class="btn btn-pri" data-i18n="t78" href="demo.html">Request my demo →</a>
+</div>
+<p class="fine" data-i18n="t79">Built for banks, insurers and the public sector · On-prem · EU AI Act · DORA · NIS2 · GDPR</p>
+</div>
+<footer data-i18n="t80">© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr</footer>
+</div>
+<div class="sticky"><a class="btn btn-pri" data-i18n="t81" href="demo.html">Book a demo</a></div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "t2": "Réserver une démo",
+  "t3": "SENTINEL AI · Conformité",
+  "t4": "L'AI Act européen arrive pour vos agents IA. <span class=\"grad\">Pouvez-vous prouver qu'ils sont conformes ?</span>",
+  "t5": "Inventoriez chaque système d'IA. Testez chaque agent en red team. Suivez chaque obligation. <strong>SENTINEL AI Compliance</strong> transforme l'AI Act, l'OWASP LLM Top 10 et MITRE ATLAS en une posture vivante que votre direction, votre DPO et votre régulateur peuvent lire.",
+  "t6": "Voir votre posture IA en démo →",
+  "t7": "Faire la visite",
+  "t8": "On-prem · Données réelles · Export du dossier régulateur · Aucun prompt ne quitte votre réseau",
+  "t9": "Chaque agent testé en red team selon l'OWASP LLM Top 10 et noté, catégorie par catégorie.",
+  "t11": "Cinq questions que votre régulateur va poser.<br/><span class=\"grad\">Avec leur réponse avant qu'il ne les pose.</span>",
+  "t12": "« Quels systèmes d'IA utilisez-vous ? »<span>Un inventaire vivant des agents, modèles et plateformes, chacun avec sa classe de risque.</span>",
+  "t13": "« Quels modèles font tourner vos workflows ? »<span>Chaque modèle audité à l'admission : empreinte, licence et template, les modèles dangereux bloqués.</span>",
+  "t14": "« Vos systèmes à haut risque sont-ils robustes ? »<span>Résultats OWASP LLM Top 10 et MITRE ATLAS par agent, relancés à la demande.</span>",
+  "t15": "« Qui porte chaque obligation ? »<span>Un registre article par article avec responsables, statuts et échéances.</span>",
+  "t16": "« Pouvez-vous le prouver ? »<span>Un journal d'audit infalsifiable et un dossier régulateur exportable dès aujourd'hui.</span>",
+  "t17": "Visite de SENTINEL AI Compliance",
+  "t18": "De vrais écrans de notre console. Les noms de tiers et les adresses internes sont masqués.",
+  "t19": "01 · AI Act européen",
+  "t20": "Chaque obligation, article par article. Avec un responsable et une échéance.",
+  "t21": "Le registre des obligations relie votre parc IA au règlement : gestion des risques, gouvernance des données, documentation, tenue des registres, contrôle humain, robustesse. Chaque ligne a un statut, un responsable et une date, et beaucoup sont calculées en direct depuis la console.",
+  "t22": "De l'art. 4 à l'art. 50, de la maîtrise de l'IA à la transparence",
+  "t23": "Statut calculé à partir des données réelles quand c'est possible",
+  "t24": "Export du dossier régulateur en un clic",
+  "t25": "02 · Inventaire",
+  "t26": "On ne peut pas être conforme sur ce qu'on n'a pas recensé.",
+  "t27": "Chaque agent, modèle et plateforme est découvert, classé par niveau de risque et noté. Les services IA tiers dont vous dépendez sont testés aussi, et clairement marqués hors de votre périmètre de déploiement.",
+  "t28": "Classes de risque : interdit, élevé, limité, GPAI, minimal",
+  "t29": "Rôle de fournisseur ou de déployeur par système",
+  "t30": "Score de conformité par système, écarts critiques en premier",
+  "t31": "03 · OWASP LLM Top 10",
+  "t32": "Chaque agent testé en red team selon l'OWASP LLM Top 10 (2025).",
+  "t33": "Injection de prompt, divulgation de données sensibles, fuite du prompt système, mauvaise gestion des sorties, désinformation : chaque agent est attaqué avec de vrais prompts, et le résultat arrive dans un tableau de bord exploitable par votre équipe sécurité.",
+  "t34": "Couverture et taux de réussite par agent et par catégorie",
+  "t35": "Constats en langage clair, catégorie par catégorie",
+  "t36": "Relancé à la demande après chaque changement de modèle ou de prompt",
+  "t37": "04 · MITRE ATLAS",
+  "t38": "Cartographié sur les techniques des vrais attaquants.",
+  "t39": "Les résultats de test sont traduits en techniques MITRE ATLAS : votre modèle de menace parle la même langue que votre SOC, exploitée, partielle ou déjouée.",
+  "t40": "AML.T0051 injection de prompt, AML.T0057 fuite de données, AML.T0056 extraction du prompt système",
+  "t41": "Taux de réussite des attaques par technique",
+  "t42": "Moteurs de red team Garak et PyRIT",
+  "t43": "05 · Feuille de route",
+  "t44": "De « par où commencer ? » à un plan en 12 étapes.",
+  "t45": "Inventaire, classification, revue des pratiques interdites, gestion des risques, documentation, journalisation, contrôle humain, robustesse, FRIA, enregistrement européen, surveillance après mise sur le marché : le chemin est tracé, et l'avancement se met à jour tout seul.",
+  "t46": "12 étapes alignées sur le règlement",
+  "t47": "Avancement suivi en direct",
+  "t48": "Assistant d'analyse d'impact sur les droits fondamentaux (FRIA) intégré",
+  "t49": "06 · Chaîne d'approvisionnement IA (OWASP LLM03)",
+  "t50": "Un modèle vulnérable dans un workflow est une porte dérobée. Arrêtez-le avant la mise en service.",
+  "t51": "Chaque modèle, agent et serveur MCP dont dépendent vos workflows passe par une passerelle d'admission avant usage. Chaque modèle reçoit une empreinte, sa licence est vérifiée et son template de chat comparé à une référence saine. Tout ce qui échoue est signalé, et bloqué en un clic.",
+  "t52": "Une empreinte unique par modèle : un fichier remplacé ou modifié saute aux yeux",
+  "t53": "Verdict de licence avant usage : Apache-2.0, MIT, restreinte ou non conforme",
+  "t54": "Détection de dérive du template de chat, une cachette connue pour des instructions malveillantes",
+  "t55": "Blocage en un clic, ré-audit automatique",
+  "t56": "07 · Tenue des registres (art. 12)",
+  "t57": "Chaque décision de l'IA, consignée. Prête pour votre auditeur.",
+  "t58": "Chaque action de l'agent AI SOC Analyst est écrite dans un journal chaîné par hachage SHA-256, ancré chaque jour. Demandez pourquoi il a proposé une action et obtenez les preuves. Demandez si le journal a été modifié et obtenez la preuve.",
+  "t59": "Appels d'outils, sources et résultats journalisés, secrets masqués",
+  "t60": "Intégrité vérifiée à la demande",
+  "t61": "Chaque validation enregistrée avec le nom de l'analyste",
+  "t62": "Scénario illustratif.",
+  "t63": "La gouvernance de l'IA, de deux façons",
+  "t64": "Des tableurs et de bonnes intentions",
+  "t65": "Personne ne sait combien de systèmes d'IA sont utilisés",
+  "t66": "Des modèles téléchargés et branchés dans les workflows sans contrôle",
+  "t67": "La robustesse « testée » une seule fois, avant le lancement",
+  "t68": "Les obligations vivent dans une présentation, sans responsable",
+  "t69": "Les preuves d'audit reconstituées à la main à chaque fois",
+  "t70": "Avec SENTINEL AI Compliance",
+  "t71": "Un inventaire vivant, classé par risque",
+  "t72": "Chaque modèle audité et doté d'une empreinte avant usage",
+  "t73": "Un red teaming continu sur OWASP et MITRE ATLAS",
+  "t74": "Un registre article par article avec responsables et dates",
+  "t75": "Dossier régulateur et piste d'audit prêts à exporter",
+  "t76": "Une conformité que vous pouvez montrer, pas seulement affirmer.",
+  "t77": "En 30 minutes, nous parcourons avec vous votre posture IA : inventaire, résultats de red team, obligations de l'AI Act et écarts à corriger en premier.",
+  "t78": "Demander ma démo →",
+  "t79": "Conçu pour les banques, les assureurs et le secteur public · On-prem · AI Act · DORA · NIS2 · RGPD",
+  "t80": "© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr",
+  "t81": "Réserver une démo",
+  "title": "SENTINEL AI Compliance : AI Act, OWASP LLM Top 10, MITRE ATLAS | ASA AI",
+  "desc": "SENTINEL AI Compliance inventorie chaque système d'IA que vous utilisez, teste chaque agent en red team selon l'OWASP LLM Top 10 et MITRE ATLAS, et suit vos obligations au titre de l'AI Act article par article. On-prem. Réservez une démo."
+ },
+ "es": {
+  "t2": "Reservar una demo",
+  "t3": "SENTINEL AI · Cumplimiento",
+  "t4": "La Ley de IA de la UE llega para sus agentes de IA. <span class=\"grad\">¿Puede demostrar que cumplen?</span>",
+  "t5": "Inventaríe cada sistema de IA. Someta cada agente a red team. Siga cada obligación. <strong>SENTINEL AI Compliance</strong> convierte la Ley de IA, el OWASP LLM Top 10 y MITRE ATLAS en una postura viva que su consejo, su DPO y su regulador pueden leer.",
+  "t6": "Vea su postura de IA en una demo →",
+  "t7": "Hacer el recorrido",
+  "t8": "On-prem · Datos reales · Exportación del expediente para el regulador · Ningún prompt sale de su red",
+  "t9": "Cada agente sometido a red team según el OWASP LLM Top 10 y puntuado, categoría por categoría.",
+  "t11": "Cinco preguntas que hará su regulador.<br/><span class=\"grad\">Respondidas antes de que las haga.</span>",
+  "t12": "«¿Qué sistemas de IA utiliza?»<span>Un inventario vivo de agentes, modelos y plataformas, cada uno con su clase de riesgo.</span>",
+  "t13": "«¿Qué modelos ejecutan sus flujos de trabajo?»<span>Cada modelo auditado en la admisión: huella, licencia y plantilla, los inseguros bloqueados.</span>",
+  "t14": "«¿Son robustos sus sistemas de alto riesgo?»<span>Resultados OWASP LLM Top 10 y MITRE ATLAS por agente, relanzados a demanda.</span>",
+  "t15": "«¿Quién es responsable de cada obligación?»<span>Un registro artículo por artículo con responsables, estados y plazos.</span>",
+  "t16": "«¿Puede demostrarlo?»<span>Un registro de auditoría a prueba de manipulaciones y un expediente para el regulador exportable hoy mismo.</span>",
+  "t17": "Recorrido por SENTINEL AI Compliance",
+  "t18": "Pantallas reales de nuestra consola. Los nombres de terceros y las direcciones internas están ocultos.",
+  "t19": "01 · Ley de IA de la UE",
+  "t20": "Cada obligación, artículo por artículo. Con un responsable y un plazo.",
+  "t21": "El registro de obligaciones relaciona su parque de IA con el reglamento: gestión de riesgos, gobernanza de datos, documentación, registro, supervisión humana, robustez. Cada línea tiene un estado, un responsable y una fecha, y muchas se calculan en directo desde la consola.",
+  "t22": "Del art. 4 al art. 50, de la alfabetización en IA a la transparencia",
+  "t23": "Estado calculado con datos reales cuando es posible",
+  "t24": "Exportación del expediente para el regulador en un clic",
+  "t25": "02 · Inventario",
+  "t26": "No se puede cumplir con lo que no se ha inventariado.",
+  "t27": "Cada agente, modelo y plataforma se descubre, se clasifica por nivel de riesgo y se puntúa. Los servicios de IA de terceros de los que depende también se prueban y se marcan claramente fuera de su perímetro de despliegue.",
+  "t28": "Clases de riesgo: prohibido, alto, limitado, GPAI, mínimo",
+  "t29": "Rol de proveedor o de responsable del despliegue por sistema",
+  "t30": "Puntuación de cumplimiento por sistema, primero las brechas críticas",
+  "t31": "03 · OWASP LLM Top 10",
+  "t32": "Cada agente sometido a red team según el OWASP LLM Top 10 (2025).",
+  "t33": "Inyección de prompt, divulgación de datos sensibles, fuga del prompt de sistema, gestión incorrecta de salidas, desinformación: cada agente se ataca con prompts reales y el resultado llega a un cuadro de mando que su equipo de seguridad puede usar.",
+  "t34": "Cobertura y tasa de éxito por agente y por categoría",
+  "t35": "Hallazgos en lenguaje claro, categoría por categoría",
+  "t36": "Relanzado a demanda tras cada cambio de modelo o de prompt",
+  "t37": "04 · MITRE ATLAS",
+  "t38": "Mapeado a las técnicas que usan los atacantes reales.",
+  "t39": "Los resultados de las pruebas se traducen en técnicas MITRE ATLAS, para que su modelo de amenazas hable el mismo idioma que su SOC: explotada, parcial o frustrada.",
+  "t40": "AML.T0051 inyección de prompt, AML.T0057 fuga de datos, AML.T0056 extracción del prompt de sistema",
+  "t41": "Tasa de éxito de ataque por técnica",
+  "t42": "Motores de red team Garak y PyRIT",
+  "t43": "05 · Hoja de ruta",
+  "t44": "De «¿por dónde empezamos?» a un plan de 12 pasos.",
+  "t45": "Inventario, clasificación, revisión de prácticas prohibidas, gestión de riesgos, documentación, registro, supervisión humana, robustez, FRIA, registro en la UE, seguimiento posterior a la comercialización: el camino está trazado y el avance se actualiza solo.",
+  "t46": "12 pasos alineados con el reglamento",
+  "t47": "Avance seguido en directo",
+  "t48": "Asistente de evaluación de impacto en los derechos fundamentales (FRIA) integrado",
+  "t49": "06 · Cadena de suministro de IA (OWASP LLM03)",
+  "t50": "Un modelo vulnerable dentro de un flujo de trabajo es una puerta trasera. Deténgalo antes de que llegue a producción.",
+  "t51": "Cada modelo, agente y servidor MCP del que dependen sus flujos pasa por una pasarela de admisión antes de usarse. Cada modelo recibe una huella, se comprueba su licencia y su plantilla de chat se compara con una referencia fiable. Lo que falla se señala y se bloquea en un clic.",
+  "t52": "Huella única por modelo: un archivo sustituido o modificado salta a la vista",
+  "t53": "Veredicto de licencia antes del uso: Apache-2.0, MIT, restringida o no conforme",
+  "t54": "Detección de deriva de la plantilla de chat, un escondite conocido para instrucciones maliciosas",
+  "t55": "Bloqueo en un clic, nueva auditoría automática",
+  "t56": "07 · Registro (art. 12)",
+  "t57": "Cada decisión de la IA, registrada. Lista para su auditor.",
+  "t58": "Cada acción del agente AI SOC Analyst se escribe en un registro encadenado con hash SHA-256, anclado cada día. Pregunte por qué propuso una acción y obtenga las pruebas. Pregunte si el registro fue alterado y obtenga la prueba.",
+  "t59": "Llamadas a herramientas, fuentes y resultados registrados, secretos ocultos",
+  "t60": "Integridad verificada a demanda",
+  "t61": "Cada aprobación registrada con el nombre del analista",
+  "t62": "Escenario ilustrativo.",
+  "t63": "La gobernanza de la IA, de dos maneras",
+  "t64": "Hojas de cálculo y buenas intenciones",
+  "t65": "Nadie sabe cuántos sistemas de IA se utilizan",
+  "t66": "Modelos descargados y conectados a los flujos sin control",
+  "t67": "La robustez «probada» una sola vez, antes del lanzamiento",
+  "t68": "Las obligaciones viven en una presentación, sin responsables",
+  "t69": "Las pruebas de auditoría se reconstruyen a mano cada vez",
+  "t70": "Con SENTINEL AI Compliance",
+  "t71": "Inventario vivo, clasificado por riesgo",
+  "t72": "Cada modelo auditado y con huella antes de usarse",
+  "t73": "Red teaming continuo sobre OWASP y MITRE ATLAS",
+  "t74": "Registro artículo por artículo con responsables y fechas",
+  "t75": "Expediente para el regulador y pista de auditoría listos para exportar",
+  "t76": "Un cumplimiento que puede mostrar, no solo afirmar.",
+  "t77": "En 30 minutos le mostramos su postura de IA: inventario, resultados de red team, obligaciones de la Ley de IA y las brechas que corregir primero.",
+  "t78": "Solicitar mi demo →",
+  "t79": "Diseñado para bancos, aseguradoras y el sector público · On-prem · Ley de IA de la UE · DORA · NIS2 · RGPD",
+  "t80": "© 2026 ASA AI · SENTINEL AI · contact@asa-ai.fr",
+  "t81": "Reservar una demo",
+  "title": "SENTINEL AI Compliance: Ley de IA de la UE, OWASP LLM Top 10, MITRE ATLAS | ASA AI",
+  "desc": "SENTINEL AI Compliance inventaría cada sistema de IA que utiliza, somete cada agente a red team según el OWASP LLM Top 10 y MITRE ATLAS, y sigue sus obligaciones de la Ley de IA artículo por artículo. On-prem. Reserve una demo."
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  if (L.title) document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md && L.desc) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href");
+    if (lang === "fr" && /(^|\/)register\.html/.test(h)) { a.setAttribute("href", h.replace("register.html", "inscription.html").replace(/[?&]lang=en/, "")); return; }
+    if (/(^|\/)demo\.html/.test(h)) { a.setAttribute("href", h + (h.indexOf("?") < 0 ? "?" : "&") + "lang=" + lang); }
+  });
+})();
+</script>
 </body>
 </html>

@@ -1,24 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Sovereign AI Observability | ASA AI</title>
-<meta name="description" content="See every prompt, token, agent and model, without handing your data to a SaaS. ASA-AI Observability runs 100% on-prem: latency, token spend, errors, cache savings, guardrail decisions and model admission, on your own infrastructure.">
-<meta name="keywords" content="AI observability, LLM observability, sovereign AI, on-prem AI monitoring, self-hosted LLM observability, AI agent monitoring, token cost optimization, LLM cache, AI guardrails, AI inventory, model governance, data sovereignty, GDPR, NIS2, EU AI Act">
-<link rel="canonical" href="https://demo.asa-ai.fr/sentinel-observability.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Your AI telemetry stays home. Not in a SaaS.">
-<meta property="og:description" content="Sovereign, self-hosted observability for LLMs and AI agents. Every prompt, token and decision visible, and none of it leaves your walls.">
-<meta property="og:url" content="https://demo.asa-ai.fr/sentinel-observability.html">
-<meta property="og:image" content="https://demo.asa-ai.fr/assets/observability-sovereign/og-sovereign-observability.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/observability-sovereign/og-sovereign-observability.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="See every prompt, token, agent and model, without handing your data to a SaaS. ASA-AI Observability runs 100% on-prem: latency, token spend, errors, cache savings, guardrail decisions and model admission, on your own infrastructure." name="description"/>
+<meta content="AI observability, LLM observability, sovereign AI, on-prem AI monitoring, self-hosted LLM observability, AI agent monitoring, token cost optimization, LLM cache, AI guardrails, AI inventory, model governance, data sovereignty, GDPR, NIS2, EU AI Act" name="keywords"/>
+<link href="https://demo.asa-ai.fr/sentinel-observability.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Your AI telemetry stays home. Not in a SaaS." property="og:title"/>
+<meta content="Sovereign, self-hosted observability for LLMs and AI agents. Every prompt, token and decision visible, and none of it leaves your walls." property="og:description"/>
+<meta content="https://demo.asa-ai.fr/sentinel-observability.html" property="og:url"/>
+<meta content="https://demo.asa-ai.fr/assets/observability-sovereign/og-sovereign-observability.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="627" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://demo.asa-ai.fr/assets/observability-sovereign/og-sovereign-observability.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -80,132 +81,260 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="brand"><i></i>ASA AI</div>
-    <a class="btn btn-pri" href="demo.html">Book a demo</a>
-  </header>
-
-  <main>
-    <div class="hero">
-      <span class="eyebrow">Sovereign AI observability · 100% self-hosted</span>
-      <h1>See every prompt, token and agent.<br><span class="grad">Hand your data to no one.</span></h1>
-      <p class="lead">Your AI agents read your contracts, your tickets, your customer records. Most observability tools ship all of it to someone else's cloud. <strong>ASA-AI Observability runs entirely on your infrastructure</strong>: full visibility into latency, token spend, errors, cache savings, guardrail decisions and model compliance, with every byte staying inside your walls.</p>
-      <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
-        <a class="btn btn-sec" href="register.html">Join the next live session</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>6.7M</b><span>requests traced in 24 h (lab stress test)</span></div>
-        <div class="stat"><b>78%</b><span>cache hit rate: tokens you don't pay twice</span></div>
-        <div class="stat"><b>25</b><span>AI agents continuously evaluated</span></div>
-        <div class="stat"><b>30</b><span>models audited at the admission gate</span></div>
-      </div>
-    </div>
-
-    <section>
-      <h2>Your prompts are your crown jewels.<br><span class="grad">Why mail them to a stranger?</span></h2>
-      <p class="sub">With SaaS observability, every prompt, completion and tool call is copied to a third party's servers, under their retention policy, their sub-processors and their jurisdiction. Sovereign observability keeps it all where it belongs: with you.</p>
-      <div class="vs">
-        <div class="col them">
-          <h3>Typical SaaS observability</h3>
-          <ul>
-            <li><strong>Your prompts and outputs leave your network</strong> and sit in a vendor's multi-tenant cloud.</li>
-            <li><strong>Access you don't control:</strong> vendor staff, sub-processors and foreign legal requests.</li>
-            <li><strong>Usage-metered pricing:</strong> the more your AI scales, the bigger the observability bill.</li>
-            <li><strong>Compliance on trust:</strong> you audit a contract, not the system.</li>
-          </ul>
-        </div>
-        <div class="col us">
-          <h3>ASA-AI Observability, on-prem</h3>
-          <ul>
-            <li><strong>Zero data egress:</strong> telemetry is captured and stored on your own servers.</li>
-            <li><strong>Only your team holds the keys.</strong> No third-party processor in the loop.</li>
-            <li><strong>No meter on your own telemetry</strong>, and the cache cuts your token bill as you scale.</li>
-            <li><strong>Audit-ready by design</strong> for GDPR, NIS2, DORA and EU AI Act record-keeping.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Eight views. <span class="grad">Total control.</span></h2>
-      <p class="sub">Real screens from our live lab console, measured by ASA-AI-Guard, our on-prem AI gateway.</p>
-
-      <div class="shot">
-        <span class="tag">01 · Overview</span>
-        <h3>Every request, every millisecond, every token.</h3>
-        <p>Requests, latency, input/output tokens and active users at a glance, globally or per agent. Here, a 24-hour lab stress test: 6.7 million requests from 1,000 simulated users, and the console kept counting.</p>
-        <figure><img src="assets/observability-sovereign/01-overview.png" alt="AI agent analytics overview: total requests, average latency, satisfaction and unique users" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">02 · Users</span>
-        <h3>Know who uses which agent, and how much.</h3>
-        <p>Unique users, requests per user and top consumers. Spot shadow usage and chargeback costs to the right team.</p>
-        <figure><img src="assets/observability-sovereign/02-users.png" alt="Users view: unique users, requests per user, active users over time" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">03 · Errors</span>
-        <h3>Find the failing agent before your users do.</h3>
-        <p>Error rate over time and errors per agent, so you know exactly which bot is breaking and when it started.</p>
-        <figure><img src="assets/observability-sovereign/03-errors.png" alt="Errors view: error rate, errors over time and errors per agent" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">04 · Cache</span>
-        <h3>Stop paying twice for the same answer.</h3>
-        <p>A 78% cache hit rate means 78% of repeated questions never hit the model. Thousands of hits and over 6,800 minutes of compute time saved in a single day.</p>
-        <figure><img src="assets/observability-sovereign/04-cache.png" alt="Cache view: cache hits, cache rate, time saved and hits versus misses" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">05 · Gateway &amp; guardrails</span>
-        <h3>Latency, time-to-first-token and guardrail decisions, measured.</h3>
-        <p>Every model call passes through ASA-AI-Guard: median and 95th-percentile latency, time to first token, token volumes, and prompts blocked or flagged in milliseconds.</p>
-        <figure><img src="assets/observability-sovereign/05-guard-latency-tokens.png" alt="Gateway metrics: model calls, latency, tokens, error rate and guard decisions" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">06 · Per model</span>
-        <h3>Seven models. One pane of glass.</h3>
-        <p>Invocations, latency, token consumption and errors per model, so you route each task to the model that is fast, cheap and accurate enough for it.</p>
-        <figure><img src="assets/observability-sovereign/06-per-model.png" alt="Dashboard per model: invocations, input and output tokens, active models" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">07 · Continuous evaluation</span>
-        <h3>25 agents, checked around the clock.</h3>
-        <p>Availability every 15 minutes, quality every night, security every week, for lab agents and external AI services alike. You know the moment one goes dark.</p>
-        <figure><img src="assets/observability-sovereign/07-agent-evaluation.png" alt="Continuous evaluation of 25 AI agents: availability, latency, quality and security" loading="lazy"></figure>
-      </div>
-
-      <div class="shot">
-        <span class="tag">08 · AI inventory &amp; admission gate</span>
-        <h3>No model reaches production without passing the gate.</h3>
-        <p>Every model is fingerprinted, license-checked and screened for template drift before it is admitted. Non-compliant licenses get flagged, risky models get blocked in one click.</p>
-        <figure><img src="assets/observability-sovereign/08-ai-inventory.png" alt="AI inventory: audited models, admitted, non-compliant license, refused and template drift" loading="lazy"></figure>
-      </div>
-    </section>
-
-    <div class="contact" id="contact">
-      <h2>Bring your AI under control. <span class="grad">On your own turf.</span></h2>
-      <p>See ASA-AI Observability on a live environment in 30 minutes, then decide.</p>
-      <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
-        <a class="btn btn-sec" href="register.html">Save a seat at the live session</a>
-      </div>
-      <div class="ways">
-        <a class="way" href="demo.html"><small>Book a meeting</small><b>demo.asa-ai.fr</b></a>
-        <a class="way" href="mailto:contact@asa-ai.fr?subject=ASA-AI%20Observability%20demo"><small>Email us</small><b>contact@asa-ai.fr</b></a>
-        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
-      </div>
-    </div>
-
-    <p class="note">Screens captured on the ASA AI lab console. Figures include synthetic load testing.</p>
-  </main>
-
-  <footer>© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+<header>
+<div class="brand" data-i18n="t1"><i></i>ASA AI</div>
+<a class="btn btn-pri" data-i18n="t2" href="demo.html">Book a demo</a>
+</header>
+<main>
+<div class="hero">
+<span class="eyebrow" data-i18n="t3">Sovereign AI observability · 100% self-hosted</span>
+<h1 data-i18n="t4">See every prompt, token and agent.<br/><span class="grad">Hand your data to no one.</span></h1>
+<p class="lead" data-i18n="t5">Your AI agents read your contracts, your tickets, your customer records. Most observability tools ship all of it to someone else's cloud. <strong>ASA-AI Observability runs entirely on your infrastructure</strong>: full visibility into latency, token spend, errors, cache savings, guardrail decisions and model compliance, with every byte staying inside your walls.</p>
+<div class="cta-row">
+<a class="btn btn-pri" data-i18n="t6" href="demo.html">Book your demo →</a>
+<a class="btn btn-sec" data-i18n="t7" href="register.html">Join the next live session</a>
 </div>
+<div class="stats">
+<div class="stat" data-i18n="t8"><b>6.7M</b><span>requests traced in 24 h (lab stress test)</span></div>
+<div class="stat" data-i18n="t9"><b>78%</b><span>cache hit rate: tokens you don't pay twice</span></div>
+<div class="stat" data-i18n="t10"><b>25</b><span>AI agents continuously evaluated</span></div>
+<div class="stat" data-i18n="t11"><b>30</b><span>models audited at the admission gate</span></div>
+</div>
+</div>
+<section>
+<h2 data-i18n="t12">Your prompts are your crown jewels.<br/><span class="grad">Why mail them to a stranger?</span></h2>
+<p class="sub" data-i18n="t13">With SaaS observability, every prompt, completion and tool call is copied to a third party's servers, under their retention policy, their sub-processors and their jurisdiction. Sovereign observability keeps it all where it belongs: with you.</p>
+<div class="vs">
+<div class="col them">
+<h3 data-i18n="t14">Typical SaaS observability</h3>
+<ul>
+<li data-i18n="t15"><strong>Your prompts and outputs leave your network</strong> and sit in a vendor's multi-tenant cloud.</li>
+<li data-i18n="t16"><strong>Access you don't control:</strong> vendor staff, sub-processors and foreign legal requests.</li>
+<li data-i18n="t17"><strong>Usage-metered pricing:</strong> the more your AI scales, the bigger the observability bill.</li>
+<li data-i18n="t18"><strong>Compliance on trust:</strong> you audit a contract, not the system.</li>
+</ul>
+</div>
+<div class="col us">
+<h3 data-i18n="t19">ASA-AI Observability, on-prem</h3>
+<ul>
+<li data-i18n="t20"><strong>Zero data egress:</strong> telemetry is captured and stored on your own servers.</li>
+<li data-i18n="t21"><strong>Only your team holds the keys.</strong> No third-party processor in the loop.</li>
+<li data-i18n="t22"><strong>No meter on your own telemetry</strong>, and the cache cuts your token bill as you scale.</li>
+<li data-i18n="t23"><strong>Audit-ready by design</strong> for GDPR, NIS2, DORA and EU AI Act record-keeping.</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2 data-i18n="t24">Eight views. <span class="grad">Total control.</span></h2>
+<p class="sub" data-i18n="t25">Real screens from our live lab console, measured by ASA-AI-Guard, our on-prem AI gateway.</p>
+<div class="shot">
+<span class="tag" data-i18n="t26">01 · Overview</span>
+<h3 data-i18n="t27">Every request, every millisecond, every token.</h3>
+<p data-i18n="t28">Requests, latency, input/output tokens and active users at a glance, globally or per agent. Here, a 24-hour lab stress test: 6.7 million requests from 1,000 simulated users, and the console kept counting.</p>
+<figure><img alt="AI agent analytics overview: total requests, average latency, satisfaction and unique users" loading="lazy" src="assets/observability-sovereign/01-overview.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t29">02 · Users</span>
+<h3 data-i18n="t30">Know who uses which agent, and how much.</h3>
+<p data-i18n="t31">Unique users, requests per user and top consumers. Spot shadow usage and chargeback costs to the right team.</p>
+<figure><img alt="Users view: unique users, requests per user, active users over time" loading="lazy" src="assets/observability-sovereign/02-users.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t32">03 · Errors</span>
+<h3 data-i18n="t33">Find the failing agent before your users do.</h3>
+<p data-i18n="t34">Error rate over time and errors per agent, so you know exactly which bot is breaking and when it started.</p>
+<figure><img alt="Errors view: error rate, errors over time and errors per agent" loading="lazy" src="assets/observability-sovereign/03-errors.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t35">04 · Cache</span>
+<h3 data-i18n="t36">Stop paying twice for the same answer.</h3>
+<p data-i18n="t37">A 78% cache hit rate means 78% of repeated questions never hit the model. Thousands of hits and over 6,800 minutes of compute time saved in a single day.</p>
+<figure><img alt="Cache view: cache hits, cache rate, time saved and hits versus misses" loading="lazy" src="assets/observability-sovereign/04-cache.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t38">05 · Gateway &amp; guardrails</span>
+<h3 data-i18n="t39">Latency, time-to-first-token and guardrail decisions, measured.</h3>
+<p data-i18n="t40">Every model call passes through ASA-AI-Guard: median and 95th-percentile latency, time to first token, token volumes, and prompts blocked or flagged in milliseconds.</p>
+<figure><img alt="Gateway metrics: model calls, latency, tokens, error rate and guard decisions" loading="lazy" src="assets/observability-sovereign/05-guard-latency-tokens.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t41">06 · Per model</span>
+<h3 data-i18n="t42">Seven models. One pane of glass.</h3>
+<p data-i18n="t43">Invocations, latency, token consumption and errors per model, so you route each task to the model that is fast, cheap and accurate enough for it.</p>
+<figure><img alt="Dashboard per model: invocations, input and output tokens, active models" loading="lazy" src="assets/observability-sovereign/06-per-model.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t44">07 · Continuous evaluation</span>
+<h3 data-i18n="t45">25 agents, checked around the clock.</h3>
+<p data-i18n="t46">Availability every 15 minutes, quality every night, security every week, for lab agents and external AI services alike. You know the moment one goes dark.</p>
+<figure><img alt="Continuous evaluation of 25 AI agents: availability, latency, quality and security" loading="lazy" src="assets/observability-sovereign/07-agent-evaluation.png"/></figure>
+</div>
+<div class="shot">
+<span class="tag" data-i18n="t47">08 · AI inventory &amp; admission gate</span>
+<h3 data-i18n="t48">No model reaches production without passing the gate.</h3>
+<p data-i18n="t49">Every model is fingerprinted, license-checked and screened for template drift before it is admitted. Non-compliant licenses get flagged, risky models get blocked in one click.</p>
+<figure><img alt="AI inventory: audited models, admitted, non-compliant license, refused and template drift" loading="lazy" src="assets/observability-sovereign/08-ai-inventory.png"/></figure>
+</div>
+</section>
+<div class="contact" id="contact">
+<h2 data-i18n="t50">Bring your AI under control. <span class="grad">On your own turf.</span></h2>
+<p data-i18n="t51">See ASA-AI Observability on a live environment in 30 minutes, then decide.</p>
+<div class="cta-row">
+<a class="btn btn-pri" data-i18n="t52" href="demo.html">Book your demo →</a>
+<a class="btn btn-sec" data-i18n="t53" href="register.html">Save a seat at the live session</a>
+</div>
+<div class="ways">
+<a class="way" data-i18n="t54" href="demo.html"><small>Book a meeting</small><b>demo.asa-ai.fr</b></a>
+<a class="way" data-i18n="t55" href="mailto:contact@asa-ai.fr?subject=ASA-AI%20Observability%20demo"><small>Email us</small><b>contact@asa-ai.fr</b></a>
+<a class="way" data-i18n="t56" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+</div>
+</div>
+<p class="note" data-i18n="t57">Screens captured on the ASA AI lab console. Figures include synthetic load testing.</p>
+</main>
+<footer data-i18n="t58">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "t2": "Réserver une démo",
+  "t3": "Observabilité IA souveraine · 100 % auto-hébergée",
+  "t4": "Voyez chaque prompt, chaque jeton, chaque agent.<br/><span class=\"grad\">Sans confier vos données à personne.</span>",
+  "t5": "Vos agents IA lisent vos contrats, vos tickets, vos fiches clients. La plupart des outils d'observabilité envoient tout cela dans le cloud de quelqu'un d'autre. <strong>ASA-AI Observability tourne entièrement sur votre infrastructure</strong> : visibilité complète sur la latence, la consommation de jetons, les erreurs, les économies de cache, les décisions du garde-fou et la conformité des modèles, sans qu'un seul octet ne quitte vos murs.",
+  "t6": "Réserver votre démo →",
+  "t7": "Participer à la prochaine session live",
+  "t8": "<b>6.7M</b><span>requêtes tracées en 24 h (test de charge en lab)</span>",
+  "t9": "<b>78%</b><span>de taux de succès du cache : des jetons que vous ne payez pas deux fois</span>",
+  "t10": "<b>25</b><span>agents IA évalués en continu</span>",
+  "t11": "<b>30</b><span>modèles audités au portail d'admission</span>",
+  "t12": "Vos prompts sont vos joyaux de la couronne.<br/><span class=\"grad\">Pourquoi les envoyer à un inconnu ?</span>",
+  "t13": "Avec une observabilité SaaS, chaque prompt, chaque réponse et chaque appel d'outil est copié sur les serveurs d'un tiers, sous sa politique de conservation, ses sous-traitants et sa juridiction. L'observabilité souveraine garde tout là où c'est à sa place : chez vous.",
+  "t14": "Observabilité SaaS classique",
+  "t15": "<strong>Vos prompts et réponses quittent votre réseau</strong> et sont stockés dans le cloud mutualisé d'un éditeur.",
+  "t16": "<strong>Des accès que vous ne maîtrisez pas :</strong> personnel de l'éditeur, sous-traitants et réquisitions judiciaires étrangères.",
+  "t17": "<strong>Une facturation à l'usage :</strong> plus votre IA grandit, plus la facture d'observabilité grimpe.",
+  "t18": "<strong>Une conformité sur parole :</strong> vous auditez un contrat, pas le système.",
+  "t19": "ASA-AI Observability, on-prem",
+  "t20": "<strong>Zéro sortie de données :</strong> la télémétrie est capturée et stockée sur vos propres serveurs.",
+  "t21": "<strong>Seule votre équipe détient les clés.</strong> Aucun sous-traitant tiers dans la boucle.",
+  "t22": "<strong>Aucun compteur sur votre propre télémétrie</strong>, et le cache réduit votre facture de jetons à mesure que vous grandissez.",
+  "t23": "<strong>Prêt pour l'audit par conception</strong> pour le RGPD, NIS2, DORA et la tenue des registres de l'AI Act.",
+  "t24": "Huit vues. <span class=\"grad\">Un contrôle total.</span>",
+  "t25": "De vrais écrans de la console de notre lab, mesurés par ASA-AI-Guard, notre passerelle IA on-prem.",
+  "t26": "01 · Vue d'ensemble",
+  "t27": "Chaque requête, chaque milliseconde, chaque jeton.",
+  "t28": "Requêtes, latence, jetons en entrée et en sortie et utilisateurs actifs d'un coup d'œil, au global ou par agent. Ici, un test de charge de 24 heures en lab : 6,7 millions de requêtes de 1 000 utilisateurs simulés, et la console a continué de compter.",
+  "t29": "02 · Utilisateurs",
+  "t30": "Sachez qui utilise quel agent, et combien.",
+  "t31": "Utilisateurs uniques, requêtes par utilisateur et principaux consommateurs. Repérez les usages cachés et refacturez les coûts à la bonne équipe.",
+  "t32": "03 · Erreurs",
+  "t33": "Trouvez l'agent défaillant avant vos utilisateurs.",
+  "t34": "Taux d'erreur dans le temps et erreurs par agent : vous savez exactement quel bot casse et depuis quand.",
+  "t35": "04 · Cache",
+  "t36": "Arrêtez de payer deux fois la même réponse.",
+  "t37": "Un taux de succès du cache de 78 % signifie que 78 % des questions répétées n'atteignent jamais le modèle. Des milliers de succès et plus de 6 800 minutes de calcul économisées en une seule journée.",
+  "t38": "05 · Passerelle &amp; garde-fous",
+  "t39": "Latence, délai du premier jeton et décisions du garde-fou, mesurés.",
+  "t40": "Chaque appel au modèle passe par ASA-AI-Guard : latence médiane et au 95e centile, délai du premier jeton, volumes de jetons, et prompts bloqués ou signalés en quelques millisecondes.",
+  "t41": "06 · Par modèle",
+  "t42": "Sept modèles. Un seul écran.",
+  "t43": "Invocations, latence, consommation de jetons et erreurs par modèle : vous confiez chaque tâche au modèle assez rapide, économique et précis pour elle.",
+  "t44": "07 · Évaluation continue",
+  "t45": "25 agents, vérifiés jour et nuit.",
+  "t46": "Disponibilité toutes les 15 minutes, qualité chaque nuit, sécurité chaque semaine, pour les agents du lab comme pour les services IA externes. Vous savez à la minute près quand l'un d'eux tombe.",
+  "t47": "08 · Inventaire IA &amp; portail d'admission",
+  "t48": "Aucun modèle n'arrive en production sans passer le portail.",
+  "t49": "Chaque modèle reçoit une empreinte, voit sa licence vérifiée et son template contrôlé contre toute dérive avant d'être admis. Les licences non conformes sont signalées, les modèles à risque bloqués en un clic.",
+  "t50": "Reprenez le contrôle de votre IA. <span class=\"grad\">Sur votre propre terrain.</span>",
+  "t51": "Voyez ASA-AI Observability sur un environnement réel en 30 minutes, puis décidez.",
+  "t52": "Réserver votre démo →",
+  "t53": "Réserver une place à la session live",
+  "t54": "<small>Prendre rendez-vous</small><b>demo.asa-ai.fr</b>",
+  "t55": "<small>Écrivez-nous</small><b>contact@asa-ai.fr</b>",
+  "t57": "Écrans capturés sur la console du lab ASA AI. Les chiffres incluent des tests de charge synthétiques.",
+  "t58": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr",
+  "title": "Observabilité IA souveraine | ASA AI",
+  "desc": "Voyez chaque prompt, jeton, agent et modèle, sans confier vos données à un SaaS. ASA-AI Observability tourne 100 % on-prem : latence, consommation de jetons, erreurs, économies de cache, décisions du garde-fou et admission des modèles, sur votre propre infrastructure."
+ },
+ "es": {
+  "t2": "Reservar una demo",
+  "t3": "Observabilidad de IA soberana · 100 % autoalojada",
+  "t4": "Vea cada prompt, cada token y cada agente.<br/><span class=\"grad\">Sin entregar sus datos a nadie.</span>",
+  "t5": "Sus agentes de IA leen sus contratos, sus tickets y sus fichas de clientes. La mayoría de las herramientas de observabilidad envían todo eso a la nube de otro. <strong>ASA-AI Observability funciona íntegramente en su infraestructura</strong>: visibilidad completa de latencia, consumo de tokens, errores, ahorro de caché, decisiones del guardarraíl y cumplimiento de los modelos, sin que un solo byte salga de sus instalaciones.",
+  "t6": "Reserve su demo →",
+  "t7": "Únase a la próxima sesión en directo",
+  "t8": "<b>6.7M</b><span>peticiones trazadas en 24 h (prueba de carga en laboratorio)</span>",
+  "t9": "<b>78%</b><span>de aciertos de caché: tokens que no paga dos veces</span>",
+  "t10": "<b>25</b><span>agentes de IA evaluados de forma continua</span>",
+  "t11": "<b>30</b><span>modelos auditados en el portal de admisión</span>",
+  "t12": "Sus prompts son sus joyas de la corona.<br/><span class=\"grad\">¿Por qué enviárselos a un desconocido?</span>",
+  "t13": "Con una observabilidad SaaS, cada prompt, respuesta y llamada a herramienta se copia en los servidores de un tercero, bajo su política de retención, sus subencargados y su jurisdicción. La observabilidad soberana lo mantiene todo donde debe estar: con usted.",
+  "t14": "Observabilidad SaaS típica",
+  "t15": "<strong>Sus prompts y respuestas salen de su red</strong> y quedan en la nube multiinquilino de un proveedor.",
+  "t16": "<strong>Accesos que usted no controla:</strong> personal del proveedor, subencargados y requerimientos legales extranjeros.",
+  "t17": "<strong>Precio por uso:</strong> cuanto más crece su IA, mayor es la factura de observabilidad.",
+  "t18": "<strong>Cumplimiento por confianza:</strong> usted audita un contrato, no el sistema.",
+  "t19": "ASA-AI Observability, on-prem",
+  "t20": "<strong>Cero salida de datos:</strong> la telemetría se captura y almacena en sus propios servidores.",
+  "t21": "<strong>Solo su equipo tiene las llaves.</strong> Ningún encargado externo en el circuito.",
+  "t22": "<strong>Ningún contador sobre su propia telemetría</strong>, y la caché reduce su factura de tokens a medida que crece.",
+  "t23": "<strong>Listo para auditoría por diseño</strong> para el RGPD, NIS2, DORA y el registro exigido por la Ley de IA.",
+  "t24": "Ocho vistas. <span class=\"grad\">Control total.</span>",
+  "t25": "Pantallas reales de la consola de nuestro laboratorio, medidas por ASA-AI-Guard, nuestra pasarela de IA on-prem.",
+  "t26": "01 · Visión general",
+  "t27": "Cada petición, cada milisegundo, cada token.",
+  "t28": "Peticiones, latencia, tokens de entrada y salida y usuarios activos de un vistazo, en global o por agente. Aquí, una prueba de carga de 24 horas en laboratorio: 6,7 millones de peticiones de 1.000 usuarios simulados, y la consola siguió contando.",
+  "t29": "02 · Usuarios",
+  "t30": "Sepa quién usa cada agente, y cuánto.",
+  "t31": "Usuarios únicos, peticiones por usuario y principales consumidores. Detecte usos en la sombra y repercuta los costes al equipo correcto.",
+  "t32": "03 · Errores",
+  "t33": "Encuentre el agente que falla antes que sus usuarios.",
+  "t34": "Tasa de error en el tiempo y errores por agente: sabe exactamente qué bot se rompe y desde cuándo.",
+  "t35": "04 · Caché",
+  "t36": "Deje de pagar dos veces la misma respuesta.",
+  "t37": "Una tasa de aciertos de caché del 78 % significa que el 78 % de las preguntas repetidas nunca llega al modelo. Miles de aciertos y más de 6.800 minutos de cómputo ahorrados en un solo día.",
+  "t38": "05 · Pasarela y guardarraíles",
+  "t39": "Latencia, tiempo hasta el primer token y decisiones del guardarraíl, medidos.",
+  "t40": "Cada llamada al modelo pasa por ASA-AI-Guard: latencia mediana y del percentil 95, tiempo hasta el primer token, volúmenes de tokens y prompts bloqueados o señalados en milisegundos.",
+  "t41": "06 · Por modelo",
+  "t42": "Siete modelos. Una sola pantalla.",
+  "t43": "Invocaciones, latencia, consumo de tokens y errores por modelo, para asignar cada tarea al modelo lo bastante rápido, económico y preciso.",
+  "t44": "07 · Evaluación continua",
+  "t45": "25 agentes, comprobados día y noche.",
+  "t46": "Disponibilidad cada 15 minutos, calidad cada noche, seguridad cada semana, para los agentes del laboratorio y los servicios de IA externos. Sabe al instante cuándo uno deja de responder.",
+  "t47": "08 · Inventario de IA y portal de admisión",
+  "t48": "Ningún modelo llega a producción sin pasar el portal.",
+  "t49": "Cada modelo recibe una huella, se verifica su licencia y se controla la deriva de su plantilla antes de admitirlo. Las licencias no conformes se señalan y los modelos de riesgo se bloquean en un clic.",
+  "t50": "Tome el control de su IA. <span class=\"grad\">En su propio terreno.</span>",
+  "t51": "Vea ASA-AI Observability en un entorno real en 30 minutos y después decida.",
+  "t52": "Reserve su demo →",
+  "t53": "Reserve su plaza en la sesión en directo",
+  "t54": "<small>Reservar una reunión</small><b>demo.asa-ai.fr</b>",
+  "t55": "<small>Escríbanos</small><b>contact@asa-ai.fr</b>",
+  "t57": "Pantallas capturadas en la consola del laboratorio de ASA AI. Las cifras incluyen pruebas de carga sintéticas.",
+  "t58": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr",
+  "title": "Observabilidad de IA soberana | ASA AI",
+  "desc": "Vea cada prompt, token, agente y modelo, sin entregar sus datos a un SaaS. ASA-AI Observability funciona 100 % on-prem: latencia, consumo de tokens, errores, ahorro de caché, decisiones del guardarraíl y admisión de modelos, en su propia infraestructura."
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  if (L.title) document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md && L.desc) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href");
+    if (lang === "fr" && /(^|\/)register\.html/.test(h)) { a.setAttribute("href", h.replace("register.html", "inscription.html").replace(/[?&]lang=en/, "")); return; }
+    if (/(^|\/)demo\.html/.test(h)) { a.setAttribute("href", h + (h.indexOf("?") < 0 ? "?" : "&") + "lang=" + lang); }
+  });
+})();
+</script>
 </body>
 </html>

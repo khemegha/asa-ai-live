@@ -1,25 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>PHP2Shell: Find Your Exposure in Seconds | ASA AI</title>
-<meta name="description" content="PHP2Shell (CVE-2026-109618 / CVE-2026-109619) is being exploited in hours. See how AI SOC Analyst finds every exposed PHP server in seconds and proposes containment, with your analysts approving every action.">
-<meta name="keywords" content="PHP2Shell, CVE-2026-109618, CVE-2026-109619, PHP vulnerability, PHP RCE, AI SOC Analyst, SOC automation, vulnerability management, exposure management, incident response, human-in-the-loop, CISO">
-<link rel="canonical" href="https://demo.asa-ai.fr/php2shell.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PHP2Shell gets exploited in hours. Find your exposure in seconds.">
-<meta property="og:description" content="AI SOC Analyst maps every vulnerable PHP host, flags exploit attempts and proposes containment. Your analysts approve. Book a demo.">
-<meta property="og:url" content="https://demo.asa-ai.fr/php2shell.html">
-<meta property="og:image" content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta content="PHP2Shell (CVE-2026-109618 / CVE-2026-109619) is being exploited in hours. See how AI SOC Analyst finds every exposed PHP server in seconds and proposes containment, with your analysts approving every action." name="description"/>
+<meta content="PHP2Shell, CVE-2026-109618, CVE-2026-109619, PHP vulnerability, PHP RCE, AI SOC Analyst, SOC automation, vulnerability management, exposure management, incident response, human-in-the-loop, CISO" name="keywords"/>
+<link href="https://demo.asa-ai.fr/php2shell.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="PHP2Shell gets exploited in hours. Find your exposure in seconds." property="og:title"/>
+<meta content="AI SOC Analyst maps every vulnerable PHP host, flags exploit attempts and proposes containment. Your analysts approve. Book a demo." property="og:description"/>
+<meta content="https://demo.asa-ai.fr/php2shell.html" property="og:url"/>
+<meta content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="627" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://demo.asa-ai.fr/assets/php2shell/og-php2shell.png" name="twitter:image"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--red:#FF5A6E}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -89,87 +90,202 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <a class="brand" href="index.html"><i></i>ASA AI</a>
-    <a class="btn btn-pri" href="demo.html">Book a demo</a>
-  </header>
-
-  <div class="alert">⚠ <span><b>PHP2Shell</b> · CVE-2026-109618 &amp; CVE-2026-109619 · CVSS 9.2 · pre-auth RCE · patch to 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span></div>
-
-  <div class="hero">
-    <div>
-      <span class="eyebrow">Critical PHP vulnerability · October 2026</span>
-      <h1>PHP2Shell gets exploited in hours. <span class="grad">Find your exposure in seconds.</span></h1>
-      <p class="lead">Leaked before the patch. Exploited before the disclosure. Millions of attempts within a day. The only question that matters now: <strong style="color:var(--txt)">which of your servers are exposed, and is anyone already inside?</strong></p>
-      <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">See it on your environment →</a>
-        <a class="btn btn-sec" href="#how">How it works</a>
-      </div>
-      <p class="trust">30-minute live demo · On-prem · Your analysts approve every action</p>
-    </div>
-    <div>
-      <div class="shot"><img src="assets/php2shell/ai-soc-analyst-php2shell.png" width="1080" height="1360" alt="AI SOC Analyst chat: 7 hosts exposed to PHP2Shell, exploit attempt on web-prod-02 contained in 41 seconds after analyst approval"></div>
-      <p class="shot-cap">Illustrative scenario: one question, one answer, one click.</p>
-    </div>
-  </div>
-
-  <section>
-    <h2>Why this one can't wait</h2>
-    <p class="sub">PHP powers a huge share of the web: CMSs, customer portals, hosting panels, internal tools you forgot you had.</p>
-    <div class="stats">
-      <div class="stat"><strong class="r">9.2</strong><span>CVSS v4.0, unauthenticated remote code execution on default configurations</span></div>
-      <div class="stat"><strong>5.4 → 8.5.11</strong><span>Every PHP version in that range is affected</span></div>
-      <div class="stat"><strong class="r">22.6M</strong><span>Internet-exposed instances potentially vulnerable (Palo Alto Cortex Xpanse)</span></div>
-      <div class="stat"><strong>Day 0</strong><span>Exploit attempts were seen days before disclosure, then surged to millions within 24 hours</span></div>
-    </div>
-  </section>
-
-  <section id="how">
-    <h2>What AI SOC Analyst does with PHP2Shell</h2>
-    <p class="sub">Ask in plain English. Get an answer grounded in your SIEM and vulnerability data, not a dashboard to dig through.</p>
-    <div class="grid">
-      <div class="card"><div class="n">01 · FIND</div><h3>Every vulnerable PHP host</h3><p>Inventory across your fleet in seconds, with the exact PHP version on each server.</p></div>
-      <div class="card"><div class="n">02 · RANK</div><h3>Exposure first</h3><p>Internet-facing and business-critical hosts at the top. One clear patch plan to 8.5.12, 8.4.27, 8.3.36 or 8.2.35.</p></div>
-      <div class="card"><div class="n">03 · DETECT</div><h3>Exploit attempts</h3><p>Watches for php-fpm and php-cgi spawning shells or unexpected child processes, the telltale sign of PHP2Shell.</p></div>
-      <div class="card"><div class="n">04 · CONTAIN</div><h3>Human-approved response</h3><p>Proposes isolation, IP blocking and patching. Nothing runs until your analyst clicks Approve. Every step is logged.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>The next critical CVE, two ways</h2>
-    <div class="compare">
-      <div class="col old">
-        <h3>Without AI SOC Analyst</h3>
-        <ul>
-          <li>Export asset lists, cross-check versions in a spreadsheet</li>
-          <li>Hours before you know who is exposed</li>
-          <li>Exploit attempts buried in thousands of alerts</li>
-          <li>Containment waits for the morning stand-up</li>
-        </ul>
-      </div>
-      <div class="col new">
-        <h3>With AI SOC Analyst</h3>
-        <ul>
-          <li>One question: "Are we exposed to PHP2Shell?"</li>
-          <li>Exposed hosts ranked by risk in seconds</li>
-          <li>Active exploitation flagged with the evidence</li>
-          <li>Containment ready, approved by your analyst in one click</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="final">
-    <h2>AI does the grind. Your analysts make the call.</h2>
-    <p>See how AI SOC Analyst answers "are we exposed?" on your own use cases. We'll walk you through triage, CVE prioritization and human-approved response, live.</p>
-    <div class="cta-row" style="margin-top:28px">
-      <a class="btn btn-pri" href="demo.html">Request my demo →</a>
-    </div>
-    <p class="fine">On-prem · Fully auditable · Built for regulated environments (DORA, NIS2, GDPR)</p>
-  </div>
-
-  <footer>© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+<header>
+<a class="brand" data-i18n="t1" href="index.html"><i></i>ASA AI</a>
+<a class="btn btn-pri" data-i18n="t2" href="demo.html">Book a demo</a>
+</header>
+<div class="alert" data-i18n="t3">⚠ <span><b>PHP2Shell</b> · CVE-2026-109618 &amp; CVE-2026-109619 · CVSS 9.2 · pre-auth RCE · patch to 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span></div>
+<div class="hero">
+<div>
+<span class="eyebrow" data-i18n="t4">Critical PHP vulnerability · October 2026</span>
+<h1 data-i18n="t5">PHP2Shell gets exploited in hours. <span class="grad">Find your exposure in seconds.</span></h1>
+<p class="lead" data-i18n="t6">Leaked before the patch. Exploited before the disclosure. Millions of attempts within a day. The only question that matters now: <strong style="color:var(--txt)">which of your servers are exposed, and is anyone already inside?</strong></p>
+<div class="cta-row">
+<a class="btn btn-pri" data-i18n="t7" href="demo.html">See it on your environment →</a>
+<a class="btn btn-sec" data-i18n="t8" href="#how">How it works</a>
 </div>
-<div class="sticky"><a class="btn btn-pri" href="demo.html">Book a demo</a></div>
+<p class="trust" data-i18n="t9">30-minute live demo · On-prem · Your analysts approve every action</p>
+</div>
+<div>
+<div class="shot"><img alt="AI SOC Analyst chat: 7 hosts exposed to PHP2Shell, exploit attempt on web-prod-02 contained in 41 seconds after analyst approval" height="1360" src="assets/php2shell/ai-soc-analyst-php2shell.png" width="1080"/></div>
+<p class="shot-cap" data-i18n="t10">Illustrative scenario: one question, one answer, one click.</p>
+</div>
+</div>
+<section>
+<h2 data-i18n="t11">Why this one can't wait</h2>
+<p class="sub" data-i18n="t12">PHP powers a huge share of the web: CMSs, customer portals, hosting panels, internal tools you forgot you had.</p>
+<div class="stats">
+<div class="stat" data-i18n="t13"><strong class="r">9.2</strong><span>CVSS v4.0, unauthenticated remote code execution on default configurations</span></div>
+<div class="stat" data-i18n="t14"><strong>5.4 → 8.5.11</strong><span>Every PHP version in that range is affected</span></div>
+<div class="stat" data-i18n="t15"><strong class="r">22.6M</strong><span>Internet-exposed instances potentially vulnerable (Palo Alto Cortex Xpanse)</span></div>
+<div class="stat" data-i18n="t16"><strong>Day 0</strong><span>Exploit attempts were seen days before disclosure, then surged to millions within 24 hours</span></div>
+</div>
+</section>
+<section id="how">
+<h2 data-i18n="t17">What AI SOC Analyst does with PHP2Shell</h2>
+<p class="sub" data-i18n="t18">Ask in plain English. Get an answer grounded in your SIEM and vulnerability data, not a dashboard to dig through.</p>
+<div class="grid">
+<div class="card"><div class="n" data-i18n="t19">01 · FIND</div><h3 data-i18n="t20">Every vulnerable PHP host</h3><p data-i18n="t21">Inventory across your fleet in seconds, with the exact PHP version on each server.</p></div>
+<div class="card"><div class="n" data-i18n="t22">02 · RANK</div><h3 data-i18n="t23">Exposure first</h3><p data-i18n="t24">Internet-facing and business-critical hosts at the top. One clear patch plan to 8.5.12, 8.4.27, 8.3.36 or 8.2.35.</p></div>
+<div class="card"><div class="n" data-i18n="t25">03 · DETECT</div><h3 data-i18n="t26">Exploit attempts</h3><p data-i18n="t27">Watches for php-fpm and php-cgi spawning shells or unexpected child processes, the telltale sign of PHP2Shell.</p></div>
+<div class="card"><div class="n" data-i18n="t28">04 · CONTAIN</div><h3 data-i18n="t29">Human-approved response</h3><p data-i18n="t30">Proposes isolation, IP blocking and patching. Nothing runs until your analyst clicks Approve. Every step is logged.</p></div>
+</div>
+</section>
+<section>
+<h2 data-i18n="t31">The next critical CVE, two ways</h2>
+<div class="compare">
+<div class="col old">
+<h3 data-i18n="t32">Without AI SOC Analyst</h3>
+<ul>
+<li data-i18n="t33">Export asset lists, cross-check versions in a spreadsheet</li>
+<li data-i18n="t34">Hours before you know who is exposed</li>
+<li data-i18n="t35">Exploit attempts buried in thousands of alerts</li>
+<li data-i18n="t36">Containment waits for the morning stand-up</li>
+</ul>
+</div>
+<div class="col new">
+<h3 data-i18n="t37">With AI SOC Analyst</h3>
+<ul>
+<li data-i18n="t38">One question: "Are we exposed to PHP2Shell?"</li>
+<li data-i18n="t39">Exposed hosts ranked by risk in seconds</li>
+<li data-i18n="t40">Active exploitation flagged with the evidence</li>
+<li data-i18n="t41">Containment ready, approved by your analyst in one click</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="final">
+<h2 data-i18n="t42">AI does the grind. Your analysts make the call.</h2>
+<p data-i18n="t43">See how AI SOC Analyst answers "are we exposed?" on your own use cases. We'll walk you through triage, CVE prioritization and human-approved response, live.</p>
+<div class="cta-row" style="margin-top:28px">
+<a class="btn btn-pri" data-i18n="t44" href="demo.html">Request my demo →</a>
+</div>
+<p class="fine" data-i18n="t45">On-prem · Fully auditable · Built for regulated environments (DORA, NIS2, GDPR)</p>
+</div>
+<footer data-i18n="t46">© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr</footer>
+</div>
+<div class="sticky"><a class="btn btn-pri" data-i18n="t47" href="demo.html">Book a demo</a></div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "t2": "Réserver une démo",
+  "t3": "⚠ <span><b>PHP2Shell</b> · CVE-2026-109618 &amp; CVE-2026-109619 · CVSS 9.2 · RCE sans authentification · correctif 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span>",
+  "t4": "Vulnérabilité PHP critique · octobre 2026",
+  "t5": "PHP2Shell est exploitée en quelques heures. <span class=\"grad\">Trouvez votre exposition en quelques secondes.</span>",
+  "t6": "Fuitée avant le correctif. Exploitée avant la divulgation. Des millions de tentatives en une journée. La seule question qui compte désormais : <strong style=\"color:var(--txt)\">lesquels de vos serveurs sont exposés, et quelqu'un est-il déjà entré ?</strong>",
+  "t7": "Le voir sur votre environnement →",
+  "t8": "Comment ça marche",
+  "t9": "Démo live de 30 minutes · On-prem · Vos analystes valident chaque action",
+  "t10": "Scénario illustratif : une question, une réponse, un clic.",
+  "t11": "Pourquoi celle-ci ne peut pas attendre",
+  "t12": "PHP fait tourner une grande partie du web : CMS, portails clients, panneaux d'hébergement, outils internes que vous aviez oubliés.",
+  "t13": "<strong class=\"r\">9.2</strong><span>CVSS v4.0, exécution de code à distance sans authentification sur les configurations par défaut</span>",
+  "t14": "<strong>5.4 → 8.5.11</strong><span>Toutes les versions de PHP de cette plage sont touchées</span>",
+  "t15": "<strong class=\"r\">22.6M</strong><span>instances exposées sur Internet potentiellement vulnérables (Palo Alto Cortex Xpanse)</span>",
+  "t16": "<strong>Jour 0</strong><span>Des tentatives d'exploitation ont été vues des jours avant la divulgation, puis ont atteint des millions en 24 heures</span>",
+  "t17": "Ce que l'AI SOC Analyst fait face à PHP2Shell",
+  "t18": "Posez la question en langage courant. Obtenez une réponse fondée sur votre SIEM et vos données de vulnérabilités, pas un tableau de bord à fouiller.",
+  "t19": "01 · TROUVER",
+  "t20": "Chaque hôte PHP vulnérable",
+  "t21": "L'inventaire de tout votre parc en quelques secondes, avec la version exacte de PHP sur chaque serveur.",
+  "t22": "02 · CLASSER",
+  "t23": "L'exposition d'abord",
+  "t24": "Les hôtes exposés sur Internet et critiques pour l'activité en tête. Un plan de correctifs clair vers 8.5.12, 8.4.27, 8.3.36 ou 8.2.35.",
+  "t25": "03 · DÉTECTER",
+  "t26": "Les tentatives d'exploitation",
+  "t27": "Surveille php-fpm et php-cgi qui lancent des shells ou des processus enfants inattendus, la signature de PHP2Shell.",
+  "t28": "04 · CONTENIR",
+  "t29": "Une réponse validée par l'humain",
+  "t30": "Propose l'isolement, le blocage d'IP et le correctif. Rien ne s'exécute tant que votre analyste n'a pas cliqué sur Approuver. Chaque étape est journalisée.",
+  "t31": "La prochaine CVE critique, de deux façons",
+  "t32": "Sans l'AI SOC Analyst",
+  "t33": "Exporter les listes d'actifs, recouper les versions dans un tableur",
+  "t34": "Des heures avant de savoir qui est exposé",
+  "t35": "Des tentatives d'exploitation noyées dans des milliers d'alertes",
+  "t36": "Le confinement attend le point d'équipe du matin",
+  "t37": "Avec l'AI SOC Analyst",
+  "t38": "Une question : « Sommes-nous exposés à PHP2Shell ? »",
+  "t39": "Les hôtes exposés classés par risque en quelques secondes",
+  "t40": "L'exploitation active signalée avec les preuves",
+  "t41": "Le confinement prêt, validé par votre analyste en un clic",
+  "t42": "L'IA fait le travail ingrat. Vos analystes décident.",
+  "t43": "Voyez comment l'AI SOC Analyst répond à « sommes-nous exposés ? » sur vos propres cas d'usage. Nous vous montrons en direct le triage, la priorisation des CVE et la réponse validée par l'humain.",
+  "t44": "Demander ma démo →",
+  "t45": "On-prem · Entièrement auditable · Conçu pour les environnements régulés (DORA, NIS2, RGPD)",
+  "t46": "© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr",
+  "t47": "Réserver une démo",
+  "title": "PHP2Shell : trouvez votre exposition en quelques secondes | ASA AI",
+  "desc": "PHP2Shell (CVE-2026-109618 / CVE-2026-109619) est exploitée en quelques heures. Voyez comment l'AI SOC Analyst trouve chaque serveur PHP exposé en quelques secondes et propose le confinement, vos analystes validant chaque action."
+ },
+ "es": {
+  "t2": "Reservar una demo",
+  "t3": "⚠ <span><b>PHP2Shell</b> · CVE-2026-109618 y CVE-2026-109619 · CVSS 9.2 · RCE sin autenticación · parche 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span>",
+  "t4": "Vulnerabilidad crítica de PHP · octubre de 2026",
+  "t5": "PHP2Shell se explota en horas. <span class=\"grad\">Encuentre su exposición en segundos.</span>",
+  "t6": "Filtrada antes del parche. Explotada antes de la divulgación. Millones de intentos en un día. La única pregunta que importa ahora: <strong style=\"color:var(--txt)\">¿qué servidores suyos están expuestos y hay alguien ya dentro?</strong>",
+  "t7": "Véalo en su entorno →",
+  "t8": "Cómo funciona",
+  "t9": "Demo en directo de 30 minutos · On-prem · Sus analistas aprueban cada acción",
+  "t10": "Escenario ilustrativo: una pregunta, una respuesta, un clic.",
+  "t11": "Por qué esta no puede esperar",
+  "t12": "PHP impulsa gran parte de la web: CMS, portales de clientes, paneles de hosting, herramientas internas que ya había olvidado.",
+  "t13": "<strong class=\"r\">9.2</strong><span>CVSS v4.0, ejecución remota de código sin autenticación en configuraciones por defecto</span>",
+  "t14": "<strong>5.4 → 8.5.11</strong><span>Todas las versiones de PHP de ese rango están afectadas</span>",
+  "t15": "<strong class=\"r\">22.6M</strong><span>instancias expuestas a Internet potencialmente vulnerables (Palo Alto Cortex Xpanse)</span>",
+  "t16": "<strong>Día 0</strong><span>Se vieron intentos de explotación días antes de la divulgación, que luego llegaron a millones en 24 horas</span>",
+  "t17": "Qué hace el AI SOC Analyst ante PHP2Shell",
+  "t18": "Pregunte en lenguaje natural. Obtenga una respuesta basada en su SIEM y sus datos de vulnerabilidades, no un panel en el que rebuscar.",
+  "t19": "01 · ENCONTRAR",
+  "t20": "Cada host PHP vulnerable",
+  "t21": "Inventario de todo su parque en segundos, con la versión exacta de PHP en cada servidor.",
+  "t22": "02 · ORDENAR",
+  "t23": "Primero la exposición",
+  "t24": "Los hosts expuestos a Internet y críticos para el negocio arriba. Un plan de parches claro hacia 8.5.12, 8.4.27, 8.3.36 u 8.2.35.",
+  "t25": "03 · DETECTAR",
+  "t26": "Intentos de explotación",
+  "t27": "Vigila php-fpm y php-cgi lanzando shells o procesos hijos inesperados, la señal típica de PHP2Shell.",
+  "t28": "04 · CONTENER",
+  "t29": "Respuesta aprobada por humanos",
+  "t30": "Propone aislamiento, bloqueo de IP y parcheo. Nada se ejecuta hasta que su analista pulsa Aprobar. Cada paso queda registrado.",
+  "t31": "La próxima CVE crítica, de dos maneras",
+  "t32": "Sin AI SOC Analyst",
+  "t33": "Exportar listas de activos y cruzar versiones en una hoja de cálculo",
+  "t34": "Horas hasta saber quién está expuesto",
+  "t35": "Intentos de explotación enterrados entre miles de alertas",
+  "t36": "La contención espera a la reunión de la mañana",
+  "t37": "Con AI SOC Analyst",
+  "t38": "Una pregunta: «¿Estamos expuestos a PHP2Shell?»",
+  "t39": "Hosts expuestos ordenados por riesgo en segundos",
+  "t40": "Explotación activa señalada con las pruebas",
+  "t41": "Contención lista, aprobada por su analista en un clic",
+  "t42": "La IA hace el trabajo pesado. Sus analistas deciden.",
+  "t43": "Vea cómo el AI SOC Analyst responde a «¿estamos expuestos?» en sus propios casos de uso. Le mostramos en directo la clasificación, la priorización de CVE y la respuesta aprobada por humanos.",
+  "t44": "Solicitar mi demo →",
+  "t45": "On-prem · Totalmente auditable · Diseñado para entornos regulados (DORA, NIS2, RGPD)",
+  "t46": "© 2026 ASA AI · AI SOC Analyst · contact@asa-ai.fr",
+  "t47": "Reservar una demo",
+  "title": "PHP2Shell: encuentre su exposición en segundos | ASA AI",
+  "desc": "PHP2Shell (CVE-2026-109618 / CVE-2026-109619) se explota en horas. Vea cómo el AI SOC Analyst encuentra cada servidor PHP expuesto en segundos y propone la contención, con sus analistas aprobando cada acción."
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  if (L.title) document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md && L.desc) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  document.querySelectorAll("a[href]").forEach(function(a){
+    var h = a.getAttribute("href");
+    if (lang === "fr" && /(^|\/)register\.html/.test(h)) { a.setAttribute("href", h.replace("register.html", "inscription.html").replace(/[?&]lang=en/, "")); return; }
+    if (/(^|\/)demo\.html/.test(h)) { a.setAttribute("href", h + (h.indexOf("?") < 0 ? "?" : "&") + "lang=" + lang); }
+  });
+})();
+</script>
 </body>
 </html>
