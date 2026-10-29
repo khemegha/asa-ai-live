@@ -98,7 +98,7 @@
 <div class="wrap">
   <header>
     <div class="brand"><i></i>ASA AI</div>
-    <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="hdr">Request access</a>
+    <a class="btn btn-pri" href="demo.html" data-i18n="hdr">Book a demo</a>
   </header>
 
   <main>
@@ -107,7 +107,7 @@
       <h1 data-i18n="h1">See your phone system<br><span class="grad">the way an attacker does.</span></h1>
       <p class="lead" data-i18n="lead">Your IPBX, SBC and IP phones often expose more than you think: open SIP services, guessable extensions, unencrypted media, default credentials. <strong>Our audit tool runs 24 non-intrusive tests on your VoIP network and delivers a professional report, with the threat behind each finding and a remediation prioritized by target.</strong></p>
       <div class="cta-row">
-        <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="cta_trial">Request your free trial →</a>
+        <a class="btn btn-pri" href="demo.html" data-i18n="cta_trial">Book your demo →</a>
         <a class="btn btn-sec" href="#how" data-i18n="cta_how">See how it works</a>
       </div>
       <div class="hero-shot"><img data-img="01-setup" src="assets/voip-audit/01-setup-en.png" alt="ASA AI VoIP audit: engagement setup screen"></div>
@@ -188,7 +188,7 @@
         <div class="card hl">
           <h3 data-i18n="a_h">Get your trial access</h3>
           <ol>
-            <li data-i18n="a1">Send us your request with a <strong>business e-mail</strong> and phone number.</li>
+            <li data-i18n="a1">Book your demo with a <strong>business e-mail</strong> and phone number.</li>
             <li data-i18n="a2">Our team validates your request.</li>
             <li data-i18n="a3">You receive your <strong>license key</strong> and the download by e-mail.</li>
             <li data-i18n="a4">Enter the key the first time you launch the tool.</li>
@@ -210,14 +210,14 @@
 
     <div class="contact" id="contact">
       <h2 data-i18n="h2e">Find the weak spots in your VoIP. <span class="grad">Before someone else does.</span></h2>
-      <p data-i18n="contactp">Request your trial access, or let our team run the audit with you.</p>
+      <p data-i18n="contactp">Book your demo: we show you the tool in action, then you receive your trial access.</p>
       <div class="cta-row">
-        <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="cta_trial">Request your free trial →</a>
-        <a class="btn btn-sec" data-mail="assisted" href="mailto:contact@asa-ai.fr" data-i18n="cta_assisted">Ask for an assisted audit</a>
+        <a class="btn btn-pri" href="demo.html" data-i18n="cta_trial">Book your demo →</a>
+        <a class="btn btn-sec" href="#how" data-i18n="cta_how">See how it works</a>
       </div>
       <div class="ways">
         <a class="way" href="demo.html"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
-        <a class="way" data-mail="trial" href="mailto:contact@asa-ai.fr"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=VoIP%20security%20audit"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
         <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
       </div>
     </div>
@@ -230,23 +230,15 @@
 <script>
 /* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
 (function(){
-  var M = {
-    en: {trial:["VoIP Audit - trial license request","Company:\nBusiness e-mail:\nPhone:\nNumber of sites / IPBX:\n"],
-         assisted:["VoIP Audit - assisted audit request","Company:\nBusiness e-mail:\nPhone:\nScope (sites, IPBX, SBC, phones):\n"]},
-    fr: {trial:["Audit VoIP - demande de licence d'essai","Société :\nE-mail professionnel :\nTéléphone :\nNombre de sites / IPBX :\n"],
-         assisted:["Audit VoIP - demande d'audit accompagné","Société :\nE-mail professionnel :\nTéléphone :\nPérimètre (sites, IPBX, SBC, téléphones) :\n"]},
-    es: {trial:["Auditoría VoIP - solicitud de licencia de prueba","Empresa:\nE-mail profesional:\nTeléfono:\nNúmero de sedes / centralitas:\n"],
-         assisted:["Auditoría VoIP - solicitud de auditoría acompañada","Empresa:\nE-mail profesional:\nTeléfono:\nAlcance (sedes, centralitas, SBC, teléfonos):\n"]}
-  };
   var T = {
    "fr": {
     "title": "Outil d'audit de sécurité VoIP | ASA AI",
     "desc": "Audit de sécurité VoIP / SIP non intrusif selon NIST SP 800-115 : 24 tests automatisés sur IPBX, SBC, téléphones IP et softphones, et un rapport à vos couleurs avec la menace derrière chaque constat et une remédiation priorisée par cible.",
-    "hdr": "Demander un accès",
+    "hdr": "Réserver une démo",
     "eyebrow": "Audit de sécurité VoIP / SIP · NIST SP 800-115",
     "h1": "Voyez votre téléphonie<br><span class=\"grad\">comme un attaquant la voit.</span>",
     "lead": "Votre IPBX, votre SBC et vos téléphones IP en exposent souvent plus que vous ne le pensez : services SIP ouverts, extensions devinables, flux voix non chiffrés, identifiants par défaut. <strong>Notre outil d'audit exécute 24 tests non intrusifs sur votre réseau VoIP et produit un rapport professionnel, avec la menace derrière chaque constat et une remédiation priorisée par cible.</strong>",
-    "cta_trial": "Demander votre essai gratuit →",
+    "cta_trial": "Réserver votre démo →",
     "cta_how": "Voir comment ça marche",
     "st1": "tests automatisés sur la signalisation, les médias et l'infrastructure",
     "st2": "méthodologie SP 800-115, non intrusive par conception",
@@ -278,7 +270,7 @@
     "r5": "<strong>HTML et Word (.docx)</strong>, prêts à modifier, habiller et livrer.",
     "h2d": "Essayez-le sur votre propre réseau. <span class=\"grad\">5 scans offerts.</span>",
     "a_h": "Obtenez votre accès d'essai",
-    "a1": "Envoyez-nous votre demande avec un <strong>e-mail professionnel</strong> et un numéro de téléphone.",
+    "a1": "Réservez votre démo avec un <strong>e-mail professionnel</strong> et un numéro de téléphone.",
     "a2": "Notre équipe valide votre demande.",
     "a3": "Vous recevez votre <strong>clé de licence</strong> et le téléchargement par e-mail.",
     "a4": "Saisissez la clé au premier lancement de l'outil.",
@@ -290,8 +282,7 @@
     "q_p": "Le portail s'ouvre en local sur <strong>127.0.0.1</strong>. Rien à installer sur votre téléphonie.",
     "legal": "<strong>Usage autorisé uniquement.</strong> Auditer des systèmes tiers sans autorisation écrite est illégal. En utilisant l'outil, vous certifiez disposer d'un mandat explicite sur le périmètre audité.",
     "h2e": "Trouvez les failles de votre VoIP. <span class=\"grad\">Avant quelqu'un d'autre.</span>",
-    "contactp": "Demandez votre accès d'essai, ou laissez notre équipe réaliser l'audit avec vous.",
-    "cta_assisted": "Demander un audit accompagné",
+    "contactp": "Réservez votre démo : nous vous montrons l'outil en action, puis vous recevez votre accès d'essai.",
     "w1": "Prendre rendez-vous",
     "w2": "Écrivez-nous",
     "note": "Écrans capturés sur le lab ASA AI. Le code source n'est pas distribué.",
@@ -300,11 +291,11 @@
    "es": {
     "title": "Herramienta de auditoría de seguridad VoIP | ASA AI",
     "desc": "Auditoría de seguridad VoIP / SIP no intrusiva según NIST SP 800-115: 24 pruebas automatizadas en centralitas, SBC, teléfonos IP y softphones, y un informe con la amenaza detrás de cada hallazgo y una remediación priorizada por objetivo.",
-    "hdr": "Solicitar acceso",
+    "hdr": "Reservar una demo",
     "eyebrow": "Auditoría de seguridad VoIP / SIP · NIST SP 800-115",
     "h1": "Vea su telefonía<br><span class=\"grad\">como la ve un atacante.</span>",
     "lead": "Su centralita, su SBC y sus teléfonos IP suelen exponer más de lo que cree: servicios SIP abiertos, extensiones fáciles de adivinar, voz sin cifrar, credenciales por defecto. <strong>Nuestra herramienta de auditoría ejecuta 24 pruebas no intrusivas en su red VoIP y entrega un informe profesional, con la amenaza detrás de cada hallazgo y una remediación priorizada por objetivo.</strong>",
-    "cta_trial": "Solicite su prueba gratuita →",
+    "cta_trial": "Reserve su demo →",
     "cta_how": "Ver cómo funciona",
     "st1": "pruebas automatizadas de señalización, medios e infraestructura",
     "st2": "metodología SP 800-115, no intrusiva por diseño",
@@ -336,7 +327,7 @@
     "r5": "<strong>HTML y Word (.docx)</strong>, listos para editar, personalizar y entregar.",
     "h2d": "Pruébela en su propia red. <span class=\"grad\">5 escaneos gratis.</span>",
     "a_h": "Obtenga su acceso de prueba",
-    "a1": "Envíenos su solicitud con un <strong>e-mail profesional</strong> y un número de teléfono.",
+    "a1": "Reserve su demo con un <strong>e-mail profesional</strong> y un número de teléfono.",
     "a2": "Nuestro equipo valida su solicitud.",
     "a3": "Recibe su <strong>clave de licencia</strong> y la descarga por e-mail.",
     "a4": "Introduzca la clave la primera vez que inicie la herramienta.",
@@ -348,8 +339,7 @@
     "q_p": "El portal se abre en local en <strong>127.0.0.1</strong>. Nada que instalar en su telefonía.",
     "legal": "<strong>Solo uso autorizado.</strong> Auditar sistemas de terceros sin autorización por escrito es ilegal. Al usar la herramienta, usted certifica que dispone de un mandato explícito sobre el alcance auditado.",
     "h2e": "Encuentre los puntos débiles de su VoIP. <span class=\"grad\">Antes que otro.</span>",
-    "contactp": "Solicite su acceso de prueba o deje que nuestro equipo realice la auditoría con usted.",
-    "cta_assisted": "Solicitar una auditoría acompañada",
+    "contactp": "Reserve su demo: le mostramos la herramienta en acción y después recibe su acceso de prueba.",
     "w1": "Reservar una reunión",
     "w2": "Escríbanos",
     "note": "Pantallas capturadas en el laboratorio de ASA AI. El código fuente no se distribuye.",
@@ -360,10 +350,6 @@
   var lang = "en";
   for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
   var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
-  document.querySelectorAll("a[data-mail]").forEach(function(a){
-    var m = M[lang][a.getAttribute("data-mail")];
-    a.setAttribute("href", "mailto:contact@asa-ai.fr?subject=" + encodeURIComponent(m[0]) + "&body=" + encodeURIComponent(m[1]));
-  });
   if (lang === "en") return;
   var L = T[lang];
   document.documentElement.lang = lang;
