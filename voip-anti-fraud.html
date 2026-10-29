@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoIP Anti-Fraud Platform | ASA AI</title>
+<meta name="description" content="Stop toll fraud, SIP attacks and IRSF before the bill lands. GuardVoIP scores every SIP call in real time with on-prem AI, and VoIP Threat Sentinel watches your voice infrastructure 24/7. Your call data never leaves your walls.">
+<meta name="keywords" content="VoIP fraud detection, toll fraud prevention, IRSF, SIP security, SIP attack detection, telecom fraud, PBX security, Asterisk security, VoIP anomaly detection, real-time call risk scoring, on-prem AI, sovereign telecom security, GDPR call data">
+<link rel="canonical" href="https://demo.asa-ai.fr/voip-anti-fraud.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stop toll fraud before the bill lands.">
+<meta property="og:description" content="Real-time AI risk scoring for every SIP call, 24/7 SIP threat monitoring, 100% on-prem. Your call data never leaves your walls.">
+<meta property="og:url" content="https://demo.asa-ai.fr/voip-anti-fraud.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/voip-antifraud/og-voip-antifraud.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/voip-antifraud/og-voip-antifraud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:780px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:44px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800}
+  .stat span{color:var(--mut);font-size:14px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:740px;margin:14px auto 0}
+  .vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .col{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+  .col.us{border-color:rgba(214,36,122,.6);background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .col h3{font-size:20px;margin-bottom:14px}
+  .col ul{list-style:none;display:grid;gap:12px}
+  .col li{padding-left:30px;position:relative;color:var(--mut)}
+  .col li strong{color:var(--txt)}
+  .col li:before{position:absolute;left:0;top:0;font-weight:800}
+  .col.them li:before{content:"✕";color:var(--bad)}
+  .col.us li:before{content:"✓";color:var(--ok)}
+  .shot{margin-top:56px}
+  .shot .tag{font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag)}
+  .shot h3{font-size:clamp(22px,3vw,30px);font-weight:800;margin:6px 0 6px;line-height:1.2}
+  .shot p{color:var(--mut);max-width:820px}
+  .shot figure{margin-top:18px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111217;
+               box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .shot img{display:block;width:100%;height:auto}
+  .contact{margin:84px 0 0;padding:52px 24px;border-radius:24px;border:1px solid var(--line);text-align:center;
+           background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .contact p{color:var(--mut);margin-top:12px}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px auto 0;max-width:900px}
+  .way{background:rgba(14,13,26,.55);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);display:block}
+  .way small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+  .way b{font-size:17px;word-break:break-word}
+  .note{color:var(--mut);font-size:13px;text-align:center;margin-top:40px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 0 40px}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%}}
+  .hero-shot{margin:44px auto 0;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-shot img{display:block;width:100%;height:auto}
+  .threats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:36px}
+  .threat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .threat h3{font-size:18px;margin-bottom:6px}
+  .threat p{color:var(--mut);font-size:15px}
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .prod{border-radius:20px;padding:28px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(214,36,122,.12),rgba(107,47,160,.16))}
+  .prod h3{font-size:22px}
+  .prod em{display:block;font-style:normal;color:var(--mag);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+  .prod p{color:var(--mut);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow">VoIP anti-fraud · On-prem AI · 24/7</span>
+      <h1>Toll fraud hits at 3 a.m.<br><span class="grad">Your AI is already awake.</span></h1>
+      <p class="lead">Fraudsters don't knock. They brute-force a SIP extension on a Friday night, pump premium-rate international calls all weekend, and you find out from the carrier bill. <strong>Our anti-fraud platform risk-scores your SIP traffic continuously and flags the attack while it is happening</strong>, running entirely on your own infrastructure.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html">Join the next live session</a>
+      </div>
+      <div class="hero-shot"><img src="assets/voip-antifraud/00-risk-score-overview.png" alt="VoIP Threat Sentinel turns SIP traffic into a consolidated, actionable risk score"></div>
+      <div class="stats">
+        <div class="stat"><b>~25 ms</b><span>p95 scoring latency: decisions in real time</span></div>
+        <div class="stat"><b>1,100+</b><span>live traffic snapshots scored in 6 h on our lab PBX</span></div>
+        <div class="stat"><b>536</b><span>off-hours call attempts flagged in 15 min</span></div>
+        <div class="stat"><b>24/7</b><span>SIP threat monitoring, every method, every code</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2>The attacks your PBX never tells you about</h2>
+      <p class="sub">Classic firewalls see packets. We see intent: who is calling, where, when, how often, and whether it looks like a human or a bot.</p>
+      <div class="threats">
+        <div class="threat"><h3>Toll fraud &amp; IRSF</h3><p>Bursts of calls to premium or high-cost international ranges, caught on volume, destination spread and timing.</p></div>
+        <div class="threat"><h3>SIP brute force</h3><p>Waves of 401 challenges and failed REGISTERs give credential stuffing away before an extension is hijacked.</p></div>
+        <div class="threat"><h3>Scanning &amp; enumeration</h3><p>OPTIONS floods, sipsak and scanner user-agents, 404 sweeps across extensions, all surfaced in real time.</p></div>
+        <div class="threat"><h3>Off-hours abuse</h3><p>Calls fired at night or on weekends, when nobody is watching, scored as high risk instantly.</p></div>
+        <div class="threat"><h3>Spoofing &amp; hijacking</h3><p>Via/IP mismatches, never-seen source IPs and new user-agents raise the anomaly score.</p></div>
+        <div class="threat"><h3>Malformed SIP</h3><p>400s and abnormal responses that betray fuzzing and exploit attempts against your PBX.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Two engines. <span class="grad">One shield for your voice network.</span></h2>
+      <div class="duo">
+        <div class="prod"><em>Predict &amp; decide</em><h3>GuardVoIP · AI Powered</h3><p>A machine-learning engine that scores your live SIP traffic with a risk level and an ALLOW / REVIEW / BLOCK decision in milliseconds. Start in <strong>shadow mode</strong>: it logs what it would have blocked, so you prove the value on your real traffic with zero risk to legitimate calls, then switch on enforcement.</p></div>
+        <div class="prod"><em>Watch &amp; alert</em><h3>VoIP Threat Sentinel</h3><p>24/7 security monitoring of your SIP infrastructure: methods, security codes, authentication, reconnaissance, top talkers, suspicious events and a consolidated SIP risk score, all in one real-time console.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Your call records are personal data.<br><span class="grad">Keep them home.</span></h2>
+      <p class="sub">Who called whom, when and for how long is regulated data under GDPR and telecom privacy rules. Cloud fraud services ask you to stream it to a third party. We don't.</p>
+      <div class="vs">
+        <div class="col them">
+          <h3>Typical cloud fraud service</h3>
+          <ul>
+            <li><strong>Your call metadata leaves your network</strong> and sits on a vendor's servers.</li>
+            <li><strong>Access you don't control:</strong> vendor staff, sub-processors and foreign legal requests.</li>
+            <li><strong>Black-box verdicts</strong> you can't inspect, tune or audit.</li>
+            <li><strong>Per-call or per-minute pricing</strong> that grows with your traffic.</li>
+          </ul>
+        </div>
+        <div class="col us">
+          <h3>ASA AI anti-fraud, on-prem</h3>
+          <ul>
+            <li><strong>Zero data egress:</strong> SIP telemetry is captured, scored and stored on your own servers.</li>
+            <li><strong>Only your team holds the keys.</strong> No third-party processor in the loop.</li>
+            <li><strong>Explainable scores:</strong> every signal behind a risk level is visible on your dashboard.</li>
+            <li><strong>Works with your PBX:</strong> Asterisk, Kamailio and standard SIP endpoints.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Seven views. <span class="grad">Nothing on your SIP trunk goes unseen.</span></h2>
+      <p class="sub">Real screens from our live lab: an Asterisk PBX with IP phones from Yealink, Polycom and Snom, under simulated attack.</p>
+
+      <div class="shot">
+        <span class="tag">01 · GuardVoIP · Scoring &amp; shadow decisions</span>
+        <h3>Risk scored in ~25 ms. Blocks proven before they are enforced.</h3>
+        <p>Model and scoring API health, scorings over the period, would-be BLOCKs in shadow mode, the latest risk level and p95 latency, plus the ALLOW / REVIEW / BLOCK split over time.</p>
+        <figure><img src="assets/voip-antifraud/01-guardvoip-scoring-shadow.png" alt="GuardVoIP scoring overview with shadow decisions, risk gauge and p95 latency" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">02 · GuardVoIP · Live SIP telemetry</span>
+        <h3>Real PBX traffic in, risk score out. Every few seconds.</h3>
+        <p>Pipeline status, snapshot freshness, current risk, ML anomaly level and accepted snapshots, above INVITE/REGISTER rates, call volume, destinations and SIP error ratios.</p>
+        <figure><img src="assets/voip-antifraud/02-guardvoip-sip-telemetry.png" alt="GuardVoIP live SIP telemetry from the PBX: risk, ML anomaly, INVITE and REGISTER rates" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">03 · GuardVoIP · Anomalies &amp; ML</span>
+        <h3>The weak signals humans miss.</h3>
+        <p>Abnormal SIP responses, never-seen source IPs and user-agents, Via/IP mismatches, and the risk and ML anomaly curves that tie them together.</p>
+        <figure><img src="assets/voip-antifraud/03-guardvoip-anomalies-ml.png" alt="GuardVoIP abnormal SIP responses, IP and user-agent novelty, risk and ML anomaly" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">04 · GuardVoIP · One hour under attack</span>
+        <h3>A sustained attack, minute by minute.</h3>
+        <p>Rhythmic INVITE bursts, 401 waves and a risk score that never drops: this is what an automated fraud campaign looks like, and it is unmistakable.</p>
+        <figure><img src="assets/voip-antifraud/04-guardvoip-live-hour.png" alt="GuardVoIP one-hour view of a sustained SIP attack with risk and anomaly levels" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">05 · VoIP Threat Sentinel · SIP security</span>
+        <h3>Security codes, authentication and reconnaissance at a glance.</h3>
+        <p>SIP packets and security events per second, REGISTER and INVITE rates, the consolidated SIP risk score, 400/401/403 codes, authentication attempts and enumeration activity.</p>
+        <figure><img src="assets/voip-antifraud/05-sentinel-sip-security.png" alt="VoIP Threat Sentinel SIP security overview: codes, methods, authentication and reconnaissance" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">06 · VoIP Threat Sentinel · Fraud indicators &amp; top talkers</span>
+        <h3>Who is calling, from where, to which extensions.</h3>
+        <p>INVITE outcomes, call-level fraud indicators, and the top sources, user-agents and destinations, so an attacker's tooling and targets stand out immediately.</p>
+        <figure><img src="assets/voip-antifraud/06-sentinel-fraud-indicators-top-talkers.png" alt="VoIP Threat Sentinel fraud indicators with top sources, user-agents and destinations" loading="lazy"></figure>
+      </div>
+
+      <div class="shot">
+        <span class="tag">07 · VoIP Threat Sentinel · Suspicious events</span>
+        <h3>536 off-hours call attempts. Flagged in red, in real time.</h3>
+        <p>The latest suspicious SIP events line by line, with international and off-hours INVITEs, distinct destinations and capture freshness counters.</p>
+        <figure><img src="assets/voip-antifraud/07-sentinel-suspicious-events.png" alt="VoIP Threat Sentinel suspicious SIP events with off-hours INVITE counter" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2>Find out what your PBX isn't telling you. <span class="grad">Before your carrier does.</span></h2>
+      <p>See GuardVoIP and VoIP Threat Sentinel catch a live attack in 30 minutes, then decide.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html">Save a seat at the live session</a>
+      </div>
+      <div class="ways">
+        <a class="way" href="demo.html"><small>Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=VoIP%20anti-fraud%20demo"><small>Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+      </div>
+    </div>
+
+    <p class="note">Screens captured on the ASA AI lab under simulated attack traffic. Internal addresses masked.</p>
+  </main>
+
+  <footer>© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+</body>
+</html>

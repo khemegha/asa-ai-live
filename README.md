@@ -1,6 +1,40 @@
 # ASA AI · SENTINEL AI & AI SOC Analyst
 
 <!-- ASA-OBS-SOVEREIGN:START -->
+<!-- ASA-VOIP-FRAUD:START -->
+## ☎️ VoIP Anti-Fraud: stop toll fraud before the bill lands
+
+[![VoIP Anti-Fraud Platform](assets/voip-antifraud/og-voip-antifraud.png)](https://demo.asa-ai.fr/voip-anti-fraud.html)
+
+**Toll fraud hits at 3 a.m. Your AI is already awake.**
+Fraudsters brute-force a SIP extension on a Friday night and pump premium-rate calls all weekend. Our anti-fraud platform risk-scores your SIP traffic continuously and flags the attack while it is happening, **100% on your own infrastructure**. Your call records are personal data: they never leave your walls.
+
+- **GuardVoIP · AI Powered**: ML risk scoring with ALLOW / REVIEW / BLOCK decisions, ~25 ms p95
+- **Shadow mode**: see what would have been blocked on your real traffic, then switch on enforcement
+- **VoIP Threat Sentinel**: 24/7 SIP security monitoring with a consolidated risk score
+- **Catches** toll fraud & IRSF, SIP brute force, scanning & enumeration, off-hours abuse, spoofing, malformed SIP
+- **Works with** Asterisk, Kamailio and standard SIP endpoints
+
+![Risk score overview](assets/voip-antifraud/00-risk-score-overview.png)
+
+| GuardVoIP · scoring & shadow decisions | GuardVoIP · live SIP telemetry |
+|---|---|
+| ![Scoring and shadow decisions](assets/voip-antifraud/01-guardvoip-scoring-shadow.png) | ![Live SIP telemetry](assets/voip-antifraud/02-guardvoip-sip-telemetry.png) |
+| **GuardVoIP · anomalies & ML** | **GuardVoIP · one hour under attack** |
+| ![Anomalies and ML](assets/voip-antifraud/03-guardvoip-anomalies-ml.png) | ![One hour under attack](assets/voip-antifraud/04-guardvoip-live-hour.png) |
+| **VoIP Threat Sentinel · SIP security** | **VoIP Threat Sentinel · fraud indicators** |
+| ![SIP security](assets/voip-antifraud/05-sentinel-sip-security.png) | ![Fraud indicators and top talkers](assets/voip-antifraud/06-sentinel-fraud-indicators-top-talkers.png) |
+| **VoIP Threat Sentinel · suspicious events** | |
+| ![Suspicious events](assets/voip-antifraud/07-sentinel-suspicious-events.png) | |
+
+<sub>Screens from the ASA AI lab under simulated attack traffic; internal addresses masked.</sub>
+
+### 👉 [See the full tour](https://demo.asa-ai.fr/voip-anti-fraud.html) · [Book your demo](https://demo.asa-ai.fr/demo.html) · [Join the live session](https://demo.asa-ai.fr/register.html)
+📧 contact@asa-ai.fr · 💬 WhatsApp +33 6 51 81 53 90
+
+---
+<!-- ASA-VOIP-FRAUD:END -->
+
 ## 🛡️ Sovereign AI Observability: your AI telemetry stays home, not in a SaaS
 
 [![Sovereign AI Observability](assets/observability-sovereign/og-sovereign-observability.png)](https://demo.asa-ai.fr/sentinel-observability.html)
