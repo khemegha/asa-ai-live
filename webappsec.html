@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebAppSec — Web Application Security Audit | ASA AI</title>
+<meta name="description" content="WebAppSec chains reconnaissance, DAST, SAST, CVE correlation and component analysis in a single launch, re-tests every finding and delivers one board-ready report per application.">
+<meta name="keywords" content="web application security audit, DAST, SAST, OWASP ZAP, SonarQube, Nmap, CVE correlation, SCA, OWASP Top 10, OWASP ASVS, WSTG, CVSS, penetration test report">
+<link rel="canonical" href="https://demo.asa-ai.fr/webappsec.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Five scanners. One report your CISO can act on.">
+<meta property="og:description" content="Recon, DAST, SAST, CVE and SCA in one launch. Every finding re-tested, false positives removed, OWASP Top 10 mapped. 5 free scans.">
+<meta property="og:url" content="https://demo.asa-ai.fr/webappsec.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/webappsec/og-webappsec.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/webappsec/og-webappsec.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:800px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .hero-shot{margin:44px auto 0;max-width:900px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-shot img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:44px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800}
+  .stat span{color:var(--mut);font-size:14px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:760px;margin:14px auto 0}
+  .tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+  .test{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .test small{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);margin-bottom:6px}
+  .test h3{font-size:18px;margin-bottom:6px}
+  .test p{color:var(--mut);font-size:15px}
+  .step{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:center;margin-top:56px}
+  .step.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .step.rev .txt{order:2}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--mag);font-weight:800;margin-bottom:14px}
+  .step h3{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;margin-bottom:10px}
+  .step p{color:var(--mut)}
+  .step figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111217;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .step img{display:block;width:100%;height:auto}
+  .report .cta-row{margin-top:24px}
+  .step figure.doc{max-width:420px;justify-self:center;width:100%}
+  .report{max-width:760px;margin:36px auto 0;border-radius:20px;padding:32px;border:1px solid rgba(214,36,122,.6);
+          background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .checks{list-style:none;display:grid;gap:14px}
+  .checks li{padding-left:32px;position:relative;color:var(--mut)}
+  .checks li strong{color:var(--txt)}
+  .checks li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chips span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .card{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+  .card.hl{border-color:rgba(214,36,122,.6);background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .card h3{font-size:20px;margin-bottom:14px}
+  .card ol{padding-left:22px;display:grid;gap:10px;color:var(--mut)}
+  .card ol strong,.card p strong{color:var(--txt)}
+  .card p{color:var(--mut);margin-top:14px}
+  .legal{margin-top:28px;border:1px solid rgba(240,80,90,.45);background:rgba(240,80,90,.08);border-radius:16px;padding:18px 22px;color:var(--mut);text-align:center}
+  .legal strong{color:var(--txt)}
+  .contact{margin:84px 0 0;padding:52px 24px;border-radius:24px;border:1px solid var(--line);text-align:center;
+           background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .contact p{color:var(--mut);margin-top:12px}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px auto 0;max-width:900px}
+  .way{background:rgba(14,13,26,.55);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);display:block}
+  .way small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+  .way b{font-size:17px;word-break:break-word}
+  .note{color:var(--mut);font-size:13px;text-align:center;margin-top:40px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 0 40px}
+  @media (max-width:860px){.step,.step.rev{grid-template-columns:1fr;gap:20px}.step.rev .txt{order:0}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" href="demo.html?p=webappsec" data-i18n="hdr">Request a license key</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow" data-i18n="eyebrow">Web application security · OWASP Top 10</span>
+      <h1 data-i18n="h1">Five scanners.<br><span class="grad">One report your CISO can act on.</span></h1>
+      <p class="lead" data-i18n="lead">Running Nmap, a DAST, a SAST and a CVE lookup separately gives you four noisy outputs and no verdict. <strong>WebAppSec chains them in a single launch, re-tests every finding, drops the false positives and delivers one board-ready report per application.</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=webappsec" data-i18n="cta_key">Request your license key →</a>
+        <a class="btn btn-sec" href="assets/webappsec/WebAppSec-Report-SPECIMEN.pdf" target="_blank" rel="noopener" data-i18n="cta_spec">Download a sample report</a>
+      </div>
+      <div class="hero-shot"><img src="assets/webappsec/01-interface.png" alt="ASA AI WebAppSec: scope, modules and live scan log"></div>
+      <div class="stats">
+        <div class="stat"><b>5</b><span data-i18n="st1">security layers chained in one launch</span></div>
+        <div class="stat"><b>3</b><span data-i18n="st2">grades per finding: confirmed, to verify, false positive</span></div>
+        <div class="stat"><b>OWASP</b><span data-i18n="st3">Top 10 2021 mapping and ASVS / WSTG coverage</span></div>
+        <div class="stat"><b>5</b><span data-i18n="st4">free scans per license key</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2 data-i18n="h2a">One launch. <span class="grad">Five complementary layers.</span></h2>
+      <p class="sub" data-i18n="suba">Each layer sees what the others miss. Together they cover the exposed surface, the running application, the code and its dependencies.</p>
+      <div class="tests">
+        <div class="test"><small>Nmap + NSE</small><h3 data-i18n="m1h">Reconnaissance</h3><p data-i18n="m1p">Exposed ports and services, TLS / SSL posture, HTTP methods and CORS policy.</p></div>
+        <div class="test"><small>OWASP ZAP</small><h3 data-i18n="m2h">Dynamic testing (DAST)</h3><p data-i18n="m2p">Live application vulnerabilities: injection, XSS, misconfiguration and more.</p></div>
+        <div class="test"><small>SonarQube</small><h3 data-i18n="m3h">Static analysis (SAST)</h3><p data-i18n="m3p">Code-level weaknesses and hard-coded secrets, from the matching source archive.</p></div>
+        <div class="test"><small>NVD / CVE</small><h3 data-i18n="m4h">Known vulnerabilities</h3><p data-i18n="m4p">Version-based CVE correlation, filtered so unreliable matches never reach the report.</p></div>
+        <div class="test"><small>SCA</small><h3 data-i18n="m5h">Third-party components</h3><p data-i18n="m5p">Vulnerable and outdated dependencies shipped with the application.</p></div>
+        <div class="test"><small data-i18n="m6s">Qualification</small><h3 data-i18n="m6h">Re-test &amp; grading</h3><p data-i18n="m6p">Every finding is re-tested, false positives are removed and the global risk is recomputed on confirmed findings only.</p></div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 data-i18n="h2b">Set the scope. Launch. <span class="grad">Hand over the report.</span></h2>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">1</span>
+          <h3 data-i18n="s1h">Define the engagement</h3>
+          <p data-i18n="s1p">Target URLs, auditor, authorization number, black-box or white-box scan, and the modules to run. A pre-flight check confirms every engine is ready before the first request.</p>
+        </div>
+        <figure><img src="assets/webappsec/01-interface.png" alt="Engagement setup and pre-flight check" loading="lazy"></figure>
+      </div>
+
+      <div class="step rev">
+        <div class="txt">
+          <span class="num">2</span>
+          <h3 data-i18n="s2h">Read the verdict first</h3>
+          <p data-i18n="s2p">The executive summary gives management the global risk level, the severity matrix and the OWASP Top 10 2021 overview on a single page.</p>
+        </div>
+        <figure class="doc"><img src="assets/webappsec/03-report-summary.png" alt="Executive summary with risk matrix and OWASP Top 10 overview" loading="lazy"></figure>
+      </div>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">3</span>
+          <h3 data-i18n="s3h">Fix with evidence in hand</h3>
+          <p data-i18n="s3p">Each finding carries its description, CVSS v3.1 score, OWASP reference, impact, proof, remediation and validation status, so developers know exactly what to change.</p>
+        </div>
+        <figure class="doc"><img src="assets/webappsec/04-report-finding.png" alt="Detailed finding with CVSS score, proof and remediation" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2c">A deliverable, <span class="grad">not a pile of scanner exports.</span></h2>
+      <div class="report">
+        <ul class="checks">
+          <li data-i18n="r1"><strong>Premium cover page</strong>, scope and authorization on record.</li>
+          <li data-i18n="r2"><strong>Executive summary</strong> with the global risk and severity matrix.</li>
+          <li data-i18n="r3"><strong>OWASP Top 10 2021 mapping</strong> and ASVS / WSTG coverage matrix.</li>
+          <li data-i18n="r4"><strong>Graded findings</strong> with CVSS score, proof and remediation.</li>
+          <li data-i18n="r5"><strong>Prioritized remediation plan</strong> to close the audit.</li>
+          <li data-i18n="r6"><strong>Word (.docx)</strong>, ready for a CISO or a compliance file.</li>
+        </ul>
+        <div class="chips"><span>OWASP Top 10 2021</span><span>OWASP ASVS</span><span>OWASP WSTG</span><span>CVSS v3.1</span><span>CWE</span></div>
+        <div class="cta-row" style="justify-content:flex-start"><a class="btn btn-sec" href="assets/webappsec/WebAppSec-Report-SPECIMEN.pdf" target="_blank" rel="noopener" data-i18n="cta_spec2">Download the 74-page sample report (PDF)</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2d">Try it on your own applications. <span class="grad">5 scans, free.</span></h2>
+      <div class="duo">
+        <div class="card hl">
+          <h3 data-i18n="a_h">Get your license key</h3>
+          <ol>
+            <li data-i18n="a1">Request your key with a <strong>business e-mail</strong> and phone number.</li>
+            <li data-i18n="a2">Our team validates your request.</li>
+            <li data-i18n="a3">You receive your <strong>license key</strong> and the download by e-mail.</li>
+            <li data-i18n="a4">Enter the key the first time you launch the tool.</li>
+          </ol>
+          <p data-i18n="a_p">Each key allows <strong>5 scans</strong>, counted server-side, and is bound to one workstation. Need more, or an audit run by our team? Just ask.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="q_h">Requirements</h3>
+          <ol>
+            <li data-i18n="q1">Windows 10 / 11 or Windows Server, 64-bit.</li>
+            <li data-i18n="q2">Network access to the target application.</li>
+            <li data-i18n="q3"><strong>Prior written authorization</strong> from the owner of the systems under test.</li>
+          </ol>
+          <p data-i18n="q_p">The tool runs on your workstation. Reports are generated locally.</p>
+        </div>
+      </div>
+      <div class="legal" data-i18n="legal"><strong>Authorized use only.</strong> Testing third-party applications without written authorization is illegal. By using the tool, you certify that you hold an explicit mandate for the audited scope.</div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2 data-i18n="h2e">Know where your web apps stand. <span class="grad">Before an attacker tells you.</span></h2>
+      <p data-i18n="contactp">Request your key and run your first audit today, or let our team run it with you.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=webappsec" data-i18n="cta_key">Request your license key →</a>
+        <a class="btn btn-sec" href="demo.html?p=webappsec-demo" data-i18n="cta_demo">Book a demo</a>
+      </div>
+      <div class="ways">
+        <a class="way" href="demo.html?p=webappsec-demo"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=WebAppSec"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="note">Screens and sample report produced on the ASA AI lab against intentionally vulnerable applications. Source code is not distributed.</p>
+  </main>
+
+  <footer data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "title": "WebAppSec — Audit de sécurité des applications web | ASA AI",
+  "desc": "WebAppSec enchaîne reconnaissance, DAST, SAST, corrélation CVE et analyse des composants en un seul lancement, re-teste chaque constat et livre un rapport prêt pour la direction par application.",
+  "hdr": "Demander une clé de licence",
+  "eyebrow": "Sécurité des applications web · OWASP Top 10",
+  "h1": "Cinq scanners.<br><span class=\"grad\">Un rapport sur lequel votre RSSI peut agir.</span>",
+  "lead": "Lancer séparément Nmap, un DAST, un SAST et une recherche de CVE, c'est quatre sorties bruitées et aucun verdict. <strong>WebAppSec les enchaîne en un seul lancement, re-teste chaque constat, écarte les faux positifs et livre un rapport prêt pour la direction par application.</strong>",
+  "cta_key": "Demander votre clé de licence →",
+  "cta_spec": "Télécharger un exemple de rapport",
+  "st1": "couches de sécurité enchaînées en un lancement",
+  "st2": "qualifications par constat : confirmé, à vérifier, faux positif",
+  "st3": "mapping Top 10 2021 et couverture ASVS / WSTG",
+  "st4": "scans offerts par clé de licence",
+  "h2a": "Un lancement. <span class=\"grad\">Cinq couches complémentaires.</span>",
+  "suba": "Chaque couche voit ce que les autres manquent. Ensemble, elles couvrent la surface exposée, l'application en fonctionnement, le code et ses dépendances.",
+  "m1h": "Reconnaissance",
+  "m1p": "Ports et services exposés, posture TLS / SSL, méthodes HTTP et politique CORS.",
+  "m2h": "Tests dynamiques (DAST)",
+  "m2p": "Vulnérabilités de l'application en fonctionnement : injection, XSS, mauvaise configuration et plus.",
+  "m3h": "Analyse statique (SAST)",
+  "m3p": "Faiblesses du code et secrets codés en dur, à partir de l'archive source associée.",
+  "m4h": "Vulnérabilités connues",
+  "m4p": "Corrélation CVE par version, filtrée pour qu'aucune correspondance douteuse n'arrive dans le rapport.",
+  "m5h": "Composants tiers",
+  "m5p": "Dépendances vulnérables et obsolètes embarquées dans l'application.",
+  "m6s": "Qualification",
+  "m6h": "Re-test &amp; qualification",
+  "m6p": "Chaque constat est re-testé, les faux positifs sont écartés et le risque global est recalculé sur les seuls constats confirmés.",
+  "h2b": "Fixez le périmètre. Lancez. <span class=\"grad\">Remettez le rapport.</span>",
+  "s1h": "Définissez l'engagement",
+  "s1p": "URL cibles, auditeur, numéro d'autorisation, scan boîte noire ou boîte blanche, et modules à exécuter. Une vérification préalable confirme que chaque moteur est prêt avant la première requête.",
+  "s2h": "Lisez d'abord le verdict",
+  "s2p": "La synthèse exécutive donne à la direction le niveau de risque global, la matrice des sévérités et la vue d'ensemble OWASP Top 10 2021 sur une seule page.",
+  "s3h": "Corrigez preuves en main",
+  "s3p": "Chaque constat porte sa description, son score CVSS v3.1, sa référence OWASP, son impact, sa preuve, sa remédiation et son statut de validation : les développeurs savent exactement quoi changer.",
+  "h2c": "Un livrable, <span class=\"grad\">pas une pile d'exports de scanners.</span>",
+  "r1": "<strong>Page de garde premium</strong>, périmètre et autorisation consignés.",
+  "r2": "<strong>Synthèse exécutive</strong> avec le risque global et la matrice des sévérités.",
+  "r3": "<strong>Mapping OWASP Top 10 2021</strong> et matrice de couverture ASVS / WSTG.",
+  "r4": "<strong>Constats qualifiés</strong> avec score CVSS, preuve et remédiation.",
+  "r5": "<strong>Plan de correction priorisé</strong> pour clore l'audit.",
+  "r6": "<strong>Word (.docx)</strong>, prêt pour un RSSI ou un dossier de conformité.",
+  "cta_spec2": "Télécharger l'exemple de rapport de 74 pages (PDF)",
+  "h2d": "Essayez-le sur vos propres applications. <span class=\"grad\">5 scans offerts.</span>",
+  "a_h": "Obtenez votre clé de licence",
+  "a1": "Demandez votre clé avec un <strong>e-mail professionnel</strong> et un numéro de téléphone.",
+  "a2": "Notre équipe valide votre demande.",
+  "a3": "Vous recevez votre <strong>clé de licence</strong> et le téléchargement par e-mail.",
+  "a4": "Saisissez la clé au premier lancement de l'outil.",
+  "a_p": "Chaque clé autorise <strong>5 scans</strong>, décomptés côté serveur, et est liée à un poste. Besoin de plus, ou d'un audit réalisé par notre équipe ? Il suffit de nous le demander.",
+  "q_h": "Prérequis",
+  "q1": "Windows 10 / 11 ou Windows Server, 64 bits.",
+  "q2": "Un accès réseau à l'application cible.",
+  "q3": "<strong>Autorisation écrite préalable</strong> du propriétaire des systèmes testés.",
+  "q_p": "L'outil tourne sur votre poste. Les rapports sont générés en local.",
+  "legal": "<strong>Usage autorisé uniquement.</strong> Tester des applications tierces sans autorisation écrite est illégal. En utilisant l'outil, vous certifiez disposer d'un mandat explicite sur le périmètre audité.",
+  "h2e": "Sachez où en sont vos applications web. <span class=\"grad\">Avant qu'un attaquant ne vous le dise.</span>",
+  "contactp": "Demandez votre clé et lancez votre premier audit dès aujourd'hui, ou laissez notre équipe le réaliser avec vous.",
+  "cta_demo": "Réserver une démo",
+  "w1": "Prendre rendez-vous",
+  "w2": "Écrivez-nous",
+  "note": "Écrans et exemple de rapport produits sur le lab ASA AI contre des applications volontairement vulnérables. Le code source n'est pas distribué.",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr"
+ },
+ "es": {
+  "title": "WebAppSec — Auditoría de seguridad de aplicaciones web | ASA AI",
+  "desc": "WebAppSec encadena reconocimiento, DAST, SAST, correlación CVE y análisis de componentes en un solo lanzamiento, vuelve a probar cada hallazgo y entrega un informe listo para la dirección por aplicación.",
+  "hdr": "Solicitar una clave de licencia",
+  "eyebrow": "Seguridad de aplicaciones web · OWASP Top 10",
+  "h1": "Cinco escáneres.<br><span class=\"grad\">Un informe con el que su CISO puede actuar.</span>",
+  "lead": "Lanzar por separado Nmap, un DAST, un SAST y una búsqueda de CVE da cuatro salidas ruidosas y ningún veredicto. <strong>WebAppSec los encadena en un solo lanzamiento, vuelve a probar cada hallazgo, descarta los falsos positivos y entrega un informe listo para la dirección por aplicación.</strong>",
+  "cta_key": "Solicite su clave de licencia →",
+  "cta_spec": "Descargar un informe de ejemplo",
+  "st1": "capas de seguridad encadenadas en un lanzamiento",
+  "st2": "calificaciones por hallazgo: confirmado, a verificar, falso positivo",
+  "st3": "mapeo Top 10 2021 y cobertura ASVS / WSTG",
+  "st4": "escaneos gratis por clave de licencia",
+  "h2a": "Un lanzamiento. <span class=\"grad\">Cinco capas complementarias.</span>",
+  "suba": "Cada capa ve lo que las demás no ven. Juntas cubren la superficie expuesta, la aplicación en funcionamiento, el código y sus dependencias.",
+  "m1h": "Reconocimiento",
+  "m1p": "Puertos y servicios expuestos, postura TLS / SSL, métodos HTTP y política CORS.",
+  "m2h": "Pruebas dinámicas (DAST)",
+  "m2p": "Vulnerabilidades de la aplicación en funcionamiento: inyección, XSS, mala configuración y más.",
+  "m3h": "Análisis estático (SAST)",
+  "m3p": "Debilidades del código y secretos incrustados, a partir del archivo fuente asociado.",
+  "m4h": "Vulnerabilidades conocidas",
+  "m4p": "Correlación CVE por versión, filtrada para que ninguna coincidencia dudosa llegue al informe.",
+  "m5h": "Componentes de terceros",
+  "m5p": "Dependencias vulnerables y obsoletas incluidas en la aplicación.",
+  "m6s": "Calificación",
+  "m6h": "Reprueba y calificación",
+  "m6p": "Cada hallazgo se vuelve a probar, los falsos positivos se descartan y el riesgo global se recalcula solo con los hallazgos confirmados.",
+  "h2b": "Fije el alcance. Lance. <span class=\"grad\">Entregue el informe.</span>",
+  "s1h": "Defina el encargo",
+  "s1p": "URL objetivo, auditor, número de autorización, escaneo de caja negra o caja blanca y módulos a ejecutar. Una comprobación previa confirma que cada motor está listo antes de la primera petición.",
+  "s2h": "Lea primero el veredicto",
+  "s2p": "El resumen ejecutivo ofrece a la dirección el nivel de riesgo global, la matriz de gravedad y la visión general OWASP Top 10 2021 en una sola página.",
+  "s3h": "Corrija con las pruebas en la mano",
+  "s3p": "Cada hallazgo incluye descripción, puntuación CVSS v3.1, referencia OWASP, impacto, prueba, remediación y estado de validación: los desarrolladores saben exactamente qué cambiar.",
+  "h2c": "Un entregable, <span class=\"grad\">no un montón de exportaciones de escáneres.</span>",
+  "r1": "<strong>Portada premium</strong>, alcance y autorización registrados.",
+  "r2": "<strong>Resumen ejecutivo</strong> con el riesgo global y la matriz de gravedad.",
+  "r3": "<strong>Mapeo OWASP Top 10 2021</strong> y matriz de cobertura ASVS / WSTG.",
+  "r4": "<strong>Hallazgos calificados</strong> con puntuación CVSS, prueba y remediación.",
+  "r5": "<strong>Plan de remediación priorizado</strong> para cerrar la auditoría.",
+  "r6": "<strong>Word (.docx)</strong>, listo para un CISO o un expediente de cumplimiento.",
+  "cta_spec2": "Descargar el informe de ejemplo de 74 páginas (PDF)",
+  "h2d": "Pruébelo en sus propias aplicaciones. <span class=\"grad\">5 escaneos gratis.</span>",
+  "a_h": "Obtenga su clave de licencia",
+  "a1": "Solicite su clave con un <strong>e-mail profesional</strong> y un número de teléfono.",
+  "a2": "Nuestro equipo valida su solicitud.",
+  "a3": "Recibe su <strong>clave de licencia</strong> y la descarga por e-mail.",
+  "a4": "Introduzca la clave la primera vez que inicie la herramienta.",
+  "a_p": "Cada clave permite <strong>5 escaneos</strong>, contados en el servidor, y está vinculada a un equipo. ¿Necesita más o una auditoría realizada por nuestro equipo? Pregúntenos.",
+  "q_h": "Requisitos",
+  "q1": "Windows 10 / 11 o Windows Server, 64 bits.",
+  "q2": "Acceso de red a la aplicación objetivo.",
+  "q3": "<strong>Autorización previa por escrito</strong> del propietario de los sistemas probados.",
+  "q_p": "La herramienta se ejecuta en su equipo. Los informes se generan en local.",
+  "legal": "<strong>Solo uso autorizado.</strong> Probar aplicaciones de terceros sin autorización por escrito es ilegal. Al usar la herramienta, usted certifica que dispone de un mandato explícito sobre el alcance auditado.",
+  "h2e": "Sepa dónde están sus aplicaciones web. <span class=\"grad\">Antes de que se lo diga un atacante.</span>",
+  "contactp": "Solicite su clave y lance su primera auditoría hoy, o deje que nuestro equipo la realice con usted.",
+  "cta_demo": "Reservar una demo",
+  "w1": "Reservar una reunión",
+  "w2": "Escríbanos",
+  "note": "Pantallas e informe de ejemplo producidos en el laboratorio de ASA AI contra aplicaciones intencionadamente vulnerables. El código fuente no se distribuye.",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr"
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  document.querySelectorAll('a[href^="demo.html"]').forEach(function(a){ a.setAttribute("href", a.getAttribute("href") + "&lang=" + lang); });
+})();
+</script>
+</body>
+</html>
