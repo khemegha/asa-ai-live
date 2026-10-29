@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOC Automation — AI SOC Analyst | ASA AI</title>
+<meta name="description" content="The AI SOC Analyst queries your SIEM in plain language, correlates, enriches and proposes the response in seconds. Your analyst approves. 100% on-prem, human in the loop.">
+<meta name="keywords" content="SOC automation, AI SOC analyst, autonomous SOC, alert triage, SIEM AI, threat hunting, incident response, SOAR, MISP, YARA, human in the loop, NIS 2, DORA, sovereign AI">
+<link rel="canonical" href="https://demo.asa-ai.fr/soc-automation.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Attackers don't work 9 to 5. Neither should your SOC.">
+<meta property="og:description" content="The AI SOC Analyst reads your SIEM, correlates, enriches and proposes the response in seconds. Your analyst approves. On-prem, human in the loop.">
+<meta property="og:url" content="https://demo.asa-ai.fr/soc-automation.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/soc-automation/og-soc-automation.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/soc-automation/og-soc-automation.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:800px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .hero-shot{margin:44px auto 0;max-width:900px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-shot img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:44px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800}
+  .stat span{color:var(--mut);font-size:14px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:760px;margin:14px auto 0}
+  .tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+  .test{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .test small{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);margin-bottom:6px}
+  .test h3{font-size:18px;margin-bottom:6px}
+  .test p{color:var(--mut);font-size:15px}
+  .step{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:center;margin-top:56px}
+  .step.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .step.rev .txt{order:2}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--mag);font-weight:800;margin-bottom:14px}
+  .step h3{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;margin-bottom:10px}
+  .step p{color:var(--mut)}
+  .step figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111217;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .step img{display:block;width:100%;height:auto}
+  .report{max-width:760px;margin:36px auto 0;border-radius:20px;padding:32px;border:1px solid rgba(214,36,122,.6);
+          background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .checks{list-style:none;display:grid;gap:14px}
+  .checks li{padding-left:32px;position:relative;color:var(--mut)}
+  .checks li strong{color:var(--txt)}
+  .checks li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chips span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .card{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+  .card.hl{border-color:rgba(214,36,122,.6);background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .card h3{font-size:20px;margin-bottom:14px}
+  .card ol{padding-left:22px;display:grid;gap:10px;color:var(--mut)}
+  .card ol strong,.card p strong{color:var(--txt)}
+  .card p{color:var(--mut);margin-top:14px}
+  .legal{margin-top:28px;border:1px solid rgba(240,80,90,.45);background:rgba(240,80,90,.08);border-radius:16px;padding:18px 22px;color:var(--mut);text-align:center}
+  .legal strong{color:var(--txt)}
+  .contact{margin:84px 0 0;padding:52px 24px;border-radius:24px;border:1px solid var(--line);text-align:center;
+           background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .contact p{color:var(--mut);margin-top:12px}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px auto 0;max-width:900px}
+  .way{background:rgba(14,13,26,.55);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);display:block}
+  .way small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+  .way b{font-size:17px;word-break:break-word}
+  .note{color:var(--mut);font-size:13px;text-align:center;margin-top:40px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 0 40px}
+  @media (max-width:860px){.step,.step.rev{grid-template-columns:1fr;gap:20px}.step.rev .txt{order:0}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%}}
+  .card .checks{margin-top:4px}
+  .checks.bad li:before{content:"✕";color:var(--bad)}
+  .step figure.doc{max-width:460px;justify-self:center;width:100%}
+  .tests{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" href="demo.html?p=soc" data-i18n="hdr">Book a demo</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow" data-i18n="eyebrow">SOC Automation · AI SOC Analyst</span>
+      <h1 data-i18n="h1">Attackers don't work 9 to 5.<br><span class="grad">Neither should your SOC.</span></h1>
+      <p class="lead" data-i18n="lead">Your analysts drown in alerts while the one that matters waits in the queue. <strong>The AI SOC Analyst reads your SIEM, correlates, enriches and proposes the response in seconds. Your analyst approves. Nothing happens without a human yes.</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=soc" data-i18n="cta_demo">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html" data-reg data-i18n="cta_live">Join the next live session</a>
+      </div>
+      <div class="hero-shot"><img src="assets/soc-automation/01-approve.png" alt="AI SOC Analyst proposes an isolation, the analyst approves, the decision is logged"></div>
+      <div class="stats">
+        <div class="stat"><b>&lt; 30 s</b><span data-i18n="st1">from question to verdict, in plain language</span></div>
+        <div class="stat"><b>0</b><span data-i18n="st2">query language to learn, no rule to write by hand</span></div>
+        <div class="stat"><b>100 %</b><span data-i18n="st3">of actions approved by a human before execution</span></div>
+        <div class="stat"><b>24/7</b><span data-i18n="st4">triage, without burnt-out night shifts</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2 data-i18n="h2a">AI does the grind. <span class="grad">You make the call.</span></h2>
+      <p class="sub" data-i18n="suba">Tier-1 work is reading, searching, cross-checking and writing it up. That is exactly what an agent does best. Judgement, accountability and the final decision stay with your team.</p>
+      <div class="duo">
+        <div class="card">
+          <h3 data-i18n="them_h">Your SOC today</h3>
+          <ul class="checks bad">
+            <li data-i18n="them1"><strong>Thousands of alerts a day</strong>, most of them noise, triaged by hand.</li>
+            <li data-i18n="them2"><strong>Query languages</strong> only two people on the team really master.</li>
+            <li data-i18n="them3"><strong>Context scattered</strong> across the SIEM, the CTI platform and the ticketing tool.</li>
+            <li data-i18n="them4"><strong>Monday spent copy-pasting</strong> the weekly report for management.</li>
+          </ul>
+        </div>
+        <div class="card hl">
+          <h3 data-i18n="us_h">With the AI SOC Analyst</h3>
+          <ul class="checks">
+            <li data-i18n="us1"><strong>Ask in plain language</strong>, get the correlated answer with its evidence.</li>
+            <li data-i18n="us2"><strong>SIEM, threat intel and CVEs</strong> queried together, read-only.</li>
+            <li data-i18n="us3"><strong>A response proposed</strong> with an ID, approved by your analyst, then logged.</li>
+            <li data-i18n="us4"><strong>The board report written</strong> before you arrive on Monday.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 data-i18n="h2b">Ask a question. <span class="grad">Get the attacker back.</span></h2>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">1</span>
+          <h3 data-i18n="s1h">Your SIEM finally answers questions</h3>
+          <p data-i18n="s1p">"Any brute-force attempts last night?" The agent queries the SIEM across every monitored host, correlates authentication events and returns targets, sources and severity, with the remediation to approve.</p>
+        </div>
+        <figure class="doc"><img src="assets/soc-automation/03-ask-siem.png" alt="The agent reconstructs a brute-force attack path from SIEM logs" loading="lazy"></figure>
+      </div>
+
+      <div class="step rev">
+        <div class="txt">
+          <span class="num">2</span>
+          <h3 data-i18n="s2h">Minutes, not months</h3>
+          <p data-i18n="s2p">A domain admin created at 2:47 a.m., files leaving for an unknown cloud, security logs wiped. The agent links the signals, proposes containment and keeps the full timeline for your incident report.</p>
+        </div>
+        <figure class="doc"><img src="assets/soc-automation/02-chat-exfiltration.png" alt="The agent detects an off-hours admin account and data exfiltration" loading="lazy"></figure>
+      </div>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">3</span>
+          <h3 data-i18n="s3h">Your board reads one page</h3>
+          <p data-i18n="s3p">Alerts, vulnerabilities, authentication attacks and posture for the whole IT estate, condensed into a weekly executive summary with the decisions that need you.</p>
+        </div>
+        <figure><img src="assets/soc-automation/04-board-report.png" alt="Weekly SOC report for management on a single page" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2c">Eight skills. <span class="grad">One analyst that never sleeps.</span></h2>
+      <div class="tests">
+        <div class="test"><small>01</small><h3 data-i18n="k1h">Alert triage</h3><p data-i18n="k1p">Prioritizes what matters, explains why, discards the noise.</p></div>
+        <div class="test"><small>02</small><h3 data-i18n="k2h">Vulnerabilities &amp; compliance</h3><p data-i18n="k2p">CVEs per machine with CVSS score and vendor fix status, never declared fixed without proof.</p></div>
+        <div class="test"><small>03</small><h3 data-i18n="k3h">Threat intelligence</h3><p data-i18n="k3p">IOCs checked against MISP and reputation sources, then pushed to the SIEM.</p></div>
+        <div class="test"><small>04</small><h3 data-i18n="k4h">Threat hunting</h3><p data-i18n="k4p">Targeted hunts and file-integrity changes across the fleet.</p></div>
+        <div class="test"><small>05</small><h3 data-i18n="k5h">Detection engineering</h3><p data-i18n="k5p">YARA rules drafted, validated against samples and goodware, then submitted for approval.</p></div>
+        <div class="test"><small>06</small><h3 data-i18n="k6h">VoIP threat analysis</h3><p data-i18n="k6p">SIP attacks and telephony fraud, a blind spot of most SOCs.</p></div>
+        <div class="test"><small>07</small><h3 data-i18n="k7h">Response</h3><p data-i18n="k7p">Block an IP, isolate a host, open a case, notify the team: proposed, approved, executed, logged. Critical hosts protected.</p></div>
+        <div class="test"><small>08</small><h3 data-i18n="k8h">Reporting &amp; audit</h3><p data-i18n="k8p">Weekly management report and a chained audit log of every agent action.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2d">Built for regulated teams. <span class="grad">Not for the cloud of a stranger.</span></h2>
+      <div class="duo">
+        <div class="card hl">
+          <h3 data-i18n="g_h">Human in the loop, by design</h3>
+          <ul class="checks">
+            <li data-i18n="g1"><strong>Read-only access</strong> to your SIEM and threat intel by default.</li>
+            <li data-i18n="g2"><strong>Every action needs approval</strong>, with an ID you can trace.</li>
+            <li data-i18n="g3"><strong>Protected hosts</strong> the agent can never touch.</li>
+            <li data-i18n="g4"><strong>Every prompt screened</strong> by our AI guardrail before it reaches the model.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="o_h">Sovereign and on-prem</h3>
+          <p style="margin-top:0" data-i18n="o_p">The agent runs on your infrastructure with local language models. Your logs, your alerts and your incidents never leave your walls.</p>
+          <div class="chips"><span>NIS 2</span><span>DORA</span><span data-i18n="gdpr">GDPR</span><span>MITRE ATT&amp;CK</span><span>OWASP LLM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2 data-i18n="h2e">Monday, 8 a.m. <span class="grad">Your SOC already did the night shift.</span></h2>
+      <p data-i18n="contactp">Book a 30-minute demo on a real SIEM, or join our next live session with the team.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=soc" data-i18n="cta_demo">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html" data-reg data-i18n="cta_live">Join the next live session</a>
+      </div>
+      <div class="ways">
+        <a class="way" href="demo.html?p=soc"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=AI%20SOC%20Analyst"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="note">Conversations shown are illustrative scenarios built on our lab SIEM. Sensitive identifiers redacted.</p>
+  </main>
+
+  <footer data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "title": "Automatisation du SOC — AI SOC Analyst | ASA AI",
+  "desc": "L'AI SOC Analyst interroge votre SIEM en langage naturel, corrèle, enrichit et propose la réponse en quelques secondes. Votre analyste valide. 100 % on-prem, humain dans la boucle.",
+  "hdr": "Réserver une démo",
+  "eyebrow": "Automatisation du SOC · AI SOC Analyst",
+  "h1": "Les attaquants ne font pas les 35 heures.<br><span class=\"grad\">Votre SOC non plus.</span>",
+  "lead": "Vos analystes se noient sous les alertes pendant que celle qui compte attend dans la file. <strong>L'AI SOC Analyst lit votre SIEM, corrèle, enrichit et propose la réponse en quelques secondes. Votre analyste valide. Rien ne se passe sans un « oui » humain.</strong>",
+  "cta_demo": "Réserver votre démo →",
+  "cta_live": "Participer à la prochaine session live",
+  "st1": "de la question au verdict, en langage naturel",
+  "st2": "langage de requête à apprendre, aucune règle à écrire à la main",
+  "st3": "des actions validées par un humain avant exécution",
+  "st4": "de triage, sans nuits d'astreinte épuisantes",
+  "h2a": "L'IA fait le travail ingrat. <span class=\"grad\">Vous prenez la décision.</span>",
+  "suba": "Le niveau 1, c'est lire, chercher, recouper et rédiger. C'est exactement ce qu'un agent fait le mieux. Le jugement, la responsabilité et la décision finale restent à votre équipe.",
+  "them_h": "Votre SOC aujourd'hui",
+  "them1": "<strong>Des milliers d'alertes par jour</strong>, en majorité du bruit, triées à la main.",
+  "them2": "<strong>Des langages de requête</strong> que seules deux personnes maîtrisent vraiment.",
+  "them3": "<strong>Un contexte éparpillé</strong> entre le SIEM, la plateforme CTI et l'outil de tickets.",
+  "them4": "<strong>Le lundi passé à copier-coller</strong> le rapport hebdo pour la direction.",
+  "us_h": "Avec l'AI SOC Analyst",
+  "us1": "<strong>Posez la question en langage naturel</strong>, obtenez la réponse corrélée avec ses preuves.",
+  "us2": "<strong>SIEM, renseignement sur la menace et CVE</strong> interrogés ensemble, en lecture seule.",
+  "us3": "<strong>Une réponse proposée</strong> avec un identifiant, validée par votre analyste, puis journalisée.",
+  "us4": "<strong>Le rapport pour la direction rédigé</strong> avant votre arrivée le lundi.",
+  "h2b": "Posez une question. <span class=\"grad\">Récupérez l'attaquant.</span>",
+  "s1h": "Votre SIEM répond enfin aux questions",
+  "s1p": "« Des tentatives de force brute cette nuit ? » L'agent interroge le SIEM sur toutes les machines surveillées, corrèle les événements d'authentification et renvoie cibles, sources et sévérité, avec la remédiation à valider.",
+  "s2h": "Des minutes, pas des mois",
+  "s2p": "Un administrateur de domaine créé à 2 h 47, des fichiers qui partent vers un cloud inconnu, des journaux de sécurité effacés. L'agent relie les signaux, propose le confinement et conserve toute la chronologie pour votre rapport d'incident.",
+  "s3h": "Votre comité de direction lit une seule page",
+  "s3p": "Alertes, vulnérabilités, attaques d'authentification et posture de tout le SI, condensées dans une synthèse hebdomadaire avec les décisions qui vous reviennent.",
+  "h2c": "Huit compétences. <span class=\"grad\">Un analyste qui ne dort jamais.</span>",
+  "k1h": "Triage des alertes",
+  "k1p": "Priorise ce qui compte, explique pourquoi, écarte le bruit.",
+  "k2h": "Vulnérabilités &amp; conformité",
+  "k2p": "CVE par machine avec score CVSS et statut du correctif éditeur, jamais déclarées corrigées sans preuve.",
+  "k3h": "Renseignement sur la menace",
+  "k3p": "IOC vérifiés dans MISP et les sources de réputation, puis poussés dans le SIEM.",
+  "k4h": "Chasse aux menaces",
+  "k4p": "Recherches ciblées et modifications d'intégrité des fichiers sur tout le parc.",
+  "k5h": "Ingénierie de détection",
+  "k5p": "Règles YARA rédigées, validées sur échantillons et fichiers sains, puis soumises à approbation.",
+  "k6h": "Analyse des menaces VoIP",
+  "k6p": "Attaques SIP et fraude téléphonique, angle mort de la plupart des SOC.",
+  "k7h": "Réponse à incident",
+  "k7p": "Bloquer une IP, isoler une machine, ouvrir un dossier, prévenir l'équipe : proposé, validé, exécuté, journalisé. Machines critiques protégées.",
+  "k8h": "Reporting &amp; audit",
+  "k8p": "Rapport hebdomadaire pour la direction et journal d'audit chaîné de chaque action de l'agent.",
+  "h2d": "Conçu pour les équipes régulées. <span class=\"grad\">Pas pour le cloud d'un inconnu.</span>",
+  "g_h": "L'humain dans la boucle, par conception",
+  "g1": "<strong>Accès en lecture seule</strong> à votre SIEM et à votre CTI par défaut.",
+  "g2": "<strong>Chaque action exige une validation</strong>, avec un identifiant traçable.",
+  "g3": "<strong>Des machines protégées</strong> auxquelles l'agent ne peut jamais toucher.",
+  "g4": "<strong>Chaque prompt contrôlé</strong> par notre garde-fou IA avant d'atteindre le modèle.",
+  "o_h": "Souverain et on-prem",
+  "o_p": "L'agent tourne sur votre infrastructure avec des modèles de langage locaux. Vos journaux, vos alertes et vos incidents ne quittent jamais vos murs.",
+  "gdpr": "RGPD",
+  "h2e": "Lundi, 8 h. <span class=\"grad\">Votre SOC a déjà fait la nuit.</span>",
+  "contactp": "Réservez une démo de 30 minutes sur un vrai SIEM, ou rejoignez notre prochaine session live avec l'équipe.",
+  "w1": "Prendre rendez-vous",
+  "w2": "Écrivez-nous",
+  "note": "Les conversations présentées sont des scénarios illustratifs construits sur le SIEM de notre lab. Identifiants sensibles masqués.",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr"
+ },
+ "es": {
+  "title": "Automatización del SOC — AI SOC Analyst | ASA AI",
+  "desc": "El AI SOC Analyst consulta su SIEM en lenguaje natural, correlaciona, enriquece y propone la respuesta en segundos. Su analista valida. 100 % on-prem, con un humano en el circuito.",
+  "hdr": "Reservar una demo",
+  "eyebrow": "Automatización del SOC · AI SOC Analyst",
+  "h1": "Los atacantes no trabajan de 9 a 5.<br><span class=\"grad\">Su SOC tampoco debería.</span>",
+  "lead": "Sus analistas se ahogan en alertas mientras la que importa espera en la cola. <strong>El AI SOC Analyst lee su SIEM, correlaciona, enriquece y propone la respuesta en segundos. Su analista aprueba. Nada ocurre sin un «sí» humano.</strong>",
+  "cta_demo": "Reserve su demo →",
+  "cta_live": "Únase a la próxima sesión en directo",
+  "st1": "de la pregunta al veredicto, en lenguaje natural",
+  "st2": "lenguaje de consulta que aprender, ninguna regla escrita a mano",
+  "st3": "de las acciones aprobadas por un humano antes de ejecutarse",
+  "st4": "de clasificación, sin guardias nocturnas agotadoras",
+  "h2a": "La IA hace el trabajo pesado. <span class=\"grad\">Usted decide.</span>",
+  "suba": "El nivel 1 consiste en leer, buscar, contrastar y redactar. Justo lo que mejor hace un agente. El criterio, la responsabilidad y la decisión final siguen en manos de su equipo.",
+  "them_h": "Su SOC hoy",
+  "them1": "<strong>Miles de alertas al día</strong>, casi todas ruido, clasificadas a mano.",
+  "them2": "<strong>Lenguajes de consulta</strong> que solo dominan dos personas del equipo.",
+  "them3": "<strong>Contexto disperso</strong> entre el SIEM, la plataforma CTI y la herramienta de tickets.",
+  "them4": "<strong>El lunes perdido copiando y pegando</strong> el informe semanal para la dirección.",
+  "us_h": "Con el AI SOC Analyst",
+  "us1": "<strong>Pregunte en lenguaje natural</strong> y obtenga la respuesta correlacionada con sus pruebas.",
+  "us2": "<strong>SIEM, inteligencia de amenazas y CVE</strong> consultados juntos, en solo lectura.",
+  "us3": "<strong>Una respuesta propuesta</strong> con un identificador, aprobada por su analista y registrada.",
+  "us4": "<strong>El informe para la dirección redactado</strong> antes de que llegue el lunes.",
+  "h2b": "Haga una pregunta. <span class=\"grad\">Recupere al atacante.</span>",
+  "s1h": "Su SIEM por fin responde preguntas",
+  "s1p": "«¿Hubo intentos de fuerza bruta anoche?» El agente consulta el SIEM en todos los equipos supervisados, correlaciona los eventos de autenticación y devuelve objetivos, orígenes y gravedad, con la remediación para aprobar.",
+  "s2h": "Minutos, no meses",
+  "s2p": "Un administrador de dominio creado a las 2:47, archivos que salen hacia una nube desconocida, registros de seguridad borrados. El agente une las señales, propone la contención y conserva toda la cronología para su informe de incidente.",
+  "s3h": "Su consejo lee una sola página",
+  "s3p": "Alertas, vulnerabilidades, ataques de autenticación y postura de todo el SI, condensados en un resumen ejecutivo semanal con las decisiones que le corresponden.",
+  "h2c": "Ocho capacidades. <span class=\"grad\">Un analista que nunca duerme.</span>",
+  "k1h": "Clasificación de alertas",
+  "k1p": "Prioriza lo importante, explica por qué y descarta el ruido.",
+  "k2h": "Vulnerabilidades y cumplimiento",
+  "k2p": "CVE por equipo con puntuación CVSS y estado del parche del fabricante, nunca declaradas corregidas sin prueba.",
+  "k3h": "Inteligencia de amenazas",
+  "k3p": "IOC verificados en MISP y fuentes de reputación, y después enviados al SIEM.",
+  "k4h": "Caza de amenazas",
+  "k4p": "Búsquedas dirigidas y cambios de integridad de archivos en todo el parque.",
+  "k5h": "Ingeniería de detección",
+  "k5p": "Reglas YARA redactadas, validadas con muestras y archivos legítimos, y enviadas para aprobación.",
+  "k6h": "Análisis de amenazas VoIP",
+  "k6p": "Ataques SIP y fraude telefónico, el punto ciego de la mayoría de los SOC.",
+  "k7h": "Respuesta a incidentes",
+  "k7p": "Bloquear una IP, aislar un equipo, abrir un caso, avisar al equipo: propuesto, aprobado, ejecutado, registrado. Equipos críticos protegidos.",
+  "k8h": "Informes y auditoría",
+  "k8p": "Informe semanal para la dirección y registro de auditoría encadenado de cada acción del agente.",
+  "h2d": "Diseñado para equipos regulados. <span class=\"grad\">No para la nube de un desconocido.</span>",
+  "g_h": "Un humano en el circuito, por diseño",
+  "g1": "<strong>Acceso de solo lectura</strong> a su SIEM y su CTI por defecto.",
+  "g2": "<strong>Cada acción requiere aprobación</strong>, con un identificador trazable.",
+  "g3": "<strong>Equipos protegidos</strong> que el agente nunca puede tocar.",
+  "g4": "<strong>Cada prompt controlado</strong> por nuestro guardarraíl de IA antes de llegar al modelo.",
+  "o_h": "Soberano y on-prem",
+  "o_p": "El agente funciona en su infraestructura con modelos de lenguaje locales. Sus registros, alertas e incidentes nunca salen de sus instalaciones.",
+  "gdpr": "RGPD",
+  "h2e": "Lunes, 8:00. <span class=\"grad\">Su SOC ya hizo el turno de noche.</span>",
+  "contactp": "Reserve una demo de 30 minutos sobre un SIEM real o únase a nuestra próxima sesión en directo con el equipo.",
+  "w1": "Reservar una reunión",
+  "w2": "Escríbanos",
+  "note": "Las conversaciones mostradas son escenarios ilustrativos construidos sobre el SIEM de nuestro laboratorio. Identificadores sensibles ocultos.",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr"
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  if (lang === "fr") document.querySelectorAll("a[data-reg]").forEach(function(a){ a.setAttribute("href","inscription.html"); });
+  document.querySelectorAll('a[href^="demo.html"]').forEach(function(a){ a.setAttribute("href", a.getAttribute("href") + "&lang=" + lang); });
+})();
+</script>
+</body>
+</html>
