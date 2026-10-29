@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoIP Security Audit Tool | ASA AI</title>
+<meta name="description" content="Non-intrusive VoIP / SIP security audit following NIST SP 800-115: 24 automated tests on IPBX, SBC, IP phones and softphones, and a branded report with the threat behind each finding and a remediation prioritized by target.">
+<meta name="keywords" content="VoIP security audit, SIP security assessment, VoIP penetration test, IPBX audit, SBC security, SIP enumeration, SRTP, NIST SP 800-115, NIST SP 800-58, ANSSI ToIP, VoIPSA, telecom security audit">
+<link rel="canonical" href="https://demo.asa-ai.fr/voip-audit.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="See your phone system the way an attacker does.">
+<meta property="og:description" content="24 automated, non-intrusive VoIP / SIP security tests and a delivery-ready audit report with prioritized remediation. NIST SP 800-115 methodology.">
+<meta property="og:url" content="https://demo.asa-ai.fr/voip-audit.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/voip-audit/og-voip-audit.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/voip-audit/og-voip-audit.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:800px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .hero-shot{margin:44px auto 0;max-width:900px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-shot img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:44px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800}
+  .stat span{color:var(--mut);font-size:14px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:760px;margin:14px auto 0}
+  .tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+  .test{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .test small{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);margin-bottom:6px}
+  .test h3{font-size:18px;margin-bottom:6px}
+  .test p{color:var(--mut);font-size:15px}
+  .step{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:center;margin-top:56px}
+  .step.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .step.rev .txt{order:2}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--mag);font-weight:800;margin-bottom:14px}
+  .step h3{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;margin-bottom:10px}
+  .step p{color:var(--mut)}
+  .step figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111217;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .step img{display:block;width:100%;height:auto}
+  .report{max-width:760px;margin:36px auto 0;border-radius:20px;padding:32px;border:1px solid rgba(214,36,122,.6);
+          background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .checks{list-style:none;display:grid;gap:14px}
+  .checks li{padding-left:32px;position:relative;color:var(--mut)}
+  .checks li strong{color:var(--txt)}
+  .checks li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chips span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .card{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+  .card.hl{border-color:rgba(214,36,122,.6);background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .card h3{font-size:20px;margin-bottom:14px}
+  .card ol{padding-left:22px;display:grid;gap:10px;color:var(--mut)}
+  .card ol strong,.card p strong{color:var(--txt)}
+  .card p{color:var(--mut);margin-top:14px}
+  .legal{margin-top:28px;border:1px solid rgba(240,80,90,.45);background:rgba(240,80,90,.08);border-radius:16px;padding:18px 22px;color:var(--mut);text-align:center}
+  .legal strong{color:var(--txt)}
+  .contact{margin:84px 0 0;padding:52px 24px;border-radius:24px;border:1px solid var(--line);text-align:center;
+           background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .contact p{color:var(--mut);margin-top:12px}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px auto 0;max-width:900px}
+  .way{background:rgba(14,13,26,.55);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);display:block}
+  .way small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+  .way b{font-size:17px;word-break:break-word}
+  .note{color:var(--mut);font-size:13px;text-align:center;margin-top:40px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 0 40px}
+  @media (max-width:860px){.step,.step.rev{grid-template-columns:1fr;gap:20px}.step.rev .txt{order:0}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="hdr">Request access</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow" data-i18n="eyebrow">VoIP / SIP security audit · NIST SP 800-115</span>
+      <h1 data-i18n="h1">See your phone system<br><span class="grad">the way an attacker does.</span></h1>
+      <p class="lead" data-i18n="lead">Your IPBX, SBC and IP phones often expose more than you think: open SIP services, guessable extensions, unencrypted media, default credentials. <strong>Our audit tool runs 24 non-intrusive tests on your VoIP network and delivers a professional report, with the threat behind each finding and a remediation prioritized by target.</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="cta_trial">Request your free trial →</a>
+        <a class="btn btn-sec" href="#how" data-i18n="cta_how">See how it works</a>
+      </div>
+      <div class="hero-shot"><img data-img="01-setup" src="assets/voip-audit/01-setup-en.png" alt="ASA AI VoIP audit: engagement setup screen"></div>
+      <div class="stats">
+        <div class="stat"><b>24</b><span data-i18n="st1">automated tests across signaling, media and infrastructure</span></div>
+        <div class="stat"><b>NIST</b><span data-i18n="st2">SP 800-115 methodology, non-intrusive by design</span></div>
+        <div class="stat"><b>5</b><span data-i18n="st3">free scans to evaluate the tool on your own network</span></div>
+        <div class="stat"><b>127.0.0.1</b><span data-i18n="st4">the portal runs on your workstation, reports are generated locally</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2 data-i18n="h2a">24 tests. <span class="grad">Every layer of your voice network.</span></h2>
+      <p class="sub" data-i18n="suba">From the first SIP packet to the management plane, the audit covers what a real attacker would probe, without disrupting production calls.</p>
+      <div class="tests">
+        <div class="test"><small data-i18n="c1s">Discovery</small><h3 data-i18n="c1h">Exposure &amp; SIP services</h3><p data-i18n="c1p">IPBX, SBC and endpoints reachable on the voice LAN, SIP over UDP, TCP and TLS, and what each one reveals about itself.</p></div>
+        <div class="test"><small data-i18n="c2s">Signaling</small><h3 data-i18n="c2h">Extension enumeration</h3><p data-i18n="c2p">Whether valid extensions can be listed from the outside, the first step of every credential and toll-fraud attack.</p></div>
+        <div class="test"><small data-i18n="c3s">Access</small><h3 data-i18n="c3h">Authentication</h3><p data-i18n="c3p">How SIP registration and authentication hold up against weak secrets and credential guessing.</p></div>
+        <div class="test"><small data-i18n="c4s">Topology</small><h3 data-i18n="c4h">SBC &amp; trust relationships</h3><p data-i18n="c4p">Topology hiding on the SBC and trust relationships between IPBXs that an attacker could abuse.</p></div>
+        <div class="test"><small data-i18n="c5s">Media</small><h3 data-i18n="c5h">RTP &amp; encryption</h3><p data-i18n="c5p">Whether voice streams are protected or travel in clear, and how media ports are exposed.</p></div>
+        <div class="test"><small data-i18n="c6s">Resilience</small><h3 data-i18n="c6h">Denial of service</h3><p data-i18n="c6p">How your voice platform behaves under abnormal signaling load, checked in a controlled way.</p></div>
+        <div class="test"><small data-i18n="c7s">Architecture</small><h3 data-i18n="c7h">Segmentation &amp; emergency calls</h3><p data-i18n="c7p">Voice / data separation and the location information attached to emergency calls.</p></div>
+        <div class="test"><small data-i18n="c8s">Management</small><h3 data-i18n="c8h">Admin plane hygiene</h3><p data-i18n="c8p">SSH and SNMP versions, embedded web servers and default credentials left on equipment.</p></div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 data-i18n="h2b">Define the scope. Launch. <span class="grad">Deliver the report.</span></h2>
+      <p class="sub" data-i18n="subb">A clear interface that takes you from engagement to deliverable in a single session.</p>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">1</span>
+          <h3 data-i18n="s1h">Set up the engagement</h3>
+          <p data-i18n="s1p">Operator, authorized scope and ROE reference, IPBX / SBC / endpoint targets, voice VLAN, subnets, SIP transport (UDP, TCP, TLS) and endpoint inventory with brand, model and firmware.</p>
+        </div>
+        <figure><img data-img="01-setup" src="assets/voip-audit/01-setup-en.png" alt="Engagement setup: operator, scope, targets and SIP transport" loading="lazy"></figure>
+      </div>
+
+      <div class="step rev">
+        <div class="txt">
+          <span class="num">2</span>
+          <h3 data-i18n="s2h">Watch the audit run live</h3>
+          <p data-i18n="s2p">The 24 tests run before your eyes, step by step, with a real-time log: discovery, SIP enumeration, authentication, SBC, RTP, resilience and management plane.</p>
+        </div>
+        <figure><img data-img="02-execution" src="assets/voip-audit/02-execution-en.png" alt="Live audit execution with real-time log and report generation" loading="lazy"></figure>
+      </div>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">3</span>
+          <h3 data-i18n="s3h">Hand over a report your client can act on</h3>
+          <p data-i18n="s3p">One click opens the HTML report or downloads the Word document, ready to be shared with management and technical teams.</p>
+        </div>
+        <figure><img data-img="03-report" src="assets/voip-audit/03-report-en.png" alt="Cover page of the VoIP security audit report" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2c">A deliverable, <span class="grad">not a raw scan output.</span></h2>
+      <div class="report">
+        <div>
+          <ul class="checks">
+            <li data-i18n="r1"><strong>Premium cover page</strong> and paginated table of contents.</li>
+            <li data-i18n="r2"><strong>Findings ranked by severity</strong>, so the critical issues come first.</li>
+            <li data-i18n="r3"><strong>The threat behind each finding</strong>, explained in plain terms.</li>
+            <li data-i18n="r4"><strong>Remediation prioritized by target</strong>: IPBX, SBC, phones, softphones.</li>
+            <li data-i18n="r5"><strong>HTML and Word (.docx)</strong>, ready to edit, brand and deliver.</li>
+          </ul>
+          <div class="chips"><span>NIST SP 800-115</span><span>NIST SP 800-58</span><span>VoIPSA</span><span>ANSSI ToIP</span><span>ISO/IEC 27001</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2d">Try it on your own network. <span class="grad">5 scans, free.</span></h2>
+      <div class="duo">
+        <div class="card hl">
+          <h3 data-i18n="a_h">Get your trial access</h3>
+          <ol>
+            <li data-i18n="a1">Send us your request with a <strong>business e-mail</strong> and phone number.</li>
+            <li data-i18n="a2">Our team validates your request.</li>
+            <li data-i18n="a3">You receive your <strong>license key</strong> and the download by e-mail.</li>
+            <li data-i18n="a4">Enter the key the first time you launch the tool.</li>
+          </ol>
+          <p data-i18n="a_p">Each key allows <strong>5 scans</strong> and is bound to one workstation. Need a higher quota or an assisted audit? Just ask.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="q_h">Requirements</h3>
+          <ol>
+            <li data-i18n="q1">Windows 10 / 11 or Windows Server, 64-bit.</li>
+            <li data-i18n="q2">A workstation connected to the VoIP LAN to be audited.</li>
+            <li data-i18n="q3"><strong>Prior written authorization</strong> from the owner of the target systems (Rules of Engagement).</li>
+          </ol>
+          <p data-i18n="q_p">The portal opens locally on <strong>127.0.0.1</strong>. Nothing to install on your phone system.</p>
+        </div>
+      </div>
+      <div class="legal" data-i18n="legal"><strong>Authorized use only.</strong> Auditing third-party systems without written authorization is illegal. By using the tool, you certify that you hold an explicit mandate for the audited scope.</div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2 data-i18n="h2e">Find the weak spots in your VoIP. <span class="grad">Before someone else does.</span></h2>
+      <p data-i18n="contactp">Request your trial access, or let our team run the audit with you.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" data-mail="trial" href="mailto:contact@asa-ai.fr" data-i18n="cta_trial">Request your free trial →</a>
+        <a class="btn btn-sec" data-mail="assisted" href="mailto:contact@asa-ai.fr" data-i18n="cta_assisted">Ask for an assisted audit</a>
+      </div>
+      <div class="ways">
+        <a class="way" href="demo.html"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" data-mail="trial" href="mailto:contact@asa-ai.fr"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="note">Screens captured on the ASA AI lab. Source code is not distributed.</p>
+  </main>
+
+  <footer data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var M = {
+    en: {trial:["VoIP Audit - trial license request","Company:\nBusiness e-mail:\nPhone:\nNumber of sites / IPBX:\n"],
+         assisted:["VoIP Audit - assisted audit request","Company:\nBusiness e-mail:\nPhone:\nScope (sites, IPBX, SBC, phones):\n"]},
+    fr: {trial:["Audit VoIP - demande de licence d'essai","Société :\nE-mail professionnel :\nTéléphone :\nNombre de sites / IPBX :\n"],
+         assisted:["Audit VoIP - demande d'audit accompagné","Société :\nE-mail professionnel :\nTéléphone :\nPérimètre (sites, IPBX, SBC, téléphones) :\n"]},
+    es: {trial:["Auditoría VoIP - solicitud de licencia de prueba","Empresa:\nE-mail profesional:\nTeléfono:\nNúmero de sedes / centralitas:\n"],
+         assisted:["Auditoría VoIP - solicitud de auditoría acompañada","Empresa:\nE-mail profesional:\nTeléfono:\nAlcance (sedes, centralitas, SBC, teléfonos):\n"]}
+  };
+  var T = {
+   "fr": {
+    "title": "Outil d'audit de sécurité VoIP | ASA AI",
+    "desc": "Audit de sécurité VoIP / SIP non intrusif selon NIST SP 800-115 : 24 tests automatisés sur IPBX, SBC, téléphones IP et softphones, et un rapport à vos couleurs avec la menace derrière chaque constat et une remédiation priorisée par cible.",
+    "hdr": "Demander un accès",
+    "eyebrow": "Audit de sécurité VoIP / SIP · NIST SP 800-115",
+    "h1": "Voyez votre téléphonie<br><span class=\"grad\">comme un attaquant la voit.</span>",
+    "lead": "Votre IPBX, votre SBC et vos téléphones IP en exposent souvent plus que vous ne le pensez : services SIP ouverts, extensions devinables, flux voix non chiffrés, identifiants par défaut. <strong>Notre outil d'audit exécute 24 tests non intrusifs sur votre réseau VoIP et produit un rapport professionnel, avec la menace derrière chaque constat et une remédiation priorisée par cible.</strong>",
+    "cta_trial": "Demander votre essai gratuit →",
+    "cta_how": "Voir comment ça marche",
+    "st1": "tests automatisés sur la signalisation, les médias et l'infrastructure",
+    "st2": "méthodologie SP 800-115, non intrusive par conception",
+    "st3": "scans offerts pour évaluer l'outil sur votre propre réseau",
+    "st4": "le portail tourne sur votre poste, les rapports sont générés en local",
+    "h2a": "24 tests. <span class=\"grad\">Chaque couche de votre réseau voix.</span>",
+    "suba": "Du premier paquet SIP au plan d'administration, l'audit couvre ce qu'un véritable attaquant sonderait, sans perturber les appels en production.",
+    "c1s": "Découverte", "c1h": "Exposition &amp; services SIP", "c1p": "IPBX, SBC et terminaux joignables sur le LAN voix, SIP en UDP, TCP et TLS, et ce que chacun révèle de lui-même.",
+    "c2s": "Signalisation", "c2h": "Énumération des extensions", "c2p": "Peut-on lister depuis l'extérieur les extensions valides ? C'est la première étape de toute attaque sur les identifiants et de toute fraude téléphonique.",
+    "c3s": "Accès", "c3h": "Authentification", "c3p": "La résistance de l'enregistrement et de l'authentification SIP face aux secrets faibles et aux tentatives de devinette.",
+    "c4s": "Topologie", "c4h": "SBC &amp; relations de confiance", "c4p": "Le masquage de topologie sur le SBC et les relations de confiance entre IPBX qu'un attaquant pourrait détourner.",
+    "c5s": "Médias", "c5h": "RTP &amp; chiffrement", "c5p": "Les flux voix sont-ils protégés ou circulent-ils en clair, et comment les ports médias sont-ils exposés.",
+    "c6s": "Résilience", "c6h": "Déni de service", "c6p": "Le comportement de votre plateforme voix sous une charge de signalisation anormale, vérifié de façon maîtrisée.",
+    "c7s": "Architecture", "c7h": "Segmentation &amp; appels d'urgence", "c7p": "La séparation voix / données et les informations de localisation associées aux appels d'urgence.",
+    "c8s": "Administration", "c8h": "Hygiène du plan d'administration", "c8p": "Versions SSH et SNMP, serveurs web embarqués et identifiants par défaut laissés sur les équipements.",
+    "h2b": "Définissez le périmètre. Lancez. <span class=\"grad\">Livrez le rapport.</span>",
+    "subb": "Une interface claire qui vous mène de l'engagement au livrable en une seule session.",
+    "s1h": "Paramétrez l'engagement",
+    "s1p": "Opérateur, périmètre autorisé et référence ROE, cibles IPBX / SBC / terminaux, VLAN voix, sous-réseaux, transport SIP (UDP, TCP, TLS) et inventaire des terminaux avec marque, modèle et firmware.",
+    "s2h": "Suivez l'audit en direct",
+    "s2p": "Les 24 tests se déroulent sous vos yeux, étape par étape, avec un journal en temps réel : découverte, énumération SIP, authentification, SBC, RTP, résilience et plan d'administration.",
+    "s3h": "Remettez un rapport sur lequel votre client peut agir",
+    "s3p": "Un clic ouvre le rapport HTML ou télécharge le document Word, prêt à être partagé avec la direction et les équipes techniques.",
+    "h2c": "Un livrable, <span class=\"grad\">pas une sortie de scanner brute.</span>",
+    "r1": "<strong>Page de garde premium</strong> et sommaire paginé.",
+    "r2": "<strong>Constats classés par sévérité</strong>, pour traiter le critique en premier.",
+    "r3": "<strong>La menace derrière chaque constat</strong>, expliquée simplement.",
+    "r4": "<strong>Remédiation priorisée par cible</strong> : IPBX, SBC, téléphones, softphones.",
+    "r5": "<strong>HTML et Word (.docx)</strong>, prêts à modifier, habiller et livrer.",
+    "h2d": "Essayez-le sur votre propre réseau. <span class=\"grad\">5 scans offerts.</span>",
+    "a_h": "Obtenez votre accès d'essai",
+    "a1": "Envoyez-nous votre demande avec un <strong>e-mail professionnel</strong> et un numéro de téléphone.",
+    "a2": "Notre équipe valide votre demande.",
+    "a3": "Vous recevez votre <strong>clé de licence</strong> et le téléchargement par e-mail.",
+    "a4": "Saisissez la clé au premier lancement de l'outil.",
+    "a_p": "Chaque clé autorise <strong>5 scans</strong> et est liée à un poste. Besoin d'un quota supérieur ou d'un audit accompagné ? Il suffit de nous le demander.",
+    "q_h": "Prérequis",
+    "q1": "Windows 10 / 11 ou Windows Server, 64 bits.",
+    "q2": "Un poste raccordé au LAN VoIP à auditer.",
+    "q3": "<strong>Autorisation écrite préalable</strong> du propriétaire des systèmes cibles (Rules of Engagement).",
+    "q_p": "Le portail s'ouvre en local sur <strong>127.0.0.1</strong>. Rien à installer sur votre téléphonie.",
+    "legal": "<strong>Usage autorisé uniquement.</strong> Auditer des systèmes tiers sans autorisation écrite est illégal. En utilisant l'outil, vous certifiez disposer d'un mandat explicite sur le périmètre audité.",
+    "h2e": "Trouvez les failles de votre VoIP. <span class=\"grad\">Avant quelqu'un d'autre.</span>",
+    "contactp": "Demandez votre accès d'essai, ou laissez notre équipe réaliser l'audit avec vous.",
+    "cta_assisted": "Demander un audit accompagné",
+    "w1": "Prendre rendez-vous",
+    "w2": "Écrivez-nous",
+    "note": "Écrans capturés sur le lab ASA AI. Le code source n'est pas distribué.",
+    "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr"
+   },
+   "es": {
+    "title": "Herramienta de auditoría de seguridad VoIP | ASA AI",
+    "desc": "Auditoría de seguridad VoIP / SIP no intrusiva según NIST SP 800-115: 24 pruebas automatizadas en centralitas, SBC, teléfonos IP y softphones, y un informe con la amenaza detrás de cada hallazgo y una remediación priorizada por objetivo.",
+    "hdr": "Solicitar acceso",
+    "eyebrow": "Auditoría de seguridad VoIP / SIP · NIST SP 800-115",
+    "h1": "Vea su telefonía<br><span class=\"grad\">como la ve un atacante.</span>",
+    "lead": "Su centralita, su SBC y sus teléfonos IP suelen exponer más de lo que cree: servicios SIP abiertos, extensiones fáciles de adivinar, voz sin cifrar, credenciales por defecto. <strong>Nuestra herramienta de auditoría ejecuta 24 pruebas no intrusivas en su red VoIP y entrega un informe profesional, con la amenaza detrás de cada hallazgo y una remediación priorizada por objetivo.</strong>",
+    "cta_trial": "Solicite su prueba gratuita →",
+    "cta_how": "Ver cómo funciona",
+    "st1": "pruebas automatizadas de señalización, medios e infraestructura",
+    "st2": "metodología SP 800-115, no intrusiva por diseño",
+    "st3": "escaneos gratuitos para evaluar la herramienta en su propia red",
+    "st4": "el portal se ejecuta en su equipo y los informes se generan en local",
+    "h2a": "24 pruebas. <span class=\"grad\">Cada capa de su red de voz.</span>",
+    "suba": "Desde el primer paquete SIP hasta el plano de administración, la auditoría cubre lo que sondearía un atacante real, sin perturbar las llamadas en producción.",
+    "c1s": "Descubrimiento", "c1h": "Exposición y servicios SIP", "c1p": "Centralitas, SBC y terminales accesibles en la LAN de voz, SIP sobre UDP, TCP y TLS, y lo que cada uno revela de sí mismo.",
+    "c2s": "Señalización", "c2h": "Enumeración de extensiones", "c2p": "Si se pueden listar extensiones válidas desde fuera, el primer paso de cualquier ataque a credenciales y de todo fraude telefónico.",
+    "c3s": "Acceso", "c3h": "Autenticación", "c3p": "Cómo resisten el registro y la autenticación SIP frente a secretos débiles e intentos de adivinación.",
+    "c4s": "Topología", "c4h": "SBC y relaciones de confianza", "c4p": "La ocultación de topología en el SBC y las relaciones de confianza entre centralitas que un atacante podría aprovechar.",
+    "c5s": "Medios", "c5h": "RTP y cifrado", "c5p": "Si los flujos de voz están protegidos o viajan en claro, y cómo están expuestos los puertos de medios.",
+    "c6s": "Resiliencia", "c6h": "Denegación de servicio", "c6p": "Cómo se comporta su plataforma de voz ante una carga de señalización anómala, comprobado de forma controlada.",
+    "c7s": "Arquitectura", "c7h": "Segmentación y llamadas de emergencia", "c7p": "La separación voz / datos y la información de localización asociada a las llamadas de emergencia.",
+    "c8s": "Administración", "c8h": "Higiene del plano de administración", "c8p": "Versiones de SSH y SNMP, servidores web integrados y credenciales por defecto olvidadas en los equipos.",
+    "h2b": "Defina el alcance. Lance. <span class=\"grad\">Entregue el informe.</span>",
+    "subb": "Una interfaz clara que le lleva del encargo al entregable en una sola sesión.",
+    "s1h": "Configure el encargo",
+    "s1p": "Operador, alcance autorizado y referencia ROE, objetivos centralita / SBC / terminales, VLAN de voz, subredes, transporte SIP (UDP, TCP, TLS) e inventario de terminales con marca, modelo y firmware.",
+    "s2h": "Siga la auditoría en directo",
+    "s2p": "Las 24 pruebas se ejecutan ante sus ojos, paso a paso, con un registro en tiempo real: descubrimiento, enumeración SIP, autenticación, SBC, RTP, resiliencia y plano de administración.",
+    "s3h": "Entregue un informe con el que su cliente pueda actuar",
+    "s3p": "Un clic abre el informe HTML o descarga el documento Word, listo para compartir con la dirección y los equipos técnicos.",
+    "h2c": "Un entregable, <span class=\"grad\">no una salida de escáner en bruto.</span>",
+    "r1": "<strong>Portada premium</strong> e índice paginado.",
+    "r2": "<strong>Hallazgos ordenados por gravedad</strong>, para tratar primero lo crítico.",
+    "r3": "<strong>La amenaza detrás de cada hallazgo</strong>, explicada con claridad.",
+    "r4": "<strong>Remediación priorizada por objetivo</strong>: centralita, SBC, teléfonos, softphones.",
+    "r5": "<strong>HTML y Word (.docx)</strong>, listos para editar, personalizar y entregar.",
+    "h2d": "Pruébela en su propia red. <span class=\"grad\">5 escaneos gratis.</span>",
+    "a_h": "Obtenga su acceso de prueba",
+    "a1": "Envíenos su solicitud con un <strong>e-mail profesional</strong> y un número de teléfono.",
+    "a2": "Nuestro equipo valida su solicitud.",
+    "a3": "Recibe su <strong>clave de licencia</strong> y la descarga por e-mail.",
+    "a4": "Introduzca la clave la primera vez que inicie la herramienta.",
+    "a_p": "Cada clave permite <strong>5 escaneos</strong> y está vinculada a un equipo. ¿Necesita más cuota o una auditoría acompañada? Pregúntenos.",
+    "q_h": "Requisitos",
+    "q1": "Windows 10 / 11 o Windows Server, 64 bits.",
+    "q2": "Un equipo conectado a la LAN VoIP que se va a auditar.",
+    "q3": "<strong>Autorización previa por escrito</strong> del propietario de los sistemas objetivo (Rules of Engagement).",
+    "q_p": "El portal se abre en local en <strong>127.0.0.1</strong>. Nada que instalar en su telefonía.",
+    "legal": "<strong>Solo uso autorizado.</strong> Auditar sistemas de terceros sin autorización por escrito es ilegal. Al usar la herramienta, usted certifica que dispone de un mandato explícito sobre el alcance auditado.",
+    "h2e": "Encuentre los puntos débiles de su VoIP. <span class=\"grad\">Antes que otro.</span>",
+    "contactp": "Solicite su acceso de prueba o deje que nuestro equipo realice la auditoría con usted.",
+    "cta_assisted": "Solicitar una auditoría acompañada",
+    "w1": "Reservar una reunión",
+    "w2": "Escríbanos",
+    "note": "Pantallas capturadas en el laboratorio de ASA AI. El código fuente no se distribuye.",
+    "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr"
+   }
+  };
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  document.querySelectorAll("a[data-mail]").forEach(function(a){
+    var m = M[lang][a.getAttribute("data-mail")];
+    a.setAttribute("href", "mailto:contact@asa-ai.fr?subject=" + encodeURIComponent(m[0]) + "&body=" + encodeURIComponent(m[1]));
+  });
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  if (lang === "fr") document.querySelectorAll("img[data-img]").forEach(function(im){ im.src = "assets/voip-audit/" + im.getAttribute("data-img") + "-fr.png"; });
+})();
+</script>
+</body>
+</html>
