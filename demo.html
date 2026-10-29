@@ -185,10 +185,10 @@
   };
   var qs = new URLSearchParams(location.search);
   var prod = P[qs.get("p")] || null;
-  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
-  var lang = nav.slice(0,2).toLowerCase();
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (T[c]) { lang = c; break; } }
   if (T[qs.get("lang")]) lang = qs.get("lang");
-  if (!T[lang]) lang = "en";
   var t = T[lang];
   if (prod) { var o = prod[lang]; for (var k in o) t[k] = o[k]; }
   var pname = prod ? prod.name : "AI SOC Analyst";
