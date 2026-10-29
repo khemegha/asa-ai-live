@@ -93,145 +93,315 @@
 <div class="wrap">
   <header>
     <div class="brand"><i></i>ASA AI</div>
-    <a class="btn btn-pri" href="demo.html">Book a demo</a>
+    <a class="btn btn-pri" href="demo.html" data-i18n="book">Book a demo</a>
   </header>
 
   <main>
     <div class="hero">
-      <span class="eyebrow">VoIP anti-fraud · On-prem AI · 24/7</span>
-      <h1>Toll fraud hits at 3 a.m.<br><span class="grad">Your AI is already awake.</span></h1>
-      <p class="lead">Fraudsters don't knock. They brute-force a SIP extension on a Friday night, pump premium-rate international calls all weekend, and you find out from the carrier bill. <strong>Our anti-fraud platform risk-scores your SIP traffic continuously and flags the attack while it is happening</strong>, running entirely on your own infrastructure.</p>
+      <span class="eyebrow" data-i18n="eyebrow">VoIP anti-fraud · On-prem AI · 24/7</span>
+      <h1 data-i18n="h1">Toll fraud hits at 3 a.m.<br><span class="grad">Your AI is already awake.</span></h1>
+      <p class="lead" data-i18n="lead">Fraudsters don't knock. They brute-force a SIP extension on a Friday night, pump premium-rate international calls all weekend, and you find out from the carrier bill. <strong>Our anti-fraud platform risk-scores your SIP traffic continuously and flags the attack while it is happening</strong>, running entirely on your own infrastructure.</p>
       <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
-        <a class="btn btn-sec" href="register.html">Join the next live session</a>
+        <a class="btn btn-pri" href="demo.html" data-i18n="cta_demo">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html" data-reg data-i18n="cta_live">Join the next live session</a>
       </div>
       <div class="hero-shot"><img src="assets/voip-antifraud/00-risk-score-overview.png" alt="VoIP Threat Sentinel turns SIP traffic into a consolidated, actionable risk score"></div>
       <div class="stats">
-        <div class="stat"><b>~25 ms</b><span>p95 scoring latency: decisions in real time</span></div>
-        <div class="stat"><b>1,100+</b><span>live traffic snapshots scored in 6 h on our lab PBX</span></div>
-        <div class="stat"><b>536</b><span>off-hours call attempts flagged in 15 min</span></div>
-        <div class="stat"><b>24/7</b><span>SIP threat monitoring, every method, every code</span></div>
+        <div class="stat"><b>~25 ms</b><span data-i18n="st1">p95 scoring latency: decisions in real time</span></div>
+        <div class="stat"><b data-i18n="st2v">1,100+</b><span data-i18n="st2">live traffic snapshots scored in 6 h on our lab PBX</span></div>
+        <div class="stat"><b>536</b><span data-i18n="st3">off-hours call attempts flagged in 15 min</span></div>
+        <div class="stat"><b>24/7</b><span data-i18n="st4">SIP threat monitoring, every method, every code</span></div>
       </div>
     </div>
 
     <section>
-      <h2>The attacks your PBX never tells you about</h2>
-      <p class="sub">Classic firewalls see packets. We see intent: who is calling, where, when, how often, and whether it looks like a human or a bot.</p>
+      <h2 data-i18n="h2a">The attacks your PBX never tells you about</h2>
+      <p class="sub" data-i18n="suba">Classic firewalls see packets. We see intent: who is calling, where, when, how often, and whether it looks like a human or a bot.</p>
       <div class="threats">
-        <div class="threat"><h3>Toll fraud &amp; IRSF</h3><p>Bursts of calls to premium or high-cost international ranges, caught on volume, destination spread and timing.</p></div>
-        <div class="threat"><h3>SIP brute force</h3><p>Waves of 401 challenges and failed REGISTERs give credential stuffing away before an extension is hijacked.</p></div>
-        <div class="threat"><h3>Scanning &amp; enumeration</h3><p>OPTIONS floods, sipsak and scanner user-agents, 404 sweeps across extensions, all surfaced in real time.</p></div>
-        <div class="threat"><h3>Off-hours abuse</h3><p>Calls fired at night or on weekends, when nobody is watching, scored as high risk instantly.</p></div>
-        <div class="threat"><h3>Spoofing &amp; hijacking</h3><p>Via/IP mismatches, never-seen source IPs and new user-agents raise the anomaly score.</p></div>
-        <div class="threat"><h3>Malformed SIP</h3><p>400s and abnormal responses that betray fuzzing and exploit attempts against your PBX.</p></div>
+        <div class="threat"><h3 data-i18n="t1h">Toll fraud &amp; IRSF</h3><p data-i18n="t1p">Bursts of calls to premium or high-cost international ranges, caught on volume, destination spread and timing.</p></div>
+        <div class="threat"><h3 data-i18n="t2h">SIP brute force</h3><p data-i18n="t2p">Waves of 401 challenges and failed REGISTERs give credential stuffing away before an extension is hijacked.</p></div>
+        <div class="threat"><h3 data-i18n="t3h">Scanning &amp; enumeration</h3><p data-i18n="t3p">OPTIONS floods, sipsak and scanner user-agents, 404 sweeps across extensions, all surfaced in real time.</p></div>
+        <div class="threat"><h3 data-i18n="t4h">Off-hours abuse</h3><p data-i18n="t4p">Calls fired at night or on weekends, when nobody is watching, scored as high risk instantly.</p></div>
+        <div class="threat"><h3 data-i18n="t5h">Spoofing &amp; hijacking</h3><p data-i18n="t5p">Via/IP mismatches, never-seen source IPs and new user-agents raise the anomaly score.</p></div>
+        <div class="threat"><h3 data-i18n="t6h">Malformed SIP</h3><p data-i18n="t6p">400s and abnormal responses that betray fuzzing and exploit attempts against your PBX.</p></div>
       </div>
     </section>
 
     <section>
-      <h2>Two engines. <span class="grad">One shield for your voice network.</span></h2>
+      <h2 data-i18n="h2b">Two engines. <span class="grad">One shield for your voice network.</span></h2>
       <div class="duo">
-        <div class="prod"><em>Predict &amp; decide</em><h3>GuardVoIP · AI Powered</h3><p>A machine-learning engine that scores your live SIP traffic with a risk level and an ALLOW / REVIEW / BLOCK decision in milliseconds. Start in <strong>shadow mode</strong>: it logs what it would have blocked, so you prove the value on your real traffic with zero risk to legitimate calls, then switch on enforcement.</p></div>
-        <div class="prod"><em>Watch &amp; alert</em><h3>VoIP Threat Sentinel</h3><p>24/7 security monitoring of your SIP infrastructure: methods, security codes, authentication, reconnaissance, top talkers, suspicious events and a consolidated SIP risk score, all in one real-time console.</p></div>
+        <div class="prod"><em data-i18n="p1em">Predict &amp; decide</em><h3>GuardVoIP · AI Powered</h3><p data-i18n="p1p">A machine-learning engine that scores your live SIP traffic with a risk level and an ALLOW / REVIEW / BLOCK decision in milliseconds. Start in <strong>shadow mode</strong>: it logs what it would have blocked, so you prove the value on your real traffic with zero risk to legitimate calls, then switch on enforcement.</p></div>
+        <div class="prod"><em data-i18n="p2em">Watch &amp; alert</em><h3>VoIP Threat Sentinel</h3><p data-i18n="p2p">24/7 security monitoring of your SIP infrastructure: methods, security codes, authentication, reconnaissance, top talkers, suspicious events and a consolidated SIP risk score, all in one real-time console.</p></div>
       </div>
     </section>
 
     <section>
-      <h2>Your call records are personal data.<br><span class="grad">Keep them home.</span></h2>
-      <p class="sub">Who called whom, when and for how long is regulated data under GDPR and telecom privacy rules. Cloud fraud services ask you to stream it to a third party. We don't.</p>
+      <h2 data-i18n="h2c">Your call records are personal data.<br><span class="grad">Keep them home.</span></h2>
+      <p class="sub" data-i18n="subc">Who called whom, when and for how long is regulated data under GDPR and telecom privacy rules. Cloud fraud services ask you to stream it to a third party. We don't.</p>
       <div class="vs">
         <div class="col them">
-          <h3>Typical cloud fraud service</h3>
+          <h3 data-i18n="themh">Typical cloud fraud service</h3>
           <ul>
-            <li><strong>Your call metadata leaves your network</strong> and sits on a vendor's servers.</li>
-            <li><strong>Access you don't control:</strong> vendor staff, sub-processors and foreign legal requests.</li>
-            <li><strong>Black-box verdicts</strong> you can't inspect, tune or audit.</li>
-            <li><strong>Per-call or per-minute pricing</strong> that grows with your traffic.</li>
+            <li data-i18n="them1"><strong>Your call metadata leaves your network</strong> and sits on a vendor's servers.</li>
+            <li data-i18n="them2"><strong>Access you don't control:</strong> vendor staff, sub-processors and foreign legal requests.</li>
+            <li data-i18n="them3"><strong>Black-box verdicts</strong> you can't inspect, tune or audit.</li>
+            <li data-i18n="them4"><strong>Per-call or per-minute pricing</strong> that grows with your traffic.</li>
           </ul>
         </div>
         <div class="col us">
-          <h3>ASA AI anti-fraud, on-prem</h3>
+          <h3 data-i18n="ush">ASA AI anti-fraud, on-prem</h3>
           <ul>
-            <li><strong>Zero data egress:</strong> SIP telemetry is captured, scored and stored on your own servers.</li>
-            <li><strong>Only your team holds the keys.</strong> No third-party processor in the loop.</li>
-            <li><strong>Explainable scores:</strong> every signal behind a risk level is visible on your dashboard.</li>
-            <li><strong>Works with your PBX:</strong> Asterisk, Kamailio and standard SIP endpoints.</li>
+            <li data-i18n="us1"><strong>Zero data egress:</strong> SIP telemetry is captured, scored and stored on your own servers.</li>
+            <li data-i18n="us2"><strong>Only your team holds the keys.</strong> No third-party processor in the loop.</li>
+            <li data-i18n="us3"><strong>Explainable scores:</strong> every signal behind a risk level is visible on your dashboard.</li>
+            <li data-i18n="us4"><strong>Works with your PBX:</strong> Asterisk, Kamailio and standard SIP endpoints.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Seven views. <span class="grad">Nothing on your SIP trunk goes unseen.</span></h2>
-      <p class="sub">Real screens from our live lab: an Asterisk PBX with IP phones from Yealink, Polycom and Snom, under simulated attack.</p>
+      <h2 data-i18n="h2d">Seven views. <span class="grad">Nothing on your SIP trunk goes unseen.</span></h2>
+      <p class="sub" data-i18n="subd">Real screens from our live lab: an Asterisk PBX with IP phones from Yealink, Polycom and Snom, under simulated attack.</p>
 
       <div class="shot">
-        <span class="tag">01 · GuardVoIP · Scoring &amp; shadow decisions</span>
-        <h3>Risk scored in ~25 ms. Blocks proven before they are enforced.</h3>
-        <p>Model and scoring API health, scorings over the period, would-be BLOCKs in shadow mode, the latest risk level and p95 latency, plus the ALLOW / REVIEW / BLOCK split over time.</p>
+        <span class="tag" data-i18n="s1t">01 · GuardVoIP · Scoring &amp; shadow decisions</span>
+        <h3 data-i18n="s1h">Risk scored in ~25 ms. Blocks proven before they are enforced.</h3>
+        <p data-i18n="s1p">Model and scoring API health, scorings over the period, would-be BLOCKs in shadow mode, the latest risk level and p95 latency, plus the ALLOW / REVIEW / BLOCK split over time.</p>
         <figure><img src="assets/voip-antifraud/01-guardvoip-scoring-shadow.png" alt="GuardVoIP scoring overview with shadow decisions, risk gauge and p95 latency" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">02 · GuardVoIP · Live SIP telemetry</span>
-        <h3>Real PBX traffic in, risk score out. Every few seconds.</h3>
-        <p>Pipeline status, snapshot freshness, current risk, ML anomaly level and accepted snapshots, above INVITE/REGISTER rates, call volume, destinations and SIP error ratios.</p>
+        <span class="tag" data-i18n="s2t">02 · GuardVoIP · Live SIP telemetry</span>
+        <h3 data-i18n="s2h">Real PBX traffic in, risk score out. Every few seconds.</h3>
+        <p data-i18n="s2p">Pipeline status, snapshot freshness, current risk, ML anomaly level and accepted snapshots, above INVITE/REGISTER rates, call volume, destinations and SIP error ratios.</p>
         <figure><img src="assets/voip-antifraud/02-guardvoip-sip-telemetry.png" alt="GuardVoIP live SIP telemetry from the PBX: risk, ML anomaly, INVITE and REGISTER rates" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">03 · GuardVoIP · Anomalies &amp; ML</span>
-        <h3>The weak signals humans miss.</h3>
-        <p>Abnormal SIP responses, never-seen source IPs and user-agents, Via/IP mismatches, and the risk and ML anomaly curves that tie them together.</p>
+        <span class="tag" data-i18n="s3t">03 · GuardVoIP · Anomalies &amp; ML</span>
+        <h3 data-i18n="s3h">The weak signals humans miss.</h3>
+        <p data-i18n="s3p">Abnormal SIP responses, never-seen source IPs and user-agents, Via/IP mismatches, and the risk and ML anomaly curves that tie them together.</p>
         <figure><img src="assets/voip-antifraud/03-guardvoip-anomalies-ml.png" alt="GuardVoIP abnormal SIP responses, IP and user-agent novelty, risk and ML anomaly" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">04 · GuardVoIP · One hour under attack</span>
-        <h3>A sustained attack, minute by minute.</h3>
-        <p>Rhythmic INVITE bursts, 401 waves and a risk score that never drops: this is what an automated fraud campaign looks like, and it is unmistakable.</p>
+        <span class="tag" data-i18n="s4t">04 · GuardVoIP · One hour under attack</span>
+        <h3 data-i18n="s4h">A sustained attack, minute by minute.</h3>
+        <p data-i18n="s4p">Rhythmic INVITE bursts, 401 waves and a risk score that never drops: this is what an automated fraud campaign looks like, and it is unmistakable.</p>
         <figure><img src="assets/voip-antifraud/04-guardvoip-live-hour.png" alt="GuardVoIP one-hour view of a sustained SIP attack with risk and anomaly levels" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">05 · VoIP Threat Sentinel · SIP security</span>
-        <h3>Security codes, authentication and reconnaissance at a glance.</h3>
-        <p>SIP packets and security events per second, REGISTER and INVITE rates, the consolidated SIP risk score, 400/401/403 codes, authentication attempts and enumeration activity.</p>
+        <span class="tag" data-i18n="s5t">05 · VoIP Threat Sentinel · SIP security</span>
+        <h3 data-i18n="s5h">Security codes, authentication and reconnaissance at a glance.</h3>
+        <p data-i18n="s5p">SIP packets and security events per second, REGISTER and INVITE rates, the consolidated SIP risk score, 400/401/403 codes, authentication attempts and enumeration activity.</p>
         <figure><img src="assets/voip-antifraud/05-sentinel-sip-security.png" alt="VoIP Threat Sentinel SIP security overview: codes, methods, authentication and reconnaissance" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">06 · VoIP Threat Sentinel · Fraud indicators &amp; top talkers</span>
-        <h3>Who is calling, from where, to which extensions.</h3>
-        <p>INVITE outcomes, call-level fraud indicators, and the top sources, user-agents and destinations, so an attacker's tooling and targets stand out immediately.</p>
+        <span class="tag" data-i18n="s6t">06 · VoIP Threat Sentinel · Fraud indicators &amp; top talkers</span>
+        <h3 data-i18n="s6h">Who is calling, from where, to which extensions.</h3>
+        <p data-i18n="s6p">INVITE outcomes, call-level fraud indicators, and the top sources, user-agents and destinations, so an attacker's tooling and targets stand out immediately.</p>
         <figure><img src="assets/voip-antifraud/06-sentinel-fraud-indicators-top-talkers.png" alt="VoIP Threat Sentinel fraud indicators with top sources, user-agents and destinations" loading="lazy"></figure>
       </div>
 
       <div class="shot">
-        <span class="tag">07 · VoIP Threat Sentinel · Suspicious events</span>
-        <h3>536 off-hours call attempts. Flagged in red, in real time.</h3>
-        <p>The latest suspicious SIP events line by line, with international and off-hours INVITEs, distinct destinations and capture freshness counters.</p>
+        <span class="tag" data-i18n="s7t">07 · VoIP Threat Sentinel · Suspicious events</span>
+        <h3 data-i18n="s7h">536 off-hours call attempts. Flagged in red, in real time.</h3>
+        <p data-i18n="s7p">The latest suspicious SIP events line by line, with international and off-hours INVITEs, distinct destinations and capture freshness counters.</p>
         <figure><img src="assets/voip-antifraud/07-sentinel-suspicious-events.png" alt="VoIP Threat Sentinel suspicious SIP events with off-hours INVITE counter" loading="lazy"></figure>
       </div>
     </section>
 
     <div class="contact" id="contact">
-      <h2>Find out what your PBX isn't telling you. <span class="grad">Before your carrier does.</span></h2>
-      <p>See GuardVoIP and VoIP Threat Sentinel catch a live attack in 30 minutes, then decide.</p>
+      <h2 data-i18n="h2e">Find out what your PBX isn't telling you. <span class="grad">Before your carrier does.</span></h2>
+      <p data-i18n="contactp">See GuardVoIP and VoIP Threat Sentinel catch a live attack in 30 minutes, then decide.</p>
       <div class="cta-row">
-        <a class="btn btn-pri" href="demo.html">Book your demo →</a>
-        <a class="btn btn-sec" href="register.html">Save a seat at the live session</a>
+        <a class="btn btn-pri" href="demo.html" data-i18n="cta_demo">Book your demo →</a>
+        <a class="btn btn-sec" href="register.html" data-reg data-i18n="cta_seat">Save a seat at the live session</a>
       </div>
       <div class="ways">
-        <a class="way" href="demo.html"><small>Book a meeting</small><b>demo.asa-ai.fr</b></a>
-        <a class="way" href="mailto:contact@asa-ai.fr?subject=VoIP%20anti-fraud%20demo"><small>Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="demo.html"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=VoIP%20anti-fraud%20demo"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
         <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
       </div>
     </div>
 
-    <p class="note">Screens captured on the ASA AI lab under simulated attack traffic. Internal addresses masked.</p>
+    <p class="note" data-i18n="note">Screens captured on the ASA AI lab under simulated attack traffic. Internal addresses masked.</p>
   </main>
 
-  <footer>© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+  <footer data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
 </div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "book": "Réserver une démo",
+  "eyebrow": "Anti-fraude VoIP · IA on-prem · 24/7",
+  "h1": "La fraude téléphonique frappe à 3 h du matin.<br><span class=\"grad\">Votre IA est déjà réveillée.</span>",
+  "lead": "Les fraudeurs ne frappent pas à la porte. Ils attaquent par force brute un poste SIP un vendredi soir, enchaînent les appels internationaux surtaxés tout le week-end, et vous le découvrez sur la facture de l'opérateur. <strong>Notre plateforme anti-fraude évalue en continu le risque de votre trafic SIP et signale l'attaque pendant qu'elle se déroule</strong>, entièrement sur votre propre infrastructure.",
+  "cta_demo": "Réserver votre démo →",
+  "cta_live": "Participer à la prochaine session live",
+  "st1": "latence de scoring p95 : décisions en temps réel",
+  "st2v": "1 100+",
+  "st2": "instantanés de trafic réel évalués en 6 h sur notre IPBX de lab",
+  "st3": "tentatives d'appel hors horaires signalées en 15 min",
+  "st4": "surveillance des menaces SIP, chaque méthode, chaque code",
+  "h2a": "Les attaques dont votre IPBX ne vous parle jamais",
+  "suba": "Les pare-feu classiques voient des paquets. Nous voyons l'intention : qui appelle, où, quand, à quelle fréquence, et s'il s'agit d'un humain ou d'un robot.",
+  "t1h": "Fraude téléphonique &amp; IRSF",
+  "t1p": "Rafales d'appels vers des numéros surtaxés ou des destinations internationales coûteuses, détectées par le volume, la dispersion des destinations et les horaires.",
+  "t2h": "Force brute SIP",
+  "t2p": "Des vagues de challenges 401 et de REGISTER en échec trahissent le credential stuffing avant qu'un poste ne soit détourné.",
+  "t3h": "Scan &amp; énumération",
+  "t3p": "Floods d'OPTIONS, user-agents sipsak et scanners, balayages 404 des extensions : tout remonte en temps réel.",
+  "t4h": "Abus hors horaires",
+  "t4p": "Appels lancés la nuit ou le week-end, quand personne ne surveille, classés instantanément à haut risque.",
+  "t5h": "Usurpation &amp; détournement",
+  "t5p": "Incohérences Via/IP, IP sources jamais vues et nouveaux user-agents font monter le score d'anomalie.",
+  "t6h": "SIP malformé",
+  "t6p": "Réponses 400 et anomalies qui trahissent le fuzzing et les tentatives d'exploitation contre votre IPBX.",
+  "h2b": "Deux moteurs. <span class=\"grad\">Un seul bouclier pour votre réseau voix.</span>",
+  "p1em": "Prédire &amp; décider",
+  "p1p": "Un moteur de machine learning qui attribue à votre trafic SIP en direct un niveau de risque et une décision ALLOW / REVIEW / BLOCK en quelques millisecondes. Démarrez en <strong>mode shadow</strong> : il journalise ce qu'il aurait bloqué, pour prouver la valeur sur votre trafic réel sans aucun risque pour les appels légitimes, puis activez le blocage.",
+  "p2em": "Surveiller &amp; alerter",
+  "p2p": "Surveillance de sécurité 24/7 de votre infrastructure SIP : méthodes, codes de sécurité, authentification, reconnaissance, top talkers, événements suspects et score de risque SIP consolidé, le tout dans une seule console temps réel.",
+  "h2c": "Vos journaux d'appels sont des données personnelles.<br><span class=\"grad\">Gardez-les chez vous.</span>",
+  "subc": "Qui a appelé qui, quand et combien de temps : ce sont des données encadrées par le RGPD et les règles de confidentialité des télécoms. Les services anti-fraude cloud vous demandent de les transmettre à un tiers. Pas nous.",
+  "themh": "Service anti-fraude cloud classique",
+  "them1": "<strong>Vos métadonnées d'appels quittent votre réseau</strong> et sont stockées sur les serveurs d'un éditeur.",
+  "them2": "<strong>Des accès que vous ne maîtrisez pas :</strong> personnel de l'éditeur, sous-traitants et réquisitions judiciaires étrangères.",
+  "them3": "<strong>Des verdicts en boîte noire</strong> que vous ne pouvez ni inspecter, ni ajuster, ni auditer.",
+  "them4": "<strong>Une tarification à l'appel ou à la minute</strong> qui grimpe avec votre trafic.",
+  "ush": "Anti-fraude ASA AI, on-prem",
+  "us1": "<strong>Zéro sortie de données :</strong> la télémétrie SIP est capturée, évaluée et stockée sur vos propres serveurs.",
+  "us2": "<strong>Seule votre équipe détient les clés.</strong> Aucun sous-traitant tiers dans la boucle.",
+  "us3": "<strong>Des scores explicables :</strong> chaque signal derrière un niveau de risque est visible sur votre tableau de bord.",
+  "us4": "<strong>Compatible avec votre IPBX :</strong> Asterisk, Kamailio et terminaux SIP standard.",
+  "h2d": "Sept vues. <span class=\"grad\">Rien ne passe inaperçu sur votre trunk SIP.</span>",
+  "subd": "De vrais écrans de notre lab en fonctionnement : un IPBX Asterisk avec des téléphones IP Yealink, Polycom et Snom, sous attaque simulée.",
+  "s1t": "01 · GuardVoIP · Scoring &amp; décisions shadow",
+  "s1h": "Risque évalué en ~25 ms. Des blocages prouvés avant d'être appliqués.",
+  "s1p": "Santé du modèle et de l'API de scoring, scorings sur la période, BLOCK potentiels en mode shadow, dernier niveau de risque et latence p95, ainsi que la répartition ALLOW / REVIEW / BLOCK dans le temps.",
+  "s2t": "02 · GuardVoIP · Télémétrie SIP en direct",
+  "s2h": "Le trafic réel de l'IPBX en entrée, un score de risque en sortie. Toutes les quelques secondes.",
+  "s2p": "État du pipeline, fraîcheur des instantanés, risque courant, niveau d'anomalie ML et instantanés acceptés, au-dessus des taux INVITE/REGISTER, du volume d'appels, des destinations et des ratios d'erreurs SIP.",
+  "s3t": "03 · GuardVoIP · Anomalies &amp; ML",
+  "s3h": "Les signaux faibles qui échappent à l'œil humain.",
+  "s3p": "Réponses SIP anormales, IP sources et user-agents jamais vus, incohérences Via/IP, et les courbes de risque et d'anomalie ML qui les relient.",
+  "s4t": "04 · GuardVoIP · Une heure sous attaque",
+  "s4h": "Une attaque soutenue, minute par minute.",
+  "s4p": "Rafales d'INVITE rythmées, vagues de 401 et un score de risque qui ne redescend jamais : voilà à quoi ressemble une campagne de fraude automatisée, impossible à confondre.",
+  "s5t": "05 · VoIP Threat Sentinel · Sécurité SIP",
+  "s5h": "Codes de sécurité, authentification et reconnaissance en un coup d'œil.",
+  "s5p": "Paquets SIP et événements de sécurité par seconde, taux REGISTER et INVITE, score de risque SIP consolidé, codes 400/401/403, tentatives d'authentification et activité d'énumération.",
+  "s6t": "06 · VoIP Threat Sentinel · Indicateurs de fraude &amp; top talkers",
+  "s6h": "Qui appelle, d'où, vers quelles extensions.",
+  "s6p": "Issues des INVITE, indicateurs de fraude au niveau de l'appel, et principales sources, user-agents et destinations : l'outillage et les cibles d'un attaquant ressortent immédiatement.",
+  "s7t": "07 · VoIP Threat Sentinel · Événements suspects",
+  "s7h": "536 tentatives d'appel hors horaires. Signalées en rouge, en temps réel.",
+  "s7p": "Les derniers événements SIP suspects ligne par ligne, avec les INVITE internationaux et hors horaires, les destinations distinctes et les compteurs de fraîcheur de capture.",
+  "h2e": "Découvrez ce que votre IPBX ne vous dit pas. <span class=\"grad\">Avant votre opérateur.</span>",
+  "contactp": "Voyez GuardVoIP et VoIP Threat Sentinel détecter une attaque en direct en 30 minutes, puis décidez.",
+  "cta_seat": "Réserver une place à la session live",
+  "w1": "Prendre rendez-vous",
+  "w2": "Écrivez-nous",
+  "note": "Écrans capturés sur le lab ASA AI sous trafic d'attaque simulé. Adresses internes masquées.",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr",
+  "title": "Plateforme anti-fraude VoIP | ASA AI",
+  "desc": "Stoppez la fraude téléphonique, les attaques SIP et l'IRSF avant la facture. GuardVoIP évalue chaque appel SIP en temps réel avec une IA on-prem, et VoIP Threat Sentinel surveille votre infrastructure voix 24/7. Vos données d'appels ne quittent jamais vos murs."
+ },
+ "es": {
+  "book": "Reservar una demo",
+  "eyebrow": "Antifraude VoIP · IA on-prem · 24/7",
+  "h1": "El fraude telefónico ataca a las 3 de la madrugada.<br><span class=\"grad\">Su IA ya está despierta.</span>",
+  "lead": "Los defraudadores no llaman a la puerta. Atacan por fuerza bruta una extensión SIP un viernes por la noche, disparan llamadas internacionales de tarificación especial todo el fin de semana y usted se entera por la factura del operador. <strong>Nuestra plataforma antifraude evalúa de forma continua el riesgo de su tráfico SIP y señala el ataque mientras se produce</strong>, íntegramente en su propia infraestructura.",
+  "cta_demo": "Reserve su demo →",
+  "cta_live": "Únase a la próxima sesión en directo",
+  "st1": "latencia de scoring p95: decisiones en tiempo real",
+  "st2v": "1.100+",
+  "st2": "instantáneas de tráfico real evaluadas en 6 h en nuestra centralita de laboratorio",
+  "st3": "intentos de llamada fuera de horario detectados en 15 min",
+  "st4": "monitorización de amenazas SIP, cada método, cada código",
+  "h2a": "Los ataques de los que su centralita nunca le avisa",
+  "suba": "Los cortafuegos clásicos ven paquetes. Nosotros vemos la intención: quién llama, adónde, cuándo, con qué frecuencia y si parece un humano o un bot.",
+  "t1h": "Fraude telefónico e IRSF",
+  "t1p": "Ráfagas de llamadas a rangos de tarificación especial o internacionales de alto coste, detectadas por volumen, dispersión de destinos y horario.",
+  "t2h": "Fuerza bruta SIP",
+  "t2p": "Oleadas de desafíos 401 y REGISTER fallidos delatan el credential stuffing antes de que se secuestre una extensión.",
+  "t3h": "Escaneo y enumeración",
+  "t3p": "Inundaciones de OPTIONS, user-agents de sipsak y escáneres, barridos 404 de extensiones: todo aflora en tiempo real.",
+  "t4h": "Abuso fuera de horario",
+  "t4p": "Llamadas lanzadas de noche o en fin de semana, cuando nadie vigila, calificadas al instante como de alto riesgo.",
+  "t5h": "Suplantación y secuestro",
+  "t5p": "Discrepancias Via/IP, IP de origen nunca vistas y nuevos user-agents elevan la puntuación de anomalía.",
+  "t6h": "SIP malformado",
+  "t6p": "Respuestas 400 y anomalías que delatan fuzzing e intentos de explotación contra su centralita.",
+  "h2b": "Dos motores. <span class=\"grad\">Un único escudo para su red de voz.</span>",
+  "p1em": "Predecir y decidir",
+  "p1p": "Un motor de machine learning que asigna a su tráfico SIP en vivo un nivel de riesgo y una decisión ALLOW / REVIEW / BLOCK en milisegundos. Empiece en <strong>modo shadow</strong>: registra lo que habría bloqueado, para demostrar el valor sobre su tráfico real sin ningún riesgo para las llamadas legítimas, y después active el bloqueo.",
+  "p2em": "Vigilar y alertar",
+  "p2p": "Monitorización de seguridad 24/7 de su infraestructura SIP: métodos, códigos de seguridad, autenticación, reconocimiento, top talkers, eventos sospechosos y una puntuación de riesgo SIP consolidada, todo en una única consola en tiempo real.",
+  "h2c": "Sus registros de llamadas son datos personales.<br><span class=\"grad\">Manténgalos en casa.</span>",
+  "subc": "Quién llamó a quién, cuándo y durante cuánto tiempo son datos regulados por el RGPD y las normas de privacidad de las telecomunicaciones. Los servicios antifraude en la nube le piden que los envíe a un tercero. Nosotros no.",
+  "themh": "Servicio antifraude en la nube típico",
+  "them1": "<strong>Sus metadatos de llamadas salen de su red</strong> y quedan en los servidores de un proveedor.",
+  "them2": "<strong>Accesos que usted no controla:</strong> personal del proveedor, subencargados y requerimientos legales extranjeros.",
+  "them3": "<strong>Veredictos de caja negra</strong> que no puede inspeccionar, ajustar ni auditar.",
+  "them4": "<strong>Precio por llamada o por minuto</strong> que crece con su tráfico.",
+  "ush": "Antifraude ASA AI, on-prem",
+  "us1": "<strong>Cero salida de datos:</strong> la telemetría SIP se captura, evalúa y almacena en sus propios servidores.",
+  "us2": "<strong>Solo su equipo tiene las llaves.</strong> Ningún encargado externo en el circuito.",
+  "us3": "<strong>Puntuaciones explicables:</strong> cada señal detrás de un nivel de riesgo es visible en su panel.",
+  "us4": "<strong>Compatible con su centralita:</strong> Asterisk, Kamailio y terminales SIP estándar.",
+  "h2d": "Siete vistas. <span class=\"grad\">Nada en su troncal SIP pasa desapercibido.</span>",
+  "subd": "Pantallas reales de nuestro laboratorio en funcionamiento: una centralita Asterisk con teléfonos IP Yealink, Polycom y Snom, bajo ataque simulado.",
+  "s1t": "01 · GuardVoIP · Scoring y decisiones shadow",
+  "s1h": "Riesgo evaluado en ~25 ms. Bloqueos demostrados antes de aplicarse.",
+  "s1p": "Salud del modelo y de la API de scoring, scorings del periodo, BLOCK potenciales en modo shadow, último nivel de riesgo y latencia p95, además del reparto ALLOW / REVIEW / BLOCK en el tiempo.",
+  "s2t": "02 · GuardVoIP · Telemetría SIP en vivo",
+  "s2h": "Tráfico real de la centralita a la entrada, puntuación de riesgo a la salida. Cada pocos segundos.",
+  "s2p": "Estado del pipeline, frescura de las instantáneas, riesgo actual, nivel de anomalía ML e instantáneas aceptadas, sobre las tasas INVITE/REGISTER, el volumen de llamadas, los destinos y los ratios de error SIP.",
+  "s3t": "03 · GuardVoIP · Anomalías y ML",
+  "s3h": "Las señales débiles que se le escapan al ojo humano.",
+  "s3p": "Respuestas SIP anómalas, IP de origen y user-agents nunca vistos, discrepancias Via/IP, y las curvas de riesgo y anomalía ML que los relacionan.",
+  "s4t": "04 · GuardVoIP · Una hora bajo ataque",
+  "s4h": "Un ataque sostenido, minuto a minuto.",
+  "s4p": "Ráfagas rítmicas de INVITE, oleadas de 401 y una puntuación de riesgo que nunca baja: así es una campaña de fraude automatizada, inconfundible.",
+  "s5t": "05 · VoIP Threat Sentinel · Seguridad SIP",
+  "s5h": "Códigos de seguridad, autenticación y reconocimiento de un vistazo.",
+  "s5p": "Paquetes SIP y eventos de seguridad por segundo, tasas REGISTER e INVITE, puntuación de riesgo SIP consolidada, códigos 400/401/403, intentos de autenticación y actividad de enumeración.",
+  "s6t": "06 · VoIP Threat Sentinel · Indicadores de fraude y top talkers",
+  "s6h": "Quién llama, desde dónde y a qué extensiones.",
+  "s6p": "Resultados de los INVITE, indicadores de fraude por llamada y principales orígenes, user-agents y destinos, para que las herramientas y objetivos de un atacante destaquen de inmediato.",
+  "s7t": "07 · VoIP Threat Sentinel · Eventos sospechosos",
+  "s7h": "536 intentos de llamada fuera de horario. Marcados en rojo, en tiempo real.",
+  "s7p": "Los últimos eventos SIP sospechosos línea a línea, con INVITE internacionales y fuera de horario, destinos distintos y contadores de frescura de captura.",
+  "h2e": "Descubra lo que su centralita no le cuenta. <span class=\"grad\">Antes que su operador.</span>",
+  "contactp": "Vea cómo GuardVoIP y VoIP Threat Sentinel detectan un ataque en directo en 30 minutos y después decida.",
+  "cta_seat": "Reserve su plaza en la sesión en directo",
+  "w1": "Reservar una reunión",
+  "w2": "Escríbanos",
+  "note": "Pantallas capturadas en el laboratorio de ASA AI bajo tráfico de ataque simulado. Direcciones internas ocultas.",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr",
+  "title": "Plataforma antifraude VoIP | ASA AI",
+  "desc": "Detenga el fraude telefónico, los ataques SIP y el IRSF antes de que llegue la factura. GuardVoIP evalúa cada llamada SIP en tiempo real con IA on-prem y VoIP Threat Sentinel vigila su infraestructura de voz 24/7. Sus datos de llamadas nunca salen de sus instalaciones."
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  if (lang === "fr") document.querySelectorAll("a[data-reg]").forEach(function(a){ a.setAttribute("href", "inscription.html"); });
+})();
+</script>
 </body>
 </html>
