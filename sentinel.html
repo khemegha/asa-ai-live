@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SENTINEL AI Security — AI Agent Security &amp; Autonomous SOC | ASA AI</title>
+<meta name="description" content="SENTINEL inspects every AI agent call, every token and every MCP tool, blocks injections and out-of-scope actions, and maps everything to OWASP LLM Top 10, MITRE ATLAS and the EU AI Act. 100% on-prem.">
+<meta name="keywords" content="AI agent security, MCP security, Model Context Protocol, LLM security, prompt injection, AI guardrail, AI observability, OWASP LLM Top 10, MITRE ATLAS, EU AI Act, autonomous SOC, AI red teaming, sovereign AI">
+<link rel="canonical" href="https://demo.asa-ai.fr/sentinel.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your AI agents never sleep. Neither do the attackers hunting them.">
+<meta property="og:description" content="SENTINEL watches every invocation, every token and every MCP tool call, and blocks the bad ones before they land. On-prem, OWASP LLM Top 10 and MITRE ATLAS mapped.">
+<meta property="og:url" content="https://demo.asa-ai.fr/sentinel.html">
+<meta property="og:image" content="https://demo.asa-ai.fr/assets/sentinel/og-sentinel.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demo.asa-ai.fr/assets/sentinel/og-sentinel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--mag:#D6247A;--vio:#6B2FA0;--ink:#1A1A2E;--bg:#0E0D1A;--panel:#1E1C34;--line:#2E2A4E;--txt:#F5F4FA;--mut:#A09CB9;--ok:#40D28C;--bad:#F0505A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;
+       background-image:radial-gradient(900px 600px at 10% -10%,rgba(107,47,160,.45),transparent 60%),
+                        radial-gradient(800px 600px at 110% 20%,rgba(214,36,122,.25),transparent 60%)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+  .brand i{width:14px;height:14px;border-radius:50%;background:var(--mag);display:inline-block}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pri{background:var(--mag);color:#fff;box-shadow:0 10px 30px rgba(214,36,122,.35)}
+  .btn-sec{border:1.5px solid var(--line);color:var(--txt)}
+  .hero{text-align:center;padding:44px 0 10px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mag);
+           border:1px solid rgba(214,36,122,.45);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .grad{background:linear-gradient(90deg,var(--mag),#9a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:800px;margin:22px auto 0;font-size:clamp(17px,2.2vw,20px);color:var(--mut)}
+  .lead strong{color:var(--txt)}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .hero-shot{margin:44px auto 0;max-width:900px;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-shot img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:44px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800}
+  .stat span{color:var(--mut);font-size:14px}
+  section{padding:76px 0 0}
+  h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
+  .sub{text-align:center;color:var(--mut);max-width:760px;margin:14px auto 0}
+  .tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+  .test{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .test small{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mag);margin-bottom:6px}
+  .test h3{font-size:18px;margin-bottom:6px}
+  .test p{color:var(--mut);font-size:15px}
+  .step{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:center;margin-top:56px}
+  .step.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .step.rev .txt{order:2}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--mag);font-weight:800;margin-bottom:14px}
+  .step h3{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;margin-bottom:10px}
+  .step p{color:var(--mut)}
+  .step figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111217;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .step img{display:block;width:100%;height:auto}
+  .report{max-width:760px;margin:36px auto 0;border-radius:20px;padding:32px;border:1px solid rgba(214,36,122,.6);
+          background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .checks{list-style:none;display:grid;gap:14px}
+  .checks li{padding-left:32px;position:relative;color:var(--mut)}
+  .checks li strong{color:var(--txt)}
+  .checks li:before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chips span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+  .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+  .card{border-radius:20px;padding:28px;border:1px solid var(--line);background:var(--panel)}
+  .card.hl{border-color:rgba(214,36,122,.6);background:linear-gradient(160deg,rgba(214,36,122,.14),rgba(107,47,160,.16))}
+  .card h3{font-size:20px;margin-bottom:14px}
+  .card ol{padding-left:22px;display:grid;gap:10px;color:var(--mut)}
+  .card ol strong,.card p strong{color:var(--txt)}
+  .card p{color:var(--mut);margin-top:14px}
+  .legal{margin-top:28px;border:1px solid rgba(240,80,90,.45);background:rgba(240,80,90,.08);border-radius:16px;padding:18px 22px;color:var(--mut);text-align:center}
+  .legal strong{color:var(--txt)}
+  .contact{margin:84px 0 0;padding:52px 24px;border-radius:24px;border:1px solid var(--line);text-align:center;
+           background:linear-gradient(135deg,rgba(214,36,122,.18),rgba(107,47,160,.22))}
+  .contact p{color:var(--mut);margin-top:12px}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px auto 0;max-width:900px}
+  .way{background:rgba(14,13,26,.55);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--txt);display:block}
+  .way small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+  .way b{font-size:17px;word-break:break-word}
+  .note{color:var(--mut);font-size:13px;text-align:center;margin-top:40px}
+  footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 0 40px}
+  @media (max-width:860px){.step,.step.rev{grid-template-columns:1fr;gap:20px}.step.rev .txt{order:0}}
+  @media (max-width:600px){header .btn{display:none}.cta-row .btn{width:100%}}
+  .hero-shot.wide{max-width:1100px}
+  .step{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .step.rev{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+  .card .checks{margin-top:4px}
+  .log{max-width:820px;margin:32px auto 0;background:#0A0912;border:1px solid var(--line);border-radius:16px;padding:22px 24px;
+       font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.9;color:#C9C6DC;overflow-x:auto;white-space:nowrap}
+  .log .t{color:#6E6A8A}.log .ok{color:var(--ok);font-weight:700}.log .ko{color:var(--bad);font-weight:700}.log .fl{color:#F0B84A;font-weight:700}
+  .log em{font-style:normal;color:var(--mag)}
+  .log .foot{margin-top:10px;color:var(--mut);font-family:Inter,system-ui,sans-serif;font-size:13px;white-space:normal}
+  @media (max-width:860px){.step,.step.rev{grid-template-columns:1fr}}
+  @media (max-width:600px){.log{font-size:12px;padding:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><i></i>ASA AI</div>
+    <a class="btn btn-pri" href="demo.html?p=sentinel" data-i18n="hdr">Book a demo</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow" data-i18n="eyebrow">SENTINEL AI Security · MCP · Autonomous SOC</span>
+      <h1 data-i18n="h1">Your AI agents never sleep.<br><span class="grad">Neither do the attackers hunting them.</span></h1>
+      <p class="lead" data-i18n="lead">Every agent you plug into an MCP server gets tools, data and credentials. One poisoned prompt, one rogue tool call, and your automation works for the attacker. <strong>SENTINEL watches every invocation, every token and every tool call, and blocks the bad ones before they land.</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=sentinel" data-i18n="cta_demo">See it stop an attack live →</a>
+        <a class="btn btn-sec" href="#how" data-i18n="cta_how">See the platform</a>
+      </div>
+      <div class="hero-shot wide"><img src="assets/sentinel/01-overview.png" alt="SENTINEL AI Endpoint Security overview: fleet, MCP servers, IOCs, SIEM alerts and refusals"></div>
+      <div class="stats">
+        <div class="stat"><b>31,629</b><span data-i18n="st1">AI agent invocations inspected in 24 h</span></div>
+        <div class="stat"><b>1.05 M</b><span data-i18n="st2">tokens screened, in and out</span></div>
+        <div class="stat"><b>51</b><span data-i18n="st3">out-of-scope agent actions refused</span></div>
+        <div class="stat"><b>373</b><span data-i18n="st4">malicious IOCs confirmed by VirusTotal</span></div>
+      </div>
+      <p class="note" style="margin-top:14px" data-i18n="stnote">Live figures from our lab deployment, 24-hour window.</p>
+    </div>
+
+    <section>
+      <h2 data-i18n="h2a">You gave your AI the keys to the kingdom. <span class="grad">Nobody is checking what it opens.</span></h2>
+      <p class="sub" data-i18n="suba">Your firewall sees HTTPS. Your EDR sees a trusted process. Your SIEM sees nothing at all. Meanwhile, an agent with shell access, a vector store and your ticketing system takes instructions from whatever text it reads next.</p>
+      <div class="tests">
+        <div class="test"><small>01 · LLM01</small><h3 data-i18n="t1h">One email can hijack your agent</h3><p data-i18n="t1p">Hidden instructions in a document, a web page or a log line rewrite your agent's goal mid-task. It still looks like it is working for you.</p></div>
+        <div class="test"><small>02 · LLM06</small><h3 data-i18n="t2h">Every MCP tool is a loaded weapon</h3><p data-i18n="t2p">nmap, nuclei, shell, database, file system. A single out-of-scope call turns your pentest agent into a live attack on your own network.</p></div>
+        <div class="test"><small>03 · LLM02</small><h3 data-i18n="t3h">Your data leaves one token at a time</h3><p data-i18n="t3p">Hostnames, IPs, credentials and internal topology flow into model context and back out. No alert fires. No log line looks wrong.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2g">188 milliseconds. <span class="grad">That is how long a malicious prompt survives.</span></h2>
+      <p class="sub" data-i18n="subg">ASA-AI-Guard sits between your agents and your models. Every request is analysed inline: injection attempts are blocked, risky calls flagged, out-of-perimeter tool calls refused, with a full audit trail mapped to OWASP LLM Top 10 and MITRE ATLAS.</p>
+      <div class="log" aria-label="Guard decisions">
+        <div><span class="t">09:00:31</span> <span class="ok">ALLOW</span> agent=soc-analyst tool=wazuh.agents</div>
+        <div><span class="t">09:00:34</span> <span class="ko">BLOCK</span> agent=web-recon reason=prompt_injection <em>LLM01</em></div>
+        <div><span class="t">09:00:35</span> <span class="ko">BLOCK</span> agent=pentest tool=nmap target=out_of_scope</div>
+        <div><span class="t">09:00:41</span> <span class="fl">FLAG</span>&nbsp; agent=cti reason=sensitive_data_egress <em>LLM02</em></div>
+        <div><span class="t">09:00:42</span> <span class="ok">ALLOW</span> agent=voice-arsenal tool=sip.scan scope=lab</div>
+        <div><span class="t">09:00:44</span> <span class="ko">BLOCK</span> agent=red-team reason=excessive_agency <em>LLM06</em></div>
+        <div class="foot" data-i18n="logfoot">analysis 188 ms · every decision written to the audit trail</div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 data-i18n="h2b">One console. <span class="grad">Every agent, model and tool call on the record.</span></h2>
+
+      <div class="step rev">
+        <div class="txt">
+          <span class="num">1</span>
+          <h3 data-i18n="s1h">AI observability, measured by the Guard</h3>
+          <p data-i18n="s1p">Invocations, latency, token burn and errors per model, for the 20 agents behind the gateway, plus the Guard's block and flag decisions in real time.</p>
+        </div>
+        <figure><img src="assets/sentinel/02-observability.png" alt="AI observability: invocations, tokens, errors per model and Guard decisions" loading="lazy"></figure>
+      </div>
+
+      <div class="step">
+        <div class="txt">
+          <span class="num">2</span>
+          <h3 data-i18n="s2h">An admission gate for every model</h3>
+          <p data-i18n="s2p">Each model is audited before use: source, license compliance, chat-template drift and fingerprint. Non-compliant licenses are flagged, drifting models refused.</p>
+        </div>
+        <figure><img src="assets/sentinel/03-inventory.png" alt="AI inventory: model admission gate with license, template and fingerprint checks" loading="lazy"></figure>
+      </div>
+
+      <div class="step rev">
+        <div class="txt">
+          <span class="num">3</span>
+          <h3 data-i18n="s3h">OWASP LLM Top 10, scored per agent</h3>
+          <p data-i18n="s3p">Real attack prompts run against every loaded agent: injection, system-prompt leakage, secret disclosure. Each agent gets its own coverage and compliance score.</p>
+        </div>
+        <figure><img src="assets/sentinel/04-owasp-agents.png" alt="OWASP LLM Top 10 compliance evaluated per agent" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2p">Attack it. Defend it. <span class="grad">Secure the AI doing both.</span></h2>
+      <div class="tests">
+        <div class="test"><small data-i18n="p1s">Offensive</small><h3 data-i18n="p1h">AI-driven pentesting</h3><p data-i18n="p1p">nmap, nuclei and ProjectDiscovery tools plus a dedicated VoIP / SIP arsenal, fenced by a perimeter guardrail that refuses anything out of scope.</p></div>
+        <div class="test"><small data-i18n="p2s">Defensive</small><h3 data-i18n="p2h">Autonomous SOC</h3><p data-i18n="p2p">SIEM, MISP threat intelligence and a security data lake refreshed every five minutes, triaged by AI agents around the clock.</p></div>
+        <div class="test"><small data-i18n="p3s">AI security</small><h3 data-i18n="p3h">Red teaming &amp; inventory</h3><p data-i18n="p3p">Garak-driven red teaming against your local models, an inventory of every agent and MCP server, and continuous OWASP LLM scoring.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="h2c">Audit-ready for AI regulation. <span class="grad">Sovereign by design.</span></h2>
+      <div class="duo">
+        <div class="card hl">
+          <h3 data-i18n="c_h">Compliance, built in</h3>
+          <ul class="checks">
+            <li data-i18n="c1"><strong>OWASP LLM Top 10</strong>, globally and per agent.</li>
+            <li data-i18n="c2"><strong>MITRE ATLAS</strong> mapping of every detection.</li>
+            <li data-i18n="c3"><strong>EU AI Act</strong> inventory, obligations and roadmap.</li>
+            <li data-i18n="c4"><strong>Chained audit log</strong> of every agent decision.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="v_h">Your models. Your infrastructure.</h3>
+          <p style="margin-top:0" data-i18n="v_p">SENTINEL runs on-premise with local LLMs, routed and governed through 13 MCP servers. Cloud models are optional, never required. Nothing phones home.</p>
+          <div class="chips"><span>mistral:7b</span><span>qwen2.5:7b</span><span>llama3.1:8b</span><span>gemma2:9b</span><span>phi3.5</span><span>deepseek-coder</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <h2 data-i18n="h2e">Automate your SOC. <span class="grad">Without handing the attacker a new one.</span></h2>
+      <p data-i18n="contactp">We plug SENTINEL into your AI workflows and show you, live, what your agents are really doing, and what they would have done without us.</p>
+      <div class="cta-row">
+        <a class="btn btn-pri" href="demo.html?p=sentinel" data-i18n="cta_demo2">Book your live demo →</a>
+        <a class="btn btn-sec" href="#how" data-i18n="cta_how">See the platform</a>
+      </div>
+      <div class="ways">
+        <a class="way" href="demo.html?p=sentinel"><small data-i18n="w1">Book a meeting</small><b>demo.asa-ai.fr</b></a>
+        <a class="way" href="mailto:contact@asa-ai.fr?subject=SENTINEL%20AI%20Security"><small data-i18n="w2">Email us</small><b>contact@asa-ai.fr</b></a>
+        <a class="way" href="https://wa.me/33651815390"><small>WhatsApp</small><b>+33 6 51 81 53 90</b></a>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="note">Screens captured on the ASA AI lab deployment. Sensitive identifiers redacted.</p>
+  </main>
+
+  <footer data-i18n="foot">© 2026 ASA AI · Sovereign AI security, built in France · contact@asa-ai.fr</footer>
+</div>
+<script>
+/* Langue du lecteur détectée automatiquement (anglais par défaut, ?lang=fr|es|en pour forcer) */
+(function(){
+  var T = {
+ "fr": {
+  "title": "SENTINEL AI Security — Sécurité des agents IA et SOC autonome | ASA AI",
+  "desc": "SENTINEL inspecte chaque appel d'agent IA, chaque jeton et chaque outil MCP, bloque les injections et les actions hors périmètre, et cartographie tout sur OWASP LLM Top 10, MITRE ATLAS et l'AI Act. 100 % on-prem.",
+  "hdr": "Réserver une démo",
+  "eyebrow": "SENTINEL AI Security · MCP · SOC autonome",
+  "h1": "Vos agents IA ne dorment jamais.<br><span class=\"grad\">Les attaquants qui les traquent non plus.</span>",
+  "lead": "Chaque agent branché sur un serveur MCP reçoit des outils, des données et des identifiants. Un prompt empoisonné, un appel d'outil malveillant, et votre automatisation travaille pour l'attaquant. <strong>SENTINEL surveille chaque invocation, chaque jeton et chaque appel d'outil, et bloque les mauvais avant qu'ils n'atteignent leur cible.</strong>",
+  "cta_demo": "Voir SENTINEL stopper une attaque en direct →",
+  "cta_how": "Découvrir la plateforme",
+  "st1": "invocations d'agents IA inspectées en 24 h",
+  "st2": "jetons contrôlés, en entrée et en sortie",
+  "st3": "actions d'agents hors périmètre refusées",
+  "st4": "IOC malveillants confirmés par VirusTotal",
+  "stnote": "Chiffres réels de notre déploiement de lab, fenêtre de 24 heures.",
+  "h2a": "Vous avez confié les clés du royaume à votre IA. <span class=\"grad\">Personne ne vérifie ce qu'elle ouvre.</span>",
+  "suba": "Votre pare-feu voit du HTTPS. Votre EDR voit un processus de confiance. Votre SIEM ne voit rien. Pendant ce temps, un agent avec un accès shell, une base vectorielle et votre outil de ticketing obéit au prochain texte qu'il lit.",
+  "t1h": "Un e-mail peut détourner votre agent",
+  "t1p": "Des instructions cachées dans un document, une page web ou une ligne de log réécrivent l'objectif de votre agent en pleine tâche. Il a toujours l'air de travailler pour vous.",
+  "t2h": "Chaque outil MCP est une arme chargée",
+  "t2p": "nmap, nuclei, shell, base de données, système de fichiers. Un seul appel hors périmètre transforme votre agent de pentest en attaque réelle contre votre propre réseau.",
+  "t3h": "Vos données fuient un jeton à la fois",
+  "t3p": "Noms d'hôtes, adresses IP, identifiants et topologie interne entrent dans le contexte du modèle et en ressortent. Aucune alerte ne se déclenche. Aucune ligne de log ne semble anormale.",
+  "h2g": "188 millisecondes. <span class=\"grad\">C'est la durée de vie d'un prompt malveillant.</span>",
+  "subg": "ASA-AI-Guard s'intercale entre vos agents et vos modèles. Chaque requête est analysée en ligne : les injections sont bloquées, les appels risqués signalés, les appels d'outils hors périmètre refusés, avec une piste d'audit complète cartographiée sur OWASP LLM Top 10 et MITRE ATLAS.",
+  "logfoot": "analyse 188 ms · chaque décision est inscrite dans la piste d'audit",
+  "h2b": "Une seule console. <span class=\"grad\">Chaque agent, modèle et appel d'outil tracé.</span>",
+  "s1h": "L'observabilité IA, mesurée par le Guard",
+  "s1p": "Invocations, latence, consommation de jetons et erreurs par modèle, pour les 20 agents derrière la passerelle, avec les décisions de blocage et de signalement du Guard en temps réel.",
+  "s2h": "Un portail d'admission pour chaque modèle",
+  "s2p": "Chaque modèle est audité avant usage : source, conformité de la licence, dérive du template de chat et empreinte. Les licences non conformes sont signalées, les modèles qui dérivent refusés.",
+  "s3h": "OWASP LLM Top 10, noté agent par agent",
+  "s3p": "De vrais prompts d'attaque sont joués contre chaque agent chargé : injection, fuite du prompt système, divulgation de secrets. Chaque agent obtient sa propre couverture et son score de conformité.",
+  "h2p": "Attaquez. Défendez. <span class=\"grad\">Sécurisez l'IA qui fait les deux.</span>",
+  "p1s": "Offensif",
+  "p1h": "Pentest piloté par l'IA",
+  "p1p": "Outils nmap, nuclei et ProjectDiscovery plus un arsenal VoIP / SIP dédié, encadrés par un garde-fou de périmètre qui refuse tout ce qui sort du cadre.",
+  "p2s": "Défensif",
+  "p2h": "SOC autonome",
+  "p2p": "SIEM, renseignement sur la menace MISP et un data lake de sécurité rafraîchi toutes les cinq minutes, trié par des agents IA en continu.",
+  "p3s": "Sécurité IA",
+  "p3h": "Red teaming &amp; inventaire",
+  "p3p": "Red teaming piloté par Garak contre vos modèles locaux, inventaire de chaque agent et serveur MCP, et notation OWASP LLM en continu.",
+  "h2c": "Prêt pour l'audit de la réglementation IA. <span class=\"grad\">Souverain par conception.</span>",
+  "c_h": "La conformité, intégrée",
+  "c1": "<strong>OWASP LLM Top 10</strong>, global et par agent.",
+  "c2": "<strong>MITRE ATLAS</strong> : cartographie de chaque détection.",
+  "c3": "<strong>AI Act européen</strong> : inventaire, obligations et feuille de route.",
+  "c4": "<strong>Journal d'audit chaîné</strong> de chaque décision d'agent.",
+  "v_h": "Vos modèles. Votre infrastructure.",
+  "v_p": "SENTINEL tourne on-premise avec des LLM locaux, routés et gouvernés par 13 serveurs MCP. Les modèles cloud sont optionnels, jamais obligatoires. Rien ne sort de chez vous.",
+  "h2e": "Automatisez votre SOC. <span class=\"grad\">Sans offrir à l'attaquant un nouveau point d'entrée.</span>",
+  "contactp": "Nous branchons SENTINEL sur vos workflows IA et vous montrons, en direct, ce que font vraiment vos agents, et ce qu'ils auraient fait sans nous.",
+  "cta_demo2": "Réserver votre démo live →",
+  "w1": "Prendre rendez-vous",
+  "w2": "Écrivez-nous",
+  "note": "Écrans capturés sur le déploiement de lab ASA AI. Identifiants sensibles masqués.",
+  "foot": "© 2026 ASA AI · Sécurité IA souveraine, conçue en France · contact@asa-ai.fr"
+ },
+ "es": {
+  "title": "SENTINEL AI Security — Seguridad de agentes de IA y SOC autónomo | ASA AI",
+  "desc": "SENTINEL inspecciona cada llamada de agente de IA, cada token y cada herramienta MCP, bloquea inyecciones y acciones fuera de perímetro, y lo mapea todo en OWASP LLM Top 10, MITRE ATLAS y la Ley de IA. 100 % on-prem.",
+  "hdr": "Reservar una demo",
+  "eyebrow": "SENTINEL AI Security · MCP · SOC autónomo",
+  "h1": "Sus agentes de IA nunca duermen.<br><span class=\"grad\">Los atacantes que los persiguen tampoco.</span>",
+  "lead": "Cada agente conectado a un servidor MCP recibe herramientas, datos y credenciales. Un prompt envenenado, una llamada a herramienta maliciosa, y su automatización trabaja para el atacante. <strong>SENTINEL vigila cada invocación, cada token y cada llamada a herramienta, y bloquea las malas antes de que lleguen a su objetivo.</strong>",
+  "cta_demo": "Vea cómo detiene un ataque en directo →",
+  "cta_how": "Descubrir la plataforma",
+  "st1": "invocaciones de agentes de IA inspeccionadas en 24 h",
+  "st2": "tokens controlados, de entrada y de salida",
+  "st3": "acciones de agentes fuera de perímetro rechazadas",
+  "st4": "IOC maliciosos confirmados por VirusTotal",
+  "stnote": "Cifras reales de nuestro despliegue de laboratorio, ventana de 24 horas.",
+  "h2a": "Le dio a su IA las llaves del reino. <span class=\"grad\">Nadie comprueba qué abre.</span>",
+  "suba": "Su cortafuegos ve HTTPS. Su EDR ve un proceso de confianza. Su SIEM no ve nada. Mientras tanto, un agente con acceso a shell, una base vectorial y su sistema de tickets obedece al siguiente texto que lee.",
+  "t1h": "Un e-mail puede secuestrar a su agente",
+  "t1p": "Instrucciones ocultas en un documento, una página web o una línea de log reescriben el objetivo de su agente en plena tarea. Sigue pareciendo que trabaja para usted.",
+  "t2h": "Cada herramienta MCP es un arma cargada",
+  "t2p": "nmap, nuclei, shell, base de datos, sistema de archivos. Una sola llamada fuera de perímetro convierte a su agente de pentest en un ataque real contra su propia red.",
+  "t3h": "Sus datos se escapan token a token",
+  "t3p": "Nombres de host, IP, credenciales y topología interna entran en el contexto del modelo y vuelven a salir. No salta ninguna alerta. Ninguna línea de log parece anómala.",
+  "h2g": "188 milisegundos. <span class=\"grad\">Es lo que sobrevive un prompt malicioso.</span>",
+  "subg": "ASA-AI-Guard se sitúa entre sus agentes y sus modelos. Cada petición se analiza en línea: las inyecciones se bloquean, las llamadas de riesgo se señalan y las llamadas a herramientas fuera de perímetro se rechazan, con una pista de auditoría completa mapeada en OWASP LLM Top 10 y MITRE ATLAS.",
+  "logfoot": "análisis 188 ms · cada decisión queda registrada en la pista de auditoría",
+  "h2b": "Una sola consola. <span class=\"grad\">Cada agente, modelo y llamada a herramienta registrados.</span>",
+  "s1h": "Observabilidad de IA, medida por el Guard",
+  "s1p": "Invocaciones, latencia, consumo de tokens y errores por modelo, para los 20 agentes tras la pasarela, con las decisiones de bloqueo y señalización del Guard en tiempo real.",
+  "s2h": "Un portal de admisión para cada modelo",
+  "s2p": "Cada modelo se audita antes de usarlo: origen, cumplimiento de licencia, deriva de la plantilla de chat y huella. Las licencias no conformes se señalan y los modelos que derivan se rechazan.",
+  "s3h": "OWASP LLM Top 10, puntuado agente por agente",
+  "s3p": "Prompts de ataque reales se lanzan contra cada agente cargado: inyección, fuga del prompt de sistema, divulgación de secretos. Cada agente obtiene su propia cobertura y puntuación de cumplimiento.",
+  "h2p": "Atáquelo. Defiéndalo. <span class=\"grad\">Proteja la IA que hace ambas cosas.</span>",
+  "p1s": "Ofensivo",
+  "p1h": "Pentest dirigido por IA",
+  "p1p": "Herramientas nmap, nuclei y ProjectDiscovery más un arsenal VoIP / SIP dedicado, limitados por un guardarraíl de perímetro que rechaza todo lo que queda fuera del alcance.",
+  "p2s": "Defensivo",
+  "p2h": "SOC autónomo",
+  "p2p": "SIEM, inteligencia de amenazas MISP y un data lake de seguridad actualizado cada cinco minutos, clasificado por agentes de IA sin descanso.",
+  "p3s": "Seguridad de IA",
+  "p3h": "Red teaming e inventario",
+  "p3p": "Red teaming con Garak contra sus modelos locales, inventario de cada agente y servidor MCP, y puntuación OWASP LLM continua.",
+  "h2c": "Listo para auditar la regulación de IA. <span class=\"grad\">Soberano por diseño.</span>",
+  "c_h": "Cumplimiento integrado",
+  "c1": "<strong>OWASP LLM Top 10</strong>, global y por agente.",
+  "c2": "<strong>MITRE ATLAS</strong>: mapeo de cada detección.",
+  "c3": "<strong>Ley de IA de la UE</strong>: inventario, obligaciones y hoja de ruta.",
+  "c4": "<strong>Registro de auditoría encadenado</strong> de cada decisión de agente.",
+  "v_h": "Sus modelos. Su infraestructura.",
+  "v_p": "SENTINEL funciona on-premise con LLM locales, enrutados y gobernados por 13 servidores MCP. Los modelos en la nube son opcionales, nunca obligatorios. Nada sale de sus instalaciones.",
+  "h2e": "Automatice su SOC. <span class=\"grad\">Sin regalar al atacante una nueva puerta.</span>",
+  "contactp": "Conectamos SENTINEL a sus flujos de IA y le mostramos, en directo, lo que hacen realmente sus agentes, y lo que habrían hecho sin nosotros.",
+  "cta_demo2": "Reserve su demo en directo →",
+  "w1": "Reservar una reunión",
+  "w2": "Escríbanos",
+  "note": "Pantallas capturadas en el despliegue de laboratorio de ASA AI. Identificadores sensibles ocultos.",
+  "foot": "© 2026 ASA AI · Seguridad de IA soberana, desarrollada en Francia · contact@asa-ai.fr"
+ }
+};
+  var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+  var lang = "en";
+  for (var i = 0; i < prefs.length; i++){ var c = (prefs[i] || "").slice(0,2).toLowerCase(); if (c === "en" || T[c]) { lang = c; break; } }
+  var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || T[q]) lang = q;
+  if (lang === "en") return;
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  var md = document.querySelector('meta[name="description"]'); if (md) md.content = L.desc;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){ var v = L[e.getAttribute("data-i18n")]; if (v != null) e.innerHTML = v; });
+  document.querySelectorAll('a[href^="demo.html"]').forEach(function(a){ a.setAttribute("href", a.getAttribute("href") + "&lang=" + lang); });
+})();
+</script>
+</body>
+</html>
