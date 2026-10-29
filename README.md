@@ -1,5 +1,38 @@
 # ASA AI · SENTINEL AI & AI SOC Analyst
 
+<!-- ASA-OBS-SOVEREIGN:START -->
+## 🛡️ Sovereign AI Observability: your AI telemetry stays home, not in a SaaS
+
+[![Sovereign AI Observability](assets/observability-sovereign/og-sovereign-observability.png)](https://demo.asa-ai.fr/sentinel-observability.html)
+
+**Your AI agents read your contracts, tickets and customer records. Why ship all of it to someone else's cloud?**
+ASA-AI Observability gives you full visibility into your LLMs and AI agents, running **100% on your own infrastructure**. Zero data egress, no third-party processor, no usage meter on your own telemetry.
+
+- **Every request, token and millisecond**: latency, time-to-first-token, token spend, errors, globally or per agent
+- **Cut your token bill**: 78% cache hit rate in our lab, so repeated questions never hit the model
+- **Guardrails, measured**: prompts blocked or flagged in milliseconds by ASA-AI-Guard, our on-prem AI gateway
+- **25 agents continuously evaluated**: availability every 15 min, quality nightly, security weekly
+- **Model admission gate**: every model fingerprinted, license-checked and screened for template drift before production
+- **Audit-ready by design** for GDPR, NIS2, DORA and EU AI Act record-keeping
+
+| Overview | Users |
+|---|---|
+| ![Overview](assets/observability-sovereign/01-overview.png) | ![Users](assets/observability-sovereign/02-users.png) |
+| **Errors** | **Cache** |
+| ![Errors](assets/observability-sovereign/03-errors.png) | ![Cache](assets/observability-sovereign/04-cache.png) |
+| **Gateway & guardrails** | **Per model** |
+| ![Gateway and guardrails](assets/observability-sovereign/05-guard-latency-tokens.png) | ![Per model](assets/observability-sovereign/06-per-model.png) |
+| **Continuous evaluation** | **AI inventory & admission gate** |
+| ![Continuous evaluation](assets/observability-sovereign/07-agent-evaluation.png) | ![AI inventory](assets/observability-sovereign/08-ai-inventory.png) |
+
+<sub>Screens from the ASA AI lab console; figures include synthetic load testing.</sub>
+
+### 👉 [See the full tour](https://demo.asa-ai.fr/sentinel-observability.html) · [Book your demo](https://demo.asa-ai.fr/demo.html) · [Join the live session](https://demo.asa-ai.fr/register.html)
+📧 contact@asa-ai.fr · 💬 WhatsApp +33 6 51 81 53 90
+
+---
+<!-- ASA-OBS-SOVEREIGN:END -->
+
 ## 📜 The EU AI Act is coming for your AI agents. Can you prove they comply?
 
 [![SENTINEL AI Compliance: every agent red-teamed against the OWASP LLM Top 10 and scored](assets/compliance/per-agent.jpg)](https://demo.asa-ai.fr/demo.html)
